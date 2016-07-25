@@ -1,6 +1,5 @@
 # SJSegmentedScrollView
 
-[![CI Status](http://img.shields.io/travis/SubinsJose/SJSegmentedScrollView.svg?style=flat)](https://travis-ci.org/Subins Jose/SJSegmentedScrollView)
 [![Version](https://img.shields.io/cocoapods/v/SJSegmentedScrollView.svg?style=flat)](http://cocoapods.org/pods/SJSegmentedScrollView)
 [![License](https://img.shields.io/cocoapods/l/SJSegmentedScrollView.svg?style=flat)](http://cocoapods.org/pods/SJSegmentedScrollView)
 [![Platform](https://img.shields.io/cocoapods/p/SJSegmentedScrollView.svg?style=flat)](http://cocoapods.org/pods/SJSegmentedScrollView)
@@ -28,7 +27,7 @@ platform :ios, '9.0'
 use_frameworks!
 
 target '<Your Target Name>' do
-pod ’SJSegmentedScrollView’, ‘1.0.8'
+pod ’SJSegmentedScrollView’, ‘1.0.9'
 end
 ```
 Then, run the following command:
