@@ -24,7 +24,7 @@ import UIKit
 
 typealias DidSelectSegmentAtIndex = (index: Int) -> Void
 
-public class SJSegmentView: UIScrollView {
+class SJSegmentView: UIScrollView {
     
     var selectedSegmentViewColor: UIColor? {
         didSet {
@@ -85,7 +85,7 @@ public class SJSegmentView: UIScrollView {
         super.init(frame: frame)
     }
     
-    required public init?(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
@@ -259,7 +259,7 @@ public class SJSegmentView: UIScrollView {
         return maxWidth
     }
     
-    override public func observeValueForKeyPath(keyPath: String?,
+    override func observeValueForKeyPath(keyPath: String?,
                                                 ofObject object: AnyObject?,
                                                          change: [String : AnyObject]?,
                                                          context: UnsafeMutablePointer<Void>) {

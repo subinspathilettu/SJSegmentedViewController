@@ -25,9 +25,9 @@ import UIKit
 @objc public protocol SJSegmentedViewControllerViewSource {
     
     /**
-     Default SJSegmentedScrollView will observe the content changes of each child view controller's
-     top view. eg:- (For UIVIewController -> view, For UITableViewController -> tableView). If you 
-     want to change the observing view, implement this method.
+     By default, SJSegmentedScrollView will observe the default view of viewcontroller for content
+     changes and makes the scroll effect. If you want to change the default view, implement
+     SJSegmentedViewControllerViewSource and pass your custom view.
      
      - parameter controller: UIViewController for segment
      - parameter index:      index of segment controller
@@ -40,53 +40,62 @@ import UIKit
 
 public class SJSegmentedViewController: UIViewController {
     
+    /// Set height for headerview. Default height is 200.0.
     public var headerViewHeight: CGFloat = 200.0 {
         didSet {
             segmentedScrollView.headerViewHeight = headerViewHeight
         }
     }
     
+    /// Set height for segment view. Default height is 40.0
     public var segmentViewHeight: CGFloat = 40.0 {
         didSet {
             segmentedScrollView.segmentViewHeight = segmentViewHeight
         }
     }
     
+    /// Set headerview offset height.
     public var headerViewOffsetHeight: CGFloat = 0.0 {
         didSet {
             self.segmentedScrollView.headerViewOffsetHeight = headerViewOffsetHeight
         }
     }
     
+    /// Set color for selected segment. Default color is light gray.
     public var selectedSegmentViewColor = UIColor.lightGrayColor() {
         didSet {
             segmentedScrollView.selectedSegmentViewColor = selectedSegmentViewColor
         }
     }
     
+    /// Set height for selected segment view. Default is 5.0.
     public var selectedSegmentViewHeight: CGFloat = 5.0 {
         didSet {
             segmentedScrollView.selectedSegmentViewHeight = selectedSegmentViewHeight
         }
     }
     
+    /// Set color for segment title. Default is black.
     public var segmentTitleColor = UIColor.blackColor() {
         didSet {
             segmentedScrollView.segmentTitleColor = segmentTitleColor
         }
     }
     
+    /// Set color for segment background. Default is white.
     public var segmentBackgroundColor = UIColor.whiteColor() {
         didSet {
             segmentedScrollView.segmentBackgroundColor = segmentBackgroundColor
         }
     }
     
+    /// Set font for segment title.
     public var segmentTitleFont = UIFont.systemFontOfSize(14.0) {
         didSet {
             segmentedScrollView.segmentTitleFont = segmentTitleFont
         }
     }
+    
     
     public var headerViewController: UIViewController?
     public var contentControllers = [UIViewController]()
@@ -94,6 +103,13 @@ public class SJSegmentedViewController: UIViewController {
     var segmentedScrollView = SJSegmentedScrollView(frame: CGRectZero)
     var segmentScrollViewTopConstraint: NSLayoutConstraint?
     
+    /**
+     Custom initializer for SJSegmentedViewController.
+     
+     - parameter headerViewController: A UIViewController
+     - parameter segmentControllers:   Array of UIViewControllers for segments.
+
+     */
     convenience public init(headerViewController: UIViewController,
                             segmentControllers: [UIViewController]) {
         self.init(nibName: nil, bundle: nil)
@@ -112,7 +128,7 @@ public class SJSegmentedViewController: UIViewController {
         super.init(coder: aDecoder)
     }
     
-    public override func loadView() {
+    override public func loadView() {
         super.loadView()
         addSegmentedScrollView()
     }

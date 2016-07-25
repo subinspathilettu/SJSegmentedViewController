@@ -90,20 +90,28 @@ You can also customize your controllers by using following properties in SJSegme
 
 ```swift
 let segmentedViewController = SJSegmentedViewController()
+
 //Set height for headerview.
 segmentedViewController.headerViewHeight = 250.0
+
 //Set height for segmentview.
 segmentedViewController.segmentViewHeight = 60.0
+
 //Set color for selected segment.
 segmentedViewController.selectedSegmentViewColor = UIColor.redColor()
+
 //Set color for segment title.
 segmentedViewController.segmentTitleColor = UIColor.blackColor()
+
 //Set background color for segmentview.
 segmentedViewController.segmentBackgroundColor = UIColor.whiteColor()
+
 //Set font for segmentview titles.
 segmentedViewController.segmentTitleFont = UIFont.systemFontOfSize(14.0)
+
 //Set height for selected segmentview.
 segmentedViewController.selectedSegmentViewHeight = 5.0
+
 //Set height for headerview to visible after scrolling
 segmentedViewController. headerViewOffsetHeight = 10.0
 ```
