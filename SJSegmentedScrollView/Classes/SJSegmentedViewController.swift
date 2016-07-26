@@ -96,8 +96,10 @@ public class SJSegmentedViewController: UIViewController {
         }
     }
     
-    
+    /// ViewController for header view.
     public var headerViewController: UIViewController?
+    
+    /// Array of ViewControllers for segments. 
     public var contentControllers = [UIViewController]()
     
     var segmentedScrollView = SJSegmentedScrollView(frame: CGRectZero)
@@ -125,7 +127,7 @@ public class SJSegmentedViewController: UIViewController {
     }
     
     required public init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
+        fatalError("init(coder:) has not been implemented")
     }
     
     override public func loadView() {

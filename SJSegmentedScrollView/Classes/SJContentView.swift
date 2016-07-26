@@ -133,7 +133,7 @@ class SJContentView: UIScrollView {
         self.layoutIfNeeded()
     }
     
-    override init(frame: CGRect) {
+    required override init(frame: CGRect) {
         super.init(frame: frame)
     }
     

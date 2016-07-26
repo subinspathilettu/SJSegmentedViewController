@@ -81,7 +81,7 @@ class SJSegmentView: UIScrollView {
         self.bounces = false
     }
     
-    override init(frame: CGRect) {
+    required override init(frame: CGRect) {
         super.init(frame: frame)
     }
     
