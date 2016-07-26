@@ -11,34 +11,32 @@ import SJSegmentedScrollView
 
 class ViewController: UIViewController {
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
         if let storyboard = self.storyboard {
             
             let headerViewController = storyboard
-                .instantiateViewControllerWithIdentifier("HeaderViewController")
+                .instantiateViewController(withIdentifier: "HeaderViewController")
             
             let firstViewController = storyboard
-                .instantiateViewControllerWithIdentifier("FirstTableViewController")
+                .instantiateViewController(withIdentifier: "FirstTableViewController")
             firstViewController.title = "Table View"
             
             let secondViewController = storyboard
-                .instantiateViewControllerWithIdentifier("SecondViewController")
+                .instantiateViewController(withIdentifier: "SecondViewController")
             secondViewController.title = "Custom View"
             
             let thirdViewController = storyboard
-                .instantiateViewControllerWithIdentifier("ThirdViewController")
+                .instantiateViewController(withIdentifier: "ThirdViewController")
             thirdViewController.title = "View"
             
             let segmentedViewController = SJSegmentedViewController(headerViewController: headerViewController,
                                                                     segmentControllers: [firstViewController,
                                                                         secondViewController,
                                                                         thirdViewController])
-            segmentedViewController.headerViewHeight = 250.0
-            segmentedViewController.segmentViewHeight = 60.0
-            segmentedViewController.selectedSegmentViewColor = UIColor.redColor()
-            self.presentViewController(segmentedViewController, animated: false, completion: nil)
+            segmentedViewController.selectedSegmentViewColor = UIColor.red()
+            self.present(segmentedViewController, animated: false, completion: nil)
         }
     }
 }
