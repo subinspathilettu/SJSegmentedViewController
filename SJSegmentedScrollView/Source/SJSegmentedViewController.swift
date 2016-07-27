@@ -197,7 +197,7 @@ public class SJSegmentedViewController: UIViewController {
         loadControllers()
     }
     /**
-        Set the default values for the segmented scroll view.
+     * Set the default values for the segmented scroll view.
      */
     func setDefaultValuesToSegmentedScrollView() {
         
@@ -211,7 +211,7 @@ public class SJSegmentedViewController: UIViewController {
         segmentedScrollView.segmentViewHeight           = self.segmentViewHeight
     }
     /**
-     Private method for adding the segmented scroll view.
+     * Private method for adding the segmented scroll view.
      */
     func addSegmentedScrollView() {
         
@@ -294,7 +294,7 @@ public class SJSegmentedViewController: UIViewController {
     }
     
     /**
-     Method for loading content ViewControllers and header ViewController
+     * Method for loading content ViewControllers and header ViewController
      */
     func loadControllers() {
         
@@ -306,7 +306,7 @@ public class SJSegmentedViewController: UIViewController {
     }
     
     /**
-     Method for handling rotation of viewcontroller
+     * Method for handling rotation of viewcontroller
      */
     override public func willAnimateRotation(to toInterfaceOrientation: UIInterfaceOrientation,
                                                 duration: TimeInterval) {
@@ -319,7 +319,7 @@ public class SJSegmentedViewController: UIViewController {
     }
     
     /**
-     Method to get topspacing of container,
+     * Method to get topspacing of container,
      
      - returns: topspace in float
      */
@@ -336,7 +336,7 @@ public class SJSegmentedViewController: UIViewController {
     }
     
     /**
-     Method to get bottomspacing of container
+     * Method to get bottomspacing of container
      
      - returns: bottomspace in float
      */
