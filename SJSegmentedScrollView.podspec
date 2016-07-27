@@ -9,6 +9,6 @@ spec.license                = { :type => 'MIT', :file => 'LICENSE' }
 spec.homepage               = 'https://github.com/subinspathilettu/SJSegmentedViewController'
 spec.author                 = { 'Subins Jose' => 'subinsjose@gmail.com' }
 spec.source                 = { :git => 'https://github.com/subinspathilettu/SJSegmentedViewController.git', :tag => 'v1.0.10' }
-spec.source_files           = 'SJSegmentedScrollView/Classes/**/*.{swift}'
+spec.source_files           = 'SJSegmentedScrollView/Classes/*.{swift}'
 spec.framework              = "UIKit"
 end
