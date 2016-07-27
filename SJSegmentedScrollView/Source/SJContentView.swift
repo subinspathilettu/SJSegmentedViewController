@@ -37,36 +37,36 @@ class SJContentView: UIScrollView {
         
         self.observer = delegate
         self.delegate = self
-        self.isPagingEnabled = true
+        self.pagingEnabled = true
         self.showsVerticalScrollIndicator = true
         
         contentView = UIView()
         contentView.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(contentView)
         
-        let horizontalConstraints = NSLayoutConstraint.constraints(withVisualFormat: "H:|[contentView]|",
+        let horizontalConstraints = NSLayoutConstraint.constraintsWithVisualFormat("H:|[contentView]|",
                                                                                    options: [],
                                                                                    metrics: nil,
                                                                                    views: ["contentView": contentView, "mainView": self])
         self.addConstraints(horizontalConstraints)
         
         contentViewWidthConstraint = NSLayoutConstraint(item: contentView,
-                                                        attribute: .width,
-                                                        relatedBy: .equal,
+                                                        attribute: .Width,
+                                                        relatedBy: .Equal,
                                                         toItem: nil,
-                                                        attribute: .notAnAttribute,
+                                                        attribute: .NotAnAttribute,
                                                         multiplier: 1.0,
                                                         constant: 0)
         self.addConstraint(contentViewWidthConstraint)
         
-        let verticalConstraints = NSLayoutConstraint.constraints(withVisualFormat: "V:|[contentView(==mainView)]|",
+        let verticalConstraints = NSLayoutConstraint.constraintsWithVisualFormat("V:|[contentView(==mainView)]|",
                                                                                  options: [],
                                                                                  metrics: nil,
                                                                                  views: ["contentView": contentView, "mainView": self])
         self.addConstraints(verticalConstraints)
     }
     
-    func addContentViews(_ contentViewControllers: [UITableViewController]) {
+    func addContentViews(contentViewControllers: [UITableViewController]) {
         
         self.controllers = contentViewControllers
         
@@ -75,23 +75,23 @@ class SJContentView: UIScrollView {
         }
     }
     
-    func addContentView(_ view: UIView) {
+    func addContentView(view: UIView) {
         
         view.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(view)
         
-        let width = Int(UIScreen.main().bounds.size.width)
+        let width = Int(UIScreen.mainScreen().bounds.size.width)
         if self.contentViews.count > 0 {
             
             let previousView = self.contentViews.last
-            let horizontalConstraints = NSLayoutConstraint.constraints(withVisualFormat: "H:[previousView]-0-[view]",
+            let horizontalConstraints = NSLayoutConstraint.constraintsWithVisualFormat("H:[previousView]-0-[view]",
                                                                                        options: [],
                                                                                        metrics: ["xPos": (self.contentViews.count * width)],
                                                                                        views: ["view": view, "previousView": previousView!])
             contentView.addConstraints(horizontalConstraints)
         } else {
             
-            let horizontalConstraints = NSLayoutConstraint.constraints(withVisualFormat: "H:|[view]",
+            let horizontalConstraints = NSLayoutConstraint.constraintsWithVisualFormat("H:|[view]",
                                                                                        options: [],
                                                                                        metrics: ["xPos": (self.contentViews.count * width)],
                                                                                        views: ["view": view])
@@ -99,28 +99,28 @@ class SJContentView: UIScrollView {
         }
         
         let widthConstraint = NSLayoutConstraint(item: view,
-                                                 attribute: .width,
-                                                 relatedBy: .equal,
+                                                 attribute: .Width,
+                                                 relatedBy: .Equal,
                                                  toItem: nil,
-                                                 attribute: .notAnAttribute,
+                                                 attribute: .NotAnAttribute,
                                                  multiplier: 1.0,
                                                  constant: CGFloat(width))
         contentView.addConstraint(widthConstraint)
         self.contentSubViewWidthConstraints.append(widthConstraint)
         
-        let verticalConstraints = NSLayoutConstraint.constraints(withVisualFormat: "V:|-0-[view]-0-|",
+        let verticalConstraints = NSLayoutConstraint.constraintsWithVisualFormat("V:|-0-[view]-0-|",
                                                                                  options: [],
                                                                                  metrics: nil,
                                                                                  views: ["view": view])
         contentView.addConstraints(verticalConstraints)
         self.contentViews.append(view)
         
-        contentViewWidthConstraint.constant = CGFloat(self.contentViews.count) * UIScreen.main().bounds.width
+        contentViewWidthConstraint.constant = CGFloat(self.contentViews.count) * UIScreen.mainScreen().bounds.width
     }
     
     func updateContentControllersFrame() {
         
-        let width = UIScreen.main().bounds.width
+        let width = UIScreen.mainScreen().bounds.width
         contentViewWidthConstraint.constant = CGFloat(self.contentViews.count) * width
         
         for constraint in self.contentSubViewWidthConstraints {
@@ -141,7 +141,7 @@ class SJContentView: UIScrollView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func movePageToIndex(_ index: Int, animated: Bool) {
+    func movePageToIndex(index: Int, animated: Bool) {
         
         self.pageIndex = index
         let point = CGPoint(x: (index * Int(self.bounds.size.width)), y: 0)
@@ -151,7 +151,7 @@ class SJContentView: UIScrollView {
 
 extension SJContentView: UIScrollViewDelegate {
     
-    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+    func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
         self.pageIndex = Int(self.contentOffset.x / self.bounds.size.width)
     }
 }
