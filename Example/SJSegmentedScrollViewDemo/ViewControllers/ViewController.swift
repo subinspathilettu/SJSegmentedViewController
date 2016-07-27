@@ -11,7 +11,7 @@ import SJSegmentedScrollView
 
 class ViewController: UIViewController {
     
-    override func viewDidAppear(_ animated: Bool) {
+    override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
         if let storyboard = self.storyboard {
