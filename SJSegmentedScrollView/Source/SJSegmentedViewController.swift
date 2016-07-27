@@ -305,6 +305,9 @@ public class SJSegmentedViewController: UIViewController {
         addContentControllers(self.contentControllers)
     }
     
+    /**
+     Method for handling rotation of viewcontroller
+     */
     override public func willAnimateRotation(to toInterfaceOrientation: UIInterfaceOrientation,
                                                 duration: TimeInterval) {
         let topSpacing = getTopSpacing()
