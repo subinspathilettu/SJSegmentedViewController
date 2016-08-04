@@ -44,7 +44,7 @@ import UIKit
 /**
  *  Public class for customizing and setting our segmented scroll view
  */
-public class SJSegmentedViewController: UIViewController {
+@objc public class SJSegmentedViewController: UIViewController {
     
     /**
      *  The headerview height for 'Header'.
@@ -151,12 +151,20 @@ public class SJSegmentedViewController: UIViewController {
     /**
      *  Set ViewController for header view.
      */
-    public var headerViewController: UIViewController?
+    public var headerViewController: UIViewController? {
+        didSet {
+            setDefaultValuesToSegmentedScrollView()
+        }
+    }
     
     /**
      *  Array of ViewControllers for segments.
      */
-    public var contentControllers = [UIViewController]()
+    public var contentControllers = [UIViewController]() {
+        didSet {
+            setDefaultValuesToSegmentedScrollView()
+        }
+    }
     
     var segmentedScrollView = SJSegmentedScrollView(frame: CGRectZero)
     var segmentScrollViewTopConstraint: NSLayoutConstraint?
@@ -259,7 +267,6 @@ public class SJSegmentedViewController: UIViewController {
      */
     func addHeaderViewController(headerViewController: UIViewController) {
         
-        self.headerViewController = headerViewController
         self.addChildViewController(headerViewController)
         segmentedScrollView.addHeaderView(headerViewController.view)
         headerViewController.didMoveToParentViewController(self)
@@ -272,7 +279,6 @@ public class SJSegmentedViewController: UIViewController {
      */
     func addContentControllers(contentControllers: [UIViewController]) {
         
-        self.contentControllers = contentControllers
         segmentedScrollView.addSegmentView(contentControllers)
         
         var index = 0
