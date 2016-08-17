@@ -15,6 +15,7 @@ SJSegmentedScrollView is a light weight generic controller written in Swift 2.3.
 * Vertical scrolling for contents.
 * Single header view for all segments.
 * Title, segment selection color, header size, segment height etc can be customized accordingly.
+* Supports Swift and Objective-C
 
 ## Installation
 
