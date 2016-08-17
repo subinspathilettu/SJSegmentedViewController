@@ -48,8 +48,8 @@ class SJSegmentedScrollView: UIScrollView {
         
         self.sizeToFit()
         self.translatesAutoresizingMaskIntoConstraints = false
-        self.showsHorizontalScrollIndicator = false
-        self.showsVerticalScrollIndicator = false
+        self.showsHorizontalScrollIndicator = true
+        self.showsVerticalScrollIndicator = true
         self.bounces = false
         
         self.addObserver(self, forKeyPath: "contentOffset",
@@ -126,14 +126,14 @@ class SJSegmentedScrollView: UIScrollView {
                          context: nil)
     }
     
-    func addContentView(contentView: UIView) {
+    func addContentView(contentView: UIView, frame: CGRect) {
         
         if self.contentView == nil {
             self.contentView = createContentView()
         }
         
         self.contentViews.append(contentView)
-        self.contentView?.addContentView(contentView)
+        self.contentView?.addContentView(contentView, frame: frame)
     }
     
     func updateSubviewsFrame(frame: CGRect) {
@@ -149,7 +149,8 @@ class SJSegmentedScrollView: UIScrollView {
     
     func getContentHeight() -> CGFloat {
         
-        var contentHeight = UIScreen.mainScreen().bounds.height + headerViewHeight!
+        
+        var contentHeight = (self.superview?.bounds.height)! + headerViewHeight!
         contentHeight -= (topSpacing! + bottomSpacing! + headerViewOffsetHeight!)
         return contentHeight
     }

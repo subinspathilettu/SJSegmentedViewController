@@ -174,7 +174,7 @@ import UIKit
      
      - parameter headerViewController: A UIViewController
      - parameter segmentControllers:   Array of UIViewControllers for segments.
-
+     
      */
     convenience public init(headerViewController: UIViewController,
                             segmentControllers: [UIViewController]) {
@@ -205,6 +205,19 @@ import UIKit
         self.view.backgroundColor = UIColor.whiteColor()
         self.automaticallyAdjustsScrollViewInsets = false
         loadControllers()
+    }
+    
+    /**
+     * Update view as per the current layout
+     */
+    override public func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        let topSpacing = getTopSpacing()
+        segmentedScrollView.topSpacing = topSpacing
+        segmentedScrollView.bottomSpacing = getBottomSpacing()
+        segmentScrollViewTopConstraint?.constant = topSpacing
+        segmentedScrollView.updateSubviewsFrame(self.view.bounds)
     }
     
     /**
@@ -285,7 +298,7 @@ import UIKit
         for controller in contentControllers {
             
             self.addChildViewController(controller)
-            segmentedScrollView.addContentView(controller.view)
+            segmentedScrollView.addContentView(controller.view, frame: self.view.bounds)
             controller.didMoveToParentViewController(self)
             
             let delegate = controller as? SJSegmentedViewControllerViewSource
@@ -316,25 +329,16 @@ import UIKit
     }
     
     /**
-     * Method for handling rotation of viewcontroller
-     */
-    override public func willAnimateRotationToInterfaceOrientation(toInterfaceOrientation: UIInterfaceOrientation,
-                                                                   duration: NSTimeInterval) {
-        let topSpacing = getTopSpacing()
-        segmentedScrollView.topSpacing = topSpacing
-        segmentedScrollView.bottomSpacing = getBottomSpacing()
-        segmentScrollViewTopConstraint?.constant = topSpacing
-        segmentedScrollView.updateSubviewsFrame(self.view.bounds)
-        
-        self.view.layoutIfNeeded()
-    }
-    
-    /**
      * Method to get topspacing of container,
      
      - returns: topspace in float
      */
     func getTopSpacing() -> CGFloat {
+        
+        
+        if let _ = self.splitViewController {
+            return 0
+        }
         
         var topSpacing = UIApplication.sharedApplication().statusBarFrame.size.height
         

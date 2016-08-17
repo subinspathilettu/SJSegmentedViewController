@@ -13,7 +13,6 @@
 		64A4216A1D3D4543009BFBFE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64A4215D1D3D4543009BFBFE /* Main.storyboard */; };
 		64A4216B1D3D4543009BFBFE /* image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 64A4215F1D3D4543009BFBFE /* image.jpg */; };
 		64A4216C1D3D4543009BFBFE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 64A421601D3D4543009BFBFE /* Images.xcassets */; };
-		64A4216D1D3D4543009BFBFE /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 64A421611D3D4543009BFBFE /* Info.plist */; };
 		64A4216E1D3D4543009BFBFE /* FirstTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A421631D3D4543009BFBFE /* FirstTableViewController.swift */; };
 		64A4216F1D3D4543009BFBFE /* HeaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A421641D3D4543009BFBFE /* HeaderViewController.swift */; };
 		64A421701D3D4543009BFBFE /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A421651D3D4543009BFBFE /* SecondViewController.swift */; };
@@ -155,7 +154,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0720;
+				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = CocoaPods;
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
@@ -190,7 +189,6 @@
 				64A421691D3D4543009BFBFE /* LaunchScreen.xib in Resources */,
 				64A4216C1D3D4543009BFBFE /* Images.xcassets in Resources */,
 				64A4216A1D3D4543009BFBFE /* Main.storyboard in Resources */,
-				64A4216D1D3D4543009BFBFE /* Info.plist in Resources */,
 				64A4216B1D3D4543009BFBFE /* image.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

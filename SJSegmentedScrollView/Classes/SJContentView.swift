@@ -66,21 +66,12 @@ class SJContentView: UIScrollView {
         self.addConstraints(verticalConstraints)
     }
     
-    func addContentViews(contentViewControllers: [UITableViewController]) {
-        
-        self.controllers = contentViewControllers
-        
-        for controller in contentViewControllers {
-            self.addContentView(controller.view)
-        }
-    }
-    
-    func addContentView(view: UIView) {
+    func addContentView(view: UIView, frame: CGRect) {
         
         view.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(view)
         
-        let width = Int(UIScreen.mainScreen().bounds.size.width)
+        let width = Int(frame.size.width)
         if self.contentViews.count > 0 {
             
             let previousView = self.contentViews.last
@@ -115,7 +106,7 @@ class SJContentView: UIScrollView {
         contentView.addConstraints(verticalConstraints)
         self.contentViews.append(view)
         
-        contentViewWidthConstraint.constant = CGFloat(self.contentViews.count) * UIScreen.mainScreen().bounds.width
+        contentViewWidthConstraint.constant = CGFloat(self.contentViews.count) * self.bounds.width
     }
     
     func updateContentControllersFrame(frame: CGRect) {
