@@ -89,9 +89,9 @@ class SJSegmentView: UIScrollView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setSegmentsView() {
+    func setSegmentsView(frame: CGRect) {
         
-        let segmentWidth = self.getSegmentWidth(self.titles!)
+        let segmentWidth = self.getSegmentWidth(self.titles!, frame: frame)
         self.createSegmentContentView(self.titles!, titleWidth: segmentWidth)
         
         var index = 0
@@ -233,7 +233,7 @@ class SJSegmentView: UIScrollView {
         }
     }
     
-    func getSegmentWidth(titles: [String]) -> CGFloat {
+    func getSegmentWidth(titles: [String], frame: CGRect) -> CGFloat {
         
         var maxWidth: CGFloat = 0
         
@@ -250,8 +250,8 @@ class SJSegmentView: UIScrollView {
         
         let width = Int(maxWidth + segmentViewOffsetWidth)
         let totalWidth = width * titles.count
-        if totalWidth < Int(UIScreen.mainScreen().bounds.size.width)  {
-            maxWidth = UIScreen.mainScreen().bounds.size.width /  CGFloat(titles.count)
+        if totalWidth < Int(frame.size.width)  {
+            maxWidth = frame.size.width /  CGFloat(titles.count)
         } else {
             maxWidth = CGFloat(width)
         }
@@ -260,9 +260,9 @@ class SJSegmentView: UIScrollView {
     }
     
     override func observeValueForKeyPath(keyPath: String?,
-                                                ofObject object: AnyObject?,
-                                                         change: [String : AnyObject]?,
-                                                         context: UnsafeMutablePointer<Void>) {
+                                         ofObject object: AnyObject?,
+                                                  change: [String : AnyObject]?,
+                                                  context: UnsafeMutablePointer<Void>) {
         
         //update selected segment view x position
         let scrollView = object as? UIScrollView
@@ -282,7 +282,7 @@ class SJSegmentView: UIScrollView {
     
     func didChangeParentViewFrame(frame: CGRect) {
         
-        let segmentWidth = self.getSegmentWidth(self.titles!)
+        let segmentWidth = self.getSegmentWidth(self.titles!, frame: frame)
         let contentViewWidth = segmentWidth * CGFloat(self.titles!.count)
         contentViewWidthConstraint?.constant = contentViewWidth
         

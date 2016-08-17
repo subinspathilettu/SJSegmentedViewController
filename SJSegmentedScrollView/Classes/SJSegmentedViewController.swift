@@ -279,7 +279,7 @@ import UIKit
      */
     func addContentControllers(contentControllers: [UIViewController]) {
         
-        segmentedScrollView.addSegmentView(contentControllers)
+        segmentedScrollView.addSegmentView(contentControllers, frame: self.view.bounds)
         
         var index = 0
         for controller in contentControllers {
@@ -292,7 +292,7 @@ import UIKit
             var observeView = controller.view
             
             if let view = delegate?.viewForSegmentControllerToObserveContentOffsetChange!(controller,
-                                                                                         index: index) {
+                                                                                          index: index) {
                 observeView = view
             }
             
@@ -324,7 +324,8 @@ import UIKit
         segmentedScrollView.topSpacing = topSpacing
         segmentedScrollView.bottomSpacing = getBottomSpacing()
         segmentScrollViewTopConstraint?.constant = topSpacing
-        segmentedScrollView.updateSubviewsFrame()
+        segmentedScrollView.updateSubviewsFrame(self.view.bounds)
+        
         self.view.layoutIfNeeded()
     }
     

@@ -118,9 +118,9 @@ class SJContentView: UIScrollView {
         contentViewWidthConstraint.constant = CGFloat(self.contentViews.count) * UIScreen.mainScreen().bounds.width
     }
     
-    func updateContentControllersFrame() {
+    func updateContentControllersFrame(frame: CGRect) {
         
-        let width = UIScreen.mainScreen().bounds.width
+        let width = frame.size.width
         contentViewWidthConstraint.constant = CGFloat(self.contentViews.count) * width
         
         for constraint in self.contentSubViewWidthConstraints {

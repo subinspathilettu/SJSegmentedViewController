@@ -13,6 +13,13 @@ class ViewController: UIViewController {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
+        self.title = "Segment"
+    }
+    
+    //MARK:- Private Function
+    //MARK:-
+    
+    func getSJSegmentedViewController() -> SJSegmentedViewController? {
         
         if let storyboard = self.storyboard {
             
@@ -38,9 +45,44 @@ class ViewController: UIViewController {
             
             segmentedViewController.selectedSegmentViewColor = UIColor.redColor()
             segmentedViewController.segmentViewHeight = 60.0
-            segmentedViewController.headerViewOffsetHeight = 20.0
-            
-            self.presentViewController(segmentedViewController, animated: false, completion: nil)
+            return segmentedViewController
+        }
+        
+        return nil
+    }
+    
+    //MARK:- Actions
+    //MARK:-
+    @IBAction func presentViewController() {
+        
+        let viewController = getSJSegmentedViewController()
+        
+        if viewController != nil {
+            self.presentViewController(viewController!,
+                                       animated: true,
+                                       completion: nil)
+        }
+    }
+    
+    @IBAction func pushViewController() {
+        
+        let viewController = getSJSegmentedViewController()
+        
+        if viewController != nil {
+            self.navigationController?.pushViewController(viewController!,
+                                                          animated: true)
+        }
+    }
+    
+    @IBAction func adddChildViewController() {
+        
+        let viewController = getSJSegmentedViewController()
+        
+        if viewController != nil {
+            addChildViewController(viewController!)
+            self.view.addSubview(viewController!.view)
+            viewController!.view.frame = self.view.bounds
+            viewController!.didMoveToParentViewController(self)
         }
     }
 }

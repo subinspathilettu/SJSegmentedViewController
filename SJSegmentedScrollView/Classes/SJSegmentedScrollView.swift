@@ -136,13 +136,13 @@ class SJSegmentedScrollView: UIScrollView {
         self.contentView?.addContentView(contentView)
     }
     
-    func updateSubviewsFrame() {
+    func updateSubviewsFrame(frame: CGRect) {
         
         contentViewHeightConstraint.constant = getContentHeight()
         contentView?.layoutIfNeeded()
         
-        self.segmentView?.didChangeParentViewFrame(self.frame)
-        self.contentView?.updateContentControllersFrame()
+        self.segmentView?.didChangeParentViewFrame(frame)
+        self.contentView?.updateContentControllersFrame(frame)
     }
     
     //MARK: Private Functions
@@ -154,7 +154,7 @@ class SJSegmentedScrollView: UIScrollView {
         return contentHeight
     }
     
-    func addSegmentView(controllers: [UIViewController]) {
+    func addSegmentView(controllers: [UIViewController], frame: CGRect) {
         
         if controllers.count > 1 {
             
@@ -172,7 +172,7 @@ class SJSegmentedScrollView: UIScrollView {
                 self.contentView?.movePageToIndex(index, animated: true)
             }
             
-            self.segmentView?.setSegmentsView()
+            self.segmentView?.setSegmentsView(frame)
             self.addSubview(self.segmentView!)
             
             let horizontalConstraints = NSLayoutConstraint.constraintsWithVisualFormat("H:|-0-[segmentView]-0-|",
@@ -279,9 +279,9 @@ class SJSegmentedScrollView: UIScrollView {
     }
     
     override func observeValueForKeyPath(keyPath: String?,
-                                                ofObject object: AnyObject?,
-                                                         change: [String : AnyObject]?,
-                                                         context: UnsafeMutablePointer<Void>) {
+                                         ofObject object: AnyObject?,
+                                                  change: [String : AnyObject]?,
+                                                  context: UnsafeMutablePointer<Void>) {
         
         if !observing { return }
         
@@ -292,7 +292,7 @@ class SJSegmentedScrollView: UIScrollView {
         let new = change![NSKeyValueChangeNewKey]?.CGPointValue
         let old = change![NSKeyValueChangeOldKey]?.CGPointValue
         let diff = (old?.y)! - (new?.y)!
-                
+        
         if diff > 0.0 {
             
             self.handleScrollUp(scrollView!,
