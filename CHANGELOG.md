@@ -10,3 +10,6 @@ All notable changes to this project will be documented in this file.
 #### `1.0.11`
 * Added objective c project support
 * Resolved header view height nil issue
+
+#### `1.0.12`
+* Resolved SplitViewController orientation issues.
