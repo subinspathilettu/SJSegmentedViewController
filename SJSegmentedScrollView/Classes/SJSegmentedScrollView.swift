@@ -224,7 +224,7 @@ class SJSegmentedScrollView: UIScrollView {
     
     func createContentView() -> SJContentView {
         
-        let contentView = SJContentView(frame: CGRectZero, delegate: self)
+        let contentView = SJContentView(frame: CGRectZero)
         contentView.translatesAutoresizingMaskIntoConstraints = false
         scrollContentView.addSubview(contentView)
         

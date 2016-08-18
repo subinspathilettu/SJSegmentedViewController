@@ -25,17 +25,14 @@ import UIKit
 class SJContentView: UIScrollView {
     
     var pageIndex = 0
-    var observer: SJSegmentedScrollView?
-    var controllers = [UITableViewController]()
     var contentViews = [UIView]()
     var contentView: UIView!
     var contentViewWidthConstraint: NSLayoutConstraint!
     var contentSubViewWidthConstraints = [NSLayoutConstraint]()
     
-    convenience init(frame: CGRect, delegate: SJSegmentedScrollView) {
-        self.init(frame: frame)
+    override init(frame: CGRect) {
+        super.init(frame: frame)
         
-        self.observer = delegate
         self.delegate = self
         self.pagingEnabled = true
         self.showsVerticalScrollIndicator = true
@@ -118,14 +115,10 @@ class SJContentView: UIScrollView {
             constraint.constant = width
         }
         
+        self.layoutIfNeeded()
         var point = self.contentOffset
         point.x = CGFloat(self.pageIndex) * width
         self.setContentOffset(point, animated: true)
-        self.layoutIfNeeded()
-    }
-    
-    required override init(frame: CGRect) {
-        super.init(frame: frame)
     }
     
     required init?(coder aDecoder: NSCoder) {

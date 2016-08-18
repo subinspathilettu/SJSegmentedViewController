@@ -49,11 +49,11 @@ import UIKit
     /**
      *  The headerview height for 'Header'.
      *
-     *  By default the height will be 200.0
+     *  By default the height will be 0.0
      *
-     *  segmentedViewController.headerViewHeight = 250.0
+     *  segmentedViewController.headerViewHeight = 200.0
      */
-    public var headerViewHeight: CGFloat = 200.0 {
+    public var headerViewHeight: CGFloat = 0.0 {
         didSet {
             segmentedScrollView.headerViewHeight = headerViewHeight
         }
@@ -160,7 +160,7 @@ import UIKit
     /**
      *  Array of ViewControllers for segments.
      */
-    public var contentControllers = [UIViewController]() {
+    public var segmentControllers = [UIViewController]() {
         didSet {
             setDefaultValuesToSegmentedScrollView()
         }
@@ -176,12 +176,12 @@ import UIKit
      - parameter segmentControllers:   Array of UIViewControllers for segments.
      
      */
-    convenience public init(headerViewController: UIViewController,
+    convenience public init(headerViewController: UIViewController?,
                             segmentControllers: [UIViewController]) {
         self.init(nibName: nil, bundle: nil)
         
         self.headerViewController = headerViewController
-        self.contentControllers = segmentControllers
+        self.segmentControllers = segmentControllers
         
         setDefaultValuesToSegmentedScrollView()
     }
@@ -321,11 +321,12 @@ import UIKit
      */
     func loadControllers() {
         
-        if headerViewController != nil  {
-            addHeaderViewController(headerViewController!)
+        if headerViewController == nil  {
+            headerViewController = UIViewController()
         }
         
-        addContentControllers(self.contentControllers)
+        addHeaderViewController(headerViewController!)
+        addContentControllers(segmentControllers)
     }
     
     /**

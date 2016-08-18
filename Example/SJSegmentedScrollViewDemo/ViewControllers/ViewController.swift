@@ -42,7 +42,7 @@ class ViewController: UIViewController {
                                                                     segmentControllers: [firstViewController,
                                                                         secondViewController,
                                                                         thirdViewController])
-            
+            segmentedViewController.headerViewHeight = 200.0
             segmentedViewController.selectedSegmentViewColor = UIColor.redColor()
             segmentedViewController.segmentViewHeight = 60.0
             return segmentedViewController
