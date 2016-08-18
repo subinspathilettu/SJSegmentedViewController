@@ -290,6 +290,13 @@ class SJSegmentView: UIScrollView {
             constraint.constant = segmentWidth
         }
         
-        self.layoutIfNeeded()
+        let changeOffset = (contentView?.contentSize.width)! / self.contentSize.width
+        let value = (contentView?.contentOffset.x)! / changeOffset
+        
+        if !value.isNaN {
+            xPosConstraints!.constant = (selectedSegmentView?.frame.origin.x)!
+            self.layoutIfNeeded()
+        }
+
     }
 }
