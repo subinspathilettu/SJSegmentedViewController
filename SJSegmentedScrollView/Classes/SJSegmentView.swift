@@ -53,6 +53,7 @@ class SJSegmentView: UIScrollView {
     
     let kSegmentViewTagOffset = 100
     var segmentViewOffsetWidth: CGFloat = 10.0
+    let animationDuration = 0.3
     var titles: [String]?
     var segments = [UIButton]()
     var segmentContentView: UIView?
@@ -270,14 +271,19 @@ class SJSegmentView: UIScrollView {
         let value = (scrollView?.contentOffset.x)! / changeOffset
         
         if !value.isNaN {
-            selectedSegmentView?.frame.origin.x = (scrollView?.contentOffset.x)! / changeOffset
+            UIView.animateWithDuration(animationDuration, animations: {
+              self.selectedSegmentView?.frame.origin.x = (scrollView?.contentOffset.x)! / changeOffset
+            })
         }
         
         //update segment offset x position
         let segmentScrollWidth = self.contentSize.width - self.bounds.width
         let contentScrollWidth = scrollView!.contentSize.width - scrollView!.bounds.width
         changeOffset = segmentScrollWidth / contentScrollWidth
-        self.contentOffset.x = (scrollView?.contentOffset.x)! * changeOffset
+        
+        var point = self.contentOffset
+        point.x = (scrollView?.contentOffset.x)! * changeOffset
+        self.setContentOffset(point, animated: true)
     }
     
     func didChangeParentViewFrame(frame: CGRect) {

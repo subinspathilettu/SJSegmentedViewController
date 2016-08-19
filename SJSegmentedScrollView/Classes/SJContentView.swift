@@ -29,6 +29,7 @@ class SJContentView: UIScrollView {
     var contentView: UIView!
     var contentViewWidthConstraint: NSLayoutConstraint!
     var contentSubViewWidthConstraints = [NSLayoutConstraint]()
+    let animationDuration = 0.3
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -129,7 +130,14 @@ class SJContentView: UIScrollView {
         
         self.pageIndex = index
         let point = CGPoint(x: (index * Int(self.bounds.size.width)), y: 0)
-        self.setContentOffset(point, animated: animated)
+        
+        if animated == true {
+            UIView.animateWithDuration(animationDuration) {
+                self.contentOffset = point
+            }
+        } else {
+            self.contentOffset = point
+        }
     }
 }
 
