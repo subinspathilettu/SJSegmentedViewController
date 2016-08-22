@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		64A0353F1D4893620068BE28 /* CHANGELOG.md in Sources */ = {isa = PBXBuildFile; fileRef = 64A0353E1D4893620068BE28 /* CHANGELOG.md */; };
 		64A421681D3D4543009BFBFE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A4215A1D3D4543009BFBFE /* AppDelegate.swift */; };
 		64A421691D3D4543009BFBFE /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64A4215B1D3D4543009BFBFE /* LaunchScreen.xib */; };
 		64A4216A1D3D4543009BFBFE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64A4215D1D3D4543009BFBFE /* Main.storyboard */; };
 		64A4216B1D3D4543009BFBFE /* image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 64A4215F1D3D4543009BFBFE /* image.jpg */; };
 		64A4216C1D3D4543009BFBFE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 64A421601D3D4543009BFBFE /* Images.xcassets */; };
-		64A4216D1D3D4543009BFBFE /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 64A421611D3D4543009BFBFE /* Info.plist */; };
 		64A4216E1D3D4543009BFBFE /* FirstTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A421631D3D4543009BFBFE /* FirstTableViewController.swift */; };
 		64A4216F1D3D4543009BFBFE /* HeaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A421641D3D4543009BFBFE /* HeaderViewController.swift */; };
 		64A421701D3D4543009BFBFE /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A421651D3D4543009BFBFE /* SecondViewController.swift */; };
@@ -23,6 +23,7 @@
 /* Begin PBXFileReference section */
 		46468A5FF1343D6897EF4F74 /* Pods-SJSegmentedScrollViewDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SJSegmentedScrollViewDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SJSegmentedScrollViewDemo/Pods-SJSegmentedScrollViewDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* SJSegmentedScrollViewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SJSegmentedScrollViewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		64A0353E1D4893620068BE28 /* CHANGELOG.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = CHANGELOG.md; path = ../CHANGELOG.md; sourceTree = "<group>"; };
 		64A4215A1D3D4543009BFBFE /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		64A4215C1D3D4543009BFBFE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		64A4215E1D3D4543009BFBFE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -82,6 +83,7 @@
 			children = (
 				65D108D5120DF23EBFD42193 /* SJSegmentedScrollView.podspec */,
 				BFD50314B40DA82219AAC1C3 /* README.md */,
+				64A0353E1D4893620068BE28 /* CHANGELOG.md */,
 				C05021CD10857241E6264427 /* LICENSE */,
 			);
 			name = "Podspec Metadata";
@@ -152,7 +154,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0720;
+				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = CocoaPods;
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
@@ -187,7 +189,6 @@
 				64A421691D3D4543009BFBFE /* LaunchScreen.xib in Resources */,
 				64A4216C1D3D4543009BFBFE /* Images.xcassets in Resources */,
 				64A4216A1D3D4543009BFBFE /* Main.storyboard in Resources */,
-				64A4216D1D3D4543009BFBFE /* Info.plist in Resources */,
 				64A4216B1D3D4543009BFBFE /* image.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -252,6 +253,7 @@
 				64A4216E1D3D4543009BFBFE /* FirstTableViewController.swift in Sources */,
 				64A421711D3D4543009BFBFE /* ThirdViewController.swift in Sources */,
 				64A421681D3D4543009BFBFE /* AppDelegate.swift in Sources */,
+				64A0353F1D4893620068BE28 /* CHANGELOG.md in Sources */,
 				64A4216F1D3D4543009BFBFE /* HeaderViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

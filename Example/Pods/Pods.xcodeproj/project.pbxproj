@@ -10,14 +10,14 @@
 		1B339857EAFDB9AAF10220604F03B270 /* SJSegmentedScrollView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8707D61AA5FA1EA184B22DBA72BCA148 /* SJSegmentedScrollView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		388D6125F5D68F56D203AABC341FE8F1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
 		39A2BEA1E6E582AF443DAC7EEE52E158 /* Pods-SJSegmentedScrollViewDemo-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A38BB26C57452274A8538E3E03725762 /* Pods-SJSegmentedScrollViewDemo-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		64A035321D4887E50068BE28 /* SJContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A0352E1D4887E50068BE28 /* SJContentView.swift */; };
-		64A035331D4887E50068BE28 /* SJContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A0352E1D4887E50068BE28 /* SJContentView.swift */; };
-		64A035341D4887E50068BE28 /* SJSegmentedScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A0352F1D4887E50068BE28 /* SJSegmentedScrollView.swift */; };
-		64A035351D4887E50068BE28 /* SJSegmentedScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A0352F1D4887E50068BE28 /* SJSegmentedScrollView.swift */; };
-		64A035361D4887E50068BE28 /* SJSegmentedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A035301D4887E50068BE28 /* SJSegmentedViewController.swift */; };
-		64A035371D4887E50068BE28 /* SJSegmentedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A035301D4887E50068BE28 /* SJSegmentedViewController.swift */; };
-		64A035381D4887E50068BE28 /* SJSegmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A035311D4887E50068BE28 /* SJSegmentView.swift */; };
-		64A035391D4887E50068BE28 /* SJSegmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A035311D4887E50068BE28 /* SJSegmentView.swift */; };
+		649DEA0A1D48F3B200CF5519 /* SJContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649DEA061D48F3B200CF5519 /* SJContentView.swift */; };
+		649DEA0B1D48F3B200CF5519 /* SJContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649DEA061D48F3B200CF5519 /* SJContentView.swift */; };
+		649DEA0C1D48F3B200CF5519 /* SJSegmentedScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649DEA071D48F3B200CF5519 /* SJSegmentedScrollView.swift */; };
+		649DEA0D1D48F3B200CF5519 /* SJSegmentedScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649DEA071D48F3B200CF5519 /* SJSegmentedScrollView.swift */; };
+		649DEA0E1D48F3B200CF5519 /* SJSegmentedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649DEA081D48F3B200CF5519 /* SJSegmentedViewController.swift */; };
+		649DEA0F1D48F3B200CF5519 /* SJSegmentedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649DEA081D48F3B200CF5519 /* SJSegmentedViewController.swift */; };
+		649DEA101D48F3B200CF5519 /* SJSegmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649DEA091D48F3B200CF5519 /* SJSegmentView.swift */; };
+		649DEA111D48F3B200CF5519 /* SJSegmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649DEA091D48F3B200CF5519 /* SJSegmentView.swift */; };
 		833EA7C6DF17029944E5147B961611BB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
 		8368272656EB0E82F79F9FF2CF9F9FC6 /* Pods-SJSegmentedScrollViewDemo-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 80D5AE1A434B8CCCF2C5DB31C8D74E37 /* Pods-SJSegmentedScrollViewDemo-dummy.m */; };
 		A0074B77908288B3B1A4143AEA40FE47 /* SJSegmentedScrollView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = CD41322645BA5E39813263B167EF800F /* SJSegmentedScrollView-dummy.m */; };
@@ -42,10 +42,10 @@
 		379C1A30FBEE637203D85D3FE2468B38 /* Pods-SJSegmentedScrollViewDemo-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SJSegmentedScrollViewDemo-acknowledgements.plist"; sourceTree = "<group>"; };
 		449AEFAC985E40950A304ABFAFDB26A1 /* SJSegmentedScrollView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = SJSegmentedScrollView.modulemap; sourceTree = "<group>"; };
 		54FE8A96D7B23300DCB655442C934F84 /* SJSegmentedScrollView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SJSegmentedScrollView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		64A0352E1D4887E50068BE28 /* SJContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SJContentView.swift; sourceTree = "<group>"; };
-		64A0352F1D4887E50068BE28 /* SJSegmentedScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SJSegmentedScrollView.swift; sourceTree = "<group>"; };
-		64A035301D4887E50068BE28 /* SJSegmentedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SJSegmentedViewController.swift; sourceTree = "<group>"; };
-		64A035311D4887E50068BE28 /* SJSegmentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SJSegmentView.swift; sourceTree = "<group>"; };
+		649DEA061D48F3B200CF5519 /* SJContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SJContentView.swift; sourceTree = "<group>"; };
+		649DEA071D48F3B200CF5519 /* SJSegmentedScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SJSegmentedScrollView.swift; sourceTree = "<group>"; };
+		649DEA081D48F3B200CF5519 /* SJSegmentedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SJSegmentedViewController.swift; sourceTree = "<group>"; };
+		649DEA091D48F3B200CF5519 /* SJSegmentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SJSegmentView.swift; sourceTree = "<group>"; };
 		80D5AE1A434B8CCCF2C5DB31C8D74E37 /* Pods-SJSegmentedScrollViewDemo-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SJSegmentedScrollViewDemo-dummy.m"; sourceTree = "<group>"; };
 		8707D61AA5FA1EA184B22DBA72BCA148 /* SJSegmentedScrollView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SJSegmentedScrollView-umbrella.h"; sourceTree = "<group>"; };
 		9045C72A98E59D9BAA2ECF662F56671D /* SJSegmentedScrollView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SJSegmentedScrollView.xcconfig; sourceTree = "<group>"; };
@@ -96,15 +96,15 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		64A0352C1D4887E50068BE28 /* source */ = {
+		649DEA041D48F3B200CF5519 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				64A0352E1D4887E50068BE28 /* SJContentView.swift */,
-				64A0352F1D4887E50068BE28 /* SJSegmentedScrollView.swift */,
-				64A035301D4887E50068BE28 /* SJSegmentedViewController.swift */,
-				64A035311D4887E50068BE28 /* SJSegmentView.swift */,
+				649DEA061D48F3B200CF5519 /* SJContentView.swift */,
+				649DEA071D48F3B200CF5519 /* SJSegmentedScrollView.swift */,
+				649DEA081D48F3B200CF5519 /* SJSegmentedViewController.swift */,
+				649DEA091D48F3B200CF5519 /* SJSegmentView.swift */,
 			);
-			path = source;
+			path = Classes;
 			sourceTree = "<group>";
 		};
 		78F75DFBDA9F0A45843BF8B76ED70BFF /* Pods-SJSegmentedScrollViewDemo */ = {
@@ -139,7 +139,7 @@
 		8519F630E34261802D17F5686AF912FE /* SJSegmentedScrollView */ = {
 			isa = PBXGroup;
 			children = (
-				64A0352C1D4887E50068BE28 /* source */,
+				649DEA041D48F3B200CF5519 /* Classes */,
 			);
 			path = SJSegmentedScrollView;
 			sourceTree = "<group>";
@@ -289,10 +289,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				A0074B77908288B3B1A4143AEA40FE47 /* SJSegmentedScrollView-dummy.m in Sources */,
-				64A035331D4887E50068BE28 /* SJContentView.swift in Sources */,
-				64A035371D4887E50068BE28 /* SJSegmentedViewController.swift in Sources */,
-				64A035391D4887E50068BE28 /* SJSegmentView.swift in Sources */,
-				64A035351D4887E50068BE28 /* SJSegmentedScrollView.swift in Sources */,
+				649DEA0D1D48F3B200CF5519 /* SJSegmentedScrollView.swift in Sources */,
+				649DEA0F1D48F3B200CF5519 /* SJSegmentedViewController.swift in Sources */,
+				649DEA0B1D48F3B200CF5519 /* SJContentView.swift in Sources */,
+				649DEA111D48F3B200CF5519 /* SJSegmentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,10 +301,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				8368272656EB0E82F79F9FF2CF9F9FC6 /* Pods-SJSegmentedScrollViewDemo-dummy.m in Sources */,
-				64A035321D4887E50068BE28 /* SJContentView.swift in Sources */,
-				64A035361D4887E50068BE28 /* SJSegmentedViewController.swift in Sources */,
-				64A035381D4887E50068BE28 /* SJSegmentView.swift in Sources */,
-				64A035341D4887E50068BE28 /* SJSegmentedScrollView.swift in Sources */,
+				649DEA0C1D48F3B200CF5519 /* SJSegmentedScrollView.swift in Sources */,
+				649DEA0E1D48F3B200CF5519 /* SJSegmentedViewController.swift in Sources */,
+				649DEA0A1D48F3B200CF5519 /* SJContentView.swift in Sources */,
+				649DEA101D48F3B200CF5519 /* SJSegmentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,5 +1,6 @@
 # SJSegmentedScrollView
 
+[![CI Status](https://img.shields.io/travis/subinspathilettu/SJSegmentedViewController.svg?style=flat)](https://travis-ci.org/subinspathilettu/SJSegmentedViewController)
 [![Version](https://img.shields.io/cocoapods/v/SJSegmentedScrollView.svg?style=flat)](http://cocoapods.org/pods/SJSegmentedScrollView)
 [![License](https://img.shields.io/cocoapods/l/SJSegmentedScrollView.svg?style=flat)](http://cocoapods.org/pods/SJSegmentedScrollView)
 [![Platform](https://img.shields.io/cocoapods/p/SJSegmentedScrollView.svg?style=flat)](http://cocoapods.org/pods/SJSegmentedScrollView)
@@ -14,6 +15,7 @@ SJSegmentedScrollView is a light weight generic controller written in Swift 2.3.
 * Vertical scrolling for contents.
 * Single header view for all segments.
 * Title, segment selection color, header size, segment height etc can be customized accordingly.
+* Supports Swift and Objective-C
 
 ## Installation
 
@@ -27,7 +29,7 @@ platform :ios, '9.0'
 use_frameworks!
 
 target '<Your Target Name>' do
-pod ’SJSegmentedScrollView’, ‘1.0.9'
+pod ’SJSegmentedScrollView’, ‘1.0.12'
 end
 ```
 Then, run the following command:

@@ -9,22 +9,22 @@
 import UIKit
 
 class FirstTableViewController: UITableViewController {
-
+    
     // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
+    
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 25
     }
-
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CellIdentifier", for: indexPath)
-
-        cell.textLabel?.text = "Row " + String((indexPath as NSIndexPath).row)
-
+    
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("CellIdentifier", forIndexPath: indexPath)
+        
+        cell.textLabel?.text = "Row " + String(indexPath.row)
+        
         return cell
     }
     
