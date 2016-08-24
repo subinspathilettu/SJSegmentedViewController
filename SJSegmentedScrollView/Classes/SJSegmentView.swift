@@ -264,20 +264,26 @@ class SJSegmentView: UIScrollView {
                                                   change: [String : AnyObject]?,
                                                   context: UnsafeMutablePointer<Void>) {
         
-        //update selected segment view x position
-        let scrollView = object as? UIScrollView
-        var changeOffset = (scrollView?.contentSize.width)! / self.contentSize.width
-        let value = (scrollView?.contentOffset.x)! / changeOffset
-        
-        if !value.isNaN {
-            selectedSegmentView?.frame.origin.x = (scrollView?.contentOffset.x)! / changeOffset
+        if let change = change as [String : AnyObject]? {
+            if let old = change["old"], new = change["new"] {
+                if !(old.isEqual(new)) {
+                    //update selected segment view x position
+                    let scrollView = object as? UIScrollView
+                    var changeOffset = (scrollView?.contentSize.width)! / self.contentSize.width
+                    let value = (scrollView?.contentOffset.x)! / changeOffset
+                    
+                    if !value.isNaN {
+                        selectedSegmentView?.frame.origin.x = (scrollView?.contentOffset.x)! / changeOffset
+                    }
+                    
+                    //update segment offset x position
+                    let segmentScrollWidth = self.contentSize.width - self.bounds.width
+                    let contentScrollWidth = scrollView!.contentSize.width - scrollView!.bounds.width
+                    changeOffset = segmentScrollWidth / contentScrollWidth
+                    self.contentOffset.x = (scrollView?.contentOffset.x)! * changeOffset
+                }
+            }
         }
-        
-        //update segment offset x position
-        let segmentScrollWidth = self.contentSize.width - self.bounds.width
-        let contentScrollWidth = scrollView!.contentSize.width - scrollView!.bounds.width
-        changeOffset = segmentScrollWidth / contentScrollWidth
-        self.contentOffset.x = (scrollView?.contentOffset.x)! * changeOffset
     }
     
     func didChangeParentViewFrame(frame: CGRect) {
