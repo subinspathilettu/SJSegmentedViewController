@@ -74,9 +74,24 @@ let segmentedViewController = SJSegmentedViewController(headerViewController: he
 segmentControllers: [firstViewController,
 	secondViewController,
 	thirdViewController])
-self.presentViewController(segmentedViewController, animated: false, completion: nil)
-}
 ```
+* Present ViewController
+```swift
+self.presentViewController(segmentedViewController, animated: false, completion: nil)
+```
+* Push ViewController
+```swift
+self.navigationController?.pushViewController(segmentedViewController,
+                                                          animated: true)
+```
+* Add Child ViewController
+```swift
+addChildViewController(segmentedViewController)
+self.view.addSubview(segmentedViewController.view)
+segmentedViewController.view.frame = self.view.bounds
+segmentedViewController.didMoveToParentViewController(self)
+```
+
 #### Customize your view
 By default, SJSegmentedScrollView will observe the default view of viewcontroller for content 
 changes and makes the scroll effect. If you want to change the default view, implement 

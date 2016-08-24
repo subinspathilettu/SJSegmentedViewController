@@ -20,4 +20,12 @@ class HeaderViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    @IBAction func headerViewAction(sender: AnyObject) {
+        
+        let viewController = self.storyboard?
+            .instantiateViewControllerWithIdentifier("HeaderDetailViewController")
+        self.parentViewController?.navigationController?.pushViewController(viewController!,
+                                                                            animated: true)
+    }
 }
