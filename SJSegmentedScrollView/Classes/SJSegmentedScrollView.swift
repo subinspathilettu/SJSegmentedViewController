@@ -31,6 +31,7 @@ class SJSegmentedScrollView: UIScrollView {
     var selectedSegmentViewColor: UIColor?
     var selectedSegmentViewHeight: CGFloat?
     var segmentTitleColor: UIColor?
+    var selectedSegmentTitleColor: UIColor?
     var segmentBackgroundColor: UIColor?
     var segmentTitleFont: UIFont?
     var topSpacing: CGFloat?
@@ -162,11 +163,12 @@ class SJSegmentedScrollView: UIScrollView {
             let titles = self.getSegmentTitlesFromControllers(controllers)
             self.segmentView = SJSegmentView(frame: CGRectZero,
                                              segmentTitles: titles)
-            self.segmentView?.selectedSegmentViewColor = self.selectedSegmentViewColor
-            self.segmentView?.selectedSegmentViewHeight = self.selectedSegmentViewHeight!
-            self.segmentView?.titleColor = self.segmentTitleColor
-            self.segmentView?.segmentBackgroundColor = self.segmentBackgroundColor
-            self.segmentView?.font = self.segmentTitleFont!
+            self.segmentView?.selectedSegmentViewColor      = self.selectedSegmentViewColor
+            self.segmentView?.selectedSegmentViewHeight     = self.selectedSegmentViewHeight!
+            self.segmentView?.titleColor                    = self.segmentTitleColor
+            self.segmentView?.selectedSegmentTitleColor     = self.selectedSegmentTitleColor
+            self.segmentView?.segmentBackgroundColor        = self.segmentBackgroundColor
+            self.segmentView?.font                          = self.segmentTitleFont!
             self.segmentView!.translatesAutoresizingMaskIntoConstraints = false
             self.segmentView!.didSelectSegmentAtIndex = {
                 (index) in

@@ -8,19 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		1B339857EAFDB9AAF10220604F03B270 /* SJSegmentedScrollView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8707D61AA5FA1EA184B22DBA72BCA148 /* SJSegmentedScrollView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		388D6125F5D68F56D203AABC341FE8F1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
+		29FABED6E2858BCEF2EB37FC54C526D4 /* SJContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC1707945B16209A2A77BDC0968FDAC /* SJContentView.swift */; };
+		3663A1F0ADC060B25696D49F5301A23A /* SJSegmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16DCABAA840C8079C8EEE39CA7460CC2 /* SJSegmentView.swift */; };
+		388D6125F5D68F56D203AABC341FE8F1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2A6FF208CEC4C2861F1E9D42D651453 /* Foundation.framework */; };
 		39A2BEA1E6E582AF443DAC7EEE52E158 /* Pods-SJSegmentedScrollViewDemo-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A38BB26C57452274A8538E3E03725762 /* Pods-SJSegmentedScrollViewDemo-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		649DEA0A1D48F3B200CF5519 /* SJContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649DEA061D48F3B200CF5519 /* SJContentView.swift */; };
-		649DEA0B1D48F3B200CF5519 /* SJContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649DEA061D48F3B200CF5519 /* SJContentView.swift */; };
-		649DEA0C1D48F3B200CF5519 /* SJSegmentedScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649DEA071D48F3B200CF5519 /* SJSegmentedScrollView.swift */; };
-		649DEA0D1D48F3B200CF5519 /* SJSegmentedScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649DEA071D48F3B200CF5519 /* SJSegmentedScrollView.swift */; };
-		649DEA0E1D48F3B200CF5519 /* SJSegmentedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649DEA081D48F3B200CF5519 /* SJSegmentedViewController.swift */; };
-		649DEA0F1D48F3B200CF5519 /* SJSegmentedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649DEA081D48F3B200CF5519 /* SJSegmentedViewController.swift */; };
-		649DEA101D48F3B200CF5519 /* SJSegmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649DEA091D48F3B200CF5519 /* SJSegmentView.swift */; };
-		649DEA111D48F3B200CF5519 /* SJSegmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649DEA091D48F3B200CF5519 /* SJSegmentView.swift */; };
-		833EA7C6DF17029944E5147B961611BB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
 		8368272656EB0E82F79F9FF2CF9F9FC6 /* Pods-SJSegmentedScrollViewDemo-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 80D5AE1A434B8CCCF2C5DB31C8D74E37 /* Pods-SJSegmentedScrollViewDemo-dummy.m */; };
 		A0074B77908288B3B1A4143AEA40FE47 /* SJSegmentedScrollView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = CD41322645BA5E39813263B167EF800F /* SJSegmentedScrollView-dummy.m */; };
+		B3682B3DF18FA16B15F2E5AF4CC85D0B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2A6FF208CEC4C2861F1E9D42D651453 /* Foundation.framework */; };
+		BBAD12CB3943EDA1F882F648B7864188 /* SJSegmentedScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431ED4BFC7B1474B3E94D15C139DAF40 /* SJSegmentedScrollView.swift */; };
+		DD04780237AAE317E33D6A2625C18EA0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E86668F20F252C440D1015B816BE59C5 /* UIKit.framework */; };
+		FEF901248F8DF5B1224C2A9E28161FE2 /* SJSegmentedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B688CEE57785DDDAF0EF03E033B138 /* SJSegmentedViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,28 +32,29 @@
 
 /* Begin PBXFileReference section */
 		11B5B1DE624A9C9DDF4551CC54F7B827 /* Pods-SJSegmentedScrollViewDemo-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SJSegmentedScrollViewDemo-resources.sh"; sourceTree = "<group>"; };
+		16DCABAA840C8079C8EEE39CA7460CC2 /* SJSegmentView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SJSegmentView.swift; sourceTree = "<group>"; };
 		1D14C2D760931D341D3EAE0A4886565F /* Pods-SJSegmentedScrollViewDemo-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SJSegmentedScrollViewDemo-acknowledgements.markdown"; sourceTree = "<group>"; };
 		2988990918C9FD15B5589899E8778ADB /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2B662FF71B58947CFB1E4D0B77472A9C /* Pods-SJSegmentedScrollViewDemo.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-SJSegmentedScrollViewDemo.modulemap"; sourceTree = "<group>"; };
 		316060B7BE9D1AAC0F464083C5E7DFC7 /* Pods-SJSegmentedScrollViewDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SJSegmentedScrollViewDemo.release.xcconfig"; sourceTree = "<group>"; };
 		379C1A30FBEE637203D85D3FE2468B38 /* Pods-SJSegmentedScrollViewDemo-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SJSegmentedScrollViewDemo-acknowledgements.plist"; sourceTree = "<group>"; };
+		431ED4BFC7B1474B3E94D15C139DAF40 /* SJSegmentedScrollView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SJSegmentedScrollView.swift; sourceTree = "<group>"; };
 		449AEFAC985E40950A304ABFAFDB26A1 /* SJSegmentedScrollView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = SJSegmentedScrollView.modulemap; sourceTree = "<group>"; };
+		45B688CEE57785DDDAF0EF03E033B138 /* SJSegmentedViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SJSegmentedViewController.swift; sourceTree = "<group>"; };
 		54FE8A96D7B23300DCB655442C934F84 /* SJSegmentedScrollView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SJSegmentedScrollView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		649DEA061D48F3B200CF5519 /* SJContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SJContentView.swift; sourceTree = "<group>"; };
-		649DEA071D48F3B200CF5519 /* SJSegmentedScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SJSegmentedScrollView.swift; sourceTree = "<group>"; };
-		649DEA081D48F3B200CF5519 /* SJSegmentedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SJSegmentedViewController.swift; sourceTree = "<group>"; };
-		649DEA091D48F3B200CF5519 /* SJSegmentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SJSegmentView.swift; sourceTree = "<group>"; };
 		80D5AE1A434B8CCCF2C5DB31C8D74E37 /* Pods-SJSegmentedScrollViewDemo-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SJSegmentedScrollViewDemo-dummy.m"; sourceTree = "<group>"; };
 		8707D61AA5FA1EA184B22DBA72BCA148 /* SJSegmentedScrollView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SJSegmentedScrollView-umbrella.h"; sourceTree = "<group>"; };
 		9045C72A98E59D9BAA2ECF662F56671D /* SJSegmentedScrollView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SJSegmentedScrollView.xcconfig; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		977E5DFDF1E91528F8580A806498C11A /* Pods-SJSegmentedScrollViewDemo-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SJSegmentedScrollViewDemo-frameworks.sh"; sourceTree = "<group>"; };
+		A2A6FF208CEC4C2861F1E9D42D651453 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		A38BB26C57452274A8538E3E03725762 /* Pods-SJSegmentedScrollViewDemo-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SJSegmentedScrollViewDemo-umbrella.h"; sourceTree = "<group>"; };
 		B2AA65796601F24134B85713AED837CC /* Pods-SJSegmentedScrollViewDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SJSegmentedScrollViewDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		BCE501D5824E669B724DA0EBBE228CC0 /* Pods_SJSegmentedScrollViewDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SJSegmentedScrollViewDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CAC1707945B16209A2A77BDC0968FDAC /* SJContentView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SJContentView.swift; sourceTree = "<group>"; };
 		CD41322645BA5E39813263B167EF800F /* SJSegmentedScrollView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SJSegmentedScrollView-dummy.m"; sourceTree = "<group>"; };
-		CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		DEF8457D6DDA0B0B9CF45826F499CAB8 /* SJSegmentedScrollView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SJSegmentedScrollView-prefix.pch"; sourceTree = "<group>"; };
+		E86668F20F252C440D1015B816BE59C5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		F08C6A2F9475749FBCFA00D12DC28111 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -69,11 +67,12 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B9A7335E9140C72139B6914C0E6CA2B6 /* Frameworks */ = {
+		6BCB849CEBE08A62DA4A2FE6E3E82918 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				833EA7C6DF17029944E5147B961611BB /* Foundation.framework in Frameworks */,
+				B3682B3DF18FA16B15F2E5AF4CC85D0B /* Foundation.framework in Frameworks */,
+				DD04780237AAE317E33D6A2625C18EA0 /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,23 +87,12 @@
 			name = "Development Pods";
 			sourceTree = "<group>";
 		};
-		3DCAB2B7CDE207B3958B6CB957FCC758 /* iOS */ = {
+		433CD3331B6C3787F473C941B61FC68F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */,
+				F302CD3B306AF1ED96B9AF31FCDBC26C /* iOS */,
 			);
-			name = iOS;
-			sourceTree = "<group>";
-		};
-		649DEA041D48F3B200CF5519 /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				649DEA061D48F3B200CF5519 /* SJContentView.swift */,
-				649DEA071D48F3B200CF5519 /* SJSegmentedScrollView.swift */,
-				649DEA081D48F3B200CF5519 /* SJSegmentedViewController.swift */,
-				649DEA091D48F3B200CF5519 /* SJSegmentView.swift */,
-			);
-			path = Classes;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		78F75DFBDA9F0A45843BF8B76ED70BFF /* Pods-SJSegmentedScrollViewDemo */ = {
@@ -130,7 +118,7 @@
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
 				103A9D63A5184DA93AE4AF04208C6843 /* Development Pods */,
-				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				433CD3331B6C3787F473C941B61FC68F /* Frameworks */,
 				9CE4359DC1FB686C8A8D48C36D58BBCA /* Products */,
 				F8AEBD3231AF04A6FFCA35C07B6518D4 /* Targets Support Files */,
 			);
@@ -139,9 +127,20 @@
 		8519F630E34261802D17F5686AF912FE /* SJSegmentedScrollView */ = {
 			isa = PBXGroup;
 			children = (
-				649DEA041D48F3B200CF5519 /* Classes */,
+				88851C558A8E1F21A97027D17015F98B /* Classes */,
 			);
 			path = SJSegmentedScrollView;
+			sourceTree = "<group>";
+		};
+		88851C558A8E1F21A97027D17015F98B /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				CAC1707945B16209A2A77BDC0968FDAC /* SJContentView.swift */,
+				431ED4BFC7B1474B3E94D15C139DAF40 /* SJSegmentedScrollView.swift */,
+				45B688CEE57785DDDAF0EF03E033B138 /* SJSegmentedViewController.swift */,
+				16DCABAA840C8079C8EEE39CA7460CC2 /* SJSegmentView.swift */,
+			);
+			path = Classes;
 			sourceTree = "<group>";
 		};
 		9CE4359DC1FB686C8A8D48C36D58BBCA /* Products */ = {
@@ -177,12 +176,13 @@
 			path = ../..;
 			sourceTree = "<group>";
 		};
-		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+		F302CD3B306AF1ED96B9AF31FCDBC26C /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				3DCAB2B7CDE207B3958B6CB957FCC758 /* iOS */,
+				A2A6FF208CEC4C2861F1E9D42D651453 /* Foundation.framework */,
+				E86668F20F252C440D1015B816BE59C5 /* UIKit.framework */,
 			);
-			name = Frameworks;
+			name = iOS;
 			sourceTree = "<group>";
 		};
 		F8AEBD3231AF04A6FFCA35C07B6518D4 /* Targets Support Files */ = {
@@ -222,7 +222,6 @@
 				C845191C08634AAD37888834246E06E5 /* Sources */,
 				460C6E4A505A0A8F26E336C2087CC694 /* Frameworks */,
 				A2BD674664D99901F37F6D35928E7139 /* Headers */,
-				643210791D6D69ED002E86E1 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -239,7 +238,7 @@
 			buildConfigurationList = 0FBEE71849134B1178FA3026F88B5A50 /* Build configuration list for PBXNativeTarget "SJSegmentedScrollView" */;
 			buildPhases = (
 				63FA14E34AEEF1CF62688467241673A6 /* Sources */,
-				B9A7335E9140C72139B6914C0E6CA2B6 /* Frameworks */,
+				6BCB849CEBE08A62DA4A2FE6E3E82918 /* Frameworks */,
 				A5648ECB0C3834FA7EC55549033BAFFC /* Headers */,
 			);
 			buildRules = (
@@ -257,14 +256,8 @@
 		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftMigration = 0730;
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0800;
-				TargetAttributes = {
-					C3D12AE62A50062B92F2658C3223C13D = {
-						LastSwiftMigration = 0800;
-					};
-				};
+				LastUpgradeCheck = 0700;
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -284,32 +277,16 @@
 		};
 /* End PBXProject section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		643210791D6D69ED002E86E1 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		63FA14E34AEEF1CF62688467241673A6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29FABED6E2858BCEF2EB37FC54C526D4 /* SJContentView.swift in Sources */,
 				A0074B77908288B3B1A4143AEA40FE47 /* SJSegmentedScrollView-dummy.m in Sources */,
-				649DEA0D1D48F3B200CF5519 /* SJSegmentedScrollView.swift in Sources */,
-				649DEA0F1D48F3B200CF5519 /* SJSegmentedViewController.swift in Sources */,
-				649DEA0B1D48F3B200CF5519 /* SJContentView.swift in Sources */,
-				649DEA111D48F3B200CF5519 /* SJSegmentView.swift in Sources */,
+				BBAD12CB3943EDA1F882F648B7864188 /* SJSegmentedScrollView.swift in Sources */,
+				FEF901248F8DF5B1224C2A9E28161FE2 /* SJSegmentedViewController.swift in Sources */,
+				3663A1F0ADC060B25696D49F5301A23A /* SJSegmentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -318,10 +295,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				8368272656EB0E82F79F9FF2CF9F9FC6 /* Pods-SJSegmentedScrollViewDemo-dummy.m in Sources */,
-				649DEA0C1D48F3B200CF5519 /* SJSegmentedScrollView.swift in Sources */,
-				649DEA0E1D48F3B200CF5519 /* SJSegmentedViewController.swift in Sources */,
-				649DEA0A1D48F3B200CF5519 /* SJContentView.swift in Sources */,
-				649DEA101D48F3B200CF5519 /* SJSegmentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -337,7 +310,68 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		0ACDCBCB0B6796575F46FFA2F5410C6B /* Release */ = {
+		099914008AC1E02027530EE1BFDDE8B5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9045C72A98E59D9BAA2ECF662F56671D /* SJSegmentedScrollView.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/SJSegmentedScrollView/SJSegmentedScrollView-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SJSegmentedScrollView/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/SJSegmentedScrollView/SJSegmentedScrollView.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = SJSegmentedScrollView;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		815DD2D54E576D10DF5F094AF3AB8165 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9045C72A98E59D9BAA2ECF662F56671D /* SJSegmentedScrollView.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/SJSegmentedScrollView/SJSegmentedScrollView-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SJSegmentedScrollView/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/SJSegmentedScrollView/SJSegmentedScrollView.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = SJSegmentedScrollView;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		8DED8AD26D381A6ACFF202E5217EC498 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -355,11 +389,10 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"POD_CONFIGURATION_RELEASE=1",
 					"$(inherited)",
@@ -371,144 +404,14 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
 				STRIP_INSTALLED_PRODUCT = NO;
 				SYMROOT = "${SRCROOT}/../build";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
-		27FA1CDB4645ED98C7F48438FC3DC892 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = B2AA65796601F24134B85713AED837CC /* Pods-SJSegmentedScrollViewDemo.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-SJSegmentedScrollViewDemo/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-SJSegmentedScrollViewDemo/Pods-SJSegmentedScrollViewDemo.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_SJSegmentedScrollViewDemo;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		480EBFC6E3F50145461C9729B4C0D137 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9045C72A98E59D9BAA2ECF662F56671D /* SJSegmentedScrollView.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/SJSegmentedScrollView/SJSegmentedScrollView-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/SJSegmentedScrollView/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/SJSegmentedScrollView/SJSegmentedScrollView.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = SJSegmentedScrollView;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		70AD2C54387747D369453F6276E2E91E /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 316060B7BE9D1AAC0F464083C5E7DFC7 /* Pods-SJSegmentedScrollViewDemo.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-SJSegmentedScrollViewDemo/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-SJSegmentedScrollViewDemo/Pods-SJSegmentedScrollViewDemo.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_SJSegmentedScrollViewDemo;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		C5FDBB5183183B16293CE56159E58B1D /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9045C72A98E59D9BAA2ECF662F56671D /* SJSegmentedScrollView.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/SJSegmentedScrollView/SJSegmentedScrollView-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/SJSegmentedScrollView/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/SJSegmentedScrollView/SJSegmentedScrollView.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = SJSegmentedScrollView;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		D3E3D092A3FF7311A98E44BBA36FFD12 /* Debug */ = {
+		9E1E4E48AF2EAB23169E611BF694090A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -526,12 +429,11 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
 				COPY_PHASE_STRIP = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"POD_CONFIGURATION_DEBUG=1",
@@ -547,10 +449,78 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
 				STRIP_INSTALLED_PRODUCT = NO;
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Debug;
+		};
+		B3DABAEB0D3699E8A9375A52C43F3439 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B2AA65796601F24134B85713AED837CC /* Pods-SJSegmentedScrollViewDemo.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-SJSegmentedScrollViewDemo/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-SJSegmentedScrollViewDemo/Pods-SJSegmentedScrollViewDemo.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_SJSegmentedScrollViewDemo;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		EAECDE64B2D53C01A4447F12A3EC0AC0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 316060B7BE9D1AAC0F464083C5E7DFC7 /* Pods-SJSegmentedScrollViewDemo.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-SJSegmentedScrollViewDemo/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-SJSegmentedScrollViewDemo/Pods-SJSegmentedScrollViewDemo.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_SJSegmentedScrollViewDemo;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
@@ -558,8 +528,8 @@
 		0FBEE71849134B1178FA3026F88B5A50 /* Build configuration list for PBXNativeTarget "SJSegmentedScrollView" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				C5FDBB5183183B16293CE56159E58B1D /* Debug */,
-				480EBFC6E3F50145461C9729B4C0D137 /* Release */,
+				815DD2D54E576D10DF5F094AF3AB8165 /* Debug */,
+				099914008AC1E02027530EE1BFDDE8B5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -567,8 +537,8 @@
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D3E3D092A3FF7311A98E44BBA36FFD12 /* Debug */,
-				0ACDCBCB0B6796575F46FFA2F5410C6B /* Release */,
+				9E1E4E48AF2EAB23169E611BF694090A /* Debug */,
+				8DED8AD26D381A6ACFF202E5217EC498 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -576,8 +546,8 @@
 		9E4312C19D460C76D64A4125C14BFCAD /* Build configuration list for PBXNativeTarget "Pods-SJSegmentedScrollViewDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				27FA1CDB4645ED98C7F48438FC3DC892 /* Debug */,
-				70AD2C54387747D369453F6276E2E91E /* Release */,
+				B3DABAEB0D3699E8A9375A52C43F3439 /* Debug */,
+				EAECDE64B2D53C01A4447F12A3EC0AC0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

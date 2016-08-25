@@ -40,6 +40,14 @@ class SJSegmentView: UIScrollView {
         }
     }
     
+    var selectedSegmentTitleColor: UIColor? {
+        didSet {
+            for segment in self.segments {
+                segment.setTitleColor(selectedSegmentTitleColor, forState: .Selected)
+            }
+        }
+    }
+    
     var segmentBackgroundColor: UIColor? {
         didSet {
             for segment in self.segments {
@@ -79,6 +87,11 @@ class SJSegmentView: UIScrollView {
         self.showsHorizontalScrollIndicator = false
         self.showsVerticalScrollIndicator = false
         self.bounces = false
+        
+        NSNotificationCenter.defaultCenter().addObserver(self,
+                                                         selector: #selector(SJSegmentView.didChangeSegmentIndex(_:)),
+                                                         name: "DidChangeSegmentIndex",
+                                                         object: nil)
     }
     
     required override init(frame: CGRect) {
@@ -87,6 +100,19 @@ class SJSegmentView: UIScrollView {
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func didChangeSegmentIndex(notification: NSNotification) {
+        
+        //deselect previos buttons
+        for button in segments {
+            button.selected = false
+        }
+        
+        // select current button
+        let index = notification.object as? Int
+        let button = segments[index!]
+        button.selected = true
     }
     
     func setSegmentsView(frame: CGRect) {
@@ -102,6 +128,10 @@ class SJSegmentView: UIScrollView {
         }
         
         self.createSelectedSegmentView(segmentWidth)
+        
+        //Set first button as selected
+        let button = segments.first! as UIButton
+        button.selected = true
     }
     
     func createSegmentContentView(titles: [String], titleWidth: CGFloat) {
@@ -218,6 +248,7 @@ class SJSegmentView: UIScrollView {
         let button = UIButton(type: .Custom)
         button.backgroundColor = segmentBackgroundColor
         button.setTitleColor(titleColor, forState: .Normal)
+        button.setTitleColor(selectedSegmentTitleColor, forState: .Selected)
         button.setTitle(title, forState: .Normal)
         button.titleLabel?.font = font
         button.addTarget(self, action: #selector(SJSegmentView.onSegmentButtonPress(_:)),
@@ -226,6 +257,15 @@ class SJSegmentView: UIScrollView {
     }
     
     func onSegmentButtonPress(sender: AnyObject) {
+        
+        //deselect previos buttons
+        for button in segments {
+            button.selected = false
+        }
+        
+        // select current button
+        let button = sender as? UIButton
+        button?.selected = true
         
         if self.didSelectSegmentAtIndex != nil {
             let index = sender.tag - kSegmentViewTagOffset
@@ -303,6 +343,7 @@ class SJSegmentView: UIScrollView {
             xPosConstraints!.constant = (selectedSegmentView?.frame.origin.x)!
             self.layoutIfNeeded()
         }
-
+        
     }
 }
+    
