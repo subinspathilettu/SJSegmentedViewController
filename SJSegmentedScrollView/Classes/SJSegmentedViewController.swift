@@ -162,6 +162,19 @@ import UIKit
     }
     
     /**
+     *  Set bounce for segment.
+     *
+     *  By default it is set to false.
+     *
+     *  segmentedViewController.segmentBounces = true
+     */
+    public var segmentBounces = false {
+        didSet {
+            segmentedScrollView.segmentBounces = segmentBounces
+        }
+    }
+    
+    /**
      *  Set ViewController for header view.
      */
     public var headerViewController: UIViewController? {
@@ -244,6 +257,7 @@ import UIKit
         segmentedScrollView.segmentBackgroundColor      = self.segmentBackgroundColor
         segmentedScrollView.segmentShadow               = self.segmentShadow
         segmentedScrollView.segmentTitleFont            = self.segmentTitleFont
+        segmentedScrollView.segmentBounces              = self.segmentBounces
         segmentedScrollView.headerViewHeight            = self.headerViewHeight
         segmentedScrollView.headerViewOffsetHeight      = self.headerViewOffsetHeight
         segmentedScrollView.segmentViewHeight           = self.segmentViewHeight

@@ -30,6 +30,7 @@ class SJSegmentedScrollView: UIScrollView {
     var headerViewOffsetHeight: CGFloat?
     var selectedSegmentViewColor: UIColor?
     var selectedSegmentViewHeight: CGFloat?
+    var segmentBounces = false
     var segmentTitleColor: UIColor?
     var segmentBackgroundColor: UIColor?
     var segmentShadow: SJShadow?
@@ -169,6 +170,7 @@ class SJSegmentedScrollView: UIScrollView {
             self.segmentView?.segmentBackgroundColor = self.segmentBackgroundColor
             self.segmentView?.shadow = self.segmentShadow
             self.segmentView?.font = self.segmentTitleFont!
+            self.segmentView?.bounces = self.segmentBounces
             self.segmentView!.translatesAutoresizingMaskIntoConstraints = false
             self.segmentView!.didSelectSegmentAtIndex = {
                 (index) in

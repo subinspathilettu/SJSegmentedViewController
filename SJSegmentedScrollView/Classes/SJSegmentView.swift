@@ -90,7 +90,6 @@ class SJSegmentView: UIScrollView {
         self.titles = segmentTitles
         self.showsHorizontalScrollIndicator = false
         self.showsVerticalScrollIndicator = false
-        self.bounces = false
     }
     
     required override init(frame: CGRect) {
