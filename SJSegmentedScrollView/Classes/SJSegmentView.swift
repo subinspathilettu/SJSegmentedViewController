@@ -56,6 +56,18 @@ class SJSegmentView: UIScrollView {
         }
     }
     
+    var shadow: SJShadow? {
+        didSet {
+            if let shadow = shadow {
+                self.layer.shadowOffset = shadow.offset
+                self.layer.shadowColor = shadow.color.CGColor
+                self.layer.shadowRadius = shadow.radius
+                self.layer.shadowOpacity = shadow.opacity
+                self.layer.masksToBounds = false;
+            }
+        }
+    }
+    
     var font: UIFont?
     var selectedSegmentViewHeight: CGFloat?
     
