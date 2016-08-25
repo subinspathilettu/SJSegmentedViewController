@@ -39,6 +39,9 @@ import UIKit
      */
     optional func viewForSegmentControllerToObserveContentOffsetChange(controller: UIViewController,
                                                                        index: Int) -> UIView
+
+    optional func didSelectSegmentAtIndex(index:Int)
+
 }
 
 /**
@@ -191,7 +194,7 @@ import UIKit
             setDefaultValuesToSegmentedScrollView()
         }
     }
-    
+    public var delegate: SJSegmentedViewControllerViewSource?
     var segmentedScrollView = SJSegmentedScrollView(frame: CGRectZero)
     var segmentScrollViewTopConstraint: NSLayoutConstraint?
     
@@ -203,12 +206,13 @@ import UIKit
      
      */
     convenience public init(headerViewController: UIViewController?,
-                            segmentControllers: [UIViewController]) {
+                            segmentControllers: [UIViewController], delegate: SJSegmentedViewControllerViewSource? = nil) {
         self.init(nibName: nil, bundle: nil)
-        
+
         self.headerViewController = headerViewController
         self.segmentControllers = segmentControllers
-        
+        self.delegate = delegate
+
         setDefaultValuesToSegmentedScrollView()
     }
     
@@ -299,6 +303,9 @@ import UIKit
         self.view.addConstraint(segmentScrollViewTopConstraint!)
         
         segmentedScrollView.setContentView()
+        segmentedScrollView.didSelectSegmentAtIndex = { index in
+            self.delegate?.didSelectSegmentAtIndex!(index)
+        }
     }
     
     /**
