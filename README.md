@@ -1,5 +1,6 @@
 # SJSegmentedScrollView
 
+[![CI Status](https://img.shields.io/travis/subinspathilettu/SJSegmentedViewController.svg?style=flat)](https://travis-ci.org/subinspathilettu/SJSegmentedViewController)
 [![Version](https://img.shields.io/cocoapods/v/SJSegmentedScrollView.svg?style=flat)](http://cocoapods.org/pods/SJSegmentedScrollView)
 [![License](https://img.shields.io/cocoapods/l/SJSegmentedScrollView.svg?style=flat)](http://cocoapods.org/pods/SJSegmentedScrollView)
 [![Platform](https://img.shields.io/cocoapods/p/SJSegmentedScrollView.svg?style=flat)](http://cocoapods.org/pods/SJSegmentedScrollView)
@@ -14,6 +15,7 @@ SJSegmentedScrollView is a light weight generic controller written in Swift 2.3.
 * Vertical scrolling for contents.
 * Single header view for all segments.
 * Title, segment selection color, header size, segment height etc can be customized accordingly.
+* Supports Swift and Objective-C
 
 ## Installation
 
@@ -27,7 +29,7 @@ platform :ios, '9.0'
 use_frameworks!
 
 target '<Your Target Name>' do
-pod ’SJSegmentedScrollView’, ‘1.0.9'
+pod ’SJSegmentedScrollView’, ‘1.0.12'
 end
 ```
 Then, run the following command:
@@ -72,9 +74,24 @@ let segmentedViewController = SJSegmentedViewController(headerViewController: he
 segmentControllers: [firstViewController,
 	secondViewController,
 	thirdViewController])
-self.presentViewController(segmentedViewController, animated: false, completion: nil)
-}
 ```
+* Present ViewController
+```swift
+self.presentViewController(segmentedViewController, animated: false, completion: nil)
+```
+* Push ViewController
+```swift
+self.navigationController?.pushViewController(segmentedViewController,
+                                                          animated: true)
+```
+* Add Child ViewController
+```swift
+addChildViewController(segmentedViewController)
+self.view.addSubview(segmentedViewController.view)
+segmentedViewController.view.frame = self.view.bounds
+segmentedViewController.didMoveToParentViewController(self)
+```
+
 #### Customize your view
 By default, SJSegmentedScrollView will observe the default view of viewcontroller for content 
 changes and makes the scroll effect. If you want to change the default view, implement 
@@ -106,6 +123,12 @@ segmentedViewController.segmentTitleColor = UIColor.blackColor()
 
 //Set background color for segmentview.
 segmentedViewController.segmentBackgroundColor = UIColor.whiteColor()
+
+//Set shadow for segmentview.
+segmentedViewController.segmentShadow = SJShadow.light()
+
+//Set bounce for segmentview.
+segmentedViewController.segmentBounces = true
 
 //Set font for segmentview titles.
 segmentedViewController.segmentTitleFont = UIFont.systemFontOfSize(14.0)

@@ -7,20 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0892BE70BD3E9312200D96DF93F9AB14 /* SJSegmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF73ADA9C264EC62E465622004A892A /* SJSegmentView.swift */; };
+		08A7C6E931B1D4591CBD3BA40CCE3D33 /* SJShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A224DF432C88DA3A0068C69DEAD59AC /* SJShadow.swift */; };
 		1B339857EAFDB9AAF10220604F03B270 /* SJSegmentedScrollView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8707D61AA5FA1EA184B22DBA72BCA148 /* SJSegmentedScrollView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		388D6125F5D68F56D203AABC341FE8F1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
+		388D6125F5D68F56D203AABC341FE8F1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2A6FF208CEC4C2861F1E9D42D651453 /* Foundation.framework */; };
 		39A2BEA1E6E582AF443DAC7EEE52E158 /* Pods-SJSegmentedScrollViewDemo-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A38BB26C57452274A8538E3E03725762 /* Pods-SJSegmentedScrollViewDemo-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		64A035321D4887E50068BE28 /* SJContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A0352E1D4887E50068BE28 /* SJContentView.swift */; };
-		64A035331D4887E50068BE28 /* SJContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A0352E1D4887E50068BE28 /* SJContentView.swift */; };
-		64A035341D4887E50068BE28 /* SJSegmentedScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A0352F1D4887E50068BE28 /* SJSegmentedScrollView.swift */; };
-		64A035351D4887E50068BE28 /* SJSegmentedScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A0352F1D4887E50068BE28 /* SJSegmentedScrollView.swift */; };
-		64A035361D4887E50068BE28 /* SJSegmentedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A035301D4887E50068BE28 /* SJSegmentedViewController.swift */; };
-		64A035371D4887E50068BE28 /* SJSegmentedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A035301D4887E50068BE28 /* SJSegmentedViewController.swift */; };
-		64A035381D4887E50068BE28 /* SJSegmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A035311D4887E50068BE28 /* SJSegmentView.swift */; };
-		64A035391D4887E50068BE28 /* SJSegmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A035311D4887E50068BE28 /* SJSegmentView.swift */; };
-		833EA7C6DF17029944E5147B961611BB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
+		58B9E343C10ADFD4D94D250D20DDDAD9 /* SJSegmentedScrollView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = CD41322645BA5E39813263B167EF800F /* SJSegmentedScrollView-dummy.m */; };
 		8368272656EB0E82F79F9FF2CF9F9FC6 /* Pods-SJSegmentedScrollViewDemo-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 80D5AE1A434B8CCCF2C5DB31C8D74E37 /* Pods-SJSegmentedScrollViewDemo-dummy.m */; };
-		A0074B77908288B3B1A4143AEA40FE47 /* SJSegmentedScrollView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = CD41322645BA5E39813263B167EF800F /* SJSegmentedScrollView-dummy.m */; };
+		9C80478A052F7A455796B510F510170B /* SJContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46B928F3F1DF8CB10E5B9BF01203F26 /* SJContentView.swift */; };
+		B3682B3DF18FA16B15F2E5AF4CC85D0B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2A6FF208CEC4C2861F1E9D42D651453 /* Foundation.framework */; };
+		B4D3A03F7EA312B4BF8AFF8AE3B85DE7 /* SJSegmentedScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9A549FE67DEA2A507E86744D0E92DB /* SJSegmentedScrollView.swift */; };
+		D4E5895743F65F61079746B9AC5308D3 /* SJSegmentedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F2257606120F961B257D7A10D5746E /* SJSegmentedViewController.swift */; };
+		DD04780237AAE317E33D6A2625C18EA0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E86668F20F252C440D1015B816BE59C5 /* UIKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,28 +34,30 @@
 /* Begin PBXFileReference section */
 		11B5B1DE624A9C9DDF4551CC54F7B827 /* Pods-SJSegmentedScrollViewDemo-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SJSegmentedScrollViewDemo-resources.sh"; sourceTree = "<group>"; };
 		1D14C2D760931D341D3EAE0A4886565F /* Pods-SJSegmentedScrollViewDemo-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SJSegmentedScrollViewDemo-acknowledgements.markdown"; sourceTree = "<group>"; };
+		1EF73ADA9C264EC62E465622004A892A /* SJSegmentView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SJSegmentView.swift; sourceTree = "<group>"; };
+		28F2257606120F961B257D7A10D5746E /* SJSegmentedViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SJSegmentedViewController.swift; sourceTree = "<group>"; };
 		2988990918C9FD15B5589899E8778ADB /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2B662FF71B58947CFB1E4D0B77472A9C /* Pods-SJSegmentedScrollViewDemo.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-SJSegmentedScrollViewDemo.modulemap"; sourceTree = "<group>"; };
 		316060B7BE9D1AAC0F464083C5E7DFC7 /* Pods-SJSegmentedScrollViewDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SJSegmentedScrollViewDemo.release.xcconfig"; sourceTree = "<group>"; };
 		379C1A30FBEE637203D85D3FE2468B38 /* Pods-SJSegmentedScrollViewDemo-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SJSegmentedScrollViewDemo-acknowledgements.plist"; sourceTree = "<group>"; };
 		449AEFAC985E40950A304ABFAFDB26A1 /* SJSegmentedScrollView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = SJSegmentedScrollView.modulemap; sourceTree = "<group>"; };
+		4A224DF432C88DA3A0068C69DEAD59AC /* SJShadow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SJShadow.swift; sourceTree = "<group>"; };
 		54FE8A96D7B23300DCB655442C934F84 /* SJSegmentedScrollView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SJSegmentedScrollView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		64A0352E1D4887E50068BE28 /* SJContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SJContentView.swift; sourceTree = "<group>"; };
-		64A0352F1D4887E50068BE28 /* SJSegmentedScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SJSegmentedScrollView.swift; sourceTree = "<group>"; };
-		64A035301D4887E50068BE28 /* SJSegmentedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SJSegmentedViewController.swift; sourceTree = "<group>"; };
-		64A035311D4887E50068BE28 /* SJSegmentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SJSegmentView.swift; sourceTree = "<group>"; };
+		6B9A549FE67DEA2A507E86744D0E92DB /* SJSegmentedScrollView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SJSegmentedScrollView.swift; sourceTree = "<group>"; };
 		80D5AE1A434B8CCCF2C5DB31C8D74E37 /* Pods-SJSegmentedScrollViewDemo-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SJSegmentedScrollViewDemo-dummy.m"; sourceTree = "<group>"; };
 		8707D61AA5FA1EA184B22DBA72BCA148 /* SJSegmentedScrollView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SJSegmentedScrollView-umbrella.h"; sourceTree = "<group>"; };
 		9045C72A98E59D9BAA2ECF662F56671D /* SJSegmentedScrollView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SJSegmentedScrollView.xcconfig; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		977E5DFDF1E91528F8580A806498C11A /* Pods-SJSegmentedScrollViewDemo-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SJSegmentedScrollViewDemo-frameworks.sh"; sourceTree = "<group>"; };
+		A2A6FF208CEC4C2861F1E9D42D651453 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		A38BB26C57452274A8538E3E03725762 /* Pods-SJSegmentedScrollViewDemo-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SJSegmentedScrollViewDemo-umbrella.h"; sourceTree = "<group>"; };
 		B2AA65796601F24134B85713AED837CC /* Pods-SJSegmentedScrollViewDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SJSegmentedScrollViewDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		BCE501D5824E669B724DA0EBBE228CC0 /* Pods_SJSegmentedScrollViewDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SJSegmentedScrollViewDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD41322645BA5E39813263B167EF800F /* SJSegmentedScrollView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SJSegmentedScrollView-dummy.m"; sourceTree = "<group>"; };
-		CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		DEF8457D6DDA0B0B9CF45826F499CAB8 /* SJSegmentedScrollView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SJSegmentedScrollView-prefix.pch"; sourceTree = "<group>"; };
+		E86668F20F252C440D1015B816BE59C5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		F08C6A2F9475749FBCFA00D12DC28111 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F46B928F3F1DF8CB10E5B9BF01203F26 /* SJContentView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SJContentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,17 +69,26 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B9A7335E9140C72139B6914C0E6CA2B6 /* Frameworks */ = {
+		6BCB849CEBE08A62DA4A2FE6E3E82918 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				833EA7C6DF17029944E5147B961611BB /* Foundation.framework in Frameworks */,
+				B3682B3DF18FA16B15F2E5AF4CC85D0B /* Foundation.framework in Frameworks */,
+				DD04780237AAE317E33D6A2625C18EA0 /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		01E33CBE9D9D6CE71DCEF238D0FC11CF /* SJSegmentedScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				2A4E898AD6ADAF0ECAAF8A103DC50CD7 /* Classes */,
+			);
+			path = SJSegmentedScrollView;
+			sourceTree = "<group>";
+		};
 		103A9D63A5184DA93AE4AF04208C6843 /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -88,23 +97,24 @@
 			name = "Development Pods";
 			sourceTree = "<group>";
 		};
-		3DCAB2B7CDE207B3958B6CB957FCC758 /* iOS */ = {
+		2A4E898AD6ADAF0ECAAF8A103DC50CD7 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */,
+				F46B928F3F1DF8CB10E5B9BF01203F26 /* SJContentView.swift */,
+				6B9A549FE67DEA2A507E86744D0E92DB /* SJSegmentedScrollView.swift */,
+				28F2257606120F961B257D7A10D5746E /* SJSegmentedViewController.swift */,
+				1EF73ADA9C264EC62E465622004A892A /* SJSegmentView.swift */,
+				4A224DF432C88DA3A0068C69DEAD59AC /* SJShadow.swift */,
 			);
-			name = iOS;
+			path = Classes;
 			sourceTree = "<group>";
 		};
-		64A0352C1D4887E50068BE28 /* source */ = {
+		433CD3331B6C3787F473C941B61FC68F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				64A0352E1D4887E50068BE28 /* SJContentView.swift */,
-				64A0352F1D4887E50068BE28 /* SJSegmentedScrollView.swift */,
-				64A035301D4887E50068BE28 /* SJSegmentedViewController.swift */,
-				64A035311D4887E50068BE28 /* SJSegmentView.swift */,
+				F302CD3B306AF1ED96B9AF31FCDBC26C /* iOS */,
 			);
-			path = source;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		78F75DFBDA9F0A45843BF8B76ED70BFF /* Pods-SJSegmentedScrollViewDemo */ = {
@@ -130,18 +140,10 @@
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
 				103A9D63A5184DA93AE4AF04208C6843 /* Development Pods */,
-				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				433CD3331B6C3787F473C941B61FC68F /* Frameworks */,
 				9CE4359DC1FB686C8A8D48C36D58BBCA /* Products */,
 				F8AEBD3231AF04A6FFCA35C07B6518D4 /* Targets Support Files */,
 			);
-			sourceTree = "<group>";
-		};
-		8519F630E34261802D17F5686AF912FE /* SJSegmentedScrollView */ = {
-			isa = PBXGroup;
-			children = (
-				64A0352C1D4887E50068BE28 /* source */,
-			);
-			path = SJSegmentedScrollView;
 			sourceTree = "<group>";
 		};
 		9CE4359DC1FB686C8A8D48C36D58BBCA /* Products */ = {
@@ -170,19 +172,20 @@
 		B5AAD581048B29C9D3E74D8ADFBB506D /* SJSegmentedScrollView */ = {
 			isa = PBXGroup;
 			children = (
-				8519F630E34261802D17F5686AF912FE /* SJSegmentedScrollView */,
+				01E33CBE9D9D6CE71DCEF238D0FC11CF /* SJSegmentedScrollView */,
 				A403BC494D59BDEBD301754D663A14AF /* Support Files */,
 			);
 			name = SJSegmentedScrollView;
 			path = ../..;
 			sourceTree = "<group>";
 		};
-		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+		F302CD3B306AF1ED96B9AF31FCDBC26C /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				3DCAB2B7CDE207B3958B6CB957FCC758 /* iOS */,
+				A2A6FF208CEC4C2861F1E9D42D651453 /* Foundation.framework */,
+				E86668F20F252C440D1015B816BE59C5 /* UIKit.framework */,
 			);
-			name = Frameworks;
+			name = iOS;
 			sourceTree = "<group>";
 		};
 		F8AEBD3231AF04A6FFCA35C07B6518D4 /* Targets Support Files */ = {
@@ -237,8 +240,8 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0FBEE71849134B1178FA3026F88B5A50 /* Build configuration list for PBXNativeTarget "SJSegmentedScrollView" */;
 			buildPhases = (
-				63FA14E34AEEF1CF62688467241673A6 /* Sources */,
-				B9A7335E9140C72139B6914C0E6CA2B6 /* Frameworks */,
+				78B4F3F050BB7B1701350EE25C5DFD8D /* Sources */,
+				6BCB849CEBE08A62DA4A2FE6E3E82918 /* Frameworks */,
 				A5648ECB0C3834FA7EC55549033BAFFC /* Headers */,
 			);
 			buildRules = (
@@ -256,14 +259,8 @@
 		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftMigration = 0730;
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0800;
-				TargetAttributes = {
-					C3D12AE62A50062B92F2658C3223C13D = {
-						LastSwiftMigration = 0800;
-					};
-				};
+				LastUpgradeCheck = 0700;
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -284,15 +281,16 @@
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		63FA14E34AEEF1CF62688467241673A6 /* Sources */ = {
+		78B4F3F050BB7B1701350EE25C5DFD8D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A0074B77908288B3B1A4143AEA40FE47 /* SJSegmentedScrollView-dummy.m in Sources */,
-				64A035331D4887E50068BE28 /* SJContentView.swift in Sources */,
-				64A035371D4887E50068BE28 /* SJSegmentedViewController.swift in Sources */,
-				64A035391D4887E50068BE28 /* SJSegmentView.swift in Sources */,
-				64A035351D4887E50068BE28 /* SJSegmentedScrollView.swift in Sources */,
+				9C80478A052F7A455796B510F510170B /* SJContentView.swift in Sources */,
+				58B9E343C10ADFD4D94D250D20DDDAD9 /* SJSegmentedScrollView-dummy.m in Sources */,
+				B4D3A03F7EA312B4BF8AFF8AE3B85DE7 /* SJSegmentedScrollView.swift in Sources */,
+				D4E5895743F65F61079746B9AC5308D3 /* SJSegmentedViewController.swift in Sources */,
+				0892BE70BD3E9312200D96DF93F9AB14 /* SJSegmentView.swift in Sources */,
+				08A7C6E931B1D4591CBD3BA40CCE3D33 /* SJShadow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,10 +299,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				8368272656EB0E82F79F9FF2CF9F9FC6 /* Pods-SJSegmentedScrollViewDemo-dummy.m in Sources */,
-				64A035321D4887E50068BE28 /* SJContentView.swift in Sources */,
-				64A035361D4887E50068BE28 /* SJSegmentedViewController.swift in Sources */,
-				64A035381D4887E50068BE28 /* SJSegmentView.swift in Sources */,
-				64A035341D4887E50068BE28 /* SJSegmentedScrollView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,9 +334,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"POD_CONFIGURATION_RELEASE=1",
 					"$(inherited)",
@@ -364,7 +356,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B2AA65796601F24134B85713AED837CC /* Pods-SJSegmentedScrollViewDemo.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -418,8 +409,6 @@
 				PRODUCT_NAME = SJSegmentedScrollView;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -430,7 +419,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 316060B7BE9D1AAC0F464083C5E7DFC7 /* Pods-SJSegmentedScrollViewDemo.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -484,7 +472,6 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -510,11 +497,9 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"POD_CONFIGURATION_DEBUG=1",

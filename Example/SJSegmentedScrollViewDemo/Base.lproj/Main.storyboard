@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="1VF-DZ-fun">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="1VF-DZ-fun">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -25,7 +25,7 @@
         <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="SJSegmentedScrollView_Example" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="SJSegmentedScrollViewDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -33,7 +33,50 @@
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lXW-mq-JdO">
+                                <rect key="frame" x="134" y="209" width="53" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="AbM-yR-5LZ"/>
+                                    <constraint firstAttribute="width" constant="53" id="aZw-AN-lgm"/>
+                                </constraints>
+                                <state key="normal" title="Present"/>
+                                <connections>
+                                    <action selector="presentViewController" destination="vXZ-lx-hvc" eventType="touchUpInside" id="dWx-Q4-zNy"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ElX-4L-Qmp">
+                                <rect key="frame" x="143" y="269" width="35" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="3sc-5G-bJe"/>
+                                    <constraint firstAttribute="width" constant="35" id="3yG-LL-mf3"/>
+                                </constraints>
+                                <state key="normal" title="Push"/>
+                                <connections>
+                                    <action selector="pushViewController" destination="vXZ-lx-hvc" eventType="touchUpInside" id="0NW-VK-SFq"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rZ8-K1-9XA">
+                                <rect key="frame" x="142" y="329" width="36" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="36" id="4g4-g2-60v"/>
+                                    <constraint firstAttribute="height" constant="30" id="lBy-6E-hVd"/>
+                                </constraints>
+                                <state key="normal" title="Child"/>
+                                <connections>
+                                    <action selector="adddChildViewController" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Tt6-2I-bgo"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="rZ8-K1-9XA" firstAttribute="top" secondItem="ElX-4L-Qmp" secondAttribute="bottom" constant="30" id="2oz-M3-ZQy"/>
+                            <constraint firstItem="ElX-4L-Qmp" firstAttribute="top" secondItem="lXW-mq-JdO" secondAttribute="bottom" constant="30" id="6Sh-4J-xvE"/>
+                            <constraint firstItem="ElX-4L-Qmp" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="71o-vh-dXF"/>
+                            <constraint firstItem="rZ8-K1-9XA" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="G52-HJ-we4"/>
+                            <constraint firstItem="ElX-4L-Qmp" firstAttribute="centerY" secondItem="kh9-bI-dsS" secondAttribute="centerY" id="cFx-mH-3KW"/>
+                            <constraint firstItem="lXW-mq-JdO" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="g20-h5-Pm9"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="RMG-v4-f0z"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
@@ -45,7 +88,7 @@
         <!--First Table View Controller-->
         <scene sceneID="nmc-er-Kvw">
             <objects>
-                <tableViewController storyboardIdentifier="FirstTableViewController" id="eYn-cL-EMO" customClass="FirstTableViewController" customModule="SJSegmentedScrollView_Example" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="FirstTableViewController" id="eYn-cL-EMO" customClass="FirstTableViewController" customModule="SJSegmentedScrollViewDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="mRY-CL-4IT">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -74,7 +117,7 @@
         <!--Third View Controller-->
         <scene sceneID="VH8-Py-1zW">
             <objects>
-                <viewController storyboardIdentifier="ThirdViewController" id="TDu-Ru-a4a" customClass="ThirdViewController" customModule="SJSegmentedScrollView_Example" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ThirdViewController" id="TDu-Ru-a4a" customClass="ThirdViewController" customModule="SJSegmentedScrollViewDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="kyM-sh-Oue"/>
                         <viewControllerLayoutGuide type="bottom" id="K3q-v7-wXX"/>
@@ -87,7 +130,7 @@
                                 <rect key="frame" x="20" y="20" width="280" height="528"/>
                                 <string key="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</string>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -108,7 +151,7 @@
         <!--Header View Controller-->
         <scene sceneID="mos-fA-Sds">
             <objects>
-                <viewController storyboardIdentifier="HeaderViewController" id="eOf-Fs-y8n" customClass="HeaderViewController" customModule="SJSegmentedScrollView_Example" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HeaderViewController" id="eOf-Fs-y8n" customClass="HeaderViewController" customModule="SJSegmentedScrollViewDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="OEv-f0-DVS"/>
                         <viewControllerLayoutGuide type="bottom" id="gUQ-NM-V28"/>
@@ -120,13 +163,23 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="l8b-Uh-4gJ">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N6c-py-nWY">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
+                                <connections>
+                                    <action selector="headerViewAction:" destination="eOf-Fs-y8n" eventType="touchUpInside" id="JGt-kO-LZI"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="l8b-Uh-4gJ" firstAttribute="top" secondItem="um4-KY-74T" secondAttribute="top" id="QWT-yF-yQn"/>
+                            <constraint firstAttribute="trailing" secondItem="N6c-py-nWY" secondAttribute="trailing" id="Qwj-il-0wa"/>
                             <constraint firstItem="l8b-Uh-4gJ" firstAttribute="leading" secondItem="um4-KY-74T" secondAttribute="leading" id="Rqr-be-yKE"/>
                             <constraint firstAttribute="trailing" secondItem="l8b-Uh-4gJ" secondAttribute="trailing" id="bZj-44-GXU"/>
+                            <constraint firstItem="N6c-py-nWY" firstAttribute="leading" secondItem="um4-KY-74T" secondAttribute="leading" id="cgJ-Cp-qZq"/>
+                            <constraint firstItem="gUQ-NM-V28" firstAttribute="top" secondItem="N6c-py-nWY" secondAttribute="bottom" id="lIC-cp-FsB"/>
                             <constraint firstItem="gUQ-NM-V28" firstAttribute="top" secondItem="l8b-Uh-4gJ" secondAttribute="bottom" id="lvv-h6-5Ds"/>
+                            <constraint firstItem="N6c-py-nWY" firstAttribute="top" secondItem="um4-KY-74T" secondAttribute="top" id="uQR-oT-3oo"/>
                         </constraints>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
@@ -136,10 +189,40 @@
             </objects>
             <point key="canvasLocation" x="983" y="323"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="oLE-ob-2Zc">
+            <objects>
+                <viewController storyboardIdentifier="HeaderDetailViewController" id="lBZ-ef-IDj" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="SgU-2Y-8HX"/>
+                        <viewControllerLayoutGuide type="bottom" id="fWs-DV-hO0"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="FY2-Oc-orz">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="bTz-SO-7Ul">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="bTz-SO-7Ul" firstAttribute="top" secondItem="FY2-Oc-orz" secondAttribute="top" id="0dJ-oQ-E0t"/>
+                            <constraint firstAttribute="trailing" secondItem="bTz-SO-7Ul" secondAttribute="trailing" id="kAl-Pb-sao"/>
+                            <constraint firstItem="bTz-SO-7Ul" firstAttribute="leading" secondItem="FY2-Oc-orz" secondAttribute="leading" id="sdn-fd-8K0"/>
+                            <constraint firstItem="fWs-DV-hO0" firstAttribute="top" secondItem="bTz-SO-7Ul" secondAttribute="bottom" id="xMS-vv-EbX"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CMA-pX-cpM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1524" y="494"/>
+        </scene>
         <!--Second View Controller-->
         <scene sceneID="Ehe-pu-rRv">
             <objects>
-                <viewController storyboardIdentifier="SecondViewController" id="J1V-qr-hlK" customClass="SecondViewController" customModule="SJSegmentedScrollView_Example" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SecondViewController" id="J1V-qr-hlK" customClass="SecondViewController" customModule="SJSegmentedScrollViewDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Cpg-gd-3k1"/>
                         <viewControllerLayoutGuide type="bottom" id="bWX-kN-9ry"/>

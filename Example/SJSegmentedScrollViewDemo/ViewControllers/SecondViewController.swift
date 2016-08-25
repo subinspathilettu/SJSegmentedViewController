@@ -16,15 +16,15 @@ class SecondViewController: UIViewController {
 
 extension SecondViewController: UITableViewDataSource {
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         return 20
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CellIdentifier", for: indexPath)
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("CellIdentifier", forIndexPath: indexPath)
         
-        cell.textLabel?.text = "Second View Row " + String((indexPath as NSIndexPath).row)
+        cell.textLabel?.text = "Second View Row " + String(indexPath.row)
         
         return cell
     }
@@ -32,7 +32,7 @@ extension SecondViewController: UITableViewDataSource {
 
 extension SecondViewController: SJSegmentedViewControllerViewSource {
     
-    func viewForSegmentControllerToObserveContentOffsetChange(_ controller: UIViewController,
+    func viewForSegmentControllerToObserveContentOffsetChange(controller: UIViewController,
                                                               index: Int) -> UIView {
         return customTableView
     }
