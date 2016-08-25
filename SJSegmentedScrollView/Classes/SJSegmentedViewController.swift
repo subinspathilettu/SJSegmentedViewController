@@ -138,6 +138,19 @@ import UIKit
     }
     
     /**
+     *  Set shadow for segment.
+     *
+     *  By default the color is light gray.
+     *
+     *  segmentedViewController.segmentShadow = SJShadow.light()
+     */
+    public var segmentShadow = SJShadow() {
+        didSet {
+            segmentedScrollView.segmentShadow = segmentShadow
+        }
+    }
+    
+    /**
      *  Set font for segment title.
      *
      *  segmentedViewController.segmentTitleFont = UIFont.systemFontOfSize(14.0)
@@ -229,6 +242,7 @@ import UIKit
         segmentedScrollView.selectedSegmentViewHeight   = self.selectedSegmentViewHeight
         segmentedScrollView.segmentTitleColor           = self.segmentTitleColor
         segmentedScrollView.segmentBackgroundColor      = self.segmentBackgroundColor
+        segmentedScrollView.segmentShadow               = self.segmentShadow
         segmentedScrollView.segmentTitleFont            = self.segmentTitleFont
         segmentedScrollView.headerViewHeight            = self.headerViewHeight
         segmentedScrollView.headerViewOffsetHeight      = self.headerViewOffsetHeight

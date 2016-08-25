@@ -45,6 +45,7 @@ class ViewController: UIViewController {
             segmentedViewController.headerViewHeight = 200.0
             segmentedViewController.selectedSegmentViewColor = UIColor.redColor()
             segmentedViewController.segmentViewHeight = 60.0
+            segmentedViewController.segmentShadow = SJShadow.medium()
             return segmentedViewController
         }
         

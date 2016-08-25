@@ -1,5 +1,5 @@
 PODS:
-  - SJSegmentedScrollView (1.0.5)
+  - SJSegmentedScrollView (1.0.12)
 
 DEPENDENCIES:
   - SJSegmentedScrollView (from `../`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  SJSegmentedScrollView: 93954610dd328f271dac366a92b45eb397d5fedf
+  SJSegmentedScrollView: 77862efbee9562fbf5eaa61d747d2e32d59a125e
 
 PODFILE CHECKSUM: fec3a847c9c6d52143926f631d13ea1d111ebca0
 
