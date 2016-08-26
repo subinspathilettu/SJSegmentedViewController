@@ -233,7 +233,7 @@ public class SJHeaderViewController: UIViewController {
 
         segmentedScrollView.segmentView?.contentView = segmentedScrollView.contentView
         //TODO: page swipe change block, this will be called when user swipes
-        segmentedScrollView.segmentView?.contentView?.didSelectPageAtIndex = { index in
+        segmentedScrollView.didSelectSegmentAtIndex = { (segment,index) in
             self.currentIndex = index
             if index == self.actualNumberOfPages{
                 // end of page
@@ -241,10 +241,10 @@ public class SJHeaderViewController: UIViewController {
                 self.segmentedScrollView.contentView?.movePageToIndex(self.currentIndex, animated: false)
 
             }
-            self.segmentedScrollView.segmentView?.contentView?.shouldObserveContentView = false
             self.pageControl.currentPage = self.currentIndex
-          //  self.resetTimer(self.autoScrollTime)
+            self.resetTimer(self.autoScrollTime)
         }
+
     }
 
     /**

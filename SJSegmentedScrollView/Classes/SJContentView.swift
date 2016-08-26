@@ -31,7 +31,7 @@ class SJContentView: UIScrollView {
     var contentSubViewWidthConstraints = [NSLayoutConstraint]()
     let animationDuration = 0.3
     //TODO: page selection closure
-    var didSelectPageAtIndex:DidSelectSegmentAtIndex?
+    var didSelectSegmentAtIndex:DidSelectSegmentAtIndex?
     var shouldObserveContentView: Bool! = true
     
     
@@ -152,8 +152,7 @@ extension SJContentView: UIScrollViewDelegate {
     
     func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
         self.pageIndex = Int(self.contentOffset.x / self.bounds.size.width)
-        self.didSelectPageAtIndex?(index: self.pageIndex)
-
+        self.didSelectSegmentAtIndex?(segment:nil, index: self.pageIndex)
         if shouldObserveContentView == true {
         NSNotificationCenter.defaultCenter().postNotificationName("DidChangeSegmentIndex",
                                                                   object: pageIndex)

@@ -22,7 +22,7 @@
 
 import UIKit
 
-typealias DidSelectSegmentAtIndex = (index: Int) -> Void
+typealias DidSelectSegmentAtIndex = (segment:UIButton?, index: Int) -> Void
 
 class SJSegmentView: UIScrollView {
     
@@ -283,7 +283,7 @@ class SJSegmentView: UIScrollView {
         
         if self.didSelectSegmentAtIndex != nil {
             let index = sender.tag - kSegmentViewTagOffset
-            self.didSelectSegmentAtIndex!(index: index)
+            self.didSelectSegmentAtIndex!(segment: button, index: index)
         }
     }
     

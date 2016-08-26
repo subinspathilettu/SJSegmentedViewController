@@ -337,9 +337,13 @@ import UIKit
         segmentedScrollView.setContentView()
 
         // selected segment at index
-        segmentedScrollView.didSelectSegmentAtIndex = { index in
+        segmentedScrollView.didSelectSegmentAtIndex = {(segment,index) in
             //TODO: set pageControl current page
-            (self.headerViewController as! SJHeaderViewController).pageControl.currentPage = index
+            //            (self.headerViewController as! SJHeaderViewController).pageControl.currentPage = inde
+            let selectedController = self.segmentControllers[index]
+
+                self.delegate?.didMoveToPage?(selectedController, segment: segment!, index: index)
+
         }
     }
 
