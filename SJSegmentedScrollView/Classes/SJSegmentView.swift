@@ -125,8 +125,10 @@ class SJSegmentView: UIScrollView {
         let index = notification.object as? Int
         let button = segments[index!]
         button.selected = true
+
     }
-    
+
+
     func setSegmentsView(frame: CGRect) {
         
         let segmentWidth = self.getSegmentWidth(self.titles!, frame: frame)

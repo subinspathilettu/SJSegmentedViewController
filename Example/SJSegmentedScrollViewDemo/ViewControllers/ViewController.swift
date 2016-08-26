@@ -49,8 +49,10 @@ class ViewController: UIViewController {
                                                                         thirdViewController])
             segmentedViewController.headerViewHeight = 500
             segmentedViewController.selectedSegmentViewColor = UIColor.redColor()
+            segmentedViewController.currentPageIndicatorColor = UIColor.yellowColor()
             segmentedViewController.segmentViewHeight = 60.0
             segmentedViewController.segmentShadow = SJShadow.dark()
+            segmentedViewController.delegate = self
             return segmentedViewController
         }
 
@@ -92,3 +94,9 @@ class ViewController: UIViewController {
         }
     }
 }
+
+extension ViewController: SJSegmentedViewControllerDelegate {
+    func didMoveToPage(controller: UIViewController, segment: UIButton, index: Int) {
+        print("Current selected index \(index)")
+    }
+   }

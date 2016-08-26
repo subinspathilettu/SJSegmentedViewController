@@ -60,6 +60,7 @@ class SJSegmentedScrollView: UIScrollView {
                self.addObserver(self, forKeyPath: "contentOffset",
                          options: [NSKeyValueObservingOptions.New, NSKeyValueObservingOptions.Old],
                          context: nil)
+        
 
     }
     

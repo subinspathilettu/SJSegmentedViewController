@@ -16,6 +16,7 @@ public class SJHeaderViewController: UIViewController {
     var loopController:UIViewController!
     var pageControl = UIPageControl()
 
+
     convenience public init(viewControllers: [UIViewController]) {
         self.init(nibName: nil, bundle: nil)
         self.viewControllers = viewControllers
@@ -44,6 +45,9 @@ public class SJHeaderViewController: UIViewController {
         self.addPageControl(actualNumberOfPages, startingPage: 0)
         makeInfiniteLoop()
         loadControllers()
+        self.segmentedScrollView.showsVerticalScrollIndicator = false
+        self.segmentedScrollView.showsHorizontalScrollIndicator = false
+        self.segmentedScrollView.contentView?.showsHorizontalScrollIndicator
         bodyContentView?.addObserver(self,
                                      forKeyPath: "contentOffset",
                                      options: [NSKeyValueObservingOptions.New, NSKeyValueObservingOptions.Old],
@@ -54,26 +58,26 @@ public class SJHeaderViewController: UIViewController {
     // To create infinite loop, duplicate the first controller
     func makeInfiniteLoop(){
         let firstControllerType = viewControllers[0].dynamicType
-        loopController = firstControllerType.init()
-        self.viewControllers.append(loopController)
+      //  loopController = firstControllerType.init()
+        //self.viewControllers.append(loopController)
     }
 
     // Adding first header controller view to the loopController
     func setViewForLoopController(){
-        let lastView = viewControllers[0].view.snapshotViewAfterScreenUpdates(true)
-        lastView.translatesAutoresizingMaskIntoConstraints = false
-        loopController.view.addSubview(lastView)
-        let horizontalConstraints = NSLayoutConstraint.constraintsWithVisualFormat("H:|-0-[lastView]-0-|",
-                                                                                   options: [],
-                                                                                   metrics: nil,
-                                                                                   views: ["lastView": lastView])
-        loopController.view.addConstraints(horizontalConstraints)
-
-        let verticalConstraints = NSLayoutConstraint.constraintsWithVisualFormat("V:|-0-[lastView]-0-|",
-                                                                                 options: [],
-                                                                                 metrics: nil,
-                                                                                 views: ["lastView": lastView])
-        loopController.view.addConstraints(verticalConstraints)
+//        let lastView = viewControllers[0].view.snapshotViewAfterScreenUpdates(true)
+//        lastView.translatesAutoresizingMaskIntoConstraints = false
+//        loopController.view.addSubview(lastView)
+//        let horizontalConstraints = NSLayoutConstraint.constraintsWithVisualFormat("H:|-0-[lastView]-0-|",
+//                                                                                   options: [],
+//                                                                                   metrics: nil,
+//                                                                                   views: ["lastView": lastView])
+//        loopController.view.addConstraints(horizontalConstraints)
+//
+//        let verticalConstraints = NSLayoutConstraint.constraintsWithVisualFormat("V:|-0-[lastView]-0-|",
+//                                                                                 options: [],
+//                                                                                 metrics: nil,
+//                                                                                 views: ["lastView": lastView])
+//        loopController.view.addConstraints(verticalConstraints)
     }
 
     /**
@@ -102,7 +106,7 @@ public class SJHeaderViewController: UIViewController {
             timerFireTime = 0
         }
         pageControl.currentPage = currentIndex
-        segmentedScrollView.contentView?.movePageToIndex(currentIndex, animated: currentIndex == 0 ? false: true)
+      //  segmentedScrollView.contentView?.movePageToIndex(currentIndex, animated: currentIndex == 0 ? false: true)
         pageControl.currentPage = currentIndex
         // in infinte loop mode controllers count will be one ahead than actual count
         if currentIndex == actualNumberOfPages{
@@ -178,7 +182,6 @@ public class SJHeaderViewController: UIViewController {
     func addPageControl(numberOfPages:Int, startingPage:Int){
         pageControl.numberOfPages = numberOfPages
         pageControl.currentPage = 0
-        pageControl.currentPageIndicatorTintColor = UIColor.redColor()
         pageControl.userInteractionEnabled = false
         segmentedScrollView.addSubview(pageControl)
         segmentedScrollView.bringSubviewToFront(pageControl)
@@ -240,7 +243,7 @@ public class SJHeaderViewController: UIViewController {
             }
             self.segmentedScrollView.segmentView?.contentView?.shouldObserveContentView = false
             self.pageControl.currentPage = self.currentIndex
-            self.resetTimer(self.autoScrollTime)
+          //  self.resetTimer(self.autoScrollTime)
         }
     }
 

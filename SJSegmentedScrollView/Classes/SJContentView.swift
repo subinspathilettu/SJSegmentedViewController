@@ -40,7 +40,10 @@ class SJContentView: UIScrollView {
         
         self.delegate = self
         self.pagingEnabled = true
+        
+        if shouldObserveContentView == true {
         self.showsVerticalScrollIndicator = true
+        }
         
         contentView = UIView()
         contentView.translatesAutoresizingMaskIntoConstraints = false
