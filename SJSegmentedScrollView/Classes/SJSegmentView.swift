@@ -270,17 +270,11 @@ class SJSegmentView: UIScrollView {
     
     func onSegmentButtonPress(sender: AnyObject) {
         
-        //deselect previos buttons
-        for button in segments {
-            button.selected = false
-        }
-        
-        // select current button
-        let button = sender as? UIButton
-        button?.selected = true
+        let index = sender.tag - kSegmentViewTagOffset
+        NSNotificationCenter.defaultCenter().postNotificationName("DidChangeSegmentIndex",
+                                                                  object: index)
         
         if self.didSelectSegmentAtIndex != nil {
-            let index = sender.tag - kSegmentViewTagOffset
             self.didSelectSegmentAtIndex!(index: index)
         }
     }
