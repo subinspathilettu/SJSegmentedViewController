@@ -124,6 +124,12 @@ segmentedViewController.segmentTitleColor = UIColor.blackColor()
 //Set background color for segmentview.
 segmentedViewController.segmentBackgroundColor = UIColor.whiteColor()
 
+//Set shadow for segmentview.
+segmentedViewController.segmentShadow = SJShadow.light()
+
+//Set bounce for segmentview.
+segmentedViewController.segmentBounces = true
+
 //Set font for segmentview titles.
 segmentedViewController.segmentTitleFont = UIFont.systemFontOfSize(14.0)
 

@@ -125,6 +125,19 @@ import UIKit
     }
     
     /**
+     *  Set color for selected segment title.
+     *
+     *  By default the color is light Gray.
+     *
+     *  segmentedViewController.selectedSegmentTitleColor = UIColor.redColor()
+     */
+    public var selectedSegmentTitleColor = UIColor.lightGrayColor() {
+        didSet {
+            segmentedScrollView.selectedSegmentTitleColor = selectedSegmentTitleColor
+        }
+    }
+    
+    /**
      *  Set color for segment background.
      *
      *  By default the color is white.
@@ -138,6 +151,19 @@ import UIKit
     }
     
     /**
+     *  Set shadow for segment.
+     *
+     *  By default the color is light gray.
+     *
+     *  segmentedViewController.segmentShadow = SJShadow.light()
+     */
+    public var segmentShadow = SJShadow() {
+        didSet {
+            segmentedScrollView.segmentShadow = segmentShadow
+        }
+    }
+    
+    /**
      *  Set font for segment title.
      *
      *  segmentedViewController.segmentTitleFont = UIFont.systemFontOfSize(14.0)
@@ -145,6 +171,19 @@ import UIKit
     public var segmentTitleFont = UIFont.systemFontOfSize(14.0) {
         didSet {
             segmentedScrollView.segmentTitleFont = segmentTitleFont
+        }
+    }
+    
+    /**
+     *  Set bounce for segment.
+     *
+     *  By default it is set to false.
+     *
+     *  segmentedViewController.segmentBounces = true
+     */
+    public var segmentBounces = false {
+        didSet {
+            segmentedScrollView.segmentBounces = segmentBounces
         }
     }
     
@@ -229,10 +268,13 @@ import UIKit
         segmentedScrollView.selectedSegmentViewHeight   = self.selectedSegmentViewHeight
         segmentedScrollView.segmentTitleColor           = self.segmentTitleColor
         segmentedScrollView.segmentBackgroundColor      = self.segmentBackgroundColor
+        segmentedScrollView.segmentShadow               = self.segmentShadow
         segmentedScrollView.segmentTitleFont            = self.segmentTitleFont
+        segmentedScrollView.segmentBounces              = self.segmentBounces
         segmentedScrollView.headerViewHeight            = self.headerViewHeight
         segmentedScrollView.headerViewOffsetHeight      = self.headerViewOffsetHeight
         segmentedScrollView.segmentViewHeight           = self.segmentViewHeight
+        segmentedScrollView.selectedSegmentTitleColor   = self.selectedSegmentTitleColor
     }
     
     /**
