@@ -22,6 +22,10 @@
 
 import UIKit
 
+public protocol SJSegmentedViewControllerDelegate{
+    func didSelectSegmentAtIndex(index:Int)
+}
+
 /**
  *  Public protocol of  SJSegmentedViewController for content changes and makes the scroll effect.
  */
@@ -39,6 +43,14 @@ import UIKit
      */
     optional func viewForSegmentControllerToObserveContentOffsetChange(controller: UIViewController,
                                                                        index: Int) -> UIView
+
+    /**
+     Method to identify the current controller and segment of contentview
+
+     - parameter controller: Current controller
+     - parameter index: index
+     */
+    optional func didMoveToPage(controller: UIViewController, index: Int)
 }
 
 /**
@@ -205,6 +217,8 @@ import UIKit
         }
     }
     
+    public var delegate:SJSegmentedViewControllerDelegate?
+    
     var segmentedScrollView = SJSegmentedScrollView(frame: CGRectZero)
     var segmentScrollViewTopConstraint: NSLayoutConstraint?
     
@@ -215,10 +229,12 @@ import UIKit
      - parameter segmentControllers:   Array of UIViewControllers for segments.
      
      */
-    convenience public init(headerViewController: UIViewController?,
+    convenience public init(headerViewControllers: [UIViewController]?,
                             segmentControllers: [UIViewController]) {
         self.init(nibName: nil, bundle: nil)
-        
+
+
+        let headerViewController = SJHeaderViewController(viewControllers: headerViewControllers!)
         self.headerViewController = headerViewController
         self.segmentControllers = segmentControllers
         
@@ -244,6 +260,9 @@ import UIKit
         self.view.backgroundColor = UIColor.whiteColor()
         self.automaticallyAdjustsScrollViewInsets = false
         loadControllers()
+
+        //TODO: fix it
+        (self.headerViewController as? SJHeaderViewController)?.bodyContentView = self.segmentedScrollView.contentView
     }
     
     /**
@@ -252,9 +271,9 @@ import UIKit
     override public func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
-        let topSpacing = getTopSpacing()
+        let topSpacing = SJUtil.getTopSpacing(self)
         segmentedScrollView.topSpacing = topSpacing
-        segmentedScrollView.bottomSpacing = getBottomSpacing()
+        segmentedScrollView.bottomSpacing = SJUtil.getBottomSpacing(self)
         segmentScrollViewTopConstraint?.constant = topSpacing
         segmentedScrollView.updateSubviewsFrame(self.view.bounds)
     }
@@ -282,10 +301,10 @@ import UIKit
      */
     func addSegmentedScrollView() {
         
-        let topSpacing = getTopSpacing()
+        let topSpacing = SJUtil.getTopSpacing(self)
         segmentedScrollView.topSpacing = topSpacing
         
-        let bottomSpacing = getBottomSpacing()
+        let bottomSpacing = SJUtil.getBottomSpacing(self)
         segmentedScrollView.bottomSpacing = bottomSpacing
         
         self.view.addSubview(segmentedScrollView)
@@ -313,6 +332,13 @@ import UIKit
         self.view.addConstraint(segmentScrollViewTopConstraint!)
         
         segmentedScrollView.setContentView()
+        
+        // selected segment at index
+        segmentedScrollView.didSelectSegmentAtIndex = { index in
+            //TODO: set pageControl current page
+//            (self.headerViewController as! SJHeaderViewController).pageControl.currentPage = index
+            self.delegate?.didSelectSegmentAtIndex(index)
+        }
     }
     
     /**
@@ -371,43 +397,4 @@ import UIKit
         addContentControllers(segmentControllers)
     }
     
-    /**
-     * Method to get topspacing of container,
-     
-     - returns: topspace in float
-     */
-    func getTopSpacing() -> CGFloat {
-        
-        
-        if let _ = self.splitViewController {
-            return 0
-        }
-        
-        var topSpacing = UIApplication.sharedApplication().statusBarFrame.size.height
-        
-        if let navigationController = self.navigationController {
-            if !navigationController.navigationBarHidden {
-                topSpacing += navigationController.navigationBar.bounds.height
-            }
-        }
-        return topSpacing
-    }
-    
-    /**
-     * Method to get bottomspacing of container
-     
-     - returns: bottomspace in float
-     */
-    func getBottomSpacing() -> CGFloat {
-        
-        var bottomSpacing: CGFloat = 0.0
-        
-        if let tabBarController = self.tabBarController {
-            if !tabBarController.tabBar.hidden {
-                bottomSpacing += tabBarController.tabBar.bounds.size.height
-            }
-        }
-        
-        return bottomSpacing
-    }
-}
+   }

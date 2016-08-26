@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="1VF-DZ-fun">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="1VF-DZ-fun">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -98,7 +98,7 @@
                                 <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rDR-b3-Bdd" id="xLM-qc-Zrl">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -151,7 +151,7 @@
         <!--Header View Controller-->
         <scene sceneID="mos-fA-Sds">
             <objects>
-                <viewController storyboardIdentifier="HeaderViewController" id="eOf-Fs-y8n" customClass="HeaderViewController" customModule="SJSegmentedScrollViewDemo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HeaderViewController1" id="eOf-Fs-y8n" customClass="HeaderViewController" customModule="SJSegmentedScrollViewDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="OEv-f0-DVS"/>
                         <viewControllerLayoutGuide type="bottom" id="gUQ-NM-V28"/>
@@ -160,7 +160,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="l8b-Uh-4gJ">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image1.JPG" translatesAutoresizingMaskIntoConstraints="NO" id="l8b-Uh-4gJ">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N6c-py-nWY">
@@ -239,7 +239,7 @@
                                         <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KEz-68-oOc" id="58R-ab-tNz">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -292,8 +292,92 @@
             </objects>
             <point key="canvasLocation" x="262" y="323"/>
         </scene>
+        <!--Header View Controller-->
+        <scene sceneID="EEK-6z-lZa">
+            <objects>
+                <viewController storyboardIdentifier="HeaderViewController2" id="76J-Tx-pc7" customClass="HeaderViewController" customModule="SJSegmentedScrollViewDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="BFr-V1-kvf"/>
+                        <viewControllerLayoutGuide type="bottom" id="Px9-aU-Egp"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ABo-1I-MAi">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="XJP-Xt-zUw">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eM5-zM-RdL">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
+                                <connections>
+                                    <action selector="headerViewAction:" destination="76J-Tx-pc7" eventType="touchUpInside" id="vB3-Vc-gfF"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="XJP-Xt-zUw" secondAttribute="trailing" id="JLN-A8-occ"/>
+                            <constraint firstItem="XJP-Xt-zUw" firstAttribute="leading" secondItem="ABo-1I-MAi" secondAttribute="leading" id="PQs-n1-IYs"/>
+                            <constraint firstItem="eM5-zM-RdL" firstAttribute="leading" secondItem="ABo-1I-MAi" secondAttribute="leading" id="QkB-tW-esL"/>
+                            <constraint firstItem="Px9-aU-Egp" firstAttribute="top" secondItem="XJP-Xt-zUw" secondAttribute="bottom" id="WML-6V-pG1"/>
+                            <constraint firstAttribute="trailing" secondItem="eM5-zM-RdL" secondAttribute="trailing" id="bfk-iS-dhm"/>
+                            <constraint firstItem="Px9-aU-Egp" firstAttribute="top" secondItem="eM5-zM-RdL" secondAttribute="bottom" id="i4R-J6-hbT"/>
+                            <constraint firstItem="eM5-zM-RdL" firstAttribute="top" secondItem="ABo-1I-MAi" secondAttribute="top" id="sfl-un-ZEz"/>
+                            <constraint firstItem="XJP-Xt-zUw" firstAttribute="top" secondItem="ABo-1I-MAi" secondAttribute="top" id="wV8-G5-Aoi"/>
+                        </constraints>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="200"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nYT-UE-4g0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="988" y="593"/>
+        </scene>
+        <!--Header View Controller-->
+        <scene sceneID="WVw-Qc-qMa">
+            <objects>
+                <viewController storyboardIdentifier="HeaderViewController3" id="yR4-GG-vqw" customClass="HeaderViewController" customModule="SJSegmentedScrollViewDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="TKC-85-coJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="qE6-Cp-lRF"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="JLj-7h-edO">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image3.JPG" translatesAutoresizingMaskIntoConstraints="NO" id="wgt-JD-ggC">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jX5-Ox-laN">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
+                                <connections>
+                                    <action selector="headerViewAction:" destination="yR4-GG-vqw" eventType="touchUpInside" id="Vat-FF-E66"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="jX5-Ox-laN" secondAttribute="trailing" id="1v3-0O-PuE"/>
+                            <constraint firstItem="jX5-Ox-laN" firstAttribute="leading" secondItem="JLj-7h-edO" secondAttribute="leading" id="Dlz-GH-bWI"/>
+                            <constraint firstItem="wgt-JD-ggC" firstAttribute="leading" secondItem="JLj-7h-edO" secondAttribute="leading" id="ENW-Td-32g"/>
+                            <constraint firstAttribute="trailing" secondItem="wgt-JD-ggC" secondAttribute="trailing" id="HJM-U5-RS1"/>
+                            <constraint firstItem="qE6-Cp-lRF" firstAttribute="top" secondItem="jX5-Ox-laN" secondAttribute="bottom" id="K6S-RC-VJb"/>
+                            <constraint firstItem="qE6-Cp-lRF" firstAttribute="top" secondItem="wgt-JD-ggC" secondAttribute="bottom" id="fR5-k9-Z72"/>
+                            <constraint firstItem="jX5-Ox-laN" firstAttribute="top" secondItem="JLj-7h-edO" secondAttribute="top" id="lLc-o4-TIz"/>
+                            <constraint firstItem="wgt-JD-ggC" firstAttribute="top" secondItem="JLj-7h-edO" secondAttribute="top" id="wHW-ea-UBL"/>
+                        </constraints>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="200"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iig-9X-GJ8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="988" y="863"/>
+        </scene>
     </scenes>
     <resources>
         <image name="image.jpg" width="600" height="400"/>
+        <image name="image1.JPG" width="1000" height="667"/>
+        <image name="image3.JPG" width="5184" height="3456"/>
     </resources>
 </document>

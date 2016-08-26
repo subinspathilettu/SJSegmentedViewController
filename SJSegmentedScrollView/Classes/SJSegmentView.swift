@@ -70,7 +70,6 @@ class SJSegmentView: UIScrollView {
     
     var font: UIFont?
     var selectedSegmentViewHeight: CGFloat?
-    
     let kSegmentViewTagOffset = 100
     var segmentViewOffsetWidth: CGFloat = 10.0
     var titles: [String]?
@@ -99,7 +98,8 @@ class SJSegmentView: UIScrollView {
         self.showsHorizontalScrollIndicator = false
         self.showsVerticalScrollIndicator = false
         self.bounces = false
-        
+
+
         NSNotificationCenter.defaultCenter().addObserver(self,
                                                          selector: #selector(SJSegmentView.didChangeSegmentIndex(_:)),
                                                          name: "DidChangeSegmentIndex",
@@ -116,7 +116,7 @@ class SJSegmentView: UIScrollView {
     
     func didChangeSegmentIndex(notification: NSNotification) {
         
-        //deselect previos buttons
+        //deselect previous buttons
         for button in segments {
             button.selected = false
         }

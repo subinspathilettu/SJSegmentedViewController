@@ -10,75 +10,80 @@ import UIKit
 import SJSegmentedScrollView
 
 class ViewController: UIViewController {
-    
+
+    var headerVC:SJHeaderViewController!
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         self.title = "Segment"
     }
-    
+
     //MARK:- Private Function
     //MARK:-
-    
+
     func getSJSegmentedViewController() -> SJSegmentedViewController? {
-        
+
         if let storyboard = self.storyboard {
-            
-            let headerViewController = storyboard
-                .instantiateViewControllerWithIdentifier("HeaderViewController")
-            
+
+            let headerViewController1 = storyboard
+                .instantiateViewControllerWithIdentifier("HeaderViewController1")
+            let headerViewController2 = storyboard
+                .instantiateViewControllerWithIdentifier("HeaderViewController2")
+            let headerViewController3 = storyboard
+                .instantiateViewControllerWithIdentifier("HeaderViewController3")
+
+
             let firstViewController = storyboard
                 .instantiateViewControllerWithIdentifier("FirstTableViewController")
             firstViewController.title = "Table View"
-            
+
             let secondViewController = storyboard
                 .instantiateViewControllerWithIdentifier("SecondViewController")
             secondViewController.title = "Custom View"
-            
+
             let thirdViewController = storyboard
                 .instantiateViewControllerWithIdentifier("ThirdViewController")
             thirdViewController.title = "View"
-            
-            let segmentedViewController = SJSegmentedViewController(headerViewController: headerViewController,
-                                                                    segmentControllers: [firstViewController,
+
+            let segmentedViewController = SJSegmentedViewController(headerViewControllers:[headerViewController1, headerViewController2, headerViewController3],segmentControllers: [firstViewController,
                                                                         secondViewController,
                                                                         thirdViewController])
-            segmentedViewController.headerViewHeight = 200.0
+            segmentedViewController.headerViewHeight = 500
             segmentedViewController.selectedSegmentViewColor = UIColor.redColor()
             segmentedViewController.segmentViewHeight = 60.0
-            segmentedViewController.segmentShadow = SJShadow.medium()
+            segmentedViewController.segmentShadow = SJShadow.dark()
             return segmentedViewController
         }
-        
+
         return nil
     }
-    
+
     //MARK:- Actions
     //MARK:-
     @IBAction func presentViewController() {
-        
+
         let viewController = getSJSegmentedViewController()
-        
+        //        viewController
         if viewController != nil {
             self.presentViewController(viewController!,
                                        animated: true,
                                        completion: nil)
         }
     }
-    
+
     @IBAction func pushViewController() {
-        
+
         let viewController = getSJSegmentedViewController()
-        
+
         if viewController != nil {
             self.navigationController?.pushViewController(viewController!,
                                                           animated: true)
         }
     }
-    
+
     @IBAction func adddChildViewController() {
-        
+
         let viewController = getSJSegmentedViewController()
-        
+
         if viewController != nil {
             addChildViewController(viewController!)
             self.view.addSubview(viewController!.view)
