@@ -37,11 +37,12 @@ class ViewController: UIViewController {
             let thirdViewController = storyboard
                 .instantiateViewControllerWithIdentifier("ThirdViewController")
             thirdViewController.title = "View"
-            
+
             let segmentedViewController = SJSegmentedViewController(headerViewController: headerViewController,
                                                                     segmentControllers: [firstViewController,
                                                                         secondViewController,
-                                                                        thirdViewController])
+                                                                        thirdViewController], delegate: self)
+
             segmentedViewController.headerViewHeight = 200.0
             segmentedViewController.selectedSegmentViewColor = UIColor.redColor()
             segmentedViewController.segmentViewHeight = 60.0
@@ -86,4 +87,10 @@ class ViewController: UIViewController {
             viewController!.didMoveToParentViewController(self)
         }
     }
+}
+extension ViewController: SJSegmentedViewControllerViewSource {
+    func didSelectSegmentAtIndex(index: Int) {
+        print("print button index \(index)")
+    }
+
 }

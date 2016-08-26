@@ -45,6 +45,7 @@ class SJSegmentedScrollView: UIScrollView {
     var contentView: SJContentView?
     var scrollContentView: UIView!
     var contentViewHeightConstraint: NSLayoutConstraint!
+    var didSelectSegmentAtIndex: DidSelectSegmentAtIndex?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -178,8 +179,9 @@ class SJSegmentedScrollView: UIScrollView {
             self.segmentView!.didSelectSegmentAtIndex = {
                 (index) in
                 self.contentView?.movePageToIndex(index, animated: true)
+                self.didSelectSegmentAtIndex!(index: index)
             }
-            
+
             self.segmentView?.setSegmentsView(frame)
             self.addSubview(self.segmentView!)
             
@@ -200,6 +202,7 @@ class SJSegmentedScrollView: UIScrollView {
             
             segmentViewHeight = 0.0
         }
+
     }
     
     func getSegmentTitlesFromControllers(controllers: [UIViewController]) -> [String] {

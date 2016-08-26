@@ -53,9 +53,6 @@ Here is how you can use SJSegmentedViewController.
 You can add any number of ViewControllers into SJSegmentedViewController. All you have to do is as follows.
 ```swift
 
-// import SJSegmentedScrollView in your viewcontroller
-import SJSegmentedScrollView
-
 if let storyboard = self.storyboard {
 
 let headerViewController = storyboard
