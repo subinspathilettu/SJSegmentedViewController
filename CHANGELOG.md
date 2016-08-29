@@ -14,3 +14,7 @@ All notable changes to this project will be documented in this file.
 #### `1.0.12`
 * Resolved SplitViewController orientation issues.
 * Renamed SJSegmentedViewController contentControllers property to segmentControllers. 
+
+#### `1.1.0`
+* Added shadow to segment view. (issue #6)
+* Added multiple header view controller support.
