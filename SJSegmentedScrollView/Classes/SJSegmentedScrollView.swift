@@ -25,17 +25,17 @@ import UIKit
 class SJSegmentedScrollView: UIScrollView {
     
     var segmentView: SJSegmentView?
-    var headerViewHeight: CGFloat?
-    var segmentViewHeight: CGFloat?
-    var headerViewOffsetHeight: CGFloat?
-    var selectedSegmentViewColor: UIColor?
-    var selectedSegmentViewHeight: CGFloat?
+    var headerViewHeight: CGFloat! = 0
+    var segmentViewHeight: CGFloat! = 0
+    var headerViewOffsetHeight: CGFloat! = 0
+    var selectedSegmentViewColor: UIColor! = UIColor.redColor()
+    var selectedSegmentViewHeight: CGFloat! = 0
     var segmentBounces = false
-    var segmentTitleColor: UIColor?
+    var segmentTitleColor: UIColor! = UIColor.redColor()
     var selectedSegmentTitleColor: UIColor?
     var segmentBackgroundColor: UIColor?
     var segmentShadow: SJShadow?
-    var segmentTitleFont: UIFont?
+    var segmentTitleFont: UIFont! = UIFont.systemFontOfSize(12)
     var topSpacing: CGFloat?
     var bottomSpacing: CGFloat?
     var observing = true
@@ -45,6 +45,7 @@ class SJSegmentedScrollView: UIScrollView {
     var contentView: SJContentView?
     var scrollContentView: UIView!
     var contentViewHeightConstraint: NSLayoutConstraint!
+    var didSelectSegmentAtIndex: DidSelectSegmentAtIndex?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -54,14 +55,22 @@ class SJSegmentedScrollView: UIScrollView {
         self.showsHorizontalScrollIndicator = true
         self.showsVerticalScrollIndicator = true
         self.bounces = false
-        
-        self.addObserver(self, forKeyPath: "contentOffset",
+
+               self.addObserver(self, forKeyPath: "contentOffset",
                          options: [NSKeyValueObservingOptions.New, NSKeyValueObservingOptions.Old],
                          context: nil)
+        
+
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    deinit {
+        self.removeObserver(self,
+                            forKeyPath: "contentOffset",
+                            context: nil)
     }
     
     func setContentView() {
@@ -102,7 +111,7 @@ class SJSegmentedScrollView: UIScrollView {
             
             self.headerView = headerView
             self.headerView?.translatesAutoresizingMaskIntoConstraints = false
-            self.headerView?.clipsToBounds = true
+           // self.headerView?.clipsToBounds = true
             scrollContentView.addSubview(self.headerView!)
             
             let horizontalConstraints = NSLayoutConstraint.constraintsWithVisualFormat("H:|-0-[headerView]-0-|",
@@ -130,13 +139,17 @@ class SJSegmentedScrollView: UIScrollView {
     }
     
     func addContentView(contentView: UIView, frame: CGRect) {
-        
+
         if self.contentView == nil {
             self.contentView = createContentView()
         }
-        
+
         self.contentViews.append(contentView)
         self.contentView?.addContentView(contentView, frame: frame)
+        self.contentView!.didSelectSegmentAtIndex = {
+            (segment,index) in
+            self.didSelectSegmentAtIndex?(segment: self.segmentView!.segments[index], index: index)
+        }
     }
     
     func updateSubviewsFrame(frame: CGRect) {
@@ -151,17 +164,15 @@ class SJSegmentedScrollView: UIScrollView {
     //MARK: Private Functions
     
     func getContentHeight() -> CGFloat {
-        
-        
         var contentHeight = (self.superview?.bounds.height)! + headerViewHeight!
         contentHeight -= (topSpacing! + bottomSpacing! + headerViewOffsetHeight!)
         return contentHeight
     }
     
     func addSegmentView(controllers: [UIViewController], frame: CGRect) {
-        
+
         if controllers.count > 1 {
-            
+
             let titles = self.getSegmentTitlesFromControllers(controllers)
             self.segmentView = SJSegmentView(frame: CGRectZero,
                                              segmentTitles: titles)
@@ -176,19 +187,21 @@ class SJSegmentedScrollView: UIScrollView {
             self.segmentView?.bounces = self.segmentBounces
             self.segmentView!.translatesAutoresizingMaskIntoConstraints = false
             self.segmentView!.didSelectSegmentAtIndex = {
-                (index) in
+                (segment,index) in
                 self.contentView?.movePageToIndex(index, animated: true)
+                self.didSelectSegmentAtIndex?(segment: segment, index: index)
             }
-            
+
             self.segmentView?.setSegmentsView(frame)
             self.addSubview(self.segmentView!)
-            
+            self.segmentView?.clipsToBounds = true
+
             let horizontalConstraints = NSLayoutConstraint.constraintsWithVisualFormat("H:|-0-[segmentView]-0-|",
                                                                                        options: [],
                                                                                        metrics: nil,
                                                                                        views: ["segmentView": self.segmentView!])
             self.addConstraints(horizontalConstraints)
-            
+
             let view = headerView == nil ? self : headerView
             let verticalConstraints = NSLayoutConstraint.constraintsWithVisualFormat("V:[headerView]-0-[segmentView(\(segmentViewHeight!))]",
                                                                                      options: [],
@@ -197,11 +210,12 @@ class SJSegmentedScrollView: UIScrollView {
                                                                                         "segmentView": self.segmentView!])
             self.addConstraints(verticalConstraints)
         } else {
-            
+
             segmentViewHeight = 0.0
         }
     }
     
+
     func getSegmentTitlesFromControllers(controllers: [UIViewController]) -> [String] {
         
         var titles = [String]()
@@ -218,12 +232,12 @@ class SJSegmentedScrollView: UIScrollView {
     }
     
     func addSegmentsForContentViews(titles: [String]) {
-        
+
         let frame = CGRect(x: 0, y: headerViewHeight!,
                            width: self.bounds.size.width, height: segmentViewHeight!)
         self.segmentView = SJSegmentView(frame: frame, segmentTitles: titles)
         self.segmentView!.didSelectSegmentAtIndex = {
-            (index) in
+            (segment,index) in
             self.contentView?.movePageToIndex(index, animated: true)
         }
         self.addSubview(self.segmentView!)
@@ -240,14 +254,26 @@ class SJSegmentedScrollView: UIScrollView {
                                                                                    metrics: nil,
                                                                                    views: ["contentView": contentView])
         scrollContentView.addConstraints(horizontalConstraints)
-        
-        let verticalConstraints = NSLayoutConstraint.constraintsWithVisualFormat("V:[headerView]-\(segmentViewHeight!)-[contentView]-0-|",
+
+        var verticalConstraints = [NSLayoutConstraint]()
+        if headerView != nil{
+            verticalConstraints = NSLayoutConstraint.constraintsWithVisualFormat("V:[headerView]-\(segmentViewHeight!)-[contentView]-0-|",
                                                                                  options: [],
                                                                                  metrics: nil,
                                                                                  views: ["headerView": self.headerView!,
                                                                                     "contentView": contentView])
+
+        }else{
+
+            verticalConstraints = NSLayoutConstraint.constraintsWithVisualFormat("V:|-\(segmentViewHeight!)-[contentView]-0-|",
+                                                                                 options: [],
+                                                                                 metrics: nil,
+                                                                                 views: [
+                                                                                    "contentView": contentView])
+        }
+
+
         scrollContentView.addConstraints(verticalConstraints)
-        
         return contentView
     }
     

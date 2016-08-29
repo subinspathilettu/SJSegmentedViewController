@@ -18,7 +18,10 @@
 		64A421701D3D4543009BFBFE /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A421651D3D4543009BFBFE /* SecondViewController.swift */; };
 		64A421711D3D4543009BFBFE /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A421661D3D4543009BFBFE /* ThirdViewController.swift */; };
 		64A421721D3D4543009BFBFE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A421671D3D4543009BFBFE /* ViewController.swift */; };
-		8330C3DD06ABB5767F1FEEB7 /* Pods_SJSegmentedScrollViewDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 220B06FF892F6EAAE77A7744 /* Pods_SJSegmentedScrollViewDemo.framework */; };
+		65ED4A0F1D6FF8B900B2EE28 /* SJSegmentedScrollView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65ED4A0E1D6FF8B900B2EE28 /* SJSegmentedScrollView.framework */; };
+		65ED4A111D70041800B2EE28 /* image1.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 65ED4A101D70041800B2EE28 /* image1.JPG */; };
+		65ED4A131D70042600B2EE28 /* image2.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 65ED4A121D70042600B2EE28 /* image2.JPG */; };
+		65ED4A151D70043600B2EE28 /* image3.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 65ED4A141D70043600B2EE28 /* image3.JPG */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,7 +41,10 @@
 		64A421661D3D4543009BFBFE /* ThirdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
 		64A421671D3D4543009BFBFE /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		65D108D5120DF23EBFD42193 /* SJSegmentedScrollView.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = SJSegmentedScrollView.podspec; path = ../SJSegmentedScrollView.podspec; sourceTree = "<group>"; };
-		7545C5136087896FA6FC8CB2 /* Pods_SJSegmentedScrollViewDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SJSegmentedScrollViewDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		65ED4A0E1D6FF8B900B2EE28 /* SJSegmentedScrollView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SJSegmentedScrollView.framework; path = "../../../../Library/Developer/Xcode/DerivedData/SJSegmentedScrollViewDemo-bcsxqnqsrcwiyabnptjxeyzbzldf/Build/Products/Debug-iphonesimulator/SJSegmentedScrollView/SJSegmentedScrollView.framework"; sourceTree = "<group>"; };
+		65ED4A101D70041800B2EE28 /* image1.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image1.JPG; sourceTree = "<group>"; };
+		65ED4A121D70042600B2EE28 /* image2.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image2.JPG; sourceTree = "<group>"; };
+		65ED4A141D70043600B2EE28 /* image3.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image3.JPG; sourceTree = "<group>"; };
 		81D33DFEACCD76037A928394 /* Pods-SJSegmentedScrollViewDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SJSegmentedScrollViewDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-SJSegmentedScrollViewDemo/Pods-SJSegmentedScrollViewDemo.release.xcconfig"; sourceTree = "<group>"; };
 		BFD50314B40DA82219AAC1C3 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		C05021CD10857241E6264427 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
@@ -49,7 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8330C3DD06ABB5767F1FEEB7 /* Pods_SJSegmentedScrollViewDemo.framework in Frameworks */,
+				65ED4A0F1D6FF8B900B2EE28 /* SJSegmentedScrollView.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,6 +65,7 @@
 		566D9E804771E7D0235444FE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				65ED4A0E1D6FF8B900B2EE28 /* SJSegmentedScrollView.framework */,
 				220B06FF892F6EAAE77A7744 /* Pods_SJSegmentedScrollViewDemo.framework */,
 			);
 			name = Frameworks;
@@ -100,6 +107,9 @@
 				64A4215A1D3D4543009BFBFE /* AppDelegate.swift */,
 				64A4215B1D3D4543009BFBFE /* LaunchScreen.xib */,
 				64A4215D1D3D4543009BFBFE /* Main.storyboard */,
+				65ED4A141D70043600B2EE28 /* image3.JPG */,
+				65ED4A121D70042600B2EE28 /* image2.JPG */,
+				65ED4A101D70041800B2EE28 /* image1.JPG */,
 				64A4215F1D3D4543009BFBFE /* image.jpg */,
 				64A421601D3D4543009BFBFE /* Images.xcassets */,
 				64A421611D3D4543009BFBFE /* Info.plist */,
@@ -191,8 +201,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65ED4A131D70042600B2EE28 /* image2.JPG in Resources */,
 				64A421691D3D4543009BFBFE /* LaunchScreen.xib in Resources */,
+				65ED4A111D70041800B2EE28 /* image1.JPG in Resources */,
 				64A4216C1D3D4543009BFBFE /* Images.xcassets in Resources */,
+				65ED4A151D70043600B2EE28 /* image3.JPG in Resources */,
 				64A4216A1D3D4543009BFBFE /* Main.storyboard in Resources */,
 				64A4216B1D3D4543009BFBFE /* image.jpg in Resources */,
 			);
