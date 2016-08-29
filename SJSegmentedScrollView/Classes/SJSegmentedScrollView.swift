@@ -252,7 +252,7 @@ class SJSegmentedScrollView: UIScrollView {
                                                                                    views: ["contentView": contentView])
         scrollContentView.addConstraints(horizontalConstraints)
         
-        var verticalConstraints = NSLayoutConstraint.constraintsWithVisualFormat("V:[headerView]-\(segmentViewHeight!)-[contentView]-0-|",
+        let verticalConstraints = NSLayoutConstraint.constraintsWithVisualFormat("V:[headerView]-\(segmentViewHeight!)-[contentView]-0-|",
                                                                                  options: [],
                                                                                  metrics: nil,
                                                                                  views: ["headerView": self.headerView!,
