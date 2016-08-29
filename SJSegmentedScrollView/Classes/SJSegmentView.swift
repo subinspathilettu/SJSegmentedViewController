@@ -22,7 +22,7 @@
 
 import UIKit
 
-typealias DidSelectSegmentAtIndex = (index: Int) -> Void
+typealias DidSelectSegmentAtIndex = (segment:UIButton?, index: Int) -> Void
 
 class SJSegmentView: UIScrollView {
     
@@ -70,7 +70,6 @@ class SJSegmentView: UIScrollView {
     
     var font: UIFont?
     var selectedSegmentViewHeight: CGFloat?
-    
     let kSegmentViewTagOffset = 100
     var segmentViewOffsetWidth: CGFloat = 10.0
     var titles: [String]?
@@ -99,7 +98,8 @@ class SJSegmentView: UIScrollView {
         self.showsHorizontalScrollIndicator = false
         self.showsVerticalScrollIndicator = false
         self.bounces = false
-        
+
+
         NSNotificationCenter.defaultCenter().addObserver(self,
                                                          selector: #selector(SJSegmentView.didChangeSegmentIndex(_:)),
                                                          name: "DidChangeSegmentIndex",
@@ -114,9 +114,19 @@ class SJSegmentView: UIScrollView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    deinit {
+        contentView!.removeObserver(self,
+                                    forKeyPath: "contentOffset",
+                                    context: nil)
+        
+        NSNotificationCenter.defaultCenter().removeObserver(self,
+                                                            name: "DidChangeSegmentIndex",
+                                                            object: nil)
+    }
+    
     func didChangeSegmentIndex(notification: NSNotification) {
         
-        //deselect previos buttons
+        //deselect previous buttons
         for button in segments {
             button.selected = false
         }
@@ -125,8 +135,10 @@ class SJSegmentView: UIScrollView {
         let index = notification.object as? Int
         let button = segments[index!]
         button.selected = true
+
     }
-    
+
+
     func setSegmentsView(frame: CGRect) {
         
         let segmentWidth = self.getSegmentWidth(self.titles!, frame: frame)
@@ -275,7 +287,7 @@ class SJSegmentView: UIScrollView {
                                                                   object: index)
         
         if self.didSelectSegmentAtIndex != nil {
-            self.didSelectSegmentAtIndex!(index: index)
+            self.didSelectSegmentAtIndex!(segment: sender as? UIButton, index: index)
         }
     }
     
