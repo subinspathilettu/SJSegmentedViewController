@@ -17,4 +17,5 @@ All notable changes to this project will be documented in this file.
 
 #### `1.1.0`
 * Added shadow to segment view. (issue #6)
-* Added multiple header view controller support.
+* Added SJSegmentedViewControllerDelegate to access current viewcontroller, segment and index.
+* Added a property to get SJSegmentedScrollView segments.  

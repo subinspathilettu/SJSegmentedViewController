@@ -40,14 +40,6 @@ class SJSegmentView: UIScrollView {
         }
     }
     
-    var selectedSegmentTitleColor: UIColor? {
-        didSet {
-            for segment in self.segments {
-                segment.setTitleColor(selectedSegmentTitleColor, forState: .Selected)
-            }
-        }
-    }
-    
     var segmentBackgroundColor: UIColor? {
         didSet {
             for segment in self.segments {
@@ -272,7 +264,6 @@ class SJSegmentView: UIScrollView {
         let button = UIButton(type: .Custom)
         button.backgroundColor = segmentBackgroundColor
         button.setTitleColor(titleColor, forState: .Normal)
-        button.setTitleColor(selectedSegmentTitleColor, forState: .Selected)
         button.setTitle(title, forState: .Normal)
         button.titleLabel?.font = font
         button.addTarget(self, action: #selector(SJSegmentView.onSegmentButtonPress(_:)),
@@ -361,7 +352,6 @@ class SJSegmentView: UIScrollView {
             xPosConstraints!.constant = (selectedSegmentView?.frame.origin.x)!
             self.layoutIfNeeded()
         }
-        
     }
 }
     

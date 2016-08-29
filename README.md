@@ -15,7 +15,8 @@ SJSegmentedScrollView is a light weight generic controller written in Swift 2.3.
 * Vertical scrolling for contents.
 * Single header view for all segments.
 * Title, segment selection color, header size, segment height etc can be customized accordingly.
-* Supports Swift and Objective-C
+* Supports Swift and Objective-C.
+* Supports multitasking.
 
 ## Installation
 
@@ -103,6 +104,28 @@ func viewForSegmentControllerToObserveContentOffsetChange(controller: UIViewCont
     return view
 }
 ```
+
+Delegate method which helps to customize segment view by accessing the current segment, index,
+etc. 
+
+Note: if there is only one content controller then the segment will be empty. 
+
+```swift
+
+segmentedViewController.delegate = self
+
+extension ViewController: SJSegmentedViewControllerDelegate {
+    
+    func didMoveToPage(controller: UIViewController, segment: UIButton?, index: Int) {
+        if segmentedViewController.segments.count > 0 {
+            
+            let button = segmentedViewController.segments[index]
+            button.setTitleColor(UIColor.yellowColor(), forState: .Selected)
+        }
+    }
+}
+```
+
 
 You can also customize your controllers by using following properties in SJSegmentedViewController.
 

@@ -30,9 +30,7 @@ class SJContentView: UIScrollView {
     var contentViewWidthConstraint: NSLayoutConstraint!
     var contentSubViewWidthConstraints = [NSLayoutConstraint]()
     let animationDuration = 0.3
-    //TODO: page selection closure
-    var didSelectSegmentAtIndex:DidSelectSegmentAtIndex?
-    var shouldObserveContentView: Bool! = true
+    var didSelectSegmentAtIndex: DidSelectSegmentAtIndex?
     
     
     override init(frame: CGRect) {
@@ -40,10 +38,7 @@ class SJContentView: UIScrollView {
         
         self.delegate = self
         self.pagingEnabled = true
-        
-        if shouldObserveContentView == true {
-        self.showsVerticalScrollIndicator = true
-        }
+        self.showsVerticalScrollIndicator = false
         
         contentView = UIView()
         contentView.translatesAutoresizingMaskIntoConstraints = false
@@ -153,9 +148,7 @@ extension SJContentView: UIScrollViewDelegate {
     func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
         self.pageIndex = Int(self.contentOffset.x / self.bounds.size.width)
         self.didSelectSegmentAtIndex?(segment:nil, index: self.pageIndex)
-        if shouldObserveContentView == true {
         NSNotificationCenter.defaultCenter().postNotificationName("DidChangeSegmentIndex",
                                                                   object: pageIndex)
-        }
     }
 }

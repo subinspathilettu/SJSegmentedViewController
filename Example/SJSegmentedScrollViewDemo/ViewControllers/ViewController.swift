@@ -10,60 +10,57 @@ import UIKit
 import SJSegmentedScrollView
 
 class ViewController: UIViewController {
-
-    var headerVC:SJHeaderViewController!
+    
+    let segmentedViewController = SJSegmentedViewController()
+    
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         self.title = "Segment"
     }
-
+    
     //MARK:- Private Function
     //MARK:-
-
+    
     func getSJSegmentedViewController() -> SJSegmentedViewController? {
-
+        
         if let storyboard = self.storyboard {
-
-            let headerViewController1 = storyboard
+            
+            let headerViewController = storyboard
                 .instantiateViewControllerWithIdentifier("HeaderViewController1")
-            let headerViewController2 = storyboard
-                .instantiateViewControllerWithIdentifier("HeaderViewController2")
-            let headerViewController3 = storyboard
-                .instantiateViewControllerWithIdentifier("HeaderViewController3")
-
 
             let firstViewController = storyboard
                 .instantiateViewControllerWithIdentifier("FirstTableViewController")
             firstViewController.title = "Table View"
-
+            
             let secondViewController = storyboard
                 .instantiateViewControllerWithIdentifier("SecondViewController")
             secondViewController.title = "Custom View"
-
+            
             let thirdViewController = storyboard
                 .instantiateViewControllerWithIdentifier("ThirdViewController")
             thirdViewController.title = "View"
-
-            let segmentedViewController = SJSegmentedViewController(headerViewControllers:[headerViewController1, headerViewController2, headerViewController3],segmentControllers: [firstViewController,
-                                                                        secondViewController,
-                                                                        thirdViewController])
+            
+            segmentedViewController.headerViewController = headerViewController
+            segmentedViewController.segmentControllers = [firstViewController,
+                                                          secondViewController,
+                                                          thirdViewController]
             segmentedViewController.headerViewHeight = 200
-
+            
             segmentedViewController.selectedSegmentViewColor = UIColor.redColor()
-            segmentedViewController.currentPageIndicatorColor = UIColor.yellowColor()
             segmentedViewController.segmentViewHeight = 60.0
-            segmentedViewController.segmentShadow = SJShadow.dark()
+            segmentedViewController.segmentShadow = SJShadow.light()
             segmentedViewController.delegate = self
+        
             return segmentedViewController
         }
-
+        
         return nil
     }
-
+    
     //MARK:- Actions
     //MARK:-
     @IBAction func presentViewController() {
-
+        
         let viewController = getSJSegmentedViewController()
         //        viewController
         if viewController != nil {
@@ -72,21 +69,21 @@ class ViewController: UIViewController {
                                        completion: nil)
         }
     }
-
+    
     @IBAction func pushViewController() {
-
+        
         let viewController = getSJSegmentedViewController()
-
+        
         if viewController != nil {
             self.navigationController?.pushViewController(viewController!,
                                                           animated: true)
         }
     }
-
+    
     @IBAction func adddChildViewController() {
-
+        
         let viewController = getSJSegmentedViewController()
-
+        
         if viewController != nil {
             addChildViewController(viewController!)
             self.view.addSubview(viewController!.view)
@@ -97,7 +94,13 @@ class ViewController: UIViewController {
 }
 
 extension ViewController: SJSegmentedViewControllerDelegate {
-    func didMoveToPage(controller: UIViewController, segment: UIButton, index: Int) {
-        print("Current selected index \(index)")
+    
+    func didMoveToPage(controller: UIViewController, segment: UIButton?, index: Int) {
+        
+        if segmentedViewController.segments.count > 0 {
+            
+            let button = segmentedViewController.segments[index]
+            button.setTitleColor(UIColor.yellowColor(), forState: .Selected)
+        }
     }
-   }
+}

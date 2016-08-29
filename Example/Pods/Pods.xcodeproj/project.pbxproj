@@ -15,8 +15,6 @@
 		58B9E343C10ADFD4D94D250D20DDDAD9 /* SJSegmentedScrollView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = CD41322645BA5E39813263B167EF800F /* SJSegmentedScrollView-dummy.m */; };
 		654A37A91D703BD300A1499D /* SJUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654A37A81D703BD300A1499D /* SJUtil.swift */; };
 		654A37AA1D703BD600A1499D /* SJUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654A37A81D703BD300A1499D /* SJUtil.swift */; };
-		65ED4A0C1D6FF69000B2EE28 /* SJHeaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65ED4A0B1D6FF69000B2EE28 /* SJHeaderViewController.swift */; };
-		65ED4A0D1D6FF7FF00B2EE28 /* SJHeaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65ED4A0B1D6FF69000B2EE28 /* SJHeaderViewController.swift */; };
 		8368272656EB0E82F79F9FF2CF9F9FC6 /* Pods-SJSegmentedScrollViewDemo-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 80D5AE1A434B8CCCF2C5DB31C8D74E37 /* Pods-SJSegmentedScrollViewDemo-dummy.m */; };
 		9C80478A052F7A455796B510F510170B /* SJContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46B928F3F1DF8CB10E5B9BF01203F26 /* SJContentView.swift */; };
 		B3682B3DF18FA16B15F2E5AF4CC85D0B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2A6FF208CEC4C2861F1E9D42D651453 /* Foundation.framework */; };
@@ -48,7 +46,6 @@
 		4A224DF432C88DA3A0068C69DEAD59AC /* SJShadow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SJShadow.swift; sourceTree = "<group>"; };
 		54FE8A96D7B23300DCB655442C934F84 /* SJSegmentedScrollView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SJSegmentedScrollView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		654A37A81D703BD300A1499D /* SJUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SJUtil.swift; sourceTree = "<group>"; };
-		65ED4A0B1D6FF69000B2EE28 /* SJHeaderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SJHeaderViewController.swift; sourceTree = "<group>"; };
 		6B9A549FE67DEA2A507E86744D0E92DB /* SJSegmentedScrollView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SJSegmentedScrollView.swift; sourceTree = "<group>"; };
 		80D5AE1A434B8CCCF2C5DB31C8D74E37 /* Pods-SJSegmentedScrollViewDemo-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SJSegmentedScrollViewDemo-dummy.m"; sourceTree = "<group>"; };
 		8707D61AA5FA1EA184B22DBA72BCA148 /* SJSegmentedScrollView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SJSegmentedScrollView-umbrella.h"; sourceTree = "<group>"; };
@@ -111,7 +108,6 @@
 				28F2257606120F961B257D7A10D5746E /* SJSegmentedViewController.swift */,
 				1EF73ADA9C264EC62E465622004A892A /* SJSegmentView.swift */,
 				4A224DF432C88DA3A0068C69DEAD59AC /* SJShadow.swift */,
-				65ED4A0B1D6FF69000B2EE28 /* SJHeaderViewController.swift */,
 				654A37A81D703BD300A1499D /* SJUtil.swift */,
 			);
 			path = Classes;
@@ -294,7 +290,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C80478A052F7A455796B510F510170B /* SJContentView.swift in Sources */,
-				65ED4A0D1D6FF7FF00B2EE28 /* SJHeaderViewController.swift in Sources */,
 				654A37AA1D703BD600A1499D /* SJUtil.swift in Sources */,
 				58B9E343C10ADFD4D94D250D20DDDAD9 /* SJSegmentedScrollView-dummy.m in Sources */,
 				B4D3A03F7EA312B4BF8AFF8AE3B85DE7 /* SJSegmentedScrollView.swift in Sources */,
@@ -308,7 +303,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				65ED4A0C1D6FF69000B2EE28 /* SJHeaderViewController.swift in Sources */,
 				8368272656EB0E82F79F9FF2CF9F9FC6 /* Pods-SJSegmentedScrollViewDemo-dummy.m in Sources */,
 				654A37A91D703BD300A1499D /* SJUtil.swift in Sources */,
 			);
