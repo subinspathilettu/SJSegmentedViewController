@@ -29,17 +29,17 @@ class SJUtil {
 
      - returns: topspace in float
      */
-    static func getTopSpacing(viewController: UIViewController) -> CGFloat {
+    static func getTopSpacing(_ viewController: UIViewController) -> CGFloat {
 
 
         if let _ = viewController.splitViewController {
             return 0
         }
 
-        var topSpacing = UIApplication.sharedApplication().statusBarFrame.size.height
+        var topSpacing = UIApplication.shared.statusBarFrame.size.height
 
         if let navigationController = viewController.navigationController {
-            if !navigationController.navigationBarHidden {
+            if !navigationController.isNavigationBarHidden {
                 topSpacing += navigationController.navigationBar.bounds.height
             }
         }
@@ -51,12 +51,12 @@ class SJUtil {
 
      - returns: bottomspace in float
      */
-    static func getBottomSpacing(viewController: UIViewController) -> CGFloat {
+    static func getBottomSpacing(_ viewController: UIViewController) -> CGFloat {
 
         var bottomSpacing: CGFloat = 0.0
 
         if let tabBarController = viewController.tabBarController {
-            if !tabBarController.tabBar.hidden {
+            if !tabBarController.tabBar.isHidden {
                 bottomSpacing += tabBarController.tabBar.bounds.size.height
             }
         }

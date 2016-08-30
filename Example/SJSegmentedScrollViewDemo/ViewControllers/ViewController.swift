@@ -13,7 +13,7 @@ class ViewController: UIViewController {
     
     let segmentedViewController = SJSegmentedViewController()
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         self.title = "Segment"
     }
@@ -26,18 +26,18 @@ class ViewController: UIViewController {
         if let storyboard = self.storyboard {
             
             let headerViewController = storyboard
-                .instantiateViewControllerWithIdentifier("HeaderViewController1")
+                .instantiateViewController(withIdentifier: "HeaderViewController1")
 
             let firstViewController = storyboard
-                .instantiateViewControllerWithIdentifier("FirstTableViewController")
+                .instantiateViewController(withIdentifier: "FirstTableViewController")
             firstViewController.title = "Table View"
             
             let secondViewController = storyboard
-                .instantiateViewControllerWithIdentifier("SecondViewController")
+                .instantiateViewController(withIdentifier: "SecondViewController")
             secondViewController.title = "Custom View"
             
             let thirdViewController = storyboard
-                .instantiateViewControllerWithIdentifier("ThirdViewController")
+                .instantiateViewController(withIdentifier: "ThirdViewController")
             thirdViewController.title = "View"
             
             segmentedViewController.headerViewController = headerViewController
@@ -46,7 +46,7 @@ class ViewController: UIViewController {
                                                           thirdViewController]
             segmentedViewController.headerViewHeight = 200
             
-            segmentedViewController.selectedSegmentViewColor = UIColor.redColor()
+            segmentedViewController.selectedSegmentViewColor = UIColor.red
             segmentedViewController.segmentViewHeight = 60.0
             segmentedViewController.segmentShadow = SJShadow.light()
             segmentedViewController.delegate = self
@@ -64,7 +64,7 @@ class ViewController: UIViewController {
         let viewController = getSJSegmentedViewController()
         //        viewController
         if viewController != nil {
-            self.presentViewController(viewController!,
+            self.present(viewController!,
                                        animated: true,
                                        completion: nil)
         }
@@ -88,19 +88,19 @@ class ViewController: UIViewController {
             addChildViewController(viewController!)
             self.view.addSubview(viewController!.view)
             viewController!.view.frame = self.view.bounds
-            viewController!.didMoveToParentViewController(self)
+            viewController!.didMove(toParentViewController: self)
         }
     }
 }
 
 extension ViewController: SJSegmentedViewControllerDelegate {
     
-    func didMoveToPage(controller: UIViewController, segment: UIButton?, index: Int) {
+    func didMoveToPage(_ controller: UIViewController, segment: UIButton?, index: Int) {
         
         if segmentedViewController.segments.count > 0 {
             
             let button = segmentedViewController.segments[index]
-            button.setTitleColor(UIColor.yellowColor(), forState: .Selected)
+            button.setTitleColor(UIColor.red, for: .selected)
         }
     }
 }
