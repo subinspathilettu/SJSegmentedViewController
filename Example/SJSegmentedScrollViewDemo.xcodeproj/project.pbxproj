@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		64A0353F1D4893620068BE28 /* CHANGELOG.md in Sources */ = {isa = PBXBuildFile; fileRef = 64A0353E1D4893620068BE28 /* CHANGELOG.md */; };
 		64A421681D3D4543009BFBFE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A4215A1D3D4543009BFBFE /* AppDelegate.swift */; };
 		64A421691D3D4543009BFBFE /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64A4215B1D3D4543009BFBFE /* LaunchScreen.xib */; };
 		64A4216A1D3D4543009BFBFE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64A4215D1D3D4543009BFBFE /* Main.storyboard */; };
@@ -259,7 +258,6 @@
 				64A4216E1D3D4543009BFBFE /* FirstTableViewController.swift in Sources */,
 				64A421711D3D4543009BFBFE /* ThirdViewController.swift in Sources */,
 				64A421681D3D4543009BFBFE /* AppDelegate.swift in Sources */,
-				64A0353F1D4893620068BE28 /* CHANGELOG.md in Sources */,
 				64A4216F1D3D4543009BFBFE /* HeaderViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
