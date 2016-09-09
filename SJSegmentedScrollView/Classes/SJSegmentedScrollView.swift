@@ -147,7 +147,7 @@ class SJSegmentedScrollView: UIScrollView {
         self.contentView?.addContentView(contentView, frame: frame)
         self.contentView!.didSelectSegmentAtIndex = {
             (segment,index) in
-            self.didSelectSegmentAtIndex?(segment: self.segmentView!.segments[index], index: index)
+            self.didSelectSegmentAtIndex?(self.segmentView!.segments[index], index)
         }
     }
     
@@ -187,7 +187,7 @@ class SJSegmentedScrollView: UIScrollView {
             self.segmentView!.didSelectSegmentAtIndex = {
                 (segment,index) in
                 self.contentView?.movePageToIndex(index, animated: true)
-                self.didSelectSegmentAtIndex?(segment: segment, index: index)
+                self.didSelectSegmentAtIndex?(segment, index)
             }
             
             self.segmentView?.setSegmentsView(frame)
@@ -257,7 +257,7 @@ class SJSegmentedScrollView: UIScrollView {
                                                                                  metrics: nil,
                                                                                  views: ["headerView": self.headerView!,
                                                                                     "contentView": contentView])
-        
+
         
         scrollContentView.addConstraints(verticalConstraints)
         return contentView
@@ -297,35 +297,38 @@ class SJSegmentedScrollView: UIScrollView {
             }
         }
     }
-    
-    override func observeValue(forKeyPath keyPath: String?,
-                                         of object: AnyObject?,
-                                                  change: [NSKeyValueChangeKey : AnyObject]?,
-                                                  context: UnsafeMutablePointer<Void>?) {
-        
-        if !observing { return }
-        
-        let scrollView = object as? UIScrollView
-        if scrollView == nil { return }
-        if scrollView == self { return }
-        
-        let new = change![NSKeyValueChangeKey.newKey]?.cgPointValue
-        let old = change![NSKeyValueChangeKey.oldKey]?.cgPointValue
-        let diff = (old?.y)! - (new?.y)!
-        
-        if diff > 0.0 {
-            
-            self.handleScrollUp(scrollView!,
-                                change: diff,
-                                oldPosition: old!)
-        } else {
-            
-            self.handleScrollDown(scrollView!,
-                                  change: diff,
-                                  oldPosition: old!)
-        }
-    }
-    
+
+	override func observeValue(forKeyPath keyPath: String?,
+	                           of object: Any?,
+	                           change: [NSKeyValueChangeKey : Any]?,
+	                           context: UnsafeMutableRawPointer?) {
+		if !observing { return }
+
+		let scrollView = object as? UIScrollView
+		if scrollView == nil { return }
+		if scrollView == self { return }
+
+		let changeValues = change as! [NSKeyValueChangeKey: AnyObject]
+
+		if let new = changeValues[NSKeyValueChangeKey.newKey]?.cgPointValue,
+			let old = changeValues[NSKeyValueChangeKey.oldKey]?.cgPointValue {
+
+			let diff = old.y - new.y
+
+			if diff > 0.0 {
+
+				self.handleScrollUp(scrollView!,
+				                    change: diff,
+				                    oldPosition: old)
+			} else {
+
+				self.handleScrollDown(scrollView!,
+				                      change: diff,
+				                      oldPosition: old)
+			}
+		}
+	}
+
     func setContentOffset(_ scrollView: UIScrollView, point: CGPoint) {
         observing = false
         scrollView.contentOffset = point

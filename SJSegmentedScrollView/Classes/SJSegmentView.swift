@@ -22,7 +22,7 @@
 
 import UIKit
 
-typealias DidSelectSegmentAtIndex = (segment:UIButton?, index: Int) -> Void
+typealias DidSelectSegmentAtIndex = (_ segment:UIButton?, _ index: Int) -> Void
 
 class SJSegmentView: UIScrollView {
     
@@ -94,7 +94,7 @@ class SJSegmentView: UIScrollView {
 
         NotificationCenter.default.addObserver(self,
                                                          selector: #selector(SJSegmentView.didChangeSegmentIndex(_:)),
-                                                         name: "DidChangeSegmentIndex" as NSNotification.Name,
+                                                         name: NSNotification.Name("DidChangeSegmentIndex"),
                                                          object: nil)
     }
     
@@ -112,7 +112,7 @@ class SJSegmentView: UIScrollView {
                                     context: nil)
         
         NotificationCenter.default.removeObserver(self,
-                                                            name: "DidChangeSegmentIndex" as NSNotification.Name,
+                                                            name:NSNotification.Name("DidChangeSegmentIndex"),
                                                             object: nil)
     }
     
@@ -278,7 +278,7 @@ class SJSegmentView: UIScrollView {
                                                                   object: index)
         
         if self.didSelectSegmentAtIndex != nil {
-            self.didSelectSegmentAtIndex!(segment: sender as? UIButton, index: index)
+            self.didSelectSegmentAtIndex!(sender as? UIButton, index)
         }
     }
     
@@ -289,7 +289,7 @@ class SJSegmentView: UIScrollView {
         // find max width of segement
         for title in titles {
             
-            let string: NSString = title
+            let string: NSString = title as NSString
             let width = string.size(attributes: [NSFontAttributeName: self.font!]).width
             
             if width > maxWidth {
@@ -308,13 +308,13 @@ class SJSegmentView: UIScrollView {
         return maxWidth
     }
     
-    override func observeValue(forKeyPath keyPath: String?,
-                                         of object: AnyObject?,
-                                                  change: [NSKeyValueChangeKey : AnyObject]?,
-                                                  context: UnsafeMutablePointer<Void>?) {
+	override func observeValue(forKeyPath keyPath: String?,
+	                           of object: Any?,
+	                           change: [NSKeyValueChangeKey : Any]?,
+	                           context: UnsafeMutableRawPointer?) {
         
         if let change = change as [NSKeyValueChangeKey : AnyObject]? {
-            if let old = change[NSKeyValueChangeKey.oldKey], new = change[NSKeyValueChangeKey.newKey] {
+            if let old = change[NSKeyValueChangeKey.oldKey], let new = change[NSKeyValueChangeKey.newKey] {
                 if !(old.isEqual(new)) {
                     //update selected segment view x position
                     let scrollView = object as? UIScrollView
