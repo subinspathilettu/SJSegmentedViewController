@@ -12,6 +12,12 @@ import SJSegmentedScrollView
 class SecondViewController: UIViewController {
     
     @IBOutlet weak var customTableView: UITableView!
+
+	override func viewDidLoad() {
+		super.viewDidLoad()
+
+		customTableView.bounces = false
+	}
 }
 
 extension SecondViewController: UITableViewDataSource {
