@@ -21,11 +21,11 @@ class HeaderViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func headerViewAction(sender: AnyObject) {
+    @IBAction func headerViewAction(_ sender: AnyObject) {
         
         let viewController = self.storyboard?
-            .instantiateViewControllerWithIdentifier("HeaderDetailViewController")
-        self.parentViewController?.navigationController?.pushViewController(viewController!,
+            .instantiateViewController(withIdentifier: "HeaderDetailViewController")
+        self.parent?.navigationController?.pushViewController(viewController!,
                                                                             animated: true)
     }
 }

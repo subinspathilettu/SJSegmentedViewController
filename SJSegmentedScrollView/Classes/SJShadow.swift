@@ -26,7 +26,7 @@ import UIKit
 
 @objc public class SJShadow: NSObject {
     var offset = CGSize(width: 0, height: 1)
-    var color = UIColor.lightGrayColor()
+    var color = UIColor.lightGray
     var radius: CGFloat = 3.0
     var opacity: Float = 0.4
     
@@ -55,7 +55,7 @@ import UIKit
      */
     public class func light() -> SJShadow {
         return SJShadow(offset: CGSize(width: 0, height: 1),
-                        color: UIColor.lightGrayColor(),
+                        color: UIColor.lightGray,
                         radius: 3.0,
                         opacity: 0.4)
     }
@@ -67,7 +67,7 @@ import UIKit
      */
     public class func medium() -> SJShadow {
         return SJShadow(offset: CGSize(width: 0, height: 1),
-                        color: UIColor.grayColor(),
+                        color: UIColor.gray,
                         radius: 3.0,
                         opacity: 0.4)
     }
@@ -79,7 +79,7 @@ import UIKit
      */
     public class func dark() -> SJShadow {
         return SJShadow(offset: CGSize(width: 0, height: 1),
-                        color: UIColor.blackColor(),
+                        color: UIColor.black,
                         radius: 3.0,
                         opacity: 0.4)
     }
