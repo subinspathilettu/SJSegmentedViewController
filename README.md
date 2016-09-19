@@ -26,13 +26,19 @@ To integrate SJSegmentedViewController into your Xcode project using CocoaPods, 
 ```swift
 
 source 'https://github.com/CocoaPods/Specs.git'
-platform :ios, '9.0'
+platform :ios, '10.0'
 use_frameworks!
 
 target '<Your Target Name>' do
-pod ’SJSegmentedScrollView’, ‘1.1.0'
+pod ’SJSegmentedScrollView’, ‘1.2.0'
 end
 ```
+
+For older versions use 
+```swift
+pod ’SJSegmentedScrollView’, ‘1.1.0'
+```
+
 Then, run the following command:
 ```swift
 $ pod install
@@ -45,7 +51,7 @@ $ pod install
 
 ## Requirements
 
-iOS 8.0+, Swift 2.3
+iOS 10.0+, Swift 3
 
 ## Usage
 

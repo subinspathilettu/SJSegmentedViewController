@@ -28,13 +28,13 @@ class SJSegmentView: UIScrollView {
     
     var selectedSegmentViewColor: UIColor? {
         didSet {
-            self.selectedSegmentView?.backgroundColor = selectedSegmentViewColor
+            selectedSegmentView?.backgroundColor = selectedSegmentViewColor
         }
     }
     
     var titleColor: UIColor? {
         didSet {
-            for segment in self.segments {
+            for segment in segments {
                 segment.setTitleColor(titleColor, for: UIControlState())
             }
         }
@@ -42,7 +42,7 @@ class SJSegmentView: UIScrollView {
     
     var segmentBackgroundColor: UIColor? {
         didSet {
-            for segment in self.segments {
+            for segment in segments {
                 segment.backgroundColor = segmentBackgroundColor
             }
         }
@@ -51,11 +51,11 @@ class SJSegmentView: UIScrollView {
     var shadow: SJShadow? {
         didSet {
             if let shadow = shadow {
-                self.layer.shadowOffset = shadow.offset
-                self.layer.shadowColor = shadow.color.cgColor
-                self.layer.shadowRadius = shadow.radius
-                self.layer.shadowOpacity = shadow.opacity
-                self.layer.masksToBounds = false;
+                layer.shadowOffset = shadow.offset
+                layer.shadowColor = shadow.color.cgColor
+                layer.shadowRadius = shadow.radius
+                layer.shadowOpacity = shadow.opacity
+                layer.masksToBounds = false;
             }
         }
     }
@@ -86,10 +86,10 @@ class SJSegmentView: UIScrollView {
     convenience init(frame: CGRect, segmentTitles: [String]) {
         self.init(frame: frame)
         
-        self.titles = segmentTitles
-        self.showsHorizontalScrollIndicator = false
-        self.showsVerticalScrollIndicator = false
-        self.bounces = false
+        titles = segmentTitles
+        showsHorizontalScrollIndicator = false
+        showsVerticalScrollIndicator = false
+        bounces = false
 
 
         NotificationCenter.default.addObserver(self,
@@ -133,17 +133,17 @@ class SJSegmentView: UIScrollView {
 
     func setSegmentsView(_ frame: CGRect) {
         
-        let segmentWidth = self.getSegmentWidth(self.titles!, frame: frame)
-        self.createSegmentContentView(self.titles!, titleWidth: segmentWidth)
+        let segmentWidth = getSegmentWidth(titles!, frame: frame)
+        createSegmentContentView(titles!, titleWidth: segmentWidth)
         
         var index = 0
-        for title in self.titles! {
+        for title in titles! {
             
-            self.createSegmentFor(title, width: segmentWidth, index: index)
+            createSegmentFor(title, width: segmentWidth, index: index)
             index += 1
         }
         
-        self.createSelectedSegmentView(segmentWidth)
+        createSelectedSegmentView(segmentWidth)
         
         //Set first button as selected
         let button = segments.first! as UIButton
@@ -152,42 +152,42 @@ class SJSegmentView: UIScrollView {
     
     func createSegmentContentView(_ titles: [String], titleWidth: CGFloat) {
         
-        self.segmentContentView = UIView(frame: CGRect.zero)
-        self.segmentContentView!.translatesAutoresizingMaskIntoConstraints = false
-        self.addSubview(self.segmentContentView!)
+        segmentContentView = UIView(frame: CGRect.zero)
+        segmentContentView!.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(segmentContentView!)
         
         let contentViewWidth = titleWidth * CGFloat(titles.count)
         let horizontalConstraints = NSLayoutConstraint.constraints(withVisualFormat: "H:|[contentView]|",
                                                                                    options: [],
                                                                                    metrics: nil,
-                                                                                   views: ["contentView": self.segmentContentView!,
+                                                                                   views: ["contentView": segmentContentView!,
                                                                                     "mainView": self])
-        self.addConstraints(horizontalConstraints)
+        addConstraints(horizontalConstraints)
         
-        contentViewWidthConstraint = NSLayoutConstraint(item: self.segmentContentView!,
+        contentViewWidthConstraint = NSLayoutConstraint(item: segmentContentView!,
                                                         attribute: .width,
                                                         relatedBy: .equal,
                                                         toItem: nil,
                                                         attribute: .notAnAttribute,
                                                         multiplier: 1.0,
                                                         constant: contentViewWidth)
-        self.addConstraint(contentViewWidthConstraint!)
+        addConstraint(contentViewWidthConstraint!)
         
         
         let verticalConstraints = NSLayoutConstraint.constraints(withVisualFormat: "V:|[contentView(==mainView)]|",
                                                                                  options: [],
                                                                                  metrics: nil,
-                                                                                 views: ["contentView": self.segmentContentView!,
+                                                                                 views: ["contentView": segmentContentView!,
                                                                                     "mainView": self])
-        self.addConstraints(verticalConstraints)
+        addConstraints(verticalConstraints)
     }
     
     func createSegmentFor(_ title: String, width: CGFloat, index: Int) {
         
-        let segmentView = self.getSegmentViewForController(title)
+        let segmentView = getSegmentViewForController(title)
         segmentView.tag = (index + kSegmentViewTagOffset)
         segmentView.translatesAutoresizingMaskIntoConstraints = false
-        self.segmentContentView!.addSubview(segmentView)
+        segmentContentView!.addSubview(segmentView)
         
         if segments.count == 0 {
             
@@ -195,7 +195,7 @@ class SJSegmentView: UIScrollView {
                                                                                        options: [],
                                                                                        metrics: nil,
                                                                                        views: ["view": segmentView])
-            self.segmentContentView!.addConstraints(horizontalConstraints)
+            segmentContentView!.addConstraints(horizontalConstraints)
             
         } else {
             
@@ -205,7 +205,7 @@ class SJSegmentView: UIScrollView {
                                                                                        metrics: nil,
                                                                                        views: ["view": segmentView,
                                                                                         "previousView": previousView!])
-            self.segmentContentView!.addConstraints(horizontalConstraints)
+            segmentContentView!.addConstraints(horizontalConstraints)
         }
         
         let widthConstraint = NSLayoutConstraint(item: segmentView,
@@ -215,14 +215,14 @@ class SJSegmentView: UIScrollView {
                                                  attribute: .notAnAttribute,
                                                  multiplier: 1.0,
                                                  constant: width)
-        self.segmentContentView!.addConstraint(widthConstraint)
-        self.contentSubViewWidthConstraints.append(widthConstraint)
+        segmentContentView!.addConstraint(widthConstraint)
+        contentSubViewWidthConstraints.append(widthConstraint)
         
         let verticalConstraints = NSLayoutConstraint.constraints(withVisualFormat: "V:|[view]|",
                                                                                  options: [],
                                                                                  metrics: nil,
                                                                                  views: ["view": segmentView])
-        self.segmentContentView!.addConstraints(verticalConstraints)
+        segmentContentView!.addConstraints(verticalConstraints)
         
         segments.append(segmentView)
     }
@@ -232,31 +232,31 @@ class SJSegmentView: UIScrollView {
         let segmentView = UIView()
         segmentView.backgroundColor = selectedSegmentViewColor
         segmentView.translatesAutoresizingMaskIntoConstraints = false
-        self.segmentContentView!.addSubview(segmentView)
-        self.selectedSegmentView = segmentView
+        segmentContentView!.addSubview(segmentView)
+        selectedSegmentView = segmentView
         
         xPosConstraints = NSLayoutConstraint(item: segmentView,
                                              attribute: .leading,
                                              relatedBy: .equal,
-                                             toItem: self.segmentContentView!,
+                                             toItem: segmentContentView!,
                                              attribute: .leading,
                                              multiplier: 1.0,
                                              constant: 0.0)
-        self.segmentContentView!.addConstraint(xPosConstraints!)
+        segmentContentView!.addConstraint(xPosConstraints!)
         
-        let segment = self.segments.first
+        let segment = segments.first
         let horizontalConstraints = NSLayoutConstraint.constraints(withVisualFormat: "H:[view(==segment)]",
                                                                                    options: [],
                                                                                    metrics: nil,
                                                                                    views: ["view": segmentView,
                                                                                     "segment": segment!])
-        self.segmentContentView!.addConstraints(horizontalConstraints)
+        segmentContentView!.addConstraints(horizontalConstraints)
         
         let verticalConstraints = NSLayoutConstraint.constraints(withVisualFormat: "V:[view(height)]|",
                                                                                  options: [],
                                                                                  metrics: ["height": selectedSegmentViewHeight!],
                                                                                  views: ["view": segmentView])
-        self.segmentContentView!.addConstraints(verticalConstraints)
+        segmentContentView!.addConstraints(verticalConstraints)
     }
     
     func getSegmentViewForController(_ title: String) -> UIButton {
@@ -277,8 +277,8 @@ class SJSegmentView: UIScrollView {
         NotificationCenter.default.post(name: Notification.Name(rawValue: "DidChangeSegmentIndex"),
                                                                   object: index)
         
-        if self.didSelectSegmentAtIndex != nil {
-            self.didSelectSegmentAtIndex!(sender as? UIButton, index)
+        if didSelectSegmentAtIndex != nil {
+            didSelectSegmentAtIndex!(sender as? UIButton, index)
         }
     }
     
@@ -290,7 +290,7 @@ class SJSegmentView: UIScrollView {
         for title in titles {
             
             let string: NSString = title as NSString
-            let width = string.size(attributes: [NSFontAttributeName: self.font!]).width
+            let width = string.size(attributes: [NSFontAttributeName: font!]).width
             
             if width > maxWidth {
                 maxWidth = width
@@ -318,7 +318,7 @@ class SJSegmentView: UIScrollView {
                 if !(old.isEqual(new)) {
                     //update selected segment view x position
                     let scrollView = object as? UIScrollView
-                    var changeOffset = (scrollView?.contentSize.width)! / self.contentSize.width
+                    var changeOffset = (scrollView?.contentSize.width)! / contentSize.width
                     let value = (scrollView?.contentOffset.x)! / changeOffset
                     
                     if !value.isNaN {
@@ -326,10 +326,10 @@ class SJSegmentView: UIScrollView {
                     }
                     
                     //update segment offset x position
-                    let segmentScrollWidth = self.contentSize.width - self.bounds.width
+                    let segmentScrollWidth = contentSize.width - bounds.width
                     let contentScrollWidth = scrollView!.contentSize.width - scrollView!.bounds.width
                     changeOffset = segmentScrollWidth / contentScrollWidth
-                    self.contentOffset.x = (scrollView?.contentOffset.x)! * changeOffset
+                    contentOffset.x = (scrollView?.contentOffset.x)! * changeOffset
                 }
             }
         }
@@ -337,20 +337,20 @@ class SJSegmentView: UIScrollView {
     
     func didChangeParentViewFrame(_ frame: CGRect) {
         
-        let segmentWidth = self.getSegmentWidth(self.titles!, frame: frame)
-        let contentViewWidth = segmentWidth * CGFloat(self.titles!.count)
+        let segmentWidth = getSegmentWidth(titles!, frame: frame)
+        let contentViewWidth = segmentWidth * CGFloat(titles!.count)
         contentViewWidthConstraint?.constant = contentViewWidth
         
-        for constraint in self.contentSubViewWidthConstraints {
+        for constraint in contentSubViewWidthConstraints {
             constraint.constant = segmentWidth
         }
         
-        let changeOffset = (contentView?.contentSize.width)! / self.contentSize.width
+        let changeOffset = (contentView?.contentSize.width)! / contentSize.width
         let value = (contentView?.contentOffset.x)! / changeOffset
         
         if !value.isNaN {
             xPosConstraints!.constant = (selectedSegmentView?.frame.origin.x)!
-            self.layoutIfNeeded()
+            layoutIfNeeded()
         }
     }
 }

@@ -18,4 +18,7 @@ All notable changes to this project will be documented in this file.
 #### `1.1.0`
 * Added shadow to segment view. (issue #6)
 * Added SJSegmentedViewControllerDelegate to access current viewcontroller, segment and index.
-* Added a property to get SJSegmentedScrollView segments.  
+* Added a property to get SJSegmentedScrollView segments.
+
+#### `1.2.0`
+* Upgraded to Swift 3.0
