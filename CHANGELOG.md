@@ -22,3 +22,6 @@ All notable changes to this project will be documented in this file.
 
 #### `1.2.0`
 * Upgraded to Swift 3.0
+
+#### `1.2.1`
+* Updated documentations.
