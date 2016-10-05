@@ -414,5 +414,13 @@ import UIKit
                                  segment: segment,
                                  index: 0)
     }
+
+    /**
+    * Method for atuomaticly scroll the segmet controller on top when button is taped
+    **/
+
+    open func animateToTop() {
+        segmentedScrollView.scrollToTop(height: headerViewHeight)
+    }
     
 }

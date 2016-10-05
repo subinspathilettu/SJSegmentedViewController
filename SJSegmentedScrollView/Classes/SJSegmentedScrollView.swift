@@ -22,6 +22,13 @@
 
 import UIKit
 
+extension UIScrollView {
+    func scrollToTop(height: CGFloat) {
+        let desiredOffset = CGPoint(x: 0, y: contentInset.top + height)
+        setContentOffset(desiredOffset, animated: true)
+    }
+}
+
 class SJSegmentedScrollView: UIScrollView {
     
     var segmentView: SJSegmentView?
