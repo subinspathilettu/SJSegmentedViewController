@@ -5,7 +5,7 @@
 [![License](https://img.shields.io/cocoapods/l/SJSegmentedScrollView.svg?style=flat)](http://cocoapods.org/pods/SJSegmentedScrollView)
 [![Platform](https://img.shields.io/cocoapods/p/SJSegmentedScrollView.svg?style=flat)](http://cocoapods.org/pods/SJSegmentedScrollView)
 
-SJSegmentedScrollView is a light weight generic controller written in Swift. Its a simple customizable controller were you can integrate any number of ViewControllers into a segmented controller with a header view controller. We have upgraded to Swift 3, version 1.2.1. For older versions use 
+SJSegmentedScrollView is a light weight generic controller written in Swift. Its a simple customizable controller were you can integrate any number of ViewControllers into a segmented controller with a header view controller. We have upgraded to Swift 3, version 1.2.2. For older versions use 
 ```swift
 pod ’SJSegmentedScrollView’, ‘1.1.0'
 ```
@@ -29,11 +29,11 @@ To integrate SJSegmentedViewController into your Xcode project using CocoaPods, 
 ```swift
 
 source 'https://github.com/CocoaPods/Specs.git'
-platform :ios, '10.0'
+platform :ios, '9.0'
 use_frameworks!
 
 target '<Your Target Name>' do
-pod ’SJSegmentedScrollView’, ‘1.2.1'
+pod ’SJSegmentedScrollView’, ‘1.2.2'
 end
 ```
 
