@@ -1,14 +1,14 @@
 Pod::Spec.new do |spec|
 spec.platform               = :ios
-spec.ios.deployment_target  = '10.0'
+spec.ios.deployment_target  = '9.0'
 spec.name                   = 'SJSegmentedScrollView'
 spec.summary                = 'Custom segmented header scrollview controller.'
 spec.requires_arc           = true
-spec.version                = '1.2.1'
+spec.version                = '1.2.2'
 spec.license                = { :type => 'MIT', :file => 'LICENSE' }
 spec.homepage               = 'https://github.com/subinspathilettu/SJSegmentedViewController'
 spec.author                 = { 'Subins Jose' => 'subinsjose@gmail.com' }
-spec.source                 = { :git => 'https://github.com/subinspathilettu/SJSegmentedViewController.git', :tag => 'v1.2.1' }
+spec.source                 = { :git => 'https://github.com/subinspathilettu/SJSegmentedViewController.git', :tag => 'v1.2.2' }
 spec.source_files           = 'SJSegmentedScrollView/Classes/*.{swift}'
 spec.framework              = "UIKit"
 end
