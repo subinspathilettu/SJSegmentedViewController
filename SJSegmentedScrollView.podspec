@@ -10,5 +10,6 @@ spec.homepage               = 'https://github.com/subinspathilettu/SJSegmentedVi
 spec.author                 = { 'Subins Jose' => 'subinsjose@gmail.com' }
 spec.source                 = { :git => 'https://github.com/subinspathilettu/SJSegmentedViewController.git', :tag => 'v1.2.2' }
 spec.source_files           = 'SJSegmentedScrollView/Classes/*.{swift}'
+spec.social_media_url       = 'https://twitter.com/subinsjose'
 spec.framework              = "UIKit"
 end
