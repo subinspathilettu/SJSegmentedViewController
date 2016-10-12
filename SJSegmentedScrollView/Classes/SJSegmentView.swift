@@ -123,12 +123,14 @@ class SJSegmentView: UIScrollView {
         //deselect previous buttons
         for button in segments {
             button.isSelected = false
+            button.tintColor = self.tintColor
         }
         
         // select current button
         let index = notification.object as? Int
         let button = segments[index!]
         button.isSelected = true
+        button.tintColor = UIColor.red
 
     }
 
