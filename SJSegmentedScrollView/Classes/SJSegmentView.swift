@@ -187,7 +187,7 @@ class SJSegmentView: UIScrollView {
     func createSegmentFor(_ title: String, width: CGFloat, index: Int, image: UIImage?) {
         
         let segmentView = getSegmentViewForController(title)
-        segmentView.imageView?.image = image
+        segmentView.setImage(image, for: .normal)
         segmentView.tag = (index + kSegmentViewTagOffset)
         segmentView.translatesAutoresizingMaskIntoConstraints = false
         segmentContentView!.addSubview(segmentView)
