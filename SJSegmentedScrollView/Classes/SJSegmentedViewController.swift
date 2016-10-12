@@ -55,8 +55,21 @@ import UIKit
                                                                        index: Int) -> UIView
 }
 
+/**
+ *  Public protocol of  SJSegmentedViewController for button image in normal or selected state.
+ */
 @objc public protocol SJSegmentedViewControllerViewDataSource: class {
-    @objc optional var imageForViewController: UIImage? { get set }
+    
+    /**
+     By default, SJSegmentedScrollView Have text to display, this will add image to the buttons
+     instead of or + the text, IF you want to add it, implement the delegate and pass your image
+     for both states.
+     
+     - parameter state: UIControlState for Button
+     
+     - returns: Image for UIButton
+     */
+    @objc optional func imageForViewController(state: UIControlState) -> UIImage?
 }
 
 /**

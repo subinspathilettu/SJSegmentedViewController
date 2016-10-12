@@ -174,8 +174,9 @@ class SJSegmentedScrollView: UIScrollView {
             
             let titles = getSegmentTitlesFromControllers(controllers)
             let images = getSegmentImagesFromControllers(controllers)
+            let selectedImages = getSegmentImagesFromControllers(controllers)
             segmentView = SJSegmentView(frame: CGRect.zero,
-                                        segmentTitles: titles, segmentImages: images)
+                                        segmentTitles: titles, segmentImages: images, selectedSegmentImages: selectedImages)
             segmentView?.selectedSegmentViewColor      = selectedSegmentViewColor
             segmentView?.selectedSegmentViewHeight     = selectedSegmentViewHeight!
             segmentView?.titleColor                    = segmentTitleColor
@@ -235,7 +236,21 @@ class SJSegmentedScrollView: UIScrollView {
         
         for controller in controllers {
             if let controller = controller as? SJSegmentedViewControllerViewDataSource {
-                if let icon = controller.imageForViewController!  {
+                if let icon = controller.imageForViewController!(state: .normal)  {
+                    images.append(icon)
+                }
+            }
+        }
+        return images
+    }
+    
+    func getSelectedSegmentImagesFromControllers(_ controllers: [UIViewController]) -> [UIImage] {
+        
+        var images = [UIImage]()
+        
+        for controller in controllers {
+            if let controller = controller as? SJSegmentedViewControllerViewDataSource {
+                if let icon = controller.imageForViewController!(state: .selected)  {
                     images.append(icon)
                 }
             }
@@ -245,11 +260,12 @@ class SJSegmentedScrollView: UIScrollView {
     
     
     
-    func addSegmentsForContentViews(_ titles: [String], images: [UIImage]?) {
+    
+    func addSegmentsForContentViews(_ titles: [String], images: [UIImage]?, selectedImages: [UIImage]?) {
         
         let frame = CGRect(x: 0, y: headerViewHeight!,
                            width: bounds.size.width, height: segmentViewHeight!)
-        segmentView = SJSegmentView(frame: frame, segmentTitles: titles, segmentImages: images)
+        segmentView = SJSegmentView(frame: frame, segmentTitles: titles, segmentImages: images, selectedSegmentImages: selectedImages)
         segmentView!.didSelectSegmentAtIndex = {
             (segment,index) in
             self.contentView?.movePageToIndex(index, animated: true)
