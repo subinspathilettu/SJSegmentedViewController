@@ -123,7 +123,7 @@ class SJSegmentView: UIScrollView {
         //deselect previous buttons
         for button in segments {
             button.isSelected = false
-            button.tintColor = self.tintColor
+            button.tintColor = UIColor.white
         }
         
         // select current button
@@ -189,7 +189,7 @@ class SJSegmentView: UIScrollView {
     func createSegmentFor(_ title: String, width: CGFloat, index: Int, image: UIImage?) {
         
         let segmentView = getSegmentViewForController(title)
-        segmentView.setImage(image, for: .normal)
+        segmentView.setImage(image?.withRenderingMode(.alwaysOriginal), for: .normal)
         segmentView.tag = (index + kSegmentViewTagOffset)
         segmentView.translatesAutoresizingMaskIntoConstraints = false
         segmentContentView!.addSubview(segmentView)
