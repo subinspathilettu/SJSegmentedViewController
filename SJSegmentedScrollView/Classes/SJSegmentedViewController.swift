@@ -55,6 +55,10 @@ import UIKit
                                                                        index: Int) -> UIView
 }
 
+@objc public protocol SJSegmentedViewControllerViewDataSource: class {
+    @objc optional var imageForViewController: UIImage? { get set }
+}
+
 /**
  *  Public class for customizing and setting our segmented scroll view
  */

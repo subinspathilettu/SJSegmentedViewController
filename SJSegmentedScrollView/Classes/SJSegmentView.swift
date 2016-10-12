@@ -65,6 +65,7 @@ class SJSegmentView: UIScrollView {
     let kSegmentViewTagOffset = 100
     var segmentViewOffsetWidth: CGFloat = 10.0
     var titles: [String]?
+    var images: [UIImage]?
     var segments = [UIButton]()
     var segmentContentView: UIView?
     var didSelectSegmentAtIndex: DidSelectSegmentAtIndex?
@@ -83,10 +84,11 @@ class SJSegmentView: UIScrollView {
         }
     }
     
-    convenience init(frame: CGRect, segmentTitles: [String]) {
+    convenience init(frame: CGRect, segmentTitles: [String], segmentImages: [UIImage]?) {
         self.init(frame: frame)
         
         titles = segmentTitles
+        images = segmentImages
         showsHorizontalScrollIndicator = false
         showsVerticalScrollIndicator = false
         bounces = false
@@ -139,7 +141,7 @@ class SJSegmentView: UIScrollView {
         var index = 0
         for title in titles! {
             
-            createSegmentFor(title, width: segmentWidth, index: index)
+            createSegmentFor(title, width: segmentWidth, index: index, image: images?[index])
             index += 1
         }
         
@@ -182,9 +184,10 @@ class SJSegmentView: UIScrollView {
         addConstraints(verticalConstraints)
     }
     
-    func createSegmentFor(_ title: String, width: CGFloat, index: Int) {
+    func createSegmentFor(_ title: String, width: CGFloat, index: Int, image: UIImage?) {
         
         let segmentView = getSegmentViewForController(title)
+        segmentView.imageView?.image = image
         segmentView.tag = (index + kSegmentViewTagOffset)
         segmentView.translatesAutoresizingMaskIntoConstraints = false
         segmentContentView!.addSubview(segmentView)
