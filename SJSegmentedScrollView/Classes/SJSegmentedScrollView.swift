@@ -174,7 +174,7 @@ class SJSegmentedScrollView: UIScrollView {
             
             let titles = getSegmentTitlesFromControllers(controllers)
             let images = getSegmentImagesFromControllers(controllers)
-            let selectedImages = getSegmentImagesFromControllers(controllers)
+            let selectedImages = getSelectedSegmentImagesFromControllers(controllers)
             segmentView = SJSegmentView(frame: CGRect.zero,
                                         segmentTitles: titles, segmentImages: images, selectedSegmentImages: selectedImages)
             segmentView?.selectedSegmentViewColor      = selectedSegmentViewColor
