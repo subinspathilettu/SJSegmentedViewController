@@ -39,11 +39,18 @@ class ViewController: UIViewController {
             let thirdViewController = storyboard
                 .instantiateViewController(withIdentifier: "ThirdViewController")
             thirdViewController.title = "View"
+
+			let fourthViewController = storyboard
+				.instantiateViewController(withIdentifier: "CollectionViewIdentifier")
+			fourthViewController.title = "Collection View"
+
+
             
             segmentedViewController.headerViewController = headerViewController
             segmentedViewController.segmentControllers = [firstViewController,
                                                           secondViewController,
-                                                          thirdViewController]
+                                                          thirdViewController,
+                                                          fourthViewController]
             segmentedViewController.headerViewHeight = 200
             
             segmentedViewController.selectedSegmentViewColor = UIColor.red

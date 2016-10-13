@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SJSegmentedScrollView
 
 class FirstTableViewController: UITableViewController {
     
@@ -33,3 +34,11 @@ class FirstTableViewController: UITableViewController {
         return self.tableView
     }
 }
+
+//extension FirstTableViewController: SJSegmentedViewControllerViewDataSource {
+//
+//	func imageForViewController(state: UIControlState) -> UIImage? {
+//
+//		return nil
+//	}
+//}

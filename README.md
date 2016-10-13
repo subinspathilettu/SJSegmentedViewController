@@ -33,7 +33,7 @@ platform :ios, '9.0'
 use_frameworks!
 
 target '<Your Target Name>' do
-pod ’SJSegmentedScrollView’, ‘1.2.2'
+pod ’SJSegmentedScrollView’, ‘1.2.3'
 end
 ```
 

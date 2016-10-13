@@ -377,12 +377,16 @@ import UIKit
             
             let delegate = controller as? SJSegmentedViewControllerViewSource
             var observeView = controller.view
-            
+
+			if let collectionController = controller as? UICollectionViewController {
+				observeView = collectionController.collectionView
+			}
+
             if let view = delegate?.viewForSegmentControllerToObserveContentOffsetChange!(controller,
                                                                                           index: index) {
                 observeView = view
             }
-            
+
             viewObservers.append(observeView!)
             segmentedScrollView.addObserverFor(observeView!)
             index += 1
