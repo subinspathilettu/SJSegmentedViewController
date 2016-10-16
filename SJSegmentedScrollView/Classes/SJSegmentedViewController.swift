@@ -297,6 +297,7 @@ import UIKit
         segmentedScrollView.topSpacing = topSpacing
         segmentedScrollView.bottomSpacing = SJUtil.getBottomSpacing(self)
         segmentScrollViewTopConstraint?.constant = topSpacing
+        segmentedScrollView.isScrollEnabled = false
         segmentedScrollView.updateSubviewsFrame(view.bounds)
     }
     

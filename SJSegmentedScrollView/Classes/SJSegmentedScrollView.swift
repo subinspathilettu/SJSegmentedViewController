@@ -44,6 +44,7 @@ class SJSegmentedScrollView: UIScrollView {
     var contentViews = [UIView]()
     var contentView: SJContentView?
     var scrollContentView: UIView!
+    var contentConrollerHight: CGFloat!
     var contentViewHeightConstraint: NSLayoutConstraint!
     var didSelectSegmentAtIndex: DidSelectSegmentAtIndex?
     
@@ -163,6 +164,10 @@ class SJSegmentedScrollView: UIScrollView {
     //MARK: Private Functions
     
     func getContentHeight() -> CGFloat {
+        if let height = contentConrollerHight {
+            return height
+        }
+        
         var contentHeight = (superview?.bounds.height)! + headerViewHeight!
         contentHeight -= (topSpacing! + bottomSpacing! + headerViewOffsetHeight!)
         return contentHeight
