@@ -53,21 +53,20 @@ class SJSegmentedScrollView: UIScrollView {
     var scrollContentView: UIView!
     var contentViewHeightConstraint: NSLayoutConstraint!
     var didSelectSegmentAtIndex: DidSelectSegmentAtIndex?
+    var tableView: UITableView?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
         sizeToFit()
         translatesAutoresizingMaskIntoConstraints = false
         showsHorizontalScrollIndicator = true
-        showsVerticalScrollIndicator = true
-        bounces = false
+        showsVerticalScrollIndicator = false
+        bounces = true
+        alwaysBounceVertical = true
         
         addObserver(self, forKeyPath: "contentOffset",
                          options: [NSKeyValueObservingOptions.new, NSKeyValueObservingOptions.old],
                          context: nil)
-        
-        
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -275,8 +274,13 @@ class SJSegmentedScrollView: UIScrollView {
                         oldPosition: CGPoint) {
         
         if scrollView.contentOffset.y < 0.0 {
+            
+            if scrollView.isKind(of: UITableView.classForCoder()) {
+                self.tableView = scrollView as! UITableView
+                scrollView.isScrollEnabled = false
+            }
+            
             if contentOffset.y >= 0.0 {
-                
                 var yPos = contentOffset.y - change
                 yPos = yPos < 0 ? 0 : yPos
                 let updatedPos = CGPoint(x: contentOffset.x, y: yPos)
@@ -289,7 +293,6 @@ class SJSegmentedScrollView: UIScrollView {
     func handleScrollDown(_ scrollView: UIScrollView,
                           change: CGFloat,
                           oldPosition: CGPoint) {
-        
         let offset = (headerViewHeight! - headerViewOffsetHeight!)
         
         if contentOffset.y < offset {
@@ -305,36 +308,45 @@ class SJSegmentedScrollView: UIScrollView {
         }
     }
 
-	override func observeValue(forKeyPath keyPath: String?,
-	                           of object: Any?,
-	                           change: [NSKeyValueChangeKey : Any]?,
-	                           context: UnsafeMutableRawPointer?) {
-		if !observing { return }
+    override func observeValue(forKeyPath keyPath: String?,
+                               of object: Any?,
+                               change: [NSKeyValueChangeKey : Any]?,
+                               context: UnsafeMutableRawPointer?) {
+        
+        if !observing { return }
 
-		let scrollView = object as? UIScrollView
-		if scrollView == nil { return }
-		if scrollView == self { return }
+        let scrollView = object as? UIScrollView
+        if scrollView == nil { return }
+        
+        if (scrollView?.isKind(of: UIScrollView.classForCoder()))! {
+            if scrollView!.contentOffset.y >= headerViewHeight {
+                tableView?.isScrollEnabled = true
+            }
+        }
+        
+        if scrollView == self { return }
+    
+    
+        let changeValues = change as! [NSKeyValueChangeKey: AnyObject]
 
-		let changeValues = change as! [NSKeyValueChangeKey: AnyObject]
+        if let new = changeValues[NSKeyValueChangeKey.newKey]?.cgPointValue,
+            let old = changeValues[NSKeyValueChangeKey.oldKey]?.cgPointValue {
 
-		if let new = changeValues[NSKeyValueChangeKey.newKey]?.cgPointValue,
-			let old = changeValues[NSKeyValueChangeKey.oldKey]?.cgPointValue {
+            let diff = old.y - new.y
 
-			let diff = old.y - new.y
-
-			if diff > 0.0 {
-
-				handleScrollUp(scrollView!,
-				                    change: diff,
-				                    oldPosition: old)
-			} else {
-
-				handleScrollDown(scrollView!,
-				                      change: diff,
-				                      oldPosition: old)
-			}
-		}
-	}
+            if diff > 0.0 {
+                
+                handleScrollUp(scrollView!,
+                                    change: diff,
+                                    oldPosition: old)
+            } else {
+                
+                handleScrollDown(scrollView!,
+                                      change: diff,
+                                      oldPosition: old)
+            }
+        }
+    }
 
     func setContentOffset(_ scrollView: UIScrollView, point: CGPoint) {
         observing = false

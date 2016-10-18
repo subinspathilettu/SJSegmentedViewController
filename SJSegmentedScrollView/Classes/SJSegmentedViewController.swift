@@ -34,6 +34,8 @@ import UIKit
      - parameter index: index of selected segment.
      */
     @objc optional func didMoveToPage(_ controller: UIViewController, segment: UIButton?, index: Int)
+    
+    @objc optional func didPullToRefress(_ refreshController: UIRefreshControl, selectedSegmet: UIViewController)
 }
 
 /**
@@ -220,6 +222,8 @@ import UIKit
         }
     }
     
+    open var selectedSegmetViewController: UIViewController?
+    
     open var delegate:SJSegmentedViewControllerDelegate?
     var viewObservers = [UIView]()
     var segmentedScrollView = SJSegmentedScrollView(frame: CGRect.zero)
@@ -300,10 +304,26 @@ import UIKit
         segmentedScrollView.segmentViewHeight           = segmentViewHeight
     }
     
+    func pullToRefresh(_ refreshController: UIRefreshControl) {
+        if selectedSegmetViewController == nil {
+            self.selectedSegmetViewController = self.segmentControllers[0]
+        }
+        
+        for vc in (selectedSegmetViewController?.childViewControllers)! {
+            
+        }
+        
+        self.delegate?.didPullToRefress!(refreshController, selectedSegmet: selectedSegmetViewController!)
+    }
+    
     /**
      * Private method for adding the segmented scroll view.
      */
     func addSegmentedScrollView() {
+        
+        let refreshControl: UIRefreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(pullToRefresh(_:)), for: .valueChanged)
+        segmentedScrollView.insertSubview(refreshControl, at: 0)
         
         let topSpacing = SJUtil.getTopSpacing(self)
         segmentedScrollView.topSpacing = topSpacing
@@ -340,6 +360,7 @@ import UIKit
         // selected segment at index
         segmentedScrollView.didSelectSegmentAtIndex = {(segment,index) in
             let selectedController = self.segmentControllers[index]
+            self.selectedSegmetViewController = selectedController
             
             self.delegate?.didMoveToPage?(selectedController, segment: segment!, index: index)
             
@@ -413,12 +434,9 @@ import UIKit
         delegate?.didMoveToPage?(segmentControllers[0],
                                  segment: segment,
                                  index: 0)
+    
     }
-
-    /**
-    * Method for atuomaticly scroll the segmet controller on top when button is taped
-    **/
-
+    
     open func animateToTop() {
         segmentedScrollView.scrollToTop(height: headerViewHeight)
     }
