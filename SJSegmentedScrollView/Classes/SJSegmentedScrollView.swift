@@ -308,15 +308,14 @@ class SJSegmentedScrollView: UIScrollView {
         }
     }
 
-    override func observeValue(forKeyPath keyPath: String?,
-                               of object: Any?,
-                               change: [NSKeyValueChangeKey : Any]?,
-                               context: UnsafeMutableRawPointer?) {
-        
-        if !observing { return }
+	override func observeValue(forKeyPath keyPath: String?,
+	                           of object: Any?,
+	                           change: [NSKeyValueChangeKey : Any]?,
+	                           context: UnsafeMutableRawPointer?) {
+		if !observing { return }
 
-        let scrollView = object as? UIScrollView
-        if scrollView == nil { return }
+		let scrollView = object as? UIScrollView
+		if scrollView == nil { return }
         
         if (scrollView?.isKind(of: UIScrollView.classForCoder()))! {
             if scrollView!.contentOffset.y >= headerViewHeight {
@@ -324,29 +323,28 @@ class SJSegmentedScrollView: UIScrollView {
             }
         }
         
-        if scrollView == self { return }
-    
-    
-        let changeValues = change as! [NSKeyValueChangeKey: AnyObject]
+		if scrollView == self { return }
 
-        if let new = changeValues[NSKeyValueChangeKey.newKey]?.cgPointValue,
-            let old = changeValues[NSKeyValueChangeKey.oldKey]?.cgPointValue {
+		let changeValues = change as! [NSKeyValueChangeKey: AnyObject]
 
-            let diff = old.y - new.y
+		if let new = changeValues[NSKeyValueChangeKey.newKey]?.cgPointValue,
+			let old = changeValues[NSKeyValueChangeKey.oldKey]?.cgPointValue {
 
-            if diff > 0.0 {
-                
-                handleScrollUp(scrollView!,
-                                    change: diff,
-                                    oldPosition: old)
-            } else {
-                
-                handleScrollDown(scrollView!,
-                                      change: diff,
-                                      oldPosition: old)
-            }
-        }
-    }
+			let diff = old.y - new.y
+
+			if diff > 0.0 {
+
+				handleScrollUp(scrollView!,
+				                    change: diff,
+				                    oldPosition: old)
+			} else {
+
+				handleScrollDown(scrollView!,
+				                      change: diff,
+				                      oldPosition: old)
+			}
+		}
+	}
 
     func setContentOffset(_ scrollView: UIScrollView, point: CGPoint) {
         observing = false
