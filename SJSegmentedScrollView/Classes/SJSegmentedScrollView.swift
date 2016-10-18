@@ -22,6 +22,13 @@
 
 import UIKit
 
+extension UIScrollView {
+    func scrollToTop(height: CGFloat) {
+        let desiredOffset = CGPoint(x: 0, y: contentInset.top + height)
+        setContentOffset(desiredOffset, animated: true)
+    }
+}
+
 class SJSegmentedScrollView: UIScrollView {
     
     var segmentView: SJSegmentView?
@@ -46,21 +53,20 @@ class SJSegmentedScrollView: UIScrollView {
     var scrollContentView: UIView!
     var contentViewHeightConstraint: NSLayoutConstraint!
     var didSelectSegmentAtIndex: DidSelectSegmentAtIndex?
+    var tableView: UITableView?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
         sizeToFit()
         translatesAutoresizingMaskIntoConstraints = false
         showsHorizontalScrollIndicator = true
-        showsVerticalScrollIndicator = true
-        bounces = false
+        showsVerticalScrollIndicator = false
+        bounces = true
+        alwaysBounceVertical = true
         
         addObserver(self, forKeyPath: "contentOffset",
                          options: [NSKeyValueObservingOptions.new, NSKeyValueObservingOptions.old],
                          context: nil)
-        
-        
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -268,8 +274,13 @@ class SJSegmentedScrollView: UIScrollView {
                         oldPosition: CGPoint) {
         
         if scrollView.contentOffset.y < 0.0 {
+            
+            if scrollView.isKind(of: UITableView.classForCoder()) {
+                self.tableView = scrollView as! UITableView
+                scrollView.isScrollEnabled = false
+            }
+            
             if contentOffset.y >= 0.0 {
-                
                 var yPos = contentOffset.y - change
                 yPos = yPos < 0 ? 0 : yPos
                 let updatedPos = CGPoint(x: contentOffset.x, y: yPos)
@@ -282,7 +293,6 @@ class SJSegmentedScrollView: UIScrollView {
     func handleScrollDown(_ scrollView: UIScrollView,
                           change: CGFloat,
                           oldPosition: CGPoint) {
-        
         let offset = (headerViewHeight! - headerViewOffsetHeight!)
         
         if contentOffset.y < offset {
@@ -306,6 +316,13 @@ class SJSegmentedScrollView: UIScrollView {
 
 		let scrollView = object as? UIScrollView
 		if scrollView == nil { return }
+        
+        if (scrollView?.isKind(of: UIScrollView.classForCoder()))! {
+            if scrollView!.contentOffset.y >= headerViewHeight {
+                tableView?.isScrollEnabled = true
+            }
+        }
+        
 		if scrollView == self { return }
 
 		let changeValues = change as! [NSKeyValueChangeKey: AnyObject]
