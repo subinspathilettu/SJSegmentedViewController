@@ -241,7 +241,7 @@ class SJSegmentedScrollView: UIScrollView {
         
         for controller in controllers {
             if let controller = controller as? SJSegmentedViewControllerViewDataSource {
-                if let icon = controller.imageForViewController!(state: .normal)  {
+                if let icon = controller.imageForViewController(state: .normal)  {
                     images.append(icon)
                 }
             }
@@ -255,7 +255,7 @@ class SJSegmentedScrollView: UIScrollView {
         
         for controller in controllers {
             if let controller = controller as? SJSegmentedViewControllerViewDataSource {
-                if let icon = controller.imageForViewController!(state: .selected)  {
+                if let icon = controller.imageForViewController(state: .selected)  {
                     images.append(icon)
                 }
             }
