@@ -71,7 +71,7 @@ public protocol SJSegmentedViewControllerViewDataSource: class {
      */
     func imageForViewController(state: UIControlState) -> UIImage?
     
-    var isScrollable: Bool! {get set}
+    var isScrollable: Bool! {get}
 }
 
 /**
