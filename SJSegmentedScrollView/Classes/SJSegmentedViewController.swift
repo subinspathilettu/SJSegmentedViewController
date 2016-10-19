@@ -58,7 +58,7 @@ import UIKit
 /**
  *  Public protocol of  SJSegmentedViewController for button image in normal or selected state.
  */
-@objc public protocol SJSegmentedViewControllerViewDataSource: class {
+public protocol SJSegmentedViewControllerViewDataSource: class {
     
     /**
      By default, SJSegmentedScrollView Have text to display, this will add image to the buttons
@@ -69,7 +69,9 @@ import UIKit
      
      - returns: Image for UIButton
      */
-    @objc optional func imageForViewController(state: UIControlState) -> UIImage?
+    func imageForViewController(state: UIControlState) -> UIImage?
+    
+    var isScrollable: Bool! {get set}
 }
 
 /**
@@ -297,7 +299,6 @@ import UIKit
         segmentedScrollView.topSpacing = topSpacing
         segmentedScrollView.bottomSpacing = SJUtil.getBottomSpacing(self)
         segmentScrollViewTopConstraint?.constant = topSpacing
-        segmentedScrollView.isScrollEnabled = false
         segmentedScrollView.updateSubviewsFrame(view.bounds)
     }
     
