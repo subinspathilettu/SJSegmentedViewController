@@ -54,6 +54,7 @@ class SJSegmentedScrollView: UIScrollView {
         translatesAutoresizingMaskIntoConstraints = false
         showsHorizontalScrollIndicator = true
         showsVerticalScrollIndicator = true
+		decelerationRate = UIScrollViewDecelerationRateFast
         bounces = false
         
         addObserver(self, forKeyPath: "contentOffset",

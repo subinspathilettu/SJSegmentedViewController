@@ -12,11 +12,13 @@ import SJSegmentedScrollView
 class ViewController: UIViewController {
     
     let segmentedViewController = SJSegmentedViewController()
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        self.title = "Segment"
-    }
+	var selectedSegment: UIButton?
+
+	override func viewDidLoad() {
+		super.viewDidLoad()
+
+		adddChildViewController()
+	}
     
     //MARK:- Private Function
     //MARK:-
@@ -44,20 +46,15 @@ class ViewController: UIViewController {
 				.instantiateViewController(withIdentifier: "CollectionViewIdentifier")
 			fourthViewController.title = "Collection View"
 
-
-            
             segmentedViewController.headerViewController = headerViewController
             segmentedViewController.segmentControllers = [firstViewController,
                                                           secondViewController,
                                                           thirdViewController,
                                                           fourthViewController]
             segmentedViewController.headerViewHeight = 200
-            
-            segmentedViewController.selectedSegmentViewColor = UIColor.red
-            segmentedViewController.segmentViewHeight = 60.0
+			segmentedViewController.selectedSegmentViewHeight = 5.0
+			segmentedViewController.segmentTitleColor = UIColor.gray
             segmentedViewController.segmentShadow = SJShadow.light()
-            segmentedViewController.delegate = self
-        
             return segmentedViewController
         }
         
@@ -96,18 +93,6 @@ class ViewController: UIViewController {
             self.view.addSubview(viewController!.view)
             viewController!.view.frame = self.view.bounds
             viewController!.didMove(toParentViewController: self)
-        }
-    }
-}
-
-extension ViewController: SJSegmentedViewControllerDelegate {
-    
-    func didMoveToPage(_ controller: UIViewController, segment: UIButton?, index: Int) {
-        
-        if segmentedViewController.segments.count > 0 {
-            
-            let button = segmentedViewController.segments[index]
-            button.setTitleColor(UIColor.red, for: .selected)
         }
     }
 }

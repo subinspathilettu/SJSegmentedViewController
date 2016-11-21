@@ -31,9 +31,13 @@ extension SecondViewController: UITableViewDataSource {
 }
 
 extension SecondViewController: SJSegmentedViewControllerViewSource {
-    
-    func viewForSegmentControllerToObserveContentOffsetChange(_ controller: UIViewController,
-                                                              index: Int) -> UIView {
+
+	public func imageForSegmentTab(_ state: UIControlState) -> UIImage? {
+		return nil
+	}
+
+    func viewForSegmentControllerToObserveContentOffsetChange() -> UIView {
+		
         return customTableView
     }
 }

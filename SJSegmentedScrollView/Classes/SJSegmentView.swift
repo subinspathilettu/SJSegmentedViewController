@@ -127,7 +127,6 @@ class SJSegmentView: UIScrollView {
         let index = notification.object as? Int
         let button = segments[index!]
         button.isSelected = true
-
     }
 
 
@@ -354,4 +353,3 @@ class SJSegmentView: UIScrollView {
         }
     }
 }
-    

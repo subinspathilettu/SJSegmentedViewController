@@ -46,13 +46,19 @@ import UIKit
      changes and makes the scroll effect. If you want to change the default view, implement
      SJSegmentedViewControllerViewSource and pass your custom view.
      
-     - parameter controller: UIViewController for segment
-     - parameter index:      index of segment controller
-     
      - returns: observe view
      */
-    @objc optional func viewForSegmentControllerToObserveContentOffsetChange(_ controller: UIViewController,
-                                                                       index: Int) -> UIView
+    func viewForSegmentControllerToObserveContentOffsetChange() -> UIView
+
+
+	/**
+	By default, SJSegmentedScrollView will set viewcontroller title as segment tab title. If you 
+	want to set image for segment tab, implement
+	SJSegmentedViewControllerViewSource and pass your segment image.
+
+	- returns: UIImage
+	*/
+	func imageForSegmentTab(_ state: UIControlState) -> UIImage?
 }
 
 /**
@@ -382,8 +388,7 @@ import UIKit
 				observeView = collectionController.collectionView
 			}
 
-            if let view = delegate?.viewForSegmentControllerToObserveContentOffsetChange!(controller,
-                                                                                          index: index) {
+            if let view = delegate?.viewForSegmentControllerToObserveContentOffsetChange() {
                 observeView = view
             }
 
