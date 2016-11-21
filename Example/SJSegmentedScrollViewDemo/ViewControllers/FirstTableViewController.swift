@@ -35,10 +35,10 @@ class FirstTableViewController: UITableViewController {
     }
 }
 
-//extension FirstTableViewController: SJSegmentedViewControllerViewDataSource {
-//
-//	func imageForViewController(state: UIControlState) -> UIImage? {
-//
-//		return nil
-//	}
-//}
+extension FirstTableViewController: SJSegmentedViewControllerViewSource {
+
+	public func titleForSegment() -> String? {
+
+		return "First"
+	}
+}

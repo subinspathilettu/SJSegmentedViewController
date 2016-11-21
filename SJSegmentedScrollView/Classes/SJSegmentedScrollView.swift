@@ -46,7 +46,7 @@ class SJSegmentedScrollView: UIScrollView {
     var scrollContentView: UIView!
     var contentViewHeightConstraint: NSLayoutConstraint!
     var didSelectSegmentAtIndex: DidSelectSegmentAtIndex?
-    
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -174,16 +174,16 @@ class SJSegmentedScrollView: UIScrollView {
         if controllers.count > 1 {
             
             let titles = getSegmentTitlesFromControllers(controllers)
-            segmentView = SJSegmentView(frame: CGRect.zero,
-                                             segmentTitles: titles)
-            segmentView?.selectedSegmentViewColor      = selectedSegmentViewColor
-            segmentView?.selectedSegmentViewHeight     = selectedSegmentViewHeight!
-            segmentView?.titleColor                    = segmentTitleColor
-            segmentView?.segmentBackgroundColor        = segmentBackgroundColor
-            segmentView?.font                          = segmentTitleFont!
-            segmentView?.shadow = segmentShadow
-            segmentView?.font = segmentTitleFont!
-            segmentView?.bounces = segmentBounces
+            segmentView = SJSegmentView(frame: CGRect.zero)
+			segmentView?.controllers					= controllers
+            segmentView?.selectedSegmentViewColor		= selectedSegmentViewColor
+            segmentView?.selectedSegmentViewHeight		= selectedSegmentViewHeight!
+            segmentView?.titleColor						= segmentTitleColor
+            segmentView?.segmentBackgroundColor			= segmentBackgroundColor
+            segmentView?.font							= segmentTitleFont!
+            segmentView?.shadow							= segmentShadow
+            segmentView?.font							= segmentTitleFont!
+            segmentView?.bounces						= segmentBounces
             segmentView!.translatesAutoresizingMaskIntoConstraints = false
             segmentView!.didSelectSegmentAtIndex = {
                 (segment,index) in
@@ -233,7 +233,7 @@ class SJSegmentedScrollView: UIScrollView {
         
         let frame = CGRect(x: 0, y: headerViewHeight!,
                            width: bounds.size.width, height: segmentViewHeight!)
-        segmentView = SJSegmentView(frame: frame, segmentTitles: titles)
+        segmentView = SJSegmentView(frame: frame)
         segmentView!.didSelectSegmentAtIndex = {
             (segment,index) in
             self.contentView?.movePageToIndex(index, animated: true)

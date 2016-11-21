@@ -32,19 +32,15 @@ class ViewController: UIViewController {
 
             let firstViewController = storyboard
                 .instantiateViewController(withIdentifier: "FirstTableViewController")
-            firstViewController.title = "Table View"
-            
+
             let secondViewController = storyboard
                 .instantiateViewController(withIdentifier: "SecondViewController")
-            secondViewController.title = "Custom View"
-            
+
             let thirdViewController = storyboard
                 .instantiateViewController(withIdentifier: "ThirdViewController")
-            thirdViewController.title = "View"
 
 			let fourthViewController = storyboard
 				.instantiateViewController(withIdentifier: "CollectionViewIdentifier")
-			fourthViewController.title = "Collection View"
 
             segmentedViewController.headerViewController = headerViewController
             segmentedViewController.segmentControllers = [firstViewController,
@@ -61,30 +57,7 @@ class ViewController: UIViewController {
         return nil
     }
     
-    //MARK:- Actions
-    //MARK:-
-    @IBAction func presentViewController() {
-        
-        let viewController = getSJSegmentedViewController()
-        //        viewController
-        if viewController != nil {
-            self.present(viewController!,
-                                       animated: true,
-                                       completion: nil)
-        }
-    }
-    
-    @IBAction func pushViewController() {
-        
-        let viewController = getSJSegmentedViewController()
-        
-        if viewController != nil {
-            self.navigationController?.pushViewController(viewController!,
-                                                          animated: true)
-        }
-    }
-    
-    @IBAction func adddChildViewController() {
+    func adddChildViewController() {
         
         let viewController = getSJSegmentedViewController()
         

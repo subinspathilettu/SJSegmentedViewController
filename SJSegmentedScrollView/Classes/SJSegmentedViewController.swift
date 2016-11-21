@@ -48,17 +48,22 @@ import UIKit
      
      - returns: observe view
      */
-    func viewForSegmentControllerToObserveContentOffsetChange() -> UIView
+    @objc optional func viewForSegmentControllerToObserveContentOffsetChange() -> UIView
 
 
 	/**
-	By default, SJSegmentedScrollView will set viewcontroller title as segment tab title. If you 
-	want to set image for segment tab, implement
-	SJSegmentedViewControllerViewSource and pass your segment image.
+	Image for segment tab.
 
 	- returns: UIImage
 	*/
-	func imageForSegmentTab(_ state: UIControlState) -> UIImage?
+	@objc optional func imageForSegmentTab(_ state: UIControlState) -> UIImage?
+
+	/**
+	Title for the controller segment tab.
+
+	- returns: String Title name
+	*/
+	@objc optional func titleForSegment() -> String?
 }
 
 /**
@@ -388,7 +393,7 @@ import UIKit
 				observeView = collectionController.collectionView
 			}
 
-            if let view = delegate?.viewForSegmentControllerToObserveContentOffsetChange() {
+            if let view = delegate?.viewForSegmentControllerToObserveContentOffsetChange?() {
                 observeView = view
             }
 

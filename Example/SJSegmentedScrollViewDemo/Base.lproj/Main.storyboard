@@ -58,50 +58,7 @@
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lXW-mq-JdO">
-                                <rect key="frame" x="161" y="258.5" width="53" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="AbM-yR-5LZ"/>
-                                    <constraint firstAttribute="width" constant="53" id="aZw-AN-lgm"/>
-                                </constraints>
-                                <state key="normal" title="Present"/>
-                                <connections>
-                                    <action selector="presentViewController" destination="vXZ-lx-hvc" eventType="touchUpInside" id="dWx-Q4-zNy"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ElX-4L-Qmp">
-                                <rect key="frame" x="170" y="318.5" width="35" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="3sc-5G-bJe"/>
-                                    <constraint firstAttribute="width" constant="35" id="3yG-LL-mf3"/>
-                                </constraints>
-                                <state key="normal" title="Push"/>
-                                <connections>
-                                    <action selector="pushViewController" destination="vXZ-lx-hvc" eventType="touchUpInside" id="0NW-VK-SFq"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rZ8-K1-9XA">
-                                <rect key="frame" x="169.5" y="378.5" width="36" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="36" id="4g4-g2-60v"/>
-                                    <constraint firstAttribute="height" constant="30" id="lBy-6E-hVd"/>
-                                </constraints>
-                                <state key="normal" title="Child"/>
-                                <connections>
-                                    <action selector="adddChildViewController" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Tt6-2I-bgo"/>
-                                </connections>
-                            </button>
-                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="rZ8-K1-9XA" firstAttribute="top" secondItem="ElX-4L-Qmp" secondAttribute="bottom" constant="30" id="2oz-M3-ZQy"/>
-                            <constraint firstItem="ElX-4L-Qmp" firstAttribute="top" secondItem="lXW-mq-JdO" secondAttribute="bottom" constant="30" id="6Sh-4J-xvE"/>
-                            <constraint firstItem="ElX-4L-Qmp" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="71o-vh-dXF"/>
-                            <constraint firstItem="rZ8-K1-9XA" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="G52-HJ-we4"/>
-                            <constraint firstItem="ElX-4L-Qmp" firstAttribute="centerY" secondItem="kh9-bI-dsS" secondAttribute="centerY" id="cFx-mH-3KW"/>
-                            <constraint firstItem="lXW-mq-JdO" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="g20-h5-Pm9"/>
-                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="SJSegment" id="I96-gV-iSQ"/>
                     <navigationItem key="navigationItem" id="RMG-v4-f0z"/>

@@ -1,3 +1,4 @@
+
 //
 //  SecondViewController.swift
 //  SJSegmentedScrollView
@@ -32,8 +33,9 @@ extension SecondViewController: UITableViewDataSource {
 
 extension SecondViewController: SJSegmentedViewControllerViewSource {
 
-	public func imageForSegmentTab(_ state: UIControlState) -> UIImage? {
-		return nil
+	public func titleForSegment() -> String? {
+
+		return "Second"
 	}
 
     func viewForSegmentControllerToObserveContentOffsetChange() -> UIView {
