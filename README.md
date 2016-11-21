@@ -5,8 +5,9 @@
 [![License](https://img.shields.io/cocoapods/l/SJSegmentedScrollView.svg?style=flat)](http://cocoapods.org/pods/SJSegmentedScrollView)
 [![Platform](https://img.shields.io/cocoapods/p/SJSegmentedScrollView.svg?style=flat)](http://cocoapods.org/pods/SJSegmentedScrollView)
 
-SJSegmentedScrollView is a light weight generic controller written in Swift. Its a simple customizable controller were you can integrate any number of ViewControllers into a segmented controller with a header view controller. We have upgraded to Swift 3, version 1.2.2. For older versions use 
-```swift
+SJSegmentedScrollView is a light weight generic controller written in Swift. Its a simple customizable controller were you can integrate any number of ViewControllers into a segmented controller with a header view controller. We have upgraded to Swift 3, version 1.2.2. For older versions use
+
+```ruby
 pod ’SJSegmentedScrollView’, ‘1.1.0'
 ```
 
@@ -23,22 +24,29 @@ pod ’SJSegmentedScrollView’, ‘1.1.0'
 
 ## Installation
 
-### Using CocoaPods:
+### CocoaPods:
+
+[CocoaPods](http://cocoapods.org) is a dependency manager for Cocoa projects. You can install it with the following command:
+
+```bash
+$ gem install cocoapods
+```
 
 To integrate SJSegmentedViewController into your Xcode project using CocoaPods, specify it in your Podfile:
-```swift
+```ruby
 
 source 'https://github.com/CocoaPods/Specs.git'
 platform :ios, '9.0'
 use_frameworks!
 
 target '<Your Target Name>' do
-pod ’SJSegmentedScrollView’, ‘1.2.3'
+pod ’SJSegmentedScrollView’, ‘1.2.2'
 end
 ```
 
 Then, run the following command:
-```swift
+
+```bash
 $ pod install
 ```
 
@@ -55,9 +63,15 @@ iOS 8.0+, Swift 2.3+
 
 Here is how you can use SJSegmentedViewController. 
 
-You can add any number of ViewControllers into SJSegmentedViewController. All you have to do is as follows.
-```swift
+Import SJSegmentedScrollView to your viewcontroller,
 
+```swift
+import SJSegmentedScrollView
+```
+
+Then add any number of ViewControllers into SJSegmentedViewController. All you have to do is as follows.
+
+```swift
 if let storyboard = self.storyboard {
 
 let headerViewController = storyboard
@@ -80,15 +94,18 @@ segmentControllers: [firstViewController,
 	secondViewController,
 	thirdViewController])
 ```
+
 * Present ViewController
 ```swift
 self.presentViewController(segmentedViewController, animated: false, completion: nil)
 ```
+
 * Push ViewController
 ```swift
 self.navigationController?.pushViewController(segmentedViewController,
                                                           animated: true)
 ```
+
 * Add Child ViewController
 ```swift
 addChildViewController(segmentedViewController)
@@ -166,9 +183,6 @@ segmentedViewController.selectedSegmentViewHeight = 5.0
 //Set height for headerview to visible after scrolling
 segmentedViewController. headerViewOffsetHeight = 10.0
 ```
-
-
-
 
 ## Author
 
