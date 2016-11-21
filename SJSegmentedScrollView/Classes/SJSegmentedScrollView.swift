@@ -44,6 +44,7 @@ class SJSegmentedScrollView: UIScrollView {
     var contentViews = [UIView]()
     var contentView: SJContentView?
     var scrollContentView: UIView!
+    var contentConrollerHight: CGFloat!
     var contentViewHeightConstraint: NSLayoutConstraint!
     var didSelectSegmentAtIndex: DidSelectSegmentAtIndex?
     
@@ -164,6 +165,10 @@ class SJSegmentedScrollView: UIScrollView {
     //MARK: Private Functions
     
     func getContentHeight() -> CGFloat {
+        if let height = contentConrollerHight {
+            return height
+        }
+        
         var contentHeight = (superview?.bounds.height)! + headerViewHeight!
         contentHeight -= (topSpacing! + bottomSpacing! + headerViewOffsetHeight!)
         return contentHeight
@@ -174,8 +179,10 @@ class SJSegmentedScrollView: UIScrollView {
         if controllers.count > 1 {
             
             let titles = getSegmentTitlesFromControllers(controllers)
+            let images = getSegmentImagesFromControllers(controllers)
+            let selectedImages = getSelectedSegmentImagesFromControllers(controllers)
             segmentView = SJSegmentView(frame: CGRect.zero,
-                                             segmentTitles: titles)
+                                        segmentTitles: titles, segmentImages: images, selectedSegmentImages: selectedImages)
             segmentView?.selectedSegmentViewColor      = selectedSegmentViewColor
             segmentView?.selectedSegmentViewHeight     = selectedSegmentViewHeight!
             segmentView?.titleColor                    = segmentTitleColor
@@ -229,17 +236,50 @@ class SJSegmentedScrollView: UIScrollView {
         return titles
     }
     
-    func addSegmentsForContentViews(_ titles: [String]) {
+    func getSegmentImagesFromControllers(_ controllers: [UIViewController]) -> [UIImage] {
+        
+        var images = [UIImage]()
+        
+        for controller in controllers {
+            if let controller = controller as? SJSegmentedViewControllerViewDataSource {
+                if let icon = controller.imageForViewController(state: .normal)  {
+                    images.append(icon)
+                }
+            }
+        }
+        return images
+    }
+    
+    func getSelectedSegmentImagesFromControllers(_ controllers: [UIViewController]) -> [UIImage] {
+        
+        var images = [UIImage]()
+        
+        for controller in controllers {
+            if let controller = controller as? SJSegmentedViewControllerViewDataSource {
+                if let icon = controller.imageForViewController(state: .selected)  {
+                    images.append(icon)
+                }
+            }
+        }
+        return images
+    }
+    
+    
+    
+    
+    func addSegmentsForContentViews(_ titles: [String], images: [UIImage]?, selectedImages: [UIImage]?) {
         
         let frame = CGRect(x: 0, y: headerViewHeight!,
                            width: bounds.size.width, height: segmentViewHeight!)
-        segmentView = SJSegmentView(frame: frame, segmentTitles: titles)
+        segmentView = SJSegmentView(frame: frame, segmentTitles: titles, segmentImages: images, selectedSegmentImages: selectedImages)
         segmentView!.didSelectSegmentAtIndex = {
             (segment,index) in
             self.contentView?.movePageToIndex(index, animated: true)
         }
         addSubview(segmentView!)
     }
+    
+    
     
     func createContentView() -> SJContentView {
         
@@ -336,3 +376,5 @@ class SJSegmentedScrollView: UIScrollView {
         observing = true
     }
 }
+
+
