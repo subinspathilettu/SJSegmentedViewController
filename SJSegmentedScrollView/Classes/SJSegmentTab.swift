@@ -2,7 +2,7 @@
 //  SJSegmentTab.swift
 //  Pods
 //
-//  Created by Subins on 21/11/16.
+//  Created by Subins on 22/11/16.
 //  Copyright © 2016 Subins Jose. All rights reserved.
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy of this software and
@@ -22,9 +22,73 @@
 
 import Foundation
 
-class SJSegmentTab {
+typealias DidSelectSegmentAtIndex = (_ segment: SJSegmentTab?, _ index: Int) -> Void
 
-	var title: String?
-	var image: UIImage?
-	var selectedImage: UIImage?
+public class SJSegmentTab: UIView {
+
+	let kSegmentViewTagOffset = 100
+	let button = UIButton(type: .custom)
+
+	var didSelectSegmentAtIndex: DidSelectSegmentAtIndex?
+	var isSelected = false {
+		didSet {
+			button.isSelected = isSelected
+		}
+	}
+
+	convenience init(title: String) {
+		self.init(frame: CGRect.zero)
+		button.setTitle(title, for: .normal)
+	}
+
+	convenience init(view: UIView) {
+		self.init(frame: CGRect.zero)
+	}
+
+	required override public init(frame: CGRect) {
+		super.init(frame: frame)
+
+		translatesAutoresizingMaskIntoConstraints = false
+		button.frame = bounds
+		button.addTarget(self, action: #selector(SJSegmentTab.onSegmentButtonPress(_:)),
+		                 for: .touchUpInside)
+		addSubview(button)
+
+		button.translatesAutoresizingMaskIntoConstraints = false
+		let verticalConstraints = NSLayoutConstraint.constraints(withVisualFormat: "V:|[view]|",
+		                                                         options: [],
+		                                                         metrics: nil,
+		                                                         views: ["view": button])
+		let horizontalConstraints = NSLayoutConstraint.constraints(withVisualFormat: "H:|[view]|",
+		                                                         options: [],
+		                                                         metrics: nil,
+		                                                         views: ["view": button])
+		addConstraints(verticalConstraints)
+		addConstraints(horizontalConstraints)
+	}
+
+	required public init?(coder aDecoder: NSCoder) {
+		fatalError("init(coder:) has not been implemented")
+	}
+
+	func titleColor(_ color: UIColor) {
+
+		button.setTitleColor(color, for: .normal)
+	}
+
+	func titleFont(_ font: UIFont) {
+
+		button.titleLabel?.font = font
+	}
+
+	func onSegmentButtonPress(_ sender: AnyObject) {
+
+		let index = tag - kSegmentViewTagOffset
+		NotificationCenter.default.post(name: Notification.Name(rawValue: "DidChangeSegmentIndex"),
+		                                object: index)
+
+		if didSelectSegmentAtIndex != nil {
+			didSelectSegmentAtIndex!(self, index)
+		}
+	}
 }

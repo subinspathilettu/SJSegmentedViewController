@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SJSegmentedScrollView
 
 class FirstTableViewController: UITableViewController {
     
@@ -33,12 +32,4 @@ class FirstTableViewController: UITableViewController {
         
         return self.tableView
     }
-}
-
-extension FirstTableViewController: SJSegmentedViewControllerViewSource {
-
-	public func titleForSegment() -> String? {
-
-		return "First"
-	}
 }

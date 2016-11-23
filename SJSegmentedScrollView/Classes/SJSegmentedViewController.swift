@@ -33,7 +33,7 @@ import UIKit
      - parameter segment: selected segment
      - parameter index: index of selected segment.
      */
-    @objc optional func didMoveToPage(_ controller: UIViewController, segment: UIButton?, index: Int)
+    @objc optional func didMoveToPage(_ controller: UIViewController, segment: SJSegmentTab?, index: Int)
 }
 
 /**
@@ -49,21 +49,6 @@ import UIKit
      - returns: observe view
      */
     @objc optional func viewForSegmentControllerToObserveContentOffsetChange() -> UIView
-
-
-	/**
-	Image for segment tab.
-
-	- returns: UIImage
-	*/
-	@objc optional func imageForSegmentTab(_ state: UIControlState) -> UIImage?
-
-	/**
-	Title for the controller segment tab.
-
-	- returns: String Title name
-	*/
-	@objc optional func titleForSegment() -> String?
 }
 
 /**
@@ -220,14 +205,14 @@ import UIKit
     /**
      *  Array of segments. For single view controller segments will be empty.
      */
-    open var segments: [UIButton] {
+    open var segments: [SJSegmentTab] {
         get {
             
             if let segmentView = segmentedScrollView.segmentView {
                 return segmentView.segments
             }
             
-            return [UIButton]()
+            return [SJSegmentTab]()
         }
     }
     
@@ -350,10 +335,9 @@ import UIKit
         
         // selected segment at index
         segmentedScrollView.didSelectSegmentAtIndex = {(segment,index) in
-            let selectedController = self.segmentControllers[index]
-            
-            self.delegate?.didMoveToPage?(selectedController, segment: segment!, index: index)
-            
+
+			let selectedController = self.segmentControllers[index]
+			self.delegate?.didMoveToPage?(selectedController, segment: segment!, index: index)
         }
     }
     
@@ -419,7 +403,7 @@ import UIKit
         
         
         //Delegate call for setting the first view of segments.
-        var segment: UIButton?
+        var segment: SJSegmentTab?
         if segments.count > 0 {
             segment = segments[0]
         }

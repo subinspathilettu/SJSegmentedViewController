@@ -45,11 +45,3 @@ class CollectionViewController: UICollectionViewController {
         return cell
     }
 }
-
-extension CollectionViewController: SJSegmentedViewControllerViewSource {
-
-	public func titleForSegment() -> String? {
-
-		return "Collection View"
-	}
-}

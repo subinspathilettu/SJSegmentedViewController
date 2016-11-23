@@ -11,11 +11,3 @@ import SJSegmentedScrollView
 
 class ThirdViewController: UIViewController {
 }
-
-extension ThirdViewController: SJSegmentedViewControllerViewSource {
-
-	public func titleForSegment() -> String? {
-
-		return "Third"
-	}
-}

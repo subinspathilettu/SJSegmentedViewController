@@ -22,8 +22,6 @@
 
 import UIKit
 
-typealias DidSelectSegmentAtIndex = (_ segment:UIButton?, _ index: Int) -> Void
-
 class SJSegmentView: UIScrollView {
     
     var selectedSegmentViewColor: UIColor? {
@@ -35,7 +33,7 @@ class SJSegmentView: UIScrollView {
     var titleColor: UIColor? {
         didSet {
             for segment in segments {
-                segment.setTitleColor(titleColor, for: UIControlState())
+                segment.titleColor(titleColor!)
             }
         }
     }
@@ -64,7 +62,7 @@ class SJSegmentView: UIScrollView {
     var selectedSegmentViewHeight: CGFloat?
     let kSegmentViewTagOffset = 100
     var segmentViewOffsetWidth: CGFloat = 10.0
-    var segments = [UIButton]()
+    var segments = [SJSegmentTab]()
     var segmentContentView: UIView?
     var didSelectSegmentAtIndex: DidSelectSegmentAtIndex?
     var selectedSegmentView: UIView?
@@ -73,7 +71,6 @@ class SJSegmentView: UIScrollView {
     var selectedSegmentViewWidthConstraint: NSLayoutConstraint?
     var contentSubViewWidthConstraints = [NSLayoutConstraint]()
 	var controllers: [UIViewController]?
-	var segmentTabs = [SJSegmentTab]()
     
     var contentView: SJContentView? {
         didSet {
@@ -125,34 +122,9 @@ class SJSegmentView: UIScrollView {
         button.isSelected = true
     }
 
-	func loadDataForSegmentTabs() {
-
-		for controller in controllers! {
-
-			let segmentTab = SJSegmentTab()
-			if let delegate = controller as? SJSegmentedViewControllerViewSource {
-
-				if let title = delegate.titleForSegment?() {
-					segmentTab.title = title
-				}
-
-				if let normalStateImage = delegate.imageForSegmentTab?(.normal) {
-					segmentTab.image = normalStateImage
-				}
-
-				if let selectedStateImage = delegate.imageForSegmentTab?(.selected) {
-					segmentTab.selectedImage = selectedStateImage
-				}
-			}
-
-			segmentTabs.append(segmentTab)
-		}
-	}
-
     func setSegmentsView(_ frame: CGRect) {
 
-		loadDataForSegmentTabs()
-        let segmentWidth = getSegmentWidth(frame)
+        let segmentWidth = widthForSegment(frame)
         createSegmentContentView(segmentWidth)
         
         var index = 0
@@ -165,7 +137,7 @@ class SJSegmentView: UIScrollView {
         createSelectedSegmentView(segmentWidth)
         
         //Set first button as selected
-        let button = segments.first! as UIButton
+        let button = segments.first!
         button.isSelected = true
     }
     
@@ -242,7 +214,6 @@ class SJSegmentView: UIScrollView {
                                                                                  metrics: nil,
                                                                                  views: ["view": segmentView])
         segmentContentView!.addConstraints(verticalConstraints)
-        
         segments.append(segmentView)
     }
     
@@ -278,73 +249,46 @@ class SJSegmentView: UIScrollView {
         segmentContentView!.addConstraints(verticalConstraints)
     }
     
-    func getSegmentViewForController(_ controller: UIViewController) -> UIButton {
-        
-        let button = UIButton(type: .custom)
-        button.backgroundColor = segmentBackgroundColor
-        button.setTitleColor(titleColor, for: .normal)
+    func getSegmentViewForController(_ controller: UIViewController) -> SJSegmentTab {
 
-		if let delegate = controller as? SJSegmentedViewControllerViewSource {
+		let segmentTab = SJSegmentTab.init(title: controller.title!)
+		segmentTab.backgroundColor = segmentBackgroundColor
+		segmentTab.titleColor(titleColor!)
+		segmentTab.titleFont(font!)
+		segmentTab.didSelectSegmentAtIndex = didSelectSegmentAtIndex
 
-			if let title = delegate.titleForSegment?() {
-				button.setTitle(title, for: .normal)
-			}
-			
-			if let normalStateImage = delegate.imageForSegmentTab?(.normal) {
-				button.setImage(normalStateImage, for: .normal)
-			}
-
-			if let selectedStateImage = delegate.imageForSegmentTab?(.normal) {
-				button.setImage(selectedStateImage, for: .selected)
-			}
-		}
-
-        button.titleLabel?.font = font
-        button.addTarget(self, action: #selector(SJSegmentView.onSegmentButtonPress(_:)),
-                         for: .touchUpInside)
-        return button
+        return segmentTab
     }
-    
-    func onSegmentButtonPress(_ sender: AnyObject) {
-        
-        let index = sender.tag - kSegmentViewTagOffset
-        NotificationCenter.default.post(name: Notification.Name(rawValue: "DidChangeSegmentIndex"),
-                                                                  object: index)
-        
-        if didSelectSegmentAtIndex != nil {
-            didSelectSegmentAtIndex!(sender as? UIButton, index)
-        }
-    }
-    
-    func getSegmentWidth(_ frame: CGRect) -> CGFloat {
-        
-        var maxWidth: CGFloat = 0
 
-		for tab in segmentTabs {
+	func widthForSegment(_ frame: CGRect) -> CGFloat {
+
+		var maxWidth: CGFloat = 0
+		for controller in controllers! {
 
 			var width: CGFloat = 0.0
-			if let image = tab.image {
-				width = image.size.width
-			} else if let title = tab.title {
+			if let view = controller.navigationItem.titleView {
+				width = view.bounds.width
+			} else if let title = controller.title {
+
 				width = title.widthWithConstrainedWidth(width: .greatestFiniteMagnitude,
-				                                        font: UIFont.systemFont(ofSize: 14))
+				                                        font: font!)
 			}
 
 			if width > maxWidth {
-				 maxWidth = width
+				maxWidth = width
 			}
 		}
 
-        let width = Int(maxWidth + segmentViewOffsetWidth)
-        let totalWidth = width * (controllers?.count)!
-        if totalWidth < Int(frame.size.width)  {
-            maxWidth = frame.size.width /  CGFloat((controllers?.count)!)
-        } else {
-            maxWidth = CGFloat(width)
-        }
+		let width = Int(maxWidth + segmentViewOffsetWidth)
+		let totalWidth = width * (controllers?.count)!
+		if totalWidth < Int(frame.size.width)  {
+			maxWidth = frame.size.width /  CGFloat((controllers?.count)!)
+		} else {
+			maxWidth = CGFloat(width)
+		}
 
-        return maxWidth
-    }
+		return maxWidth
+	}
     
 	override func observeValue(forKeyPath keyPath: String?,
 	                           of object: Any?,
@@ -375,7 +319,7 @@ class SJSegmentView: UIScrollView {
     
     func didChangeParentViewFrame(_ frame: CGRect) {
         
-        let segmentWidth = getSegmentWidth(frame)
+        let segmentWidth = widthForSegment(frame)
         let contentViewWidth = segmentWidth * CGFloat((controllers?.count)!)
         contentViewWidthConstraint?.constant = contentViewWidth
         

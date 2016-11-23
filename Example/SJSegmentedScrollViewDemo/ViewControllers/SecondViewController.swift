@@ -33,11 +33,6 @@ extension SecondViewController: UITableViewDataSource {
 
 extension SecondViewController: SJSegmentedViewControllerViewSource {
 
-	public func titleForSegment() -> String? {
-
-		return "Second"
-	}
-
     func viewForSegmentControllerToObserveContentOffsetChange() -> UIView {
 		
         return customTableView

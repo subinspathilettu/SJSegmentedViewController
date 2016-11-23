@@ -32,15 +32,19 @@ class ViewController: UIViewController {
 
             let firstViewController = storyboard
                 .instantiateViewController(withIdentifier: "FirstTableViewController")
+			firstViewController.title = "Table View"
 
             let secondViewController = storyboard
                 .instantiateViewController(withIdentifier: "SecondViewController")
+			secondViewController.title = "Custom view"
 
             let thirdViewController = storyboard
                 .instantiateViewController(withIdentifier: "ThirdViewController")
+			thirdViewController.title = "Scroll View"
 
 			let fourthViewController = storyboard
 				.instantiateViewController(withIdentifier: "CollectionViewIdentifier")
+			fourthViewController.title = "Collection View"
 
             segmentedViewController.headerViewController = headerViewController
             segmentedViewController.segmentControllers = [firstViewController,
