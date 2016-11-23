@@ -26,7 +26,7 @@ All notable changes to this project will be documented in this file.
 #### `1.2.1`
 * Updated documentations.
 
-#### `1.3.0`
+#### `1.3.1`
 * Added support to CollectionViewController.
 * Added Custom Segment tab view support. (issue #22)
 * Resolved crash issue. (issue #23)
