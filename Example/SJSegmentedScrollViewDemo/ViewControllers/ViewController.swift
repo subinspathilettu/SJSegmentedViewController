@@ -32,19 +32,19 @@ class ViewController: UIViewController {
 
             let firstViewController = storyboard
                 .instantiateViewController(withIdentifier: "FirstTableViewController")
-			firstViewController.navigationItem.titleView = getSegmentTabWithColor(.red)
+			firstViewController.navigationItem.titleView = getSegmentTabWithImage("Fire Hydrant-50")
 
             let secondViewController = storyboard
                 .instantiateViewController(withIdentifier: "SecondViewController")
-			secondViewController.navigationItem.titleView = getSegmentTabWithColor(.yellow)
+			secondViewController.navigationItem.titleView = getSegmentTabWithImage("Fountain-50")
 
             let thirdViewController = storyboard
                 .instantiateViewController(withIdentifier: "ThirdViewController")
-			thirdViewController.navigationItem.titleView = getSegmentTabWithColor(.brown)
+			thirdViewController.navigationItem.titleView = getSegmentTabWithImage("Handcuffs-50")
 
 			let fourthViewController = storyboard
 				.instantiateViewController(withIdentifier: "CollectionViewIdentifier")
-			fourthViewController.navigationItem.titleView = getSegmentTabWithColor(.green)
+			fourthViewController.navigationItem.titleView = getSegmentTabWithImage("Heart Balloon-50")
 
             segmentedViewController.headerViewController = headerViewController
             segmentedViewController.segmentControllers = [firstViewController,
@@ -61,11 +61,13 @@ class ViewController: UIViewController {
         return nil
     }
 
-	func getSegmentTabWithColor(_ color: UIColor) -> UIView {
+	func getSegmentTabWithImage(_ imageName: String) -> UIView {
 
-		let view = UIView()
-		view.frame.size.width = 150
-		view.backgroundColor = color
+		let view = UIImageView()
+		view.frame.size.width = 100
+		view.image = UIImage(named: imageName)
+		view.contentMode = .scaleAspectFit
+		view.backgroundColor = .white
 		return view
 	}
     

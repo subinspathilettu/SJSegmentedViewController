@@ -5,7 +5,7 @@
 [![License](https://img.shields.io/cocoapods/l/SJSegmentedScrollView.svg?style=flat)](http://cocoapods.org/pods/SJSegmentedScrollView)
 [![Platform](https://img.shields.io/cocoapods/p/SJSegmentedScrollView.svg?style=flat)](http://cocoapods.org/pods/SJSegmentedScrollView)
 
-SJSegmentedScrollView is a light weight generic controller written in Swift. Its a simple customizable controller were you can integrate any number of ViewControllers into a segmented controller with a header view controller. We have upgraded to Swift 3, version 1.2.2. For older versions use
+SJSegmentedScrollView is a light weight generic controller written in Swift. Its a simple customizable controller were you can integrate any number of ViewControllers into a segmented controller with a header view controller. We have upgraded to `Swift 3`. For older versions`Swift 2.3` use
 
 ```ruby
 pod ’SJSegmentedScrollView’, ‘1.1.0'
@@ -15,12 +15,12 @@ pod ’SJSegmentedScrollView’, ‘1.1.0'
 
 #### Highlights
 
-* Horizontal scrolling for switching from segment to segment.
-* Vertical scrolling for contents.
-* Single header view for all segments.
-* Title, segment selection color, header size, segment height etc can be customized accordingly.
-* Supports Swift and Objective-C.
-* Supports multitasking.
+- [x] Horizontal scrolling for switching from segment to segment.
+- [x] Vertical scrolling for contents.
+- [x] Single header view for all segments.
+- [x] Title, segment selection color, header size, segment height etc can be customized accordingly.
+- [x] Supports Swift and Objective-C.
+- [x] Supports multitasking.
 
 ## Installation
 
@@ -32,7 +32,7 @@ pod ’SJSegmentedScrollView’, ‘1.1.0'
 $ gem install cocoapods
 ```
 
-To integrate SJSegmentedViewController into your Xcode project using CocoaPods, specify it in your Podfile:
+To integrate `SJSegmentedViewController` into your Xcode project using CocoaPods, specify it in your Podfile:
 ```ruby
 
 source 'https://github.com/CocoaPods/Specs.git'
@@ -40,7 +40,7 @@ platform :ios, '9.0'
 use_frameworks!
 
 target '<Your Target Name>' do
-pod ’SJSegmentedScrollView’, ‘1.2.2'
+pod ’SJSegmentedScrollView’, ‘1.3.0'
 end
 ```
 
@@ -57,11 +57,19 @@ $ pod install
 
 ## Requirements
 
-iOS 8.0+, Swift 2.3+
+- Xcode 7.3+
+- iOS 9.0+
+- Swift 2.3+
+
+## Communication
+
+- If you **found a bug**, open an issue.
+- If you **have a feature request**, open an issue.
+- If you **want to contribute**, submit a pull request.
 
 ## Usage
 
-Here is how you can use SJSegmentedViewController. 
+Here is how you can use `SJSegmentedViewController`. 
 
 Import SJSegmentedScrollView to your viewcontroller,
 
@@ -69,7 +77,7 @@ Import SJSegmentedScrollView to your viewcontroller,
 import SJSegmentedScrollView
 ```
 
-Then add any number of ViewControllers into SJSegmentedViewController. All you have to do is as follows.
+Then add any number of ViewControllers into `SJSegmentedViewController`. All you have to do is as follows.
 
 ```swift
 if let storyboard = self.storyboard {
@@ -114,10 +122,30 @@ segmentedViewController.view.frame = self.view.bounds
 segmentedViewController.didMoveToParentViewController(self)
 ```
 
+#### Customize Segement Tab
+Defaultly, SJSegmentedScrollView shows the `controller.title` as segments tab. 
+
+```swift
+firstViewController.title = "First"
+```
+
+You can customize the segment tab view by providing `controller.navigationItem.titleView`.
+
+```swift
+// Custom ImageView
+let view = UIImageView()
+view.frame.size.width = 100
+view.image = UIImage(named: imageName)
+view.contentMode = .scaleAspectFit
+view.backgroundColor = .white
+
+firstViewController.navigationItem.titleView = view
+```
+
 #### Customize your view
 By default, SJSegmentedScrollView will observe the default view of viewcontroller for content 
 changes and makes the scroll effect. If you want to change the default view, implement 
-SJSegmentedViewControllerViewSource and pass your custom view. 
+`SJSegmentedViewControllerViewSource` and pass your custom view. 
 
 ```swift
 func viewForSegmentControllerToObserveContentOffsetChange(controller: UIViewController,
@@ -126,7 +154,7 @@ func viewForSegmentControllerToObserveContentOffsetChange(controller: UIViewCont
 }
 ```
 
-Delegate method which helps to customize segment view by accessing the current segment, index,
+`SJSegmentedViewControllerDelegate` delegate method which helps to customize segment view by accessing the current segment, index,
 etc. 
 
 Note: if there is only one content controller then the segment will be empty. 
@@ -137,18 +165,17 @@ segmentedViewController.delegate = self
 
 extension ViewController: SJSegmentedViewControllerDelegate {
     
-    func didMoveToPage(controller: UIViewController, segment: UIButton?, index: Int) {
+    func didMoveToPage(controller: UIViewController, segment: SJSegmentTab?, index: Int) {
         if segmentedViewController.segments.count > 0 {
             
-            let button = segmentedViewController.segments[index]
-            button.setTitleColor(UIColor.yellowColor(), forState: .Selected)
+            let segmentTab = segmentedViewController.segments[index]
+            segmentTab.titleColor = .yellow
         }
     }
 }
 ```
 
-
-You can also customize your controllers by using following properties in SJSegmentedViewController.
+You can also customize your controllers by using following properties in `SJSegmentedViewController`.
 
 ```swift
 let segmentedViewController = SJSegmentedViewController()
