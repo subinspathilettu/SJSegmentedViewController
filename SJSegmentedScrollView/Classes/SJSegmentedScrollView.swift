@@ -173,7 +173,6 @@ class SJSegmentedScrollView: UIScrollView {
         
         if controllers.count > 1 {
             
-            let titles = getSegmentTitlesFromControllers(controllers)
             segmentView = SJSegmentView(frame: CGRect.zero)
 			segmentView?.controllers					= controllers
             segmentView?.selectedSegmentViewColor		= selectedSegmentViewColor
@@ -211,22 +210,6 @@ class SJSegmentedScrollView: UIScrollView {
             
             segmentViewHeight = 0.0
         }
-    }
-    
-    
-    func getSegmentTitlesFromControllers(_ controllers: [UIViewController]) -> [String] {
-        
-        var titles = [String]()
-        
-        for controller in controllers {
-            if controller.title != nil  {
-                titles.append(controller.title!)
-            } else {
-                titles.append("")
-            }
-        }
-        
-        return titles
     }
     
     func addSegmentsForContentViews(_ titles: [String]) {

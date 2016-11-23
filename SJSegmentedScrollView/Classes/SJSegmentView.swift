@@ -259,7 +259,13 @@ class SJSegmentView: UIScrollView {
 		if controller.navigationItem.titleView != nil {
 			segmentTab = SJSegmentTab.init(view: controller.navigationItem.titleView!)
 		} else {
-			segmentTab = SJSegmentTab.init(title: controller.title!)
+
+			if let title = controller.title {
+				segmentTab = SJSegmentTab.init(title: title)
+			} else {
+				segmentTab = SJSegmentTab.init(title: "")
+			}
+
 			segmentTab?.backgroundColor = segmentBackgroundColor
 			segmentTab?.titleColor(titleColor!)
 			segmentTab?.titleFont(font!)

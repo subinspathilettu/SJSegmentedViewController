@@ -32,11 +32,10 @@ class SecondSJViewController: UIViewController {
 
 			let firstViewController = storyboard
 				.instantiateViewController(withIdentifier: "FirstTableViewController")
-			firstViewController.navigationItem.titleView = getSegmentTabWithImage("Fire Hydrant-50")
+			firstViewController.title = "First"
 
 			let secondViewController = storyboard
 				.instantiateViewController(withIdentifier: "SecondViewController")
-			secondViewController.navigationItem.titleView = getSegmentTabWithImage("Fountain-50")
 
 			segmentedViewController.headerViewController = headerViewController
 			segmentedViewController.segmentControllers = [firstViewController,
@@ -46,16 +45,6 @@ class SecondSJViewController: UIViewController {
 		}
 
 		return nil
-	}
-
-	func getSegmentTabWithImage(_ imageName: String) -> UIView {
-
-		let view = UIImageView()
-		view.frame.size.width = 50
-		view.image = UIImage(named: imageName)
-		view.contentMode = .scaleAspectFit
-		view.backgroundColor = .white
-		return view
 	}
 
 	func adddChildViewController() {
