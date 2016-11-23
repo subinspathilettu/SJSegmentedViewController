@@ -43,6 +43,10 @@ public class SJSegmentTab: UIView {
 
 	convenience init(view: UIView) {
 		self.init(frame: CGRect.zero)
+
+		insertSubview(view, at: 0)
+		view.removeConstraints(view.constraints)
+		addConstraintsToView(view)
 	}
 
 	required override public init(frame: CGRect) {
@@ -53,16 +57,20 @@ public class SJSegmentTab: UIView {
 		button.addTarget(self, action: #selector(SJSegmentTab.onSegmentButtonPress(_:)),
 		                 for: .touchUpInside)
 		addSubview(button)
+		addConstraintsToView(button)
+	}
 
-		button.translatesAutoresizingMaskIntoConstraints = false
+	func addConstraintsToView(_ view: UIView) {
+
+		view.translatesAutoresizingMaskIntoConstraints = false
 		let verticalConstraints = NSLayoutConstraint.constraints(withVisualFormat: "V:|[view]|",
 		                                                         options: [],
 		                                                         metrics: nil,
-		                                                         views: ["view": button])
+		                                                         views: ["view": view])
 		let horizontalConstraints = NSLayoutConstraint.constraints(withVisualFormat: "H:|[view]|",
-		                                                         options: [],
-		                                                         metrics: nil,
-		                                                         views: ["view": button])
+		                                                           options: [],
+		                                                           metrics: nil,
+		                                                           views: ["view": view])
 		addConstraints(verticalConstraints)
 		addConstraints(horizontalConstraints)
 	}

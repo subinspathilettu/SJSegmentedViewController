@@ -175,7 +175,7 @@ class SJSegmentView: UIScrollView {
     
     func createSegmentFor(_ controller: UIViewController, width: CGFloat, index: Int) {
         
-        let segmentView = getSegmentViewForController(controller)
+        let segmentView = getSegmentTabForController(controller)
         segmentView.tag = (index + kSegmentViewTagOffset)
         segmentView.translatesAutoresizingMaskIntoConstraints = false
         segmentContentView!.addSubview(segmentView)
@@ -249,15 +249,22 @@ class SJSegmentView: UIScrollView {
         segmentContentView!.addConstraints(verticalConstraints)
     }
     
-    func getSegmentViewForController(_ controller: UIViewController) -> SJSegmentTab {
+    func getSegmentTabForController(_ controller: UIViewController) -> SJSegmentTab {
 
-		let segmentTab = SJSegmentTab.init(title: controller.title!)
-		segmentTab.backgroundColor = segmentBackgroundColor
-		segmentTab.titleColor(titleColor!)
-		segmentTab.titleFont(font!)
-		segmentTab.didSelectSegmentAtIndex = didSelectSegmentAtIndex
+		var segmentTab: SJSegmentTab?
 
-        return segmentTab
+		if controller.navigationItem.titleView != nil {
+			segmentTab = SJSegmentTab.init(view: controller.navigationItem.titleView!)
+		} else {
+			segmentTab = SJSegmentTab.init(title: controller.title!)
+			segmentTab?.backgroundColor = segmentBackgroundColor
+			segmentTab?.titleColor(titleColor!)
+			segmentTab?.titleFont(font!)
+		}
+
+		segmentTab?.didSelectSegmentAtIndex = didSelectSegmentAtIndex
+
+        return segmentTab!
     }
 
 	func widthForSegment(_ frame: CGRect) -> CGFloat {

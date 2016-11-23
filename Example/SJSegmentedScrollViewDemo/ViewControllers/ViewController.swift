@@ -32,19 +32,19 @@ class ViewController: UIViewController {
 
             let firstViewController = storyboard
                 .instantiateViewController(withIdentifier: "FirstTableViewController")
-			firstViewController.title = "Table View"
+			firstViewController.navigationItem.titleView = getSegmentTabWithColor(.red)
 
             let secondViewController = storyboard
                 .instantiateViewController(withIdentifier: "SecondViewController")
-			secondViewController.title = "Custom view"
+			secondViewController.navigationItem.titleView = getSegmentTabWithColor(.yellow)
 
             let thirdViewController = storyboard
                 .instantiateViewController(withIdentifier: "ThirdViewController")
-			thirdViewController.title = "Scroll View"
+			thirdViewController.navigationItem.titleView = getSegmentTabWithColor(.brown)
 
 			let fourthViewController = storyboard
 				.instantiateViewController(withIdentifier: "CollectionViewIdentifier")
-			fourthViewController.title = "Collection View"
+			fourthViewController.navigationItem.titleView = getSegmentTabWithColor(.green)
 
             segmentedViewController.headerViewController = headerViewController
             segmentedViewController.segmentControllers = [firstViewController,
@@ -60,6 +60,14 @@ class ViewController: UIViewController {
         
         return nil
     }
+
+	func getSegmentTabWithColor(_ color: UIColor) -> UIView {
+
+		let view = UIView()
+		view.frame.size.width = 150
+		view.backgroundColor = color
+		return view
+	}
     
     func adddChildViewController() {
         
