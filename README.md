@@ -218,3 +218,9 @@ Subins Jose, subinsjose@gmail.com
 ## License
 
 SJSegmentedScrollView is available under the MIT license. See the LICENSE file for more info.
+
+## Donation
+
+If this project help you reduce time to develop, you can give me a beer 🍺 :)
+
+[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](subinsjose@gmail.com)
