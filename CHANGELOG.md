@@ -29,3 +29,4 @@ All notable changes to this project will be documented in this file.
 #### `1.3.0`
 * Added support to CollectionViewController.
 * Added Custom Segment tab view support. (issue #22)
+* Resolved crash issue. (issue #23)
