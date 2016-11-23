@@ -223,4 +223,4 @@ SJSegmentedScrollView is available under the MIT license. See the LICENSE file f
 
 If this project help you reduce time to develop, you can give me a beer 🍺 :)
 
-[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](subinsjose@gmail.com)
+[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.me/SubinsJose)
