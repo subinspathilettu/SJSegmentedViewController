@@ -118,8 +118,11 @@ class SJSegmentView: UIScrollView {
         
         // select current button
         let index = notification.object as? Int
-        let button = segments[index!]
-        button.isSelected = true
+
+		if index! < segments.count {
+			let button = segments[index!]
+			button.isSelected = true
+		}
     }
 
     func setSegmentsView(_ frame: CGRect) {
