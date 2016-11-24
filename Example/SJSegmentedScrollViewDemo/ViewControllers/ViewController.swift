@@ -12,14 +12,20 @@ import SJSegmentedScrollView
 class ViewController: UIViewController {
     
     let segmentedViewController = SJSegmentedViewController()
-	var selectedSegment: UIButton?
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
 
-		adddChildViewController()
+		if let viewController = getSJSegmentedViewController() {
+
+			viewController.automaticallyAdjustsScrollViewInsets = false
+			addChildViewController(viewController)
+			self.view.addSubview(viewController.view)
+			viewController.view.frame = self.view.bounds
+			viewController.didMove(toParentViewController: self)
+		}
 	}
-    
+
     //MARK:- Private Function
     //MARK:-
     
@@ -70,16 +76,4 @@ class ViewController: UIViewController {
 		view.backgroundColor = .white
 		return view
 	}
-    
-    func adddChildViewController() {
-        
-        let viewController = getSJSegmentedViewController()
-        
-        if viewController != nil {
-            addChildViewController(viewController!)
-            self.view.addSubview(viewController!.view)
-            viewController!.view.frame = self.view.bounds
-            viewController!.didMove(toParentViewController: self)
-        }
-    }
 }
