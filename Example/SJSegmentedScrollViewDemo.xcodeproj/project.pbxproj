@@ -11,6 +11,7 @@
 		64729EF11DE568680092C458 /* Fountain-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 64729EED1DE568680092C458 /* Fountain-50.png */; };
 		64729EF21DE568680092C458 /* Handcuffs-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 64729EEE1DE568680092C458 /* Handcuffs-50.png */; };
 		64729EF31DE568680092C458 /* Heart Balloon-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 64729EEF1DE568680092C458 /* Heart Balloon-50.png */; };
+		6480F54D1DE6E9EC00A69A9B /* ExamplePushViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6480F54C1DE6E9EC00A69A9B /* ExamplePushViewController.swift */; };
 		648742301DAE2D8100E76916 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6487422F1DAE2D8100E76916 /* CollectionViewController.swift */; };
 		64A421681D3D4543009BFBFE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A4215A1D3D4543009BFBFE /* AppDelegate.swift */; };
 		64A421691D3D4543009BFBFE /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64A4215B1D3D4543009BFBFE /* LaunchScreen.xib */; };
@@ -33,6 +34,7 @@
 		64729EED1DE568680092C458 /* Fountain-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Fountain-50.png"; sourceTree = "<group>"; };
 		64729EEE1DE568680092C458 /* Handcuffs-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Handcuffs-50.png"; sourceTree = "<group>"; };
 		64729EEF1DE568680092C458 /* Heart Balloon-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Heart Balloon-50.png"; sourceTree = "<group>"; };
+		6480F54C1DE6E9EC00A69A9B /* ExamplePushViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExamplePushViewController.swift; sourceTree = "<group>"; };
 		6487422F1DAE2D8100E76916 /* CollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		64A0353E1D4893620068BE28 /* CHANGELOG.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = CHANGELOG.md; path = ../CHANGELOG.md; sourceTree = "<group>"; };
 		64A4215A1D3D4543009BFBFE /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 				64A421661D3D4543009BFBFE /* ThirdViewController.swift */,
 				64A421671D3D4543009BFBFE /* ViewController.swift */,
 				6487422F1DAE2D8100E76916 /* CollectionViewController.swift */,
+				6480F54C1DE6E9EC00A69A9B /* ExamplePushViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -278,6 +281,7 @@
 				64A4216E1D3D4543009BFBFE /* FirstTableViewController.swift in Sources */,
 				64A421711D3D4543009BFBFE /* ThirdViewController.swift in Sources */,
 				648742301DAE2D8100E76916 /* CollectionViewController.swift in Sources */,
+				6480F54D1DE6E9EC00A69A9B /* ExamplePushViewController.swift in Sources */,
 				64A421681D3D4543009BFBFE /* AppDelegate.swift in Sources */,
 				64A4216F1D3D4543009BFBFE /* HeaderViewController.swift in Sources */,
 			);

@@ -22,10 +22,12 @@ class HeaderViewController: UIViewController {
     }
     
     @IBAction func headerViewAction(_ sender: AnyObject) {
-        
-        let viewController = self.storyboard?
-            .instantiateViewController(withIdentifier: "HeaderDetailViewController")
-        self.parent?.navigationController?.pushViewController(viewController!,
-                                                                            animated: true)
+
+		if navigationController?.isNavigationBarHidden == false {
+			let viewController = self.storyboard?
+				.instantiateViewController(withIdentifier: "HeaderDetailViewController")
+			self.parent?.navigationController?.pushViewController(viewController!,
+			                                                      animated: true)
+		}
     }
 }

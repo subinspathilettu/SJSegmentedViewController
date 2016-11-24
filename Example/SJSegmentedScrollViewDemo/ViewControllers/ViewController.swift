@@ -9,63 +9,44 @@
 import UIKit
 import SJSegmentedScrollView
 
-class ViewController: UIViewController {
-    
-    let segmentedViewController = SJSegmentedViewController()
+class ViewController: SJSegmentedViewController {
 
 	override func viewDidLoad() {
-		super.viewDidLoad()
+		if let storyboard = self.storyboard {
 
-		if let viewController = getSJSegmentedViewController() {
+			let headerController = storyboard
+				.instantiateViewController(withIdentifier: "HeaderViewController1")
 
-			viewController.automaticallyAdjustsScrollViewInsets = false
-			addChildViewController(viewController)
-			self.view.addSubview(viewController.view)
-			viewController.view.frame = self.view.bounds
-			viewController.didMove(toParentViewController: self)
-		}
-	}
-
-    //MARK:- Private Function
-    //MARK:-
-    
-    func getSJSegmentedViewController() -> SJSegmentedViewController? {
-        
-        if let storyboard = self.storyboard {
-            
-            let headerViewController = storyboard
-                .instantiateViewController(withIdentifier: "HeaderViewController1")
-
-            let firstViewController = storyboard
-                .instantiateViewController(withIdentifier: "FirstTableViewController")
+			let firstViewController = storyboard
+				.instantiateViewController(withIdentifier: "FirstTableViewController")
 			firstViewController.navigationItem.titleView = getSegmentTabWithImage("Fire Hydrant-50")
 
-            let secondViewController = storyboard
-                .instantiateViewController(withIdentifier: "SecondViewController")
+			let secondViewController = storyboard
+				.instantiateViewController(withIdentifier: "SecondViewController")
 			secondViewController.navigationItem.titleView = getSegmentTabWithImage("Fountain-50")
 
-            let thirdViewController = storyboard
-                .instantiateViewController(withIdentifier: "ThirdViewController")
+			let thirdViewController = storyboard
+				.instantiateViewController(withIdentifier: "ThirdViewController")
 			thirdViewController.navigationItem.titleView = getSegmentTabWithImage("Handcuffs-50")
 
 			let fourthViewController = storyboard
 				.instantiateViewController(withIdentifier: "CollectionViewIdentifier")
 			fourthViewController.navigationItem.titleView = getSegmentTabWithImage("Heart Balloon-50")
 
-            segmentedViewController.headerViewController = headerViewController
-            segmentedViewController.segmentControllers = [firstViewController,
-                                                          secondViewController,
-                                                          thirdViewController,
-                                                          fourthViewController]
-            segmentedViewController.headerViewHeight = 200
-			segmentedViewController.selectedSegmentViewHeight = 5.0
-			segmentedViewController.segmentTitleColor = UIColor.gray
-            segmentedViewController.segmentShadow = SJShadow.light()
-            return segmentedViewController
-        }
-        
-        return nil
-    }
+			headerViewController = headerController
+			segmentControllers = [firstViewController,
+			                           secondViewController,
+			                           thirdViewController,
+			                           fourthViewController]
+			headerViewHeight = 200
+			selectedSegmentViewHeight = 5.0
+			segmentTitleColor = UIColor.gray
+			segmentShadow = SJShadow.light()
+		}
+
+		title = "Segment"
+		super.viewDidLoad()
+	}
 
 	func getSegmentTabWithImage(_ imageName: String) -> UIView {
 
