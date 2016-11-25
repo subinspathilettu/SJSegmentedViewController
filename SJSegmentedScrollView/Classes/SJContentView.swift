@@ -147,7 +147,7 @@ extension SJContentView: UIScrollViewDelegate {
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         pageIndex = Int(contentOffset.x / bounds.size.width)
-        didSelectSegmentAtIndex?(nil, pageIndex)
+        didSelectSegmentAtIndex?(nil, pageIndex, true)
         NotificationCenter.default.post(name: Notification.Name(rawValue: "DidChangeSegmentIndex"),
                                                                   object: pageIndex)
     }

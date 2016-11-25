@@ -10,4 +10,13 @@ import UIKit
 import SJSegmentedScrollView
 
 class ThirdViewController: UIViewController {
+
+	var loadViewController: ((_ index: Int) -> Void)?
+
+	@IBAction func loadSegment(_ sender: Any) {
+
+		if loadViewController != nil {
+			loadViewController!(0)
+		}
+	}
 }

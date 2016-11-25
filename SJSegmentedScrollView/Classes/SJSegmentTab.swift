@@ -22,7 +22,7 @@
 
 import Foundation
 
-typealias DidSelectSegmentAtIndex = (_ segment: SJSegmentTab?, _ index: Int) -> Void
+typealias DidSelectSegmentAtIndex = (_ segment: SJSegmentTab?,_ index: Int,_ animated: Bool) -> Void
 
 public class SJSegmentTab: UIView {
 
@@ -96,7 +96,7 @@ public class SJSegmentTab: UIView {
 		                                object: index)
 
 		if didSelectSegmentAtIndex != nil {
-			didSelectSegmentAtIndex!(self, index)
+			didSelectSegmentAtIndex!(self, index, true)
 		}
 	}
 }

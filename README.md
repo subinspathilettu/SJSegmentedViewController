@@ -5,7 +5,7 @@
 [![License](https://img.shields.io/cocoapods/l/SJSegmentedScrollView.svg?style=flat)](http://cocoapods.org/pods/SJSegmentedScrollView)
 [![Platform](https://img.shields.io/cocoapods/p/SJSegmentedScrollView.svg?style=flat)](http://cocoapods.org/pods/SJSegmentedScrollView)
 
-SJSegmentedScrollView is a light weight generic controller written in Swift. Its a simple customizable controller were you can integrate any number of ViewControllers into a segmented controller with a header view controller. We have upgraded to `Swift 3`. For older versions`Swift 2.3` use
+SJSegmentedScrollView is a light weight generic controller written in Swift. Its a simple customizable controller were you can integrate any number of ViewControllers into a segmented controller with a header view controller. We have upgraded to `Swift 3`. For older versions `Swift 2.3`, use
 
 ```ruby
 pod ’SJSegmentedScrollView’, ‘1.1.0'
@@ -40,7 +40,7 @@ platform :ios, '9.0'
 use_frameworks!
 
 target '<Your Target Name>' do
-pod ’SJSegmentedScrollView’, ‘1.3.2'
+pod ’SJSegmentedScrollView’, ‘1.3.3'
 end
 ```
 
@@ -66,6 +66,12 @@ $ pod install
 - If you **found a bug**, open an issue.
 - If you **have a feature request**, open an issue.
 - If you **want to contribute**, submit a pull request.
+
+## Donation
+
+If this project help you reduce time to develop, you can give me a beer 🍺 :)
+
+[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.me/SubinsJose)
 
 ## Usage
 
@@ -211,6 +217,15 @@ segmentedViewController.selectedSegmentViewHeight = 5.0
 segmentedViewController. headerViewOffsetHeight = 10.0
 ```
 
+#### Change Segment Programmatically
+
+
+To change segment programmatically, use `SJSegmentedViewController` `func setSelectedSegmentAt(_ index: Int, animated: Bool)`.
+
+```swift
+segmentControl.setSelectedSegmentAt(index, animated: true)
+```
+
 ## Author
 
 Subins Jose, subinsjose@gmail.com
@@ -218,9 +233,3 @@ Subins Jose, subinsjose@gmail.com
 ## License
 
 SJSegmentedScrollView is available under the MIT license. See the LICENSE file for more info.
-
-## Donation
-
-If this project help you reduce time to develop, you can give me a beer 🍺 :)
-
-[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.me/SubinsJose)

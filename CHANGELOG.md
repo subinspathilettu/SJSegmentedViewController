@@ -33,3 +33,6 @@ All notable changes to this project will be documented in this file.
 
 #### `1.3.2`
 * Resolved white space issue.
+
+#### `1.3.3`
+* Resolved issue #25. Using '`func setSelectedSegmentAt(_ index: Int, animated: Bool)` to change segment programmatically.

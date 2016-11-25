@@ -147,8 +147,8 @@ class SJSegmentedScrollView: UIScrollView {
         contentViews.append(contentView)
         self.contentView?.addContentView(contentView, frame: frame)
         self.contentView!.didSelectSegmentAtIndex = {
-            (segment,index) in
-            self.didSelectSegmentAtIndex?(self.segmentView!.segments[index], index)
+            (segment, index, animated) in
+            self.didSelectSegmentAtIndex?(self.segmentView!.segments[index], index, animated)
         }
     }
     
@@ -162,8 +162,8 @@ class SJSegmentedScrollView: UIScrollView {
     }
     
     //MARK: Private Functions
-    
     func getContentHeight() -> CGFloat {
+		
         var contentHeight = (superview?.bounds.height)! + headerViewHeight!
         contentHeight -= (topSpacing! + bottomSpacing! + headerViewOffsetHeight!)
         return contentHeight
@@ -185,9 +185,9 @@ class SJSegmentedScrollView: UIScrollView {
             segmentView?.bounces						= segmentBounces
             segmentView!.translatesAutoresizingMaskIntoConstraints = false
             segmentView!.didSelectSegmentAtIndex = {
-                (segment,index) in
-                self.contentView?.movePageToIndex(index, animated: true)
-                self.didSelectSegmentAtIndex?(segment, index)
+                (segment, index, animated) in
+                self.contentView?.movePageToIndex(index, animated: animated)
+                self.didSelectSegmentAtIndex?(segment, index, animated)
             }
             
             segmentView?.setSegmentsView(frame)
@@ -218,8 +218,8 @@ class SJSegmentedScrollView: UIScrollView {
                            width: bounds.size.width, height: segmentViewHeight!)
         segmentView = SJSegmentView(frame: frame)
         segmentView!.didSelectSegmentAtIndex = {
-            (segment,index) in
-            self.contentView?.movePageToIndex(index, animated: true)
+            (segment, index, animated) in
+            self.contentView?.movePageToIndex(index, animated: animated)
         }
         addSubview(segmentView!)
     }

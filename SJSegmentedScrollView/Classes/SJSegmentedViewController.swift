@@ -278,6 +278,22 @@ import UIKit
         segmentScrollViewTopConstraint?.constant = topSpacing
         segmentedScrollView.updateSubviewsFrame(view.bounds)
     }
+
+	/**
+	* To select segment programmatically
+	* - parameter index Int Segment index
+	* - parameter animated Bool Move with an animation or not.
+	*/
+	public func setSelectedSegmentAt(_ index: Int, animated: Bool) {
+
+		if index >= 0 && index < segmentControllers.count {
+			segmentedScrollView.segmentView?.didSelectSegmentAtIndex!(segments[index],
+			                                                          index,
+			                                                          animated)
+			NotificationCenter.default.post(name: Notification.Name(rawValue: "DidChangeSegmentIndex"),
+			                                object: index)
+		}
+	}
     
     /**
      * Set the default values for the segmented scroll view.
@@ -334,7 +350,7 @@ import UIKit
         segmentedScrollView.setContentView()
         
         // selected segment at index
-        segmentedScrollView.didSelectSegmentAtIndex = {(segment,index) in
+        segmentedScrollView.didSelectSegmentAtIndex = {(segment, index, animated) in
 
 			let selectedController = self.segmentControllers[index]
 			self.delegate?.didMoveToPage?(selectedController, segment: segment!, index: index)

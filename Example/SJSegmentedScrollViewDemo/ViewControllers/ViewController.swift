@@ -26,8 +26,11 @@ class ViewController: SJSegmentedViewController {
 			secondViewController.navigationItem.titleView = getSegmentTabWithImage("Fountain-50")
 
 			let thirdViewController = storyboard
-				.instantiateViewController(withIdentifier: "ThirdViewController")
-			thirdViewController.navigationItem.titleView = getSegmentTabWithImage("Handcuffs-50")
+				.instantiateViewController(withIdentifier: "ThirdViewController") as? ThirdViewController
+			thirdViewController?.navigationItem.titleView = getSegmentTabWithImage("Handcuffs-50")
+			thirdViewController?.loadViewController = { (index) in
+				self.setSelectedSegmentAt(index, animated: true)
+			}
 
 			let fourthViewController = storyboard
 				.instantiateViewController(withIdentifier: "CollectionViewIdentifier")
@@ -36,7 +39,7 @@ class ViewController: SJSegmentedViewController {
 			headerViewController = headerController
 			segmentControllers = [firstViewController,
 			                           secondViewController,
-			                           thirdViewController,
+			                           thirdViewController!,
 			                           fourthViewController]
 			headerViewHeight = 200
 			selectedSegmentViewHeight = 5.0
