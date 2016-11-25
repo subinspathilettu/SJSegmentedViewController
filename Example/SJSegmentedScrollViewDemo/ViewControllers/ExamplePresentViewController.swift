@@ -1,5 +1,5 @@
 //
-//  ExamplePushViewController.swift
+//  ExamplePresentViewController.swift
 //  SJSegmentedScrollViewDemo
 //
 //  Created by Subins on 25/11/16.
@@ -9,14 +9,14 @@
 import UIKit
 import SJSegmentedScrollView
 
-class ExamplePushViewController: UIViewController {
+class ExamplePresentViewController: UIViewController {
 
-	@IBAction func push(_ sender: AnyObject) {
+	@IBAction func present(_ sender: AnyObject) {
 
 		if let storyboard = self.storyboard {
 
 			let headerViewController = storyboard
-				.instantiateViewController(withIdentifier: "HeaderViewController1")
+				.instantiateViewController(withIdentifier: "PresentHeader")
 
 			let firstViewController = storyboard
 				.instantiateViewController(withIdentifier: "FirstTableViewController")
@@ -31,7 +31,7 @@ class ExamplePushViewController: UIViewController {
 			segmentController.segmentControllers = [firstViewController,
 			                                        secondViewController]
 			segmentController.headerViewHeight = 200.0
-			navigationController?.pushViewController(segmentController, animated: true)
+			present(segmentController, animated: true, completion: nil)
 		}
 	}
 }
