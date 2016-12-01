@@ -13,6 +13,13 @@ class ViewController: UIViewController {
     
     let segmentedViewController = SJSegmentedViewController()
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        navigationController?.navigationBarHidden = false
+        adddChildViewController()
+    }
+    
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         self.title = "Segment"
@@ -84,6 +91,7 @@ class ViewController: UIViewController {
         
         let viewController = getSJSegmentedViewController()
         
+        
         if viewController != nil {
             addChildViewController(viewController!)
             self.view.addSubview(viewController!.view)
@@ -95,12 +103,18 @@ class ViewController: UIViewController {
 
 extension ViewController: SJSegmentedViewControllerDelegate {
     
-    func didMoveToPage(controller: UIViewController, segment: UIButton?, index: Int) {
+    func didMoveToPage(controller: UIViewController, segment: SJSegmentTab?, index: Int) {
         
         if segmentedViewController.segments.count > 0 {
             
-            let button = segmentedViewController.segments[index]
-            button.setTitleColor(UIColor.yellowColor(), forState: .Selected)
+            
+            
+            let tab = segmentedViewController.segments[index] as? SJSegmentTab
+    
+            tab?.titleColor(UIColor.yellowColor())
+                   
         }
+        
     }
+    
 }

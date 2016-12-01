@@ -19,6 +19,7 @@
 		64A421721D3D4543009BFBFE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A421671D3D4543009BFBFE /* ViewController.swift */; };
 		65ED4A0F1D6FF8B900B2EE28 /* SJSegmentedScrollView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65ED4A0E1D6FF8B900B2EE28 /* SJSegmentedScrollView.framework */; };
 		65ED4A151D70043600B2EE28 /* image3.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 65ED4A141D70043600B2EE28 /* image3.JPG */; };
+		A4BDF46DB114D8EFEF34987D /* Pods_SJSegmentedScrollViewDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 220B06FF892F6EAAE77A7744 /* Pods_SJSegmentedScrollViewDemo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				65ED4A0F1D6FF8B900B2EE28 /* SJSegmentedScrollView.framework in Frameworks */,
+				A4BDF46DB114D8EFEF34987D /* Pods_SJSegmentedScrollViewDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -24,7 +24,7 @@ import UIKit
 
 @objc public protocol SJSegmentedViewControllerDelegate {
     
-    optional func didSelectSegmentAtIndex(index:Int)
+    @objc optional func didSelectSegmentAtIndex(index:Int)
     
     /**
      Method to identify the current controller and segment of contentview
@@ -33,7 +33,7 @@ import UIKit
      - parameter segment: selected segment
      - parameter index: index of selected segment.
      */
-    optional func didMoveToPage(controller: UIViewController, segment: UIButton?, index: Int)
+    @objc optional func didMoveToPage(controller: UIViewController, segment: SJSegmentTab?, index: Int)
 }
 
 /**
@@ -46,13 +46,9 @@ import UIKit
      changes and makes the scroll effect. If you want to change the default view, implement
      SJSegmentedViewControllerViewSource and pass your custom view.
      
-     - parameter controller: UIViewController for segment
-     - parameter index:      index of segment controller
-     
      - returns: observe view
      */
-    optional func viewForSegmentControllerToObserveContentOffsetChange(controller: UIViewController,
-                                                                       index: Int) -> UIView
+    @objc optional func viewForSegmentControllerToObserveContentOffsetChange() -> UIView
 }
 
 /**
@@ -67,7 +63,7 @@ import UIKit
      *
      *  segmentedViewController.headerViewHeight = 200.0
      */
-    public var headerViewHeight: CGFloat = 0.0 {
+   public  var headerViewHeight: CGFloat = 0.0 {
         didSet {
             segmentedScrollView.headerViewHeight = headerViewHeight
         }
@@ -95,7 +91,7 @@ import UIKit
      */
     public var headerViewOffsetHeight: CGFloat = 0.0 {
         didSet {
-            self.segmentedScrollView.headerViewOffsetHeight = headerViewOffsetHeight
+            segmentedScrollView.headerViewOffsetHeight = headerViewOffsetHeight
         }
     }
     
@@ -209,20 +205,20 @@ import UIKit
     /**
      *  Array of segments. For single view controller segments will be empty.
      */
-    public var segments: [UIButton] {
+    public var segments: [SJSegmentTab] {
         get {
             
             if let segmentView = segmentedScrollView.segmentView {
                 return segmentView.segments
             }
             
-            return [UIButton]()
+            return [SJSegmentTab]()
         }
     }
     
     public var delegate:SJSegmentedViewControllerDelegate?
     var viewObservers = [UIView]()
-    var segmentedScrollView = SJSegmentedScrollView(frame: CGRectZero)
+    var segmentedScrollView = SJSegmentedScrollView(frame: CGRect.zero)
     var segmentScrollViewTopConstraint: NSLayoutConstraint?
     
     
@@ -236,6 +232,7 @@ import UIKit
     convenience public init(headerViewController: UIViewController?,
                             segmentControllers: [UIViewController]) {
         self.init(nibName: nil, bundle: nil)
+
         self.headerViewController = headerViewController
         self.segmentControllers = segmentControllers
         setDefaultValuesToSegmentedScrollView()
@@ -265,8 +262,8 @@ import UIKit
     override public func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.backgroundColor = UIColor.whiteColor()
-        self.automaticallyAdjustsScrollViewInsets = false
+        view.backgroundColor = UIColor.whiteColor()
+        automaticallyAdjustsScrollViewInsets = false
         loadControllers()
     }
     
@@ -280,7 +277,7 @@ import UIKit
         segmentedScrollView.topSpacing = topSpacing
         segmentedScrollView.bottomSpacing = SJUtil.getBottomSpacing(self)
         segmentScrollViewTopConstraint?.constant = topSpacing
-        segmentedScrollView.updateSubviewsFrame(self.view.bounds)
+        segmentedScrollView.updateSubviewsFrame(view.bounds)
     }
     
     /**
@@ -288,16 +285,16 @@ import UIKit
      */
     func setDefaultValuesToSegmentedScrollView() {
         
-        segmentedScrollView.selectedSegmentViewColor    = self.selectedSegmentViewColor
-        segmentedScrollView.selectedSegmentViewHeight   = self.selectedSegmentViewHeight
-        segmentedScrollView.segmentTitleColor           = self.segmentTitleColor
-        segmentedScrollView.segmentBackgroundColor      = self.segmentBackgroundColor
-        segmentedScrollView.segmentShadow               = self.segmentShadow
-        segmentedScrollView.segmentTitleFont            = self.segmentTitleFont
-        segmentedScrollView.segmentBounces              = self.segmentBounces
-        segmentedScrollView.headerViewHeight            = self.headerViewHeight
-        segmentedScrollView.headerViewOffsetHeight      = self.headerViewOffsetHeight
-        segmentedScrollView.segmentViewHeight           = self.segmentViewHeight
+        segmentedScrollView.selectedSegmentViewColor    = selectedSegmentViewColor
+        segmentedScrollView.selectedSegmentViewHeight   = selectedSegmentViewHeight
+        segmentedScrollView.segmentTitleColor           = segmentTitleColor
+        segmentedScrollView.segmentBackgroundColor      = segmentBackgroundColor
+        segmentedScrollView.segmentShadow               = segmentShadow
+        segmentedScrollView.segmentTitleFont            = segmentTitleFont
+        segmentedScrollView.segmentBounces              = segmentBounces
+        segmentedScrollView.headerViewHeight            = headerViewHeight
+        segmentedScrollView.headerViewOffsetHeight      = headerViewOffsetHeight
+        segmentedScrollView.segmentViewHeight           = segmentViewHeight
     }
     
     /**
@@ -311,38 +308,38 @@ import UIKit
         let bottomSpacing = SJUtil.getBottomSpacing(self)
         segmentedScrollView.bottomSpacing = bottomSpacing
         
-        self.view.addSubview(segmentedScrollView)
+        view.addSubview(segmentedScrollView)
         
         let horizontalConstraints = NSLayoutConstraint.constraintsWithVisualFormat("H:|-0-[scrollView]-0-|",
                                                                                    options: [],
                                                                                    metrics: nil,
                                                                                    views: ["scrollView": segmentedScrollView])
-        self.view.addConstraints(horizontalConstraints)
+        view.addConstraints(horizontalConstraints)
         
+
         let verticalConstraints = NSLayoutConstraint.constraintsWithVisualFormat("V:[scrollView]-bp-|",
                                                                                  options: [],
                                                                                  metrics: ["tp": topSpacing,
                                                                                     "bp": bottomSpacing],
                                                                                  views: ["scrollView": segmentedScrollView])
-        self.view.addConstraints(verticalConstraints)
+        view.addConstraints(verticalConstraints)
         
         segmentScrollViewTopConstraint = NSLayoutConstraint(item: segmentedScrollView,
                                                             attribute: .Top,
                                                             relatedBy: .Equal,
-                                                            toItem: self.view,
+                                                            toItem: view,
                                                             attribute: .Top,
                                                             multiplier: 1.0,
                                                             constant: topSpacing)
-        self.view.addConstraint(segmentScrollViewTopConstraint!)
+        view.addConstraint(segmentScrollViewTopConstraint!)
         
         segmentedScrollView.setContentView()
         
         // selected segment at index
         segmentedScrollView.didSelectSegmentAtIndex = {(segment,index) in
-            let selectedController = self.segmentControllers[index]
-            
-            self.delegate?.didMoveToPage?(selectedController, segment: segment!, index: index)
-            
+
+			let selectedController = self.segmentControllers[index]
+			self.delegate?.didMoveToPage?(selectedController, segment: segment!, index: index)
         }
     }
     
@@ -351,11 +348,11 @@ import UIKit
      
      - parameter headerViewController: Header ViewController.
      */
-    func addHeaderViewController(headerViewController: UIViewController) {
+    func addHeaderViewController(_ headerViewController: UIViewController) {
         
-        self.addChildViewController(headerViewController)
+        addChildViewController(headerViewController)
         segmentedScrollView.addHeaderView(headerViewController.view)
-        headerViewController.didMoveToParentViewController(self)
+          headerViewController.didMoveToParentViewController(self)
     }
     
     /**
@@ -363,28 +360,32 @@ import UIKit
      
      - parameter contentControllers: array of ViewControllers
      */
-    func addContentControllers(contentControllers: [UIViewController]) {
+    func addContentControllers(_ contentControllers: [UIViewController]) {
         
         viewObservers.removeAll()
-        segmentedScrollView.addSegmentView(contentControllers, frame: self.view.bounds)
+        segmentedScrollView.addSegmentView(contentControllers, frame: view.bounds)
         
         var index = 0
         for controller in contentControllers {
             
-            self.addChildViewController(controller)
-            segmentedScrollView.addContentView(controller.view, frame: self.view.bounds)
+            addChildViewController(controller)
+            segmentedScrollView.addContentView(controller.view, frame: view.bounds)
             controller.didMoveToParentViewController(self)
+
             
             let delegate = controller as? SJSegmentedViewControllerViewSource
             var observeView = controller.view
-            
-            if let view = delegate?.viewForSegmentControllerToObserveContentOffsetChange!(controller,
-                                                                                          index: index) {
+
+			if let collectionController = controller as? UICollectionViewController {
+				observeView = collectionController.collectionView
+			}
+
+            if let view = delegate?.viewForSegmentControllerToObserveContentOffsetChange?() {
                 observeView = view
             }
-            
-            viewObservers.append(observeView)
-            segmentedScrollView.addObserverFor(view: observeView)
+
+            viewObservers.append(observeView!)
+            segmentedScrollView.addObserverFor(observeView!)
             index += 1
         }
         
@@ -405,9 +406,9 @@ import UIKit
         
         
         //Delegate call for setting the first view of segments.
-        var segment: UIButton?
+        var segment: SJSegmentTab?
         if segments.count > 0 {
-            segment = self.segments[0]
+            segment = segments[0]
         }
         
         delegate?.didMoveToPage?(segmentControllers[0],

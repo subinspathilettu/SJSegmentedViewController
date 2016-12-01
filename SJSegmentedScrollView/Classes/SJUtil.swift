@@ -29,7 +29,7 @@ class SJUtil {
 
      - returns: topspace in float
      */
-    static func getTopSpacing(viewController: UIViewController) -> CGFloat {
+    static func getTopSpacing(_ viewController: UIViewController) -> CGFloat {
 
 
         if let _ = viewController.splitViewController {
@@ -51,7 +51,7 @@ class SJUtil {
 
      - returns: bottomspace in float
      */
-    static func getBottomSpacing(viewController: UIViewController) -> CGFloat {
+    static func getBottomSpacing(_ viewController: UIViewController) -> CGFloat {
 
         var bottomSpacing: CGFloat = 0.0
 
@@ -63,4 +63,17 @@ class SJUtil {
 
         return bottomSpacing
     }
+}
+
+extension String {
+	
+	func widthWithConstrainedWidth(width: CGFloat, font: UIFont) -> CGFloat {
+
+		let constraintRect = CGSize(width: width, height: .max)
+        let boundingBox = self.boundingRectWithSize(constraintRect,
+                                                    options: .UsesLineFragmentOrigin,
+                                                    attributes: [NSFontAttributeName: font], context: nil)
+
+		return boundingBox.width
+	}
 }
