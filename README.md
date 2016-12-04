@@ -5,11 +5,7 @@
 [![License](https://img.shields.io/cocoapods/l/SJSegmentedScrollView.svg?style=flat)](http://cocoapods.org/pods/SJSegmentedScrollView)
 [![Platform](https://img.shields.io/cocoapods/p/SJSegmentedScrollView.svg?style=flat)](http://cocoapods.org/pods/SJSegmentedScrollView)
 
-SJSegmentedScrollView is a light weight generic controller written in Swift. Its a simple customizable controller were you can integrate any number of ViewControllers into a segmented controller with a header view controller. We have upgraded to `Swift 3`. For older versions `Swift 2.3`, use
-
-```ruby
-pod ’SJSegmentedScrollView’, ‘1.1.0'
-```
+SJSegmentedScrollView is a light weight generic controller written in Swift. Its a simple customizable controller were you can integrate any number of ViewControllers into a segmented controller with a header view controller.
 
 ![sample_gif](http://g.recordit.co/TKqjr0g6gj.gif)
 
@@ -127,7 +123,12 @@ self.view.addSubview(segmentedViewController.view)
 segmentedViewController.view.frame = self.view.bounds
 segmentedViewController.didMoveToParentViewController(self)
 ```
+#### For `Swift 2.3`
+We upgraded to `Swift 3`. For those who want to use older version, use `1.1.0` .
 
+```ruby
+pod ’SJSegmentedScrollView’, ‘1.1.0'
+```
 #### Customize Segement Tab
 Defaultly, SJSegmentedScrollView shows the `controller.title` as segments tab. 
 
