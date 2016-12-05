@@ -124,10 +124,10 @@ segmentedViewController.view.frame = self.view.bounds
 segmentedViewController.didMoveToParentViewController(self)
 ```
 #### For `Swift 2.3`
-We upgraded to `Swift 3`. For those who want to use older version, use `1.1.0` .
+We upgraded to `Swift 3`. For those who want to use older version, use `1.1.1` .
 
 ```ruby
-pod ’SJSegmentedScrollView’, ‘1.1.0'
+pod 'SJSegmentedScrollView', :git => 'https://github.com/subinspathilettu/SJSegmentedViewController.git', :tag => 'v1.1.1'
 ```
 #### Customize Segement Tab
 Defaultly, SJSegmentedScrollView shows the `controller.title` as segments tab. 
