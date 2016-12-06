@@ -19,22 +19,22 @@ class ViewController: SJSegmentedViewController {
 
 			let firstViewController = storyboard
 				.instantiateViewController(withIdentifier: "FirstTableViewController")
-			firstViewController.navigationItem.titleView = getSegmentTabWithImage("Fire Hydrant-50")
+			firstViewController.title = "First"
 
 			let secondViewController = storyboard
 				.instantiateViewController(withIdentifier: "SecondViewController")
-			secondViewController.navigationItem.titleView = getSegmentTabWithImage("Fountain-50")
+			secondViewController.title = "Second"
 
 			let thirdViewController = storyboard
 				.instantiateViewController(withIdentifier: "ThirdViewController") as? ThirdViewController
-			thirdViewController?.navigationItem.titleView = getSegmentTabWithImage("Handcuffs-50")
+			thirdViewController?.title = "Third"
 			thirdViewController?.loadViewController = { (index) in
 				self.setSelectedSegmentAt(index, animated: true)
 			}
 
 			let fourthViewController = storyboard
 				.instantiateViewController(withIdentifier: "CollectionViewIdentifier")
-			fourthViewController.navigationItem.titleView = getSegmentTabWithImage("Heart Balloon-50")
+			fourthViewController.title = "Fourth"
 
 			headerViewController = headerController
 			segmentControllers = [firstViewController,

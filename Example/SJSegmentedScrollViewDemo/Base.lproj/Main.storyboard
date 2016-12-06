@@ -79,7 +79,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gBS-CU-lvZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2753" y="51"/>
+            <point key="canvasLocation" x="-2756" y="83"/>
         </scene>
         <!--Example Push View Controller-->
         <scene sceneID="uEc-kO-Ri4">
@@ -115,7 +115,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JRR-ix-t1X" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2026" y="51"/>
+            <point key="canvasLocation" x="-2036" y="82"/>
         </scene>
         <!--SJSegment-->
         <scene sceneID="ufC-wZ-h7g">

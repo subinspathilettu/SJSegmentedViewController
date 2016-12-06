@@ -7,10 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		64729EF01DE568680092C458 /* Fire Hydrant-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 64729EEC1DE568680092C458 /* Fire Hydrant-50.png */; };
-		64729EF11DE568680092C458 /* Fountain-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 64729EED1DE568680092C458 /* Fountain-50.png */; };
-		64729EF21DE568680092C458 /* Handcuffs-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 64729EEE1DE568680092C458 /* Handcuffs-50.png */; };
-		64729EF31DE568680092C458 /* Heart Balloon-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 64729EEF1DE568680092C458 /* Heart Balloon-50.png */; };
 		648742301DAE2D8100E76916 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6487422F1DAE2D8100E76916 /* CollectionViewController.swift */; };
 		64A421681D3D4543009BFBFE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A4215A1D3D4543009BFBFE /* AppDelegate.swift */; };
 		64A421691D3D4543009BFBFE /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64A4215B1D3D4543009BFBFE /* LaunchScreen.xib */; };
@@ -32,10 +28,6 @@
 		220B06FF892F6EAAE77A7744 /* Pods_SJSegmentedScrollViewDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SJSegmentedScrollViewDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		46468A5FF1343D6897EF4F74 /* Pods-SJSegmentedScrollViewDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SJSegmentedScrollViewDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SJSegmentedScrollViewDemo/Pods-SJSegmentedScrollViewDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* SJSegmentedScrollViewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SJSegmentedScrollViewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		64729EEC1DE568680092C458 /* Fire Hydrant-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Fire Hydrant-50.png"; sourceTree = "<group>"; };
-		64729EED1DE568680092C458 /* Fountain-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Fountain-50.png"; sourceTree = "<group>"; };
-		64729EEE1DE568680092C458 /* Handcuffs-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Handcuffs-50.png"; sourceTree = "<group>"; };
-		64729EEF1DE568680092C458 /* Heart Balloon-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Heart Balloon-50.png"; sourceTree = "<group>"; };
 		6487422F1DAE2D8100E76916 /* CollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		64A0353E1D4893620068BE28 /* CHANGELOG.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = CHANGELOG.md; path = ../CHANGELOG.md; sourceTree = "<group>"; };
 		64A4215A1D3D4543009BFBFE /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -117,10 +109,6 @@
 				64A4215B1D3D4543009BFBFE /* LaunchScreen.xib */,
 				64A4215D1D3D4543009BFBFE /* Main.storyboard */,
 				65ED4A141D70043600B2EE28 /* image3.JPG */,
-				64729EEC1DE568680092C458 /* Fire Hydrant-50.png */,
-				64729EED1DE568680092C458 /* Fountain-50.png */,
-				64729EEE1DE568680092C458 /* Handcuffs-50.png */,
-				64729EEF1DE568680092C458 /* Heart Balloon-50.png */,
 				64A421601D3D4543009BFBFE /* Images.xcassets */,
 				64A421611D3D4543009BFBFE /* Info.plist */,
 				64A421621D3D4543009BFBFE /* ViewControllers */,
@@ -218,12 +206,8 @@
 			files = (
 				64A421691D3D4543009BFBFE /* LaunchScreen.xib in Resources */,
 				64A4216C1D3D4543009BFBFE /* Images.xcassets in Resources */,
-				64729EF11DE568680092C458 /* Fountain-50.png in Resources */,
 				65ED4A151D70043600B2EE28 /* image3.JPG in Resources */,
-				64729EF31DE568680092C458 /* Heart Balloon-50.png in Resources */,
-				64729EF21DE568680092C458 /* Handcuffs-50.png in Resources */,
 				64A4216A1D3D4543009BFBFE /* Main.storyboard in Resources */,
-				64729EF01DE568680092C458 /* Fire Hydrant-50.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
