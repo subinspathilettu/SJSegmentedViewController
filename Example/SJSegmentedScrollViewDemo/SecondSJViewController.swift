@@ -17,11 +17,11 @@ class SecondSJViewController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 
-		adddChildViewController()
+		addChildViewController()
 	}
 
 	//MARK:- Private Function
-	//MARK:-
+	
 
 	func getSJSegmentedViewController() -> SJSegmentedViewController? {
 
@@ -47,7 +47,7 @@ class SecondSJViewController: UIViewController {
 		return nil
 	}
 
-	func adddChildViewController() {
+	func addChildViewController() {
 
 		let viewController = getSJSegmentedViewController()
 

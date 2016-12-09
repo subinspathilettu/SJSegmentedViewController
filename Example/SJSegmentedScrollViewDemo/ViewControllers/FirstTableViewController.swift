@@ -1,4 +1,4 @@
-//
+  //
 //  FirstTableViewController.swift
 //  SJSegmentedScrollView
 //
@@ -9,8 +9,24 @@
 import UIKit
 
 class FirstTableViewController: UITableViewController {
-    
+    var refreshControl1 = UIRefreshControl()
+
     // MARK: - Table view data source
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view, typically from a nib.
+
+             self.refreshControl?.addTarget(self, action: #selector(FirstTableViewController.handleRefresh(refreshControl:)), for: UIControlEvents.valueChanged)
+    }
+    
+   
+    func handleRefresh (refreshControl: UIRefreshControl) {
+        // Do some reloading of data and update the table view's data source
+        // Fetch more objects from a web service.. etc
+        self.tableView.reloadData()
+        refreshControl.endRefreshing()
+      
+    }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -31,5 +47,13 @@ class FirstTableViewController: UITableViewController {
     func viewForObserve() -> UIView{
         
         return self.tableView
+    }
+    
+    override func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        
+    }
+    
+    override func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        
     }
 }

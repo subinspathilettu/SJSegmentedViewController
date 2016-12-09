@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0BB3B56A1DF95647000B9CE4 /* Item3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB3B5691DF95647000B9CE4 /* Item3ViewController.swift */; };
 		64729EF01DE568680092C458 /* Fire Hydrant-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 64729EEC1DE568680092C458 /* Fire Hydrant-50.png */; };
 		64729EF11DE568680092C458 /* Fountain-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 64729EED1DE568680092C458 /* Fountain-50.png */; };
 		64729EF21DE568680092C458 /* Handcuffs-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 64729EEE1DE568680092C458 /* Handcuffs-50.png */; };
@@ -27,6 +28,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0BB3B5691DF95647000B9CE4 /* Item3ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item3ViewController.swift; sourceTree = SOURCE_ROOT; };
 		220B06FF892F6EAAE77A7744 /* Pods_SJSegmentedScrollViewDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SJSegmentedScrollViewDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		46468A5FF1343D6897EF4F74 /* Pods-SJSegmentedScrollViewDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SJSegmentedScrollViewDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SJSegmentedScrollViewDemo/Pods-SJSegmentedScrollViewDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* SJSegmentedScrollViewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SJSegmentedScrollViewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -134,6 +136,7 @@
 				64A421661D3D4543009BFBFE /* ThirdViewController.swift */,
 				64A421671D3D4543009BFBFE /* ViewController.swift */,
 				6487422F1DAE2D8100E76916 /* CollectionViewController.swift */,
+				0BB3B5691DF95647000B9CE4 /* Item3ViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -281,6 +284,7 @@
 				64A4216E1D3D4543009BFBFE /* FirstTableViewController.swift in Sources */,
 				64A421711D3D4543009BFBFE /* ThirdViewController.swift in Sources */,
 				648742301DAE2D8100E76916 /* CollectionViewController.swift in Sources */,
+				0BB3B56A1DF95647000B9CE4 /* Item3ViewController.swift in Sources */,
 				64A421681D3D4543009BFBFE /* AppDelegate.swift in Sources */,
 				64A4216F1D3D4543009BFBFE /* HeaderViewController.swift in Sources */,
 				64729F131DE5842B0092C458 /* SecondSJViewController.swift in Sources */,
