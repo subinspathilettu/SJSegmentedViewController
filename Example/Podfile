@@ -2,4 +2,5 @@ use_frameworks!
 
 target 'SJSegmentedScrollViewDemo' do
   pod 'SJSegmentedScrollView', :path => '../'
+
 end
