@@ -11,7 +11,26 @@ import UIKit
 class FirstTableViewController: UITableViewController {
     
     // MARK: - Table view data source
-    
+
+	override func viewDidLoad() {
+		super.viewDidLoad()
+
+		refreshControl?.addTarget(self,
+		                          action: #selector(FirstTableViewController.handleRefresh(refreshControl:)),
+		                          for: UIControlEvents.valueChanged)
+	}
+
+	func handleRefresh(refreshControl: UIRefreshControl) {
+
+		self.perform(#selector(self.endRefresh), with: nil, afterDelay: 1.0)
+
+	}
+
+	func endRefresh() {
+
+		refreshControl?.endRefreshing()
+	}
+
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }

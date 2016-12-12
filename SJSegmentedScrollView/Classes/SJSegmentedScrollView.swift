@@ -250,19 +250,21 @@ class SJSegmentedScrollView: UIScrollView {
     func handleScrollUp(_ scrollView: UIScrollView,
                         change: CGFloat,
                         oldPosition: CGPoint) {
-        
-        if scrollView.contentOffset.y < 0.0 {
-            if contentOffset.y >= 0.0 {
-                
-                var yPos = contentOffset.y - change
-                yPos = yPos < 0 ? 0 : yPos
-                let updatedPos = CGPoint(x: contentOffset.x, y: yPos)
-                setContentOffset(self, point: updatedPos)
-                setContentOffset(scrollView, point: oldPosition)
-            }
-        }
+
+		if headerViewHeight != 0.0 && contentOffset.y != 0.0 {
+			if scrollView.contentOffset.y < 0.0 {
+				if contentOffset.y >= 0.0 {
+
+					var yPos = contentOffset.y - change
+					yPos = yPos < 0 ? 0 : yPos
+					let updatedPos = CGPoint(x: contentOffset.x, y: yPos)
+					setContentOffset(self, point: updatedPos)
+					setContentOffset(scrollView, point: oldPosition)
+				}
+			}
+		}
     }
-    
+
     func handleScrollDown(_ scrollView: UIScrollView,
                           change: CGFloat,
                           oldPosition: CGPoint) {

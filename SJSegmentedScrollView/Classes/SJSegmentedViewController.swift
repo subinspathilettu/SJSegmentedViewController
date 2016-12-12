@@ -412,6 +412,7 @@ import UIKit
         
         if headerViewController == nil  {
             headerViewController = UIViewController()
+			headerViewHeight = 0.0
         }
         
         addHeaderViewController(headerViewController!)
