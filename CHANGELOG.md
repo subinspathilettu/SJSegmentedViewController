@@ -37,5 +37,5 @@ All notable changes to this project will be documented in this file.
 #### `1.3.3`
 * Resolved issue #25. Using '`func setSelectedSegmentAt(_ index: Int, animated: Bool)` to change segment programmatically.
 
-#### `1.3.4`
+#### `1.3.5`
 * Resolved issue #29. Added supports for UIRefreshControl and custom pull to refresh libraries.

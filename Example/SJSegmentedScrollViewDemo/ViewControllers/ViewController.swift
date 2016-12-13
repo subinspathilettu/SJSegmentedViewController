@@ -11,6 +11,8 @@ import SJSegmentedScrollView
 
 class ViewController: SJSegmentedViewController {
 
+	var selectedSegment: SJSegmentTab?
+
 	override func viewDidLoad() {
 		if let storyboard = self.storyboard {
 
@@ -43,8 +45,10 @@ class ViewController: SJSegmentedViewController {
 			                           fourthViewController]
 			headerViewHeight = 200
 			selectedSegmentViewHeight = 5.0
-			segmentTitleColor = UIColor.gray
+			segmentTitleColor = .gray
+			selectedSegmentViewColor = .red
 			segmentShadow = SJShadow.light()
+			delegate = self
 		}
 
 		title = "Segment"
@@ -61,3 +65,20 @@ class ViewController: SJSegmentedViewController {
 		return view
 	}
 }
+
+extension ViewController: SJSegmentedViewControllerDelegate {
+
+	func didMoveToPage(_ controller: UIViewController, segment: SJSegmentTab?, index: Int) {
+
+		if selectedSegment != nil {
+			selectedSegment?.titleColor(.lightGray)
+		}
+
+		if segments.count > 0 {
+
+			selectedSegment = segments[index]
+			selectedSegment?.titleColor(.red)
+		}
+	}
+}
+

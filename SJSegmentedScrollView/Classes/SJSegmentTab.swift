@@ -79,12 +79,12 @@ public class SJSegmentTab: UIView {
 		fatalError("init(coder:) has not been implemented")
 	}
 
-	func titleColor(_ color: UIColor) {
+	public func titleColor(_ color: UIColor) {
 
 		button.setTitleColor(color, for: .normal)
 	}
 
-	func titleFont(_ font: UIFont) {
+	public func titleFont(_ font: UIFont) {
 
 		button.titleLabel?.font = font
 	}
