@@ -17,6 +17,7 @@ SJSegmentedScrollView is a light weight generic controller written in Swift. Its
 - [x] Title, segment selection color, header size, segment height etc can be customized accordingly.
 - [x] Supports Swift and Objective-C.
 - [x] Supports multitasking.
+- [x] Supports Refreshcontrol and custom pull to refresh libs.
 
 ## Installation
 
@@ -36,7 +37,7 @@ platform :ios, '9.0'
 use_frameworks!
 
 target '<Your Target Name>' do
-pod ’SJSegmentedScrollView’, ‘1.3.3'
+pod ’SJSegmentedScrollView’, ‘1.3.4'
 end
 ```
 
