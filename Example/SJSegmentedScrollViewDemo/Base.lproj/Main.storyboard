@@ -1,11 +1,12 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="dnz-ow-PrX">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="dnz-ow-PrX">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -162,6 +163,7 @@
                         </connections>
                     </tableView>
                     <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="QCB-sq-9Jj">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </refreshControl>
                 </tableViewController>
@@ -228,7 +230,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image3.JPG" translatesAutoresizingMaskIntoConstraints="NO" id="l8b-Uh-4gJ">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="banner_image" translatesAutoresizingMaskIntoConstraints="NO" id="l8b-Uh-4gJ">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N6c-py-nWY">
@@ -257,6 +259,1200 @@
             </objects>
             <point key="canvasLocation" x="1379" y="83"/>
         </scene>
+        <!--Photographers View Controller-->
+        <scene sceneID="nO2-dn-fxd">
+            <objects>
+                <tableViewController storyboardIdentifier="PhotographersViewController" id="uYl-CX-xs4" customClass="PhotographersViewController" customModule="SJSegmentedScrollViewDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="2PH-x0-nUO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.87958115179999996" green="0.87958115179999996" blue="0.87958115179999996" alpha="1" colorSpace="calibratedRGB"/>
+                        <sections>
+                            <tableViewSection id="ff6-cF-1GH">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="70" id="L8Z-Jk-mwL">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="L8Z-Jk-mwL" id="MvZ-yM-h1a">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="69"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView opaque="NO" contentMode="scaleAspectFit" image="profile_image_01" translatesAutoresizingMaskIntoConstraints="NO" id="h6W-Ra-c53" userLabel="6057C5F3-B9E5-4AC7-BCC0-83E1ED9368B0-3538-0000F34DCFD7DF24">
+                                                    <rect key="frame" x="8" y="22" width="36" height="36"/>
+                                                    <accessibility key="accessibilityConfiguration" hint="" identifier="6A0A49E9-56B9-4F69-AFDD-B1A99BA877FD-asset" label=""/>
+                                                </imageView>
+                                                <label opaque="NO" contentMode="center" text="Ronald Parsons" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="none" translatesAutoresizingMaskIntoConstraints="NO" id="XuD-ZD-CrE" userLabel="3A1732E2-F732-4D5F-8A69-957C7DDDDF13-3538-0000F35CAA52915B">
+                                                    <rect key="frame" x="63" y="31.5" width="99.5" height="16.5"/>
+                                                    <accessibility key="accessibilityConfiguration" hint="" identifier="5048AA2A-476D-4C86-8A69-ABBD016D4B0A" label=""/>
+                                                    <fontDescription key="fontDescription" name="OpenSans" family="OpenSans" pointSize="14"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
+                                                </label>
+                                                <label opaque="NO" contentMode="center" text="Mob: 9976543675" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="none" translatesAutoresizingMaskIntoConstraints="NO" id="Dzs-Dt-oOH" userLabel="2946BC21-0E98-49A4-8DB9-FBEB21BDA933-3538-0000F3627D17444F">
+                                                    <rect key="frame" x="263" y="33.5" width="98" height="14"/>
+                                                    <accessibility key="accessibilityConfiguration" hint="" identifier="729C2A95-D66B-4BDD-A04C-D86E9AECF3E7" label=""/>
+                                                    <fontDescription key="fontDescription" name="OpenSans" family="OpenSans" pointSize="12"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.33296500000000001" colorSpace="deviceRGB"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Dzs-Dt-oOH" firstAttribute="trailing" secondItem="MvZ-yM-h1a" secondAttribute="trailingMargin" constant="-6" id="9II-Jl-9Oe"/>
+                                                <constraint firstItem="h6W-Ra-c53" firstAttribute="top" secondItem="MvZ-yM-h1a" secondAttribute="topMargin" constant="14" id="I9o-TD-Lyh"/>
+                                                <constraint firstItem="h6W-Ra-c53" firstAttribute="centerY" secondItem="XuD-ZD-CrE" secondAttribute="centerY" id="faY-rS-6an"/>
+                                                <constraint firstItem="XuD-ZD-CrE" firstAttribute="leading" secondItem="h6W-Ra-c53" secondAttribute="trailing" constant="19" id="is3-aC-qn3"/>
+                                                <constraint firstItem="XuD-ZD-CrE" firstAttribute="centerY" secondItem="Dzs-Dt-oOH" secondAttribute="centerY" id="p7H-sy-nJ0"/>
+                                                <constraint firstItem="h6W-Ra-c53" firstAttribute="leading" secondItem="MvZ-yM-h1a" secondAttribute="leadingMargin" id="tGl-gO-BaO"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.87958115179999996" green="0.87958115179999996" blue="0.87958115179999996" alpha="1" colorSpace="calibratedRGB"/>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="70" id="8ij-1F-LkA">
+                                        <rect key="frame" x="0.0" y="70" width="375" height="70"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8ij-1F-LkA" id="Ob7-3m-sTe">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="69"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView opaque="NO" contentMode="scaleAspectFit" image="profile_image_2" translatesAutoresizingMaskIntoConstraints="NO" id="YNv-Uu-y0W" userLabel="6057C5F3-B9E5-4AC7-BCC0-83E1ED9368B0-3538-0000F34DCFD7DF24">
+                                                    <rect key="frame" x="8" y="16" width="36" height="36"/>
+                                                    <accessibility key="accessibilityConfiguration" hint="" identifier="6A0A49E9-56B9-4F69-AFDD-B1A99BA877FD-asset" label=""/>
+                                                </imageView>
+                                                <label opaque="NO" contentMode="center" text="Mob: 9976543675" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="none" translatesAutoresizingMaskIntoConstraints="NO" id="JsW-8o-TqX" userLabel="2946BC21-0E98-49A4-8DB9-FBEB21BDA933-3538-0000F3627D17444F">
+                                                    <rect key="frame" x="263" y="27.5" width="98" height="14"/>
+                                                    <accessibility key="accessibilityConfiguration" hint="" identifier="729C2A95-D66B-4BDD-A04C-D86E9AECF3E7" label=""/>
+                                                    <fontDescription key="fontDescription" name="OpenSans" family="OpenSans" pointSize="12"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.33296500000000001" colorSpace="deviceRGB"/>
+                                                </label>
+                                                <label opaque="NO" contentMode="center" text="Adrian Wise" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="none" translatesAutoresizingMaskIntoConstraints="NO" id="5DI-Kq-MXN" userLabel="3A1732E2-F732-4D5F-8A69-957C7DDDDF13-3538-0000F35CAA52915B">
+                                                    <rect key="frame" x="63" y="25.5" width="75" height="16.5"/>
+                                                    <accessibility key="accessibilityConfiguration" hint="" identifier="5048AA2A-476D-4C86-8A69-ABBD016D4B0A" label=""/>
+                                                    <fontDescription key="fontDescription" name="OpenSans" family="OpenSans" pointSize="14"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="5DI-Kq-MXN" firstAttribute="leading" secondItem="YNv-Uu-y0W" secondAttribute="trailing" constant="19" id="AGk-lc-efU"/>
+                                                <constraint firstItem="YNv-Uu-y0W" firstAttribute="top" secondItem="Ob7-3m-sTe" secondAttribute="topMargin" constant="8" id="Khh-bp-sM7"/>
+                                                <constraint firstItem="JsW-8o-TqX" firstAttribute="trailing" secondItem="Ob7-3m-sTe" secondAttribute="trailingMargin" constant="-6" id="QeI-kf-zE3"/>
+                                                <constraint firstItem="YNv-Uu-y0W" firstAttribute="centerY" secondItem="5DI-Kq-MXN" secondAttribute="centerY" id="Xwj-we-KXJ"/>
+                                                <constraint firstItem="5DI-Kq-MXN" firstAttribute="centerY" secondItem="JsW-8o-TqX" secondAttribute="centerY" id="a3v-pR-MaV"/>
+                                                <constraint firstItem="YNv-Uu-y0W" firstAttribute="leading" secondItem="Ob7-3m-sTe" secondAttribute="leadingMargin" id="sQH-IX-i52"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.87958115179999996" green="0.87958115179999996" blue="0.87958115179999996" alpha="1" colorSpace="calibratedRGB"/>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="70" id="8ol-me-x4u">
+                                        <rect key="frame" x="0.0" y="140" width="375" height="70"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8ol-me-x4u" id="O8S-IY-khj">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="69"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView opaque="NO" contentMode="scaleAspectFit" image="profile_image-10" translatesAutoresizingMaskIntoConstraints="NO" id="rCj-dc-xHz" userLabel="6057C5F3-B9E5-4AC7-BCC0-83E1ED9368B0-3538-0000F34DCFD7DF24">
+                                                    <rect key="frame" x="8" y="16" width="36" height="36"/>
+                                                    <accessibility key="accessibilityConfiguration" hint="" identifier="6A0A49E9-56B9-4F69-AFDD-B1A99BA877FD-asset" label=""/>
+                                                </imageView>
+                                                <label opaque="NO" contentMode="center" misplaced="YES" text="Mob: 9976543675" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="none" translatesAutoresizingMaskIntoConstraints="NO" id="4gX-pz-g3t" userLabel="2946BC21-0E98-49A4-8DB9-FBEB21BDA933-3538-0000F3627D17444F">
+                                                    <rect key="frame" x="266" y="26" width="101" height="17"/>
+                                                    <accessibility key="accessibilityConfiguration" hint="" identifier="729C2A95-D66B-4BDD-A04C-D86E9AECF3E7" label=""/>
+                                                    <fontDescription key="fontDescription" name="OpenSans" family="OpenSans" pointSize="12"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.33296500000000001" colorSpace="deviceRGB"/>
+                                                </label>
+                                                <label opaque="NO" contentMode="center" misplaced="YES" text="Jesus Morgan" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="none" translatesAutoresizingMaskIntoConstraints="NO" id="PQN-xE-JcJ" userLabel="3A1732E2-F732-4D5F-8A69-957C7DDDDF13-3538-0000F35CAA52915B">
+                                                    <rect key="frame" x="63" y="24" width="102" height="19"/>
+                                                    <accessibility key="accessibilityConfiguration" hint="" identifier="5048AA2A-476D-4C86-8A69-ABBD016D4B0A" label=""/>
+                                                    <fontDescription key="fontDescription" name="OpenSans" family="OpenSans" pointSize="14"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="PQN-xE-JcJ" firstAttribute="centerY" secondItem="4gX-pz-g3t" secondAttribute="centerY" id="G9q-M9-8a3"/>
+                                                <constraint firstItem="rCj-dc-xHz" firstAttribute="leading" secondItem="O8S-IY-khj" secondAttribute="leadingMargin" id="GZH-Nx-4vc"/>
+                                                <constraint firstItem="rCj-dc-xHz" firstAttribute="centerY" secondItem="PQN-xE-JcJ" secondAttribute="centerY" id="HFO-bV-ROu"/>
+                                                <constraint firstItem="rCj-dc-xHz" firstAttribute="top" secondItem="O8S-IY-khj" secondAttribute="topMargin" constant="8" id="OCd-dQ-Aqg"/>
+                                                <constraint firstItem="4gX-pz-g3t" firstAttribute="trailing" secondItem="O8S-IY-khj" secondAttribute="trailingMargin" constant="-6" id="X4R-4d-QcJ"/>
+                                                <constraint firstItem="PQN-xE-JcJ" firstAttribute="leading" secondItem="rCj-dc-xHz" secondAttribute="trailing" constant="19" id="bJX-Wr-vbF"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.87958115179999996" green="0.87958115179999996" blue="0.87958115179999996" alpha="1" colorSpace="calibratedRGB"/>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="70" id="6XG-jE-Rwt">
+                                        <rect key="frame" x="0.0" y="210" width="375" height="70"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6XG-jE-Rwt" id="lRi-XZ-bbs">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="69"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView opaque="NO" contentMode="scaleAspectFit" image="profile_image_08" translatesAutoresizingMaskIntoConstraints="NO" id="z1H-oW-ovH" userLabel="6057C5F3-B9E5-4AC7-BCC0-83E1ED9368B0-3538-0000F34DCFD7DF24">
+                                                    <rect key="frame" x="8" y="16" width="36" height="36"/>
+                                                    <accessibility key="accessibilityConfiguration" hint="" identifier="6A0A49E9-56B9-4F69-AFDD-B1A99BA877FD-asset" label=""/>
+                                                </imageView>
+                                                <label opaque="NO" contentMode="center" misplaced="YES" text="Mob: 9976543546" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="none" translatesAutoresizingMaskIntoConstraints="NO" id="tCh-RA-wHB" userLabel="2946BC21-0E98-49A4-8DB9-FBEB21BDA933-3538-0000F3627D17444F">
+                                                    <rect key="frame" x="266" y="26" width="101" height="17"/>
+                                                    <accessibility key="accessibilityConfiguration" hint="" identifier="729C2A95-D66B-4BDD-A04C-D86E9AECF3E7" label=""/>
+                                                    <fontDescription key="fontDescription" name="OpenSans" family="OpenSans" pointSize="12"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.33296500000000001" colorSpace="deviceRGB"/>
+                                                </label>
+                                                <label opaque="NO" contentMode="center" misplaced="YES" text="Esther Vega" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="none" translatesAutoresizingMaskIntoConstraints="NO" id="M5z-9J-giH" userLabel="3A1732E2-F732-4D5F-8A69-957C7DDDDF13-3538-0000F35CAA52915B">
+                                                    <rect key="frame" x="63" y="24" width="102" height="19"/>
+                                                    <accessibility key="accessibilityConfiguration" hint="" identifier="5048AA2A-476D-4C86-8A69-ABBD016D4B0A" label=""/>
+                                                    <fontDescription key="fontDescription" name="OpenSans" family="OpenSans" pointSize="14"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="z1H-oW-ovH" firstAttribute="top" secondItem="lRi-XZ-bbs" secondAttribute="topMargin" constant="8" id="7zo-pw-KQf"/>
+                                                <constraint firstItem="z1H-oW-ovH" firstAttribute="centerY" secondItem="M5z-9J-giH" secondAttribute="centerY" id="Acz-fm-qTE"/>
+                                                <constraint firstItem="M5z-9J-giH" firstAttribute="centerY" secondItem="tCh-RA-wHB" secondAttribute="centerY" id="Ccm-bU-jG8"/>
+                                                <constraint firstItem="tCh-RA-wHB" firstAttribute="trailing" secondItem="lRi-XZ-bbs" secondAttribute="trailingMargin" constant="-6" id="GNB-XQ-w61"/>
+                                                <constraint firstItem="M5z-9J-giH" firstAttribute="leading" secondItem="z1H-oW-ovH" secondAttribute="trailing" constant="19" id="OSv-Ac-bEp"/>
+                                                <constraint firstItem="z1H-oW-ovH" firstAttribute="leading" secondItem="lRi-XZ-bbs" secondAttribute="leadingMargin" id="VKN-8A-rJG"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.87958115179999996" green="0.87958115179999996" blue="0.87958115179999996" alpha="1" colorSpace="calibratedRGB"/>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="70" id="XJ4-5M-8vp">
+                                        <rect key="frame" x="0.0" y="280" width="375" height="70"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XJ4-5M-8vp" id="dWW-Ph-pT2">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="69"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView opaque="NO" contentMode="scaleAspectFit" image="profile_image_12" translatesAutoresizingMaskIntoConstraints="NO" id="QLK-2K-oqX" userLabel="6057C5F3-B9E5-4AC7-BCC0-83E1ED9368B0-3538-0000F34DCFD7DF24">
+                                                    <rect key="frame" x="8" y="16" width="36" height="36"/>
+                                                    <accessibility key="accessibilityConfiguration" hint="" identifier="6A0A49E9-56B9-4F69-AFDD-B1A99BA877FD-asset" label=""/>
+                                                </imageView>
+                                                <label opaque="NO" contentMode="center" misplaced="YES" text="Mob: 9996043675" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="none" translatesAutoresizingMaskIntoConstraints="NO" id="Ahh-Mi-LDO" userLabel="2946BC21-0E98-49A4-8DB9-FBEB21BDA933-3538-0000F3627D17444F">
+                                                    <rect key="frame" x="266" y="26" width="101" height="17"/>
+                                                    <accessibility key="accessibilityConfiguration" hint="" identifier="729C2A95-D66B-4BDD-A04C-D86E9AECF3E7" label=""/>
+                                                    <fontDescription key="fontDescription" name="OpenSans" family="OpenSans" pointSize="12"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.33296500000000001" colorSpace="deviceRGB"/>
+                                                </label>
+                                                <label opaque="NO" contentMode="center" misplaced="YES" text="Hallie Larson" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="none" translatesAutoresizingMaskIntoConstraints="NO" id="JmS-Z4-HKe" userLabel="3A1732E2-F732-4D5F-8A69-957C7DDDDF13-3538-0000F35CAA52915B">
+                                                    <rect key="frame" x="63" y="24" width="102" height="19"/>
+                                                    <accessibility key="accessibilityConfiguration" hint="" identifier="5048AA2A-476D-4C86-8A69-ABBD016D4B0A" label=""/>
+                                                    <fontDescription key="fontDescription" name="OpenSans" family="OpenSans" pointSize="14"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="JmS-Z4-HKe" firstAttribute="centerY" secondItem="Ahh-Mi-LDO" secondAttribute="centerY" id="9qP-fX-dRy"/>
+                                                <constraint firstItem="Ahh-Mi-LDO" firstAttribute="trailing" secondItem="dWW-Ph-pT2" secondAttribute="trailingMargin" constant="-6" id="QOh-1s-1pf"/>
+                                                <constraint firstItem="JmS-Z4-HKe" firstAttribute="leading" secondItem="QLK-2K-oqX" secondAttribute="trailing" constant="19" id="YOJ-RP-rqK"/>
+                                                <constraint firstItem="QLK-2K-oqX" firstAttribute="leading" secondItem="dWW-Ph-pT2" secondAttribute="leadingMargin" id="hdK-pZ-0xJ"/>
+                                                <constraint firstItem="QLK-2K-oqX" firstAttribute="top" secondItem="dWW-Ph-pT2" secondAttribute="topMargin" constant="8" id="juO-kJ-Vqp"/>
+                                                <constraint firstItem="QLK-2K-oqX" firstAttribute="centerY" secondItem="JmS-Z4-HKe" secondAttribute="centerY" id="pte-Qu-VAC"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.87958115179999996" green="0.87958115179999996" blue="0.87958115179999996" alpha="1" colorSpace="calibratedRGB"/>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="70" id="uMp-JX-uyf">
+                                        <rect key="frame" x="0.0" y="350" width="375" height="70"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uMp-JX-uyf" id="tJe-Q5-hor">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="69"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView opaque="NO" contentMode="scaleAspectFit" image="profile_image_11" translatesAutoresizingMaskIntoConstraints="NO" id="IVG-LP-DLR" userLabel="6057C5F3-B9E5-4AC7-BCC0-83E1ED9368B0-3538-0000F34DCFD7DF24">
+                                                    <rect key="frame" x="8" y="16" width="36" height="36"/>
+                                                    <accessibility key="accessibilityConfiguration" hint="" identifier="6A0A49E9-56B9-4F69-AFDD-B1A99BA877FD-asset" label=""/>
+                                                </imageView>
+                                                <label opaque="NO" contentMode="center" misplaced="YES" text="Mob: 9876443675" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="none" translatesAutoresizingMaskIntoConstraints="NO" id="Jzc-8T-l7y" userLabel="2946BC21-0E98-49A4-8DB9-FBEB21BDA933-3538-0000F3627D17444F">
+                                                    <rect key="frame" x="266" y="26" width="101" height="17"/>
+                                                    <accessibility key="accessibilityConfiguration" hint="" identifier="729C2A95-D66B-4BDD-A04C-D86E9AECF3E7" label=""/>
+                                                    <fontDescription key="fontDescription" name="OpenSans" family="OpenSans" pointSize="12"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.33296500000000001" colorSpace="deviceRGB"/>
+                                                </label>
+                                                <label opaque="NO" contentMode="center" misplaced="YES" text="Ashique Mahae" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="none" translatesAutoresizingMaskIntoConstraints="NO" id="i9p-Tq-07s" userLabel="3A1732E2-F732-4D5F-8A69-957C7DDDDF13-3538-0000F35CAA52915B">
+                                                    <rect key="frame" x="63" y="24" width="102" height="19"/>
+                                                    <accessibility key="accessibilityConfiguration" hint="" identifier="5048AA2A-476D-4C86-8A69-ABBD016D4B0A" label=""/>
+                                                    <fontDescription key="fontDescription" name="OpenSans" family="OpenSans" pointSize="14"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Jzc-8T-l7y" firstAttribute="trailing" secondItem="tJe-Q5-hor" secondAttribute="trailingMargin" constant="-6" id="ROk-Md-9eE"/>
+                                                <constraint firstItem="i9p-Tq-07s" firstAttribute="centerY" secondItem="Jzc-8T-l7y" secondAttribute="centerY" id="Zcj-Wz-Wti"/>
+                                                <constraint firstItem="IVG-LP-DLR" firstAttribute="leading" secondItem="tJe-Q5-hor" secondAttribute="leadingMargin" id="a9c-7g-b0j"/>
+                                                <constraint firstItem="i9p-Tq-07s" firstAttribute="leading" secondItem="IVG-LP-DLR" secondAttribute="trailing" constant="19" id="aUb-9b-uGo"/>
+                                                <constraint firstItem="IVG-LP-DLR" firstAttribute="top" secondItem="tJe-Q5-hor" secondAttribute="topMargin" constant="8" id="hPT-wE-K0c"/>
+                                                <constraint firstItem="IVG-LP-DLR" firstAttribute="centerY" secondItem="i9p-Tq-07s" secondAttribute="centerY" id="iTy-KG-Rve"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.87958115179999996" green="0.87958115179999996" blue="0.87958115179999996" alpha="1" colorSpace="calibratedRGB"/>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="70" id="U1P-Pw-hWQ">
+                                        <rect key="frame" x="0.0" y="420" width="375" height="70"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="U1P-Pw-hWQ" id="4Wa-mZ-kDA">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="69"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView opaque="NO" contentMode="scaleAspectFit" image="profile_image_04" translatesAutoresizingMaskIntoConstraints="NO" id="YWF-C1-eJD" userLabel="6057C5F3-B9E5-4AC7-BCC0-83E1ED9368B0-3538-0000F34DCFD7DF24">
+                                                    <rect key="frame" x="8" y="16" width="36" height="36"/>
+                                                    <accessibility key="accessibilityConfiguration" hint="" identifier="6A0A49E9-56B9-4F69-AFDD-B1A99BA877FD-asset" label=""/>
+                                                </imageView>
+                                                <label opaque="NO" contentMode="center" misplaced="YES" text="Mob: 9990543675" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="none" translatesAutoresizingMaskIntoConstraints="NO" id="uTq-GQ-5xh" userLabel="2946BC21-0E98-49A4-8DB9-FBEB21BDA933-3538-0000F3627D17444F">
+                                                    <rect key="frame" x="266" y="26" width="101" height="17"/>
+                                                    <accessibility key="accessibilityConfiguration" hint="" identifier="729C2A95-D66B-4BDD-A04C-D86E9AECF3E7" label=""/>
+                                                    <fontDescription key="fontDescription" name="OpenSans" family="OpenSans" pointSize="12"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.33296500000000001" colorSpace="deviceRGB"/>
+                                                </label>
+                                                <label opaque="NO" contentMode="center" misplaced="YES" text="Ernest Pearson" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="none" translatesAutoresizingMaskIntoConstraints="NO" id="sTU-cV-Uze" userLabel="3A1732E2-F732-4D5F-8A69-957C7DDDDF13-3538-0000F35CAA52915B">
+                                                    <rect key="frame" x="63" y="24" width="102" height="19"/>
+                                                    <accessibility key="accessibilityConfiguration" hint="" identifier="5048AA2A-476D-4C86-8A69-ABBD016D4B0A" label=""/>
+                                                    <fontDescription key="fontDescription" name="OpenSans" family="OpenSans" pointSize="14"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="uTq-GQ-5xh" firstAttribute="trailing" secondItem="4Wa-mZ-kDA" secondAttribute="trailingMargin" constant="-6" id="Dn0-uz-tiE"/>
+                                                <constraint firstItem="sTU-cV-Uze" firstAttribute="leading" secondItem="YWF-C1-eJD" secondAttribute="trailing" constant="19" id="Kfe-rr-DDa"/>
+                                                <constraint firstItem="sTU-cV-Uze" firstAttribute="centerY" secondItem="uTq-GQ-5xh" secondAttribute="centerY" id="O8L-Bs-uxa"/>
+                                                <constraint firstItem="YWF-C1-eJD" firstAttribute="leading" secondItem="4Wa-mZ-kDA" secondAttribute="leadingMargin" id="OXe-WC-jUR"/>
+                                                <constraint firstItem="YWF-C1-eJD" firstAttribute="centerY" secondItem="sTU-cV-Uze" secondAttribute="centerY" id="kMZ-vC-aJ6"/>
+                                                <constraint firstItem="YWF-C1-eJD" firstAttribute="top" secondItem="4Wa-mZ-kDA" secondAttribute="topMargin" constant="8" id="yCz-eZ-744"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.87958115179999996" green="0.87958115179999996" blue="0.87958115179999996" alpha="1" colorSpace="calibratedRGB"/>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="70" id="5Y1-IA-gov">
+                                        <rect key="frame" x="0.0" y="490" width="375" height="70"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5Y1-IA-gov" id="KIo-hs-Win">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="69"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView opaque="NO" contentMode="scaleAspectFit" image="profile_image-03" translatesAutoresizingMaskIntoConstraints="NO" id="3tP-JX-eYk" userLabel="6057C5F3-B9E5-4AC7-BCC0-83E1ED9368B0-3538-0000F34DCFD7DF24">
+                                                    <rect key="frame" x="8" y="16" width="36" height="36"/>
+                                                    <accessibility key="accessibilityConfiguration" hint="" identifier="6A0A49E9-56B9-4F69-AFDD-B1A99BA877FD-asset" label=""/>
+                                                </imageView>
+                                                <label opaque="NO" contentMode="center" misplaced="YES" text="Mob: 9976889675" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="none" translatesAutoresizingMaskIntoConstraints="NO" id="Hlh-t9-yoW" userLabel="2946BC21-0E98-49A4-8DB9-FBEB21BDA933-3538-0000F3627D17444F">
+                                                    <rect key="frame" x="266" y="26" width="101" height="17"/>
+                                                    <accessibility key="accessibilityConfiguration" hint="" identifier="729C2A95-D66B-4BDD-A04C-D86E9AECF3E7" label=""/>
+                                                    <fontDescription key="fontDescription" name="OpenSans" family="OpenSans" pointSize="12"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.33296500000000001" colorSpace="deviceRGB"/>
+                                                </label>
+                                                <label opaque="NO" contentMode="center" misplaced="YES" text="Lucas Perez" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="none" translatesAutoresizingMaskIntoConstraints="NO" id="hcW-CW-wf0" userLabel="3A1732E2-F732-4D5F-8A69-957C7DDDDF13-3538-0000F35CAA52915B">
+                                                    <rect key="frame" x="63" y="24" width="102" height="19"/>
+                                                    <accessibility key="accessibilityConfiguration" hint="" identifier="5048AA2A-476D-4C86-8A69-ABBD016D4B0A" label=""/>
+                                                    <fontDescription key="fontDescription" name="OpenSans" family="OpenSans" pointSize="14"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="3tP-JX-eYk" firstAttribute="leading" secondItem="KIo-hs-Win" secondAttribute="leadingMargin" id="Gxg-1g-kZ4"/>
+                                                <constraint firstItem="hcW-CW-wf0" firstAttribute="leading" secondItem="3tP-JX-eYk" secondAttribute="trailing" constant="19" id="PN0-nP-hSM"/>
+                                                <constraint firstItem="Hlh-t9-yoW" firstAttribute="trailing" secondItem="KIo-hs-Win" secondAttribute="trailingMargin" constant="-6" id="a8r-nt-zdl"/>
+                                                <constraint firstItem="hcW-CW-wf0" firstAttribute="centerY" secondItem="Hlh-t9-yoW" secondAttribute="centerY" id="inj-uO-hnZ"/>
+                                                <constraint firstItem="3tP-JX-eYk" firstAttribute="centerY" secondItem="hcW-CW-wf0" secondAttribute="centerY" id="nAj-h9-usa"/>
+                                                <constraint firstItem="3tP-JX-eYk" firstAttribute="top" secondItem="KIo-hs-Win" secondAttribute="topMargin" constant="8" id="r5D-Ft-gfh"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.87958115179999996" green="0.87958115179999996" blue="0.87958115179999996" alpha="1" colorSpace="calibratedRGB"/>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="70" id="Og1-zJ-dnd">
+                                        <rect key="frame" x="0.0" y="560" width="375" height="70"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Og1-zJ-dnd" id="Y4S-Ou-98B">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="69"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView opaque="NO" contentMode="scaleAspectFit" image="profile_image_2" translatesAutoresizingMaskIntoConstraints="NO" id="v7o-kY-asQ" userLabel="6057C5F3-B9E5-4AC7-BCC0-83E1ED9368B0-3538-0000F34DCFD7DF24">
+                                                    <rect key="frame" x="8" y="16" width="36" height="36"/>
+                                                    <accessibility key="accessibilityConfiguration" hint="" identifier="6A0A49E9-56B9-4F69-AFDD-B1A99BA877FD-asset" label=""/>
+                                                </imageView>
+                                                <label opaque="NO" contentMode="center" misplaced="YES" text="Mob: 9976590007" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="none" translatesAutoresizingMaskIntoConstraints="NO" id="gov-u8-GJF" userLabel="2946BC21-0E98-49A4-8DB9-FBEB21BDA933-3538-0000F3627D17444F">
+                                                    <rect key="frame" x="266" y="26" width="101" height="17"/>
+                                                    <accessibility key="accessibilityConfiguration" hint="" identifier="729C2A95-D66B-4BDD-A04C-D86E9AECF3E7" label=""/>
+                                                    <fontDescription key="fontDescription" name="OpenSans" family="OpenSans" pointSize="12"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.33296500000000001" colorSpace="deviceRGB"/>
+                                                </label>
+                                                <label opaque="NO" contentMode="center" misplaced="YES" text="Curtis Corez" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="none" translatesAutoresizingMaskIntoConstraints="NO" id="hoW-of-kZO" userLabel="3A1732E2-F732-4D5F-8A69-957C7DDDDF13-3538-0000F35CAA52915B">
+                                                    <rect key="frame" x="63" y="24" width="102" height="19"/>
+                                                    <accessibility key="accessibilityConfiguration" hint="" identifier="5048AA2A-476D-4C86-8A69-ABBD016D4B0A" label=""/>
+                                                    <fontDescription key="fontDescription" name="OpenSans" family="OpenSans" pointSize="14"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="v7o-kY-asQ" firstAttribute="leading" secondItem="Y4S-Ou-98B" secondAttribute="leadingMargin" id="1Wr-8c-4hq"/>
+                                                <constraint firstItem="hoW-of-kZO" firstAttribute="centerY" secondItem="gov-u8-GJF" secondAttribute="centerY" id="CYD-fC-MWg"/>
+                                                <constraint firstItem="hoW-of-kZO" firstAttribute="leading" secondItem="v7o-kY-asQ" secondAttribute="trailing" constant="19" id="LPw-Yy-cp0"/>
+                                                <constraint firstItem="gov-u8-GJF" firstAttribute="trailing" secondItem="Y4S-Ou-98B" secondAttribute="trailingMargin" constant="-6" id="Mlb-wq-9dE"/>
+                                                <constraint firstItem="v7o-kY-asQ" firstAttribute="centerY" secondItem="hoW-of-kZO" secondAttribute="centerY" id="cNN-Ly-Ave"/>
+                                                <constraint firstItem="v7o-kY-asQ" firstAttribute="top" secondItem="Y4S-Ou-98B" secondAttribute="topMargin" constant="8" id="thJ-kP-61P"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.87958115179999996" green="0.87958115179999996" blue="0.87958115179999996" alpha="1" colorSpace="calibratedRGB"/>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="70" id="WOw-q8-sV3">
+                                        <rect key="frame" x="0.0" y="630" width="375" height="70"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WOw-q8-sV3" id="GAb-dO-4gd">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="69"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView opaque="NO" contentMode="scaleAspectFit" image="profile_image_01" translatesAutoresizingMaskIntoConstraints="NO" id="9ef-Mx-CXv" userLabel="6057C5F3-B9E5-4AC7-BCC0-83E1ED9368B0-3538-0000F34DCFD7DF24">
+                                                    <rect key="frame" x="8" y="16" width="36" height="36"/>
+                                                    <accessibility key="accessibilityConfiguration" hint="" identifier="6A0A49E9-56B9-4F69-AFDD-B1A99BA877FD-asset" label=""/>
+                                                </imageView>
+                                                <label opaque="NO" contentMode="center" misplaced="YES" text="Mob: 9976543675" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="none" translatesAutoresizingMaskIntoConstraints="NO" id="uuG-p2-FcL" userLabel="2946BC21-0E98-49A4-8DB9-FBEB21BDA933-3538-0000F3627D17444F">
+                                                    <rect key="frame" x="266" y="26" width="101" height="17"/>
+                                                    <accessibility key="accessibilityConfiguration" hint="" identifier="729C2A95-D66B-4BDD-A04C-D86E9AECF3E7" label=""/>
+                                                    <fontDescription key="fontDescription" name="OpenSans" family="OpenSans" pointSize="12"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.33296500000000001" colorSpace="deviceRGB"/>
+                                                </label>
+                                                <label opaque="NO" contentMode="center" misplaced="YES" text="Joseph Fisher" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="none" translatesAutoresizingMaskIntoConstraints="NO" id="e0l-jq-UfF" userLabel="3A1732E2-F732-4D5F-8A69-957C7DDDDF13-3538-0000F35CAA52915B">
+                                                    <rect key="frame" x="63" y="24" width="102" height="19"/>
+                                                    <accessibility key="accessibilityConfiguration" hint="" identifier="5048AA2A-476D-4C86-8A69-ABBD016D4B0A" label=""/>
+                                                    <fontDescription key="fontDescription" name="OpenSans" family="OpenSans" pointSize="14"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="uuG-p2-FcL" firstAttribute="trailing" secondItem="GAb-dO-4gd" secondAttribute="trailingMargin" constant="-6" id="1Cf-fy-N3X"/>
+                                                <constraint firstItem="9ef-Mx-CXv" firstAttribute="leading" secondItem="GAb-dO-4gd" secondAttribute="leadingMargin" id="X4l-8Z-pmC"/>
+                                                <constraint firstItem="e0l-jq-UfF" firstAttribute="leading" secondItem="9ef-Mx-CXv" secondAttribute="trailing" constant="19" id="puG-p2-ENb"/>
+                                                <constraint firstItem="9ef-Mx-CXv" firstAttribute="centerY" secondItem="e0l-jq-UfF" secondAttribute="centerY" id="rBN-KH-hLi"/>
+                                                <constraint firstItem="e0l-jq-UfF" firstAttribute="centerY" secondItem="uuG-p2-FcL" secondAttribute="centerY" id="yzE-5o-1Dg"/>
+                                                <constraint firstItem="9ef-Mx-CXv" firstAttribute="top" secondItem="GAb-dO-4gd" secondAttribute="topMargin" constant="8" id="zNv-RY-c8h"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.87958115179999996" green="0.87958115179999996" blue="0.87958115179999996" alpha="1" colorSpace="calibratedRGB"/>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="uYl-CX-xs4" id="SgE-6d-kbC"/>
+                            <outlet property="delegate" destination="uYl-CX-xs4" id="87F-dl-vg7"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Egg-JB-NLe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="357.60000000000002" y="1496.4017991004498"/>
+        </scene>
+        <!--Photos Collection View Controller-->
+        <scene sceneID="Hah-kE-ZFj">
+            <objects>
+                <collectionViewController storyboardIdentifier="PhotosCollectionViewController" extendedLayoutIncludesOpaqueBars="YES" id="Ses-IA-BhC" customClass="PhotosCollectionViewController" customModule="SJSegmentedScrollViewDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="6h6-Tr-ofd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.87958115179999996" green="0.87958115179999996" blue="0.87958115179999996" alpha="1" colorSpace="calibratedRGB"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Hqa-1b-mMK">
+                            <size key="itemSize" width="181" height="236"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="id0-or-0M5" customClass="PhotosCollectionViewCell" customModule="SJSegmentedScrollViewDemo" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="170" height="149"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="170" height="149"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" contentMode="center" text="Randall Austin" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="none" translatesAutoresizingMaskIntoConstraints="NO" id="66w-UB-zlu" userLabel="DB8E30D0-479B-458E-98A1-B1F5378B2240-3538-00013BC9E5E7B05E">
+                                            <rect key="frame" x="8" y="8" width="77.5" height="14"/>
+                                            <accessibility key="accessibilityConfiguration" hint="" identifier="7A617B89-B879-46A3-AED1-909600A7AB16" label=""/>
+                                            <fontDescription key="fontDescription" name="OpenSans" family="OpenSans" pointSize="12"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
+                                        </label>
+                                        <label opaque="NO" contentMode="center" text="120 Projects" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="none" translatesAutoresizingMaskIntoConstraints="NO" id="hGm-0l-6fs" userLabel="8CF70E31-A566-42FB-B06C-C2F38220B086-3538-00013BE5DCE9B64C">
+                                            <rect key="frame" x="8" y="26" width="56" height="12"/>
+                                            <accessibility key="accessibilityConfiguration" hint="" identifier="2E4760D8-EB18-46AD-9A78-7261631781EA" label=""/>
+                                            <fontDescription key="fontDescription" name="OpenSans" family="OpenSans" pointSize="10"/>
+                                            <color key="textColor" red="0.58823529409999997" green="0.58823529409999997" blue="0.58823529409999997" alpha="1" colorSpace="deviceRGB"/>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stars_03" translatesAutoresizingMaskIntoConstraints="NO" id="lhK-l5-C8L">
+                                            <rect key="frame" x="8" y="46" width="50" height="8"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="50" id="QgG-9N-BMf"/>
+                                                <constraint firstAttribute="height" constant="8" id="Yb7-4j-ecr"/>
+                                            </constraints>
+                                        </imageView>
+                                        <imageView opaque="NO" contentMode="scaleToFill" image="image_set_01" translatesAutoresizingMaskIntoConstraints="NO" id="6CJ-v8-z3w" userLabel="77B75F74-8941-4F86-863D-22DEC5089E65-3538-00013C2802D6DC8B">
+                                            <rect key="frame" x="0.0" y="74" width="170" height="75"/>
+                                            <accessibility key="accessibilityConfiguration" hint="" identifier="A38C9BF1-414E-4EDD-8D4E-F0FE18F070CD-asset" label=""/>
+                                        </imageView>
+                                    </subviews>
+                                </view>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="6CJ-v8-z3w" secondAttribute="trailing" id="4zR-be-jKt"/>
+                                    <constraint firstItem="hGm-0l-6fs" firstAttribute="leading" secondItem="id0-or-0M5" secondAttribute="leadingMargin" id="Gpn-QX-qfc"/>
+                                    <constraint firstItem="hGm-0l-6fs" firstAttribute="top" secondItem="66w-UB-zlu" secondAttribute="bottom" constant="4" id="LKM-d6-FdE"/>
+                                    <constraint firstItem="lhK-l5-C8L" firstAttribute="top" secondItem="hGm-0l-6fs" secondAttribute="bottom" constant="8" id="MGg-S3-4UK"/>
+                                    <constraint firstItem="66w-UB-zlu" firstAttribute="top" secondItem="id0-or-0M5" secondAttribute="topMargin" id="d5M-SC-BJi"/>
+                                    <constraint firstAttribute="bottom" secondItem="6CJ-v8-z3w" secondAttribute="bottom" id="gYo-AQ-Abx"/>
+                                    <constraint firstItem="66w-UB-zlu" firstAttribute="leading" secondItem="id0-or-0M5" secondAttribute="leadingMargin" id="gok-4P-MBe"/>
+                                    <constraint firstItem="lhK-l5-C8L" firstAttribute="leading" secondItem="id0-or-0M5" secondAttribute="leadingMargin" id="qq7-j7-ZrY"/>
+                                    <constraint firstItem="6CJ-v8-z3w" firstAttribute="leading" secondItem="id0-or-0M5" secondAttribute="leading" id="rkP-hM-23L"/>
+                                    <constraint firstItem="6CJ-v8-z3w" firstAttribute="top" secondItem="lhK-l5-C8L" secondAttribute="bottom" constant="20" id="ziS-XR-NXQ"/>
+                                </constraints>
+                                <size key="customSize" width="170" height="149"/>
+                                <connections>
+                                    <outlet property="collage" destination="6CJ-v8-z3w" id="ejA-fs-6M0"/>
+                                    <outlet property="noOfProjects" destination="hGm-0l-6fs" id="tOp-aX-Dvu"/>
+                                    <outlet property="photographerName" destination="66w-UB-zlu" id="3El-m5-UVT"/>
+                                    <outlet property="rating" destination="lhK-l5-C8L" id="d9A-xa-mLN"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="Ses-IA-BhC" id="hat-8G-d8U"/>
+                            <outlet property="delegate" destination="Ses-IA-BhC" id="3Ku-f9-NF2"/>
+                        </connections>
+                    </collectionView>
+                    <nil key="simulatedStatusBarMetrics"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xhj-Ly-fcW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1192.8" y="1330.8845577211396"/>
+        </scene>
+        <!--Testimonial Table View Controller-->
+        <scene sceneID="sYK-Yp-hzX">
+            <objects>
+                <tableViewController storyboardIdentifier="TestimonialTableViewController" id="b1r-i9-Njq" customClass="TestimonialTableViewController" customModule="SJSegmentedScrollViewDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Uym-4g-VgW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.87958115179999996" green="0.87958115179999996" blue="0.87958115179999996" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" red="0.87958115179999996" green="0.87958115179999996" blue="0.87958115179999996" alpha="1" colorSpace="calibratedRGB"/>
+                        <sections>
+                            <tableViewSection id="Wjn-AP-Kr3">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="178" id="lrq-uG-0Zs">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="178"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lrq-uG-0Zs" id="GGe-7f-sNM">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="178"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view opaque="NO" contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="IIP-EY-BBk" userLabel="B41F4B11-AB08-46A5-9252-739DAD2760FD-5410-0001485F8FBA29F7">
+                                                    <rect key="frame" x="8" y="8" width="359" height="166"/>
+                                                    <subviews>
+                                                        <imageView opaque="NO" contentMode="scaleAspectFit" image="dp_01" translatesAutoresizingMaskIntoConstraints="NO" id="YJa-A1-8ea" userLabel="CB1F0365-86E4-4112-A368-5BB7219DC34C-5410-0001486571626153">
+                                                            <rect key="frame" x="8" y="8" width="78" height="78"/>
+                                                            <accessibility key="accessibilityConfiguration" hint="" identifier="22E6782F-2C9A-4F71-9EC1-EDFD2E5D8DC9-asset" label=""/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="78" id="UOY-g0-0kV"/>
+                                                                <constraint firstAttribute="width" constant="78" id="mmb-1n-3Pj"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <label opaque="NO" contentMode="center" text="Mr &amp; Miss Johnny Cole" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="none" translatesAutoresizingMaskIntoConstraints="NO" id="YxE-NQ-wgr" userLabel="744F8BB6-A6D1-4041-98BF-15C84539D485-5410-0001486D37D22DE7">
+                                                            <rect key="frame" x="129" y="82" width="125" height="17"/>
+                                                            <accessibility key="accessibilityConfiguration" hint="" identifier="1AE55C45-1705-4A30-B802-C9E4E608B5EB" label=""/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="17" id="ggy-B1-9nT"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" name="OpenSans-Semibold" family="OpenSans-Semibold" pointSize="12"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </label>
+                                                        <label opaque="NO" contentMode="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="none" translatesAutoresizingMaskIntoConstraints="NO" id="gVl-CJ-m7o" userLabel="00749465-3E2C-429A-9581-1EB5ACFC4603-5410-000148727CD2DA26">
+                                                            <rect key="frame" x="8" y="113" width="214" height="17"/>
+                                                            <accessibility key="accessibilityConfiguration" hint="" identifier="883504C5-B4B2-405C-AF30-09AC3A129852" label=""/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="17" id="rQx-mR-tkt"/>
+                                                            </constraints>
+                                                            <string key="text">Photographers		:    Ronald Parsons</string>
+                                                            <fontDescription key="fontDescription" name="OpenSans" family="OpenSans" pointSize="12"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
+                                                        </label>
+                                                        <label opaque="NO" alpha="0.34000000357627869" contentMode="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="none" translatesAutoresizingMaskIntoConstraints="NO" id="1CT-jv-AO8" userLabel="B6E3D7E2-DBBB-4F7C-9D2C-3A61A250845F-5410-0001487DB3CCD34B">
+                                                            <rect key="frame" x="8" y="136" width="191" height="17"/>
+                                                            <accessibility key="accessibilityConfiguration" hint="" identifier="B106D3F3-8736-4FE8-8505-14962F4D5314" label=""/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="17" id="W8l-wH-Ij1"/>
+                                                            </constraints>
+                                                            <string key="text">Date				:    12/12/2016</string>
+                                                            <fontDescription key="fontDescription" name="OpenSans" family="OpenSans" pointSize="12"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
+                                                        </label>
+                                                        <imageView opaque="NO" contentMode="scaleAspectFit" image="contact1" translatesAutoresizingMaskIntoConstraints="NO" id="cSE-bq-c5d" userLabel="4783ED76-E28B-4DA1-8001-A093147689F1-5410-000148874DCE36BE">
+                                                            <rect key="frame" x="315" y="115" width="30" height="30"/>
+                                                            <accessibility key="accessibilityConfiguration" hint="" identifier="EBACFCCC-A365-4B53-9257-C561AFD2579E-asset" label=""/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="30" id="giH-Pa-kK1"/>
+                                                                <constraint firstAttribute="height" constant="30" id="ppf-gj-ulc"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <label opaque="NO" contentMode="center" lineBreakMode="characterWrap" numberOfLines="4" baselineAdjustment="none" translatesAutoresizingMaskIntoConstraints="NO" id="64S-Jk-YG9" userLabel="1A6CF37C-3681-48E7-829A-B3C9F7742E45-5410-0001486827D8CF5A">
+                                                            <rect key="frame" x="129" y="8" width="222" height="68"/>
+                                                            <accessibility key="accessibilityConfiguration" hint="" identifier="41FC42C7-42A0-4054-96BE-AA2401EC23AE" label=""/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="68" id="J2n-Ve-rpO"/>
+                                                            </constraints>
+                                                            <string key="text">Finding the perfect learning tool for Flash is a daunting task to any novice web developer. One can find help in a number of ways through books.</string>
+                                                            <fontDescription key="fontDescription" name="OpenSans" family="OpenSans" pointSize="12"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="deviceRGB"/>
+                                                    <accessibility key="accessibilityConfiguration" hint="" identifier="A52C0E44-28E2-4646-93AB-899919118137" label=""/>
+                                                    <constraints>
+                                                        <constraint firstItem="YxE-NQ-wgr" firstAttribute="top" secondItem="64S-Jk-YG9" secondAttribute="bottom" constant="6" id="3Lh-WV-92a"/>
+                                                        <constraint firstItem="YJa-A1-8ea" firstAttribute="top" secondItem="IIP-EY-BBk" secondAttribute="top" constant="8" id="Ekc-oX-vvv"/>
+                                                        <constraint firstItem="1CT-jv-AO8" firstAttribute="leading" secondItem="IIP-EY-BBk" secondAttribute="leading" constant="8" id="FpH-iy-H9K"/>
+                                                        <constraint firstAttribute="trailing" secondItem="cSE-bq-c5d" secondAttribute="trailing" constant="14" id="HV9-fU-Y6Z"/>
+                                                        <constraint firstItem="YJa-A1-8ea" firstAttribute="leading" secondItem="IIP-EY-BBk" secondAttribute="leading" constant="8" id="KAL-CQ-A2x"/>
+                                                        <constraint firstItem="gVl-CJ-m7o" firstAttribute="leading" secondItem="IIP-EY-BBk" secondAttribute="leading" constant="8" id="LcD-nY-ZAd"/>
+                                                        <constraint firstItem="gVl-CJ-m7o" firstAttribute="top" secondItem="YxE-NQ-wgr" secondAttribute="bottom" constant="14" id="PHV-6U-aa3"/>
+                                                        <constraint firstItem="YxE-NQ-wgr" firstAttribute="leading" secondItem="IIP-EY-BBk" secondAttribute="leading" constant="129" id="Vk4-P9-Zhm"/>
+                                                        <constraint firstItem="64S-Jk-YG9" firstAttribute="top" secondItem="IIP-EY-BBk" secondAttribute="top" constant="8" id="cEu-1Y-KqQ"/>
+                                                        <constraint firstAttribute="bottom" secondItem="cSE-bq-c5d" secondAttribute="bottom" constant="21" id="qkg-FH-Wct"/>
+                                                        <constraint firstAttribute="trailing" secondItem="64S-Jk-YG9" secondAttribute="trailing" constant="8" id="sAs-a1-88i"/>
+                                                        <constraint firstAttribute="height" constant="166" id="xi8-A9-isT"/>
+                                                        <constraint firstItem="1CT-jv-AO8" firstAttribute="top" secondItem="gVl-CJ-m7o" secondAttribute="bottom" constant="6" id="zFo-Wx-gl9"/>
+                                                        <constraint firstItem="64S-Jk-YG9" firstAttribute="leading" secondItem="YJa-A1-8ea" secondAttribute="trailing" constant="43" id="zXP-kW-DVd"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <real key="value" value="5"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
+                                            </subviews>
+                                            <color key="backgroundColor" red="0.87958115179999996" green="0.87958115179999996" blue="0.87958115179999996" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="IIP-EY-BBk" secondAttribute="trailing" constant="8" id="JIL-S9-pfq"/>
+                                                <constraint firstItem="IIP-EY-BBk" firstAttribute="leading" secondItem="GGe-7f-sNM" secondAttribute="leadingMargin" id="QoN-Kd-aeo"/>
+                                                <constraint firstItem="IIP-EY-BBk" firstAttribute="leading" secondItem="GGe-7f-sNM" secondAttribute="leading" constant="8" id="Wgq-3f-eWZ"/>
+                                                <constraint firstItem="IIP-EY-BBk" firstAttribute="top" secondItem="GGe-7f-sNM" secondAttribute="topMargin" id="WhZ-jB-XcK"/>
+                                                <constraint firstItem="IIP-EY-BBk" firstAttribute="trailing" secondItem="GGe-7f-sNM" secondAttribute="trailingMargin" id="kiN-Wm-TnO"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.87958115179999996" green="0.87958115179999996" blue="0.87958115179999996" alpha="1" colorSpace="calibratedRGB"/>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="178" id="5vW-g2-Pro">
+                                        <rect key="frame" x="0.0" y="178" width="375" height="178"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5vW-g2-Pro" id="SEh-tF-zyZ">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="178"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view opaque="NO" contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="a94-UJ-JvJ" userLabel="B41F4B11-AB08-46A5-9252-739DAD2760FD-5410-0001485F8FBA29F7">
+                                                    <rect key="frame" x="8" y="8" width="359" height="166"/>
+                                                    <subviews>
+                                                        <imageView opaque="NO" contentMode="scaleAspectFit" image="dp_02" translatesAutoresizingMaskIntoConstraints="NO" id="piS-y2-2fJ" userLabel="CB1F0365-86E4-4112-A368-5BB7219DC34C-5410-0001486571626153">
+                                                            <rect key="frame" x="8" y="8" width="78" height="78"/>
+                                                            <accessibility key="accessibilityConfiguration" hint="" identifier="22E6782F-2C9A-4F71-9EC1-EDFD2E5D8DC9-asset" label=""/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="78" id="40w-hT-qci"/>
+                                                                <constraint firstAttribute="height" constant="78" id="IEa-Bm-aPi"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <label opaque="NO" contentMode="center" text="Mr &amp; Miss Johnny Cole" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="none" translatesAutoresizingMaskIntoConstraints="NO" id="D2h-aX-6KM" userLabel="744F8BB6-A6D1-4041-98BF-15C84539D485-5410-0001486D37D22DE7">
+                                                            <rect key="frame" x="129" y="82" width="125" height="17"/>
+                                                            <accessibility key="accessibilityConfiguration" hint="" identifier="1AE55C45-1705-4A30-B802-C9E4E608B5EB" label=""/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="17" id="F81-n0-GHq"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" name="OpenSans-Semibold" family="OpenSans-Semibold" pointSize="12"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </label>
+                                                        <label opaque="NO" contentMode="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="none" translatesAutoresizingMaskIntoConstraints="NO" id="ZTo-JE-Ta8" userLabel="00749465-3E2C-429A-9581-1EB5ACFC4603-5410-000148727CD2DA26">
+                                                            <rect key="frame" x="8" y="113" width="214" height="17"/>
+                                                            <accessibility key="accessibilityConfiguration" hint="" identifier="883504C5-B4B2-405C-AF30-09AC3A129852" label=""/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="17" id="jFa-fs-d1k"/>
+                                                            </constraints>
+                                                            <string key="text">Photographers		:    Ronald Parsons</string>
+                                                            <fontDescription key="fontDescription" name="OpenSans" family="OpenSans" pointSize="12"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
+                                                        </label>
+                                                        <label opaque="NO" alpha="0.34000000357627869" contentMode="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="none" translatesAutoresizingMaskIntoConstraints="NO" id="iUV-k3-aWh" userLabel="B6E3D7E2-DBBB-4F7C-9D2C-3A61A250845F-5410-0001487DB3CCD34B">
+                                                            <rect key="frame" x="8" y="136" width="191" height="17"/>
+                                                            <accessibility key="accessibilityConfiguration" hint="" identifier="B106D3F3-8736-4FE8-8505-14962F4D5314" label=""/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="17" id="00R-HP-nrE"/>
+                                                            </constraints>
+                                                            <string key="text">Date				:    12/12/2016</string>
+                                                            <fontDescription key="fontDescription" name="OpenSans" family="OpenSans" pointSize="12"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
+                                                        </label>
+                                                        <imageView opaque="NO" contentMode="scaleAspectFit" image="contact1" translatesAutoresizingMaskIntoConstraints="NO" id="Qzi-0m-rBT" userLabel="4783ED76-E28B-4DA1-8001-A093147689F1-5410-000148874DCE36BE">
+                                                            <rect key="frame" x="315" y="115" width="30" height="30"/>
+                                                            <accessibility key="accessibilityConfiguration" hint="" identifier="EBACFCCC-A365-4B53-9257-C561AFD2579E-asset" label=""/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="30" id="fhc-Ww-QPp"/>
+                                                                <constraint firstAttribute="height" constant="30" id="ig0-CQ-qfB"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <label opaque="NO" contentMode="center" text="One can find help in a number of ways through books." lineBreakMode="characterWrap" numberOfLines="4" baselineAdjustment="none" translatesAutoresizingMaskIntoConstraints="NO" id="wfC-KG-XKY" userLabel="1A6CF37C-3681-48E7-829A-B3C9F7742E45-5410-0001486827D8CF5A">
+                                                            <rect key="frame" x="129" y="8" width="222" height="68"/>
+                                                            <accessibility key="accessibilityConfiguration" hint="" identifier="41FC42C7-42A0-4054-96BE-AA2401EC23AE" label=""/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="68" id="NOK-QY-uam"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" name="OpenSans" family="OpenSans" pointSize="12"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="deviceRGB"/>
+                                                    <accessibility key="accessibilityConfiguration" hint="" identifier="A52C0E44-28E2-4646-93AB-899919118137" label=""/>
+                                                    <constraints>
+                                                        <constraint firstItem="iUV-k3-aWh" firstAttribute="leading" secondItem="a94-UJ-JvJ" secondAttribute="leading" constant="8" id="0MF-bP-dxb"/>
+                                                        <constraint firstItem="ZTo-JE-Ta8" firstAttribute="top" secondItem="D2h-aX-6KM" secondAttribute="bottom" constant="14" id="35B-gf-tTn"/>
+                                                        <constraint firstAttribute="height" constant="166" id="Akg-dt-3IS"/>
+                                                        <constraint firstItem="D2h-aX-6KM" firstAttribute="leading" secondItem="a94-UJ-JvJ" secondAttribute="leading" constant="129" id="BQT-V2-ENQ"/>
+                                                        <constraint firstAttribute="trailing" secondItem="Qzi-0m-rBT" secondAttribute="trailing" constant="14" id="EWK-74-Z3z"/>
+                                                        <constraint firstAttribute="trailing" secondItem="wfC-KG-XKY" secondAttribute="trailing" constant="8" id="FD1-7a-3Be"/>
+                                                        <constraint firstItem="piS-y2-2fJ" firstAttribute="leading" secondItem="a94-UJ-JvJ" secondAttribute="leading" constant="8" id="Pp8-bg-ftK"/>
+                                                        <constraint firstItem="ZTo-JE-Ta8" firstAttribute="leading" secondItem="a94-UJ-JvJ" secondAttribute="leading" constant="8" id="Tx7-fa-gS0"/>
+                                                        <constraint firstItem="wfC-KG-XKY" firstAttribute="top" secondItem="a94-UJ-JvJ" secondAttribute="top" constant="8" id="a4h-jx-1gD"/>
+                                                        <constraint firstItem="wfC-KG-XKY" firstAttribute="leading" secondItem="piS-y2-2fJ" secondAttribute="trailing" constant="43" id="kSo-QQ-Q9G"/>
+                                                        <constraint firstItem="iUV-k3-aWh" firstAttribute="top" secondItem="ZTo-JE-Ta8" secondAttribute="bottom" constant="6" id="mMk-nX-RLJ"/>
+                                                        <constraint firstItem="piS-y2-2fJ" firstAttribute="top" secondItem="a94-UJ-JvJ" secondAttribute="top" constant="8" id="pj0-6x-BZO"/>
+                                                        <constraint firstItem="D2h-aX-6KM" firstAttribute="top" secondItem="wfC-KG-XKY" secondAttribute="bottom" constant="6" id="uqQ-Dc-07M"/>
+                                                        <constraint firstAttribute="bottom" secondItem="Qzi-0m-rBT" secondAttribute="bottom" constant="21" id="xkJ-gf-HoD"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <real key="value" value="5"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
+                                            </subviews>
+                                            <color key="backgroundColor" red="0.87958115179999996" green="0.87958115179999996" blue="0.87958115179999996" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstItem="a94-UJ-JvJ" firstAttribute="leading" secondItem="SEh-tF-zyZ" secondAttribute="leadingMargin" id="2xd-le-Xxc"/>
+                                                <constraint firstItem="a94-UJ-JvJ" firstAttribute="trailing" secondItem="SEh-tF-zyZ" secondAttribute="trailingMargin" id="4X5-Ht-etl"/>
+                                                <constraint firstItem="a94-UJ-JvJ" firstAttribute="leading" secondItem="SEh-tF-zyZ" secondAttribute="leading" constant="8" id="Buo-vH-rMK"/>
+                                                <constraint firstAttribute="trailing" secondItem="a94-UJ-JvJ" secondAttribute="trailing" constant="8" id="axf-7K-Haf"/>
+                                                <constraint firstItem="a94-UJ-JvJ" firstAttribute="top" secondItem="SEh-tF-zyZ" secondAttribute="topMargin" id="g94-mw-VH4"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.87958115179999996" green="0.87958115179999996" blue="0.87958115179999996" alpha="1" colorSpace="calibratedRGB"/>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="178" id="gKm-1e-6L2">
+                                        <rect key="frame" x="0.0" y="356" width="375" height="178"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gKm-1e-6L2" id="V0M-xB-mAa">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="178"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view opaque="NO" contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="D6I-WA-2vb" userLabel="B41F4B11-AB08-46A5-9252-739DAD2760FD-5410-0001485F8FBA29F7">
+                                                    <rect key="frame" x="8" y="8" width="359" height="166"/>
+                                                    <subviews>
+                                                        <imageView opaque="NO" contentMode="scaleAspectFit" image="dp_03" translatesAutoresizingMaskIntoConstraints="NO" id="cfF-qq-vaj" userLabel="CB1F0365-86E4-4112-A368-5BB7219DC34C-5410-0001486571626153">
+                                                            <rect key="frame" x="8" y="8" width="78" height="78"/>
+                                                            <accessibility key="accessibilityConfiguration" hint="" identifier="22E6782F-2C9A-4F71-9EC1-EDFD2E5D8DC9-asset" label=""/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="78" id="RJF-lH-Jce"/>
+                                                                <constraint firstAttribute="width" constant="78" id="fif-c5-I6Z"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <label opaque="NO" contentMode="center" text="Chester Haynes" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="none" translatesAutoresizingMaskIntoConstraints="NO" id="qE7-k6-gCt" userLabel="744F8BB6-A6D1-4041-98BF-15C84539D485-5410-0001486D37D22DE7">
+                                                            <rect key="frame" x="129" y="82" width="86" height="17"/>
+                                                            <accessibility key="accessibilityConfiguration" hint="" identifier="1AE55C45-1705-4A30-B802-C9E4E608B5EB" label=""/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="17" id="2FG-7G-dIK"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" name="OpenSans-Semibold" family="OpenSans-Semibold" pointSize="12"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </label>
+                                                        <label opaque="NO" contentMode="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="none" translatesAutoresizingMaskIntoConstraints="NO" id="rnk-To-VEE" userLabel="00749465-3E2C-429A-9581-1EB5ACFC4603-5410-000148727CD2DA26">
+                                                            <rect key="frame" x="8" y="113" width="214" height="17"/>
+                                                            <accessibility key="accessibilityConfiguration" hint="" identifier="883504C5-B4B2-405C-AF30-09AC3A129852" label=""/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="17" id="msQ-YW-M2X"/>
+                                                            </constraints>
+                                                            <string key="text">Photographers		:    Ronald Parsons</string>
+                                                            <fontDescription key="fontDescription" name="OpenSans" family="OpenSans" pointSize="12"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
+                                                        </label>
+                                                        <label opaque="NO" alpha="0.34000000357627869" contentMode="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="none" translatesAutoresizingMaskIntoConstraints="NO" id="Yma-Mc-oyd" userLabel="B6E3D7E2-DBBB-4F7C-9D2C-3A61A250845F-5410-0001487DB3CCD34B">
+                                                            <rect key="frame" x="8" y="136" width="191" height="17"/>
+                                                            <accessibility key="accessibilityConfiguration" hint="" identifier="B106D3F3-8736-4FE8-8505-14962F4D5314" label=""/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="17" id="WBb-Bz-biQ"/>
+                                                            </constraints>
+                                                            <string key="text">Date				:    12/12/2016</string>
+                                                            <fontDescription key="fontDescription" name="OpenSans" family="OpenSans" pointSize="12"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
+                                                        </label>
+                                                        <imageView opaque="NO" contentMode="scaleAspectFit" image="contact1" translatesAutoresizingMaskIntoConstraints="NO" id="qfn-PJ-hxn" userLabel="4783ED76-E28B-4DA1-8001-A093147689F1-5410-000148874DCE36BE">
+                                                            <rect key="frame" x="315" y="115" width="30" height="30"/>
+                                                            <accessibility key="accessibilityConfiguration" hint="" identifier="EBACFCCC-A365-4B53-9257-C561AFD2579E-asset" label=""/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="30" id="L7V-Eb-Ix9"/>
+                                                                <constraint firstAttribute="height" constant="30" id="xe2-50-R1H"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <label opaque="NO" contentMode="center" lineBreakMode="characterWrap" numberOfLines="4" baselineAdjustment="none" translatesAutoresizingMaskIntoConstraints="NO" id="akA-Vy-1Cd" userLabel="1A6CF37C-3681-48E7-829A-B3C9F7742E45-5410-0001486827D8CF5A">
+                                                            <rect key="frame" x="129" y="8" width="222" height="68"/>
+                                                            <accessibility key="accessibilityConfiguration" hint="" identifier="41FC42C7-42A0-4054-96BE-AA2401EC23AE" label=""/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="68" id="e7n-ce-AU4"/>
+                                                            </constraints>
+                                                            <string key="text">Usefulness Above all tutorials should be useful. They should teach things that can actually be used. It is great when the tutorial teaches.</string>
+                                                            <fontDescription key="fontDescription" name="OpenSans" family="OpenSans" pointSize="12"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="deviceRGB"/>
+                                                    <accessibility key="accessibilityConfiguration" hint="" identifier="A52C0E44-28E2-4646-93AB-899919118137" label=""/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="166" id="1fi-pg-Bps"/>
+                                                        <constraint firstItem="akA-Vy-1Cd" firstAttribute="leading" secondItem="cfF-qq-vaj" secondAttribute="trailing" constant="43" id="33i-Xc-Mcs"/>
+                                                        <constraint firstItem="rnk-To-VEE" firstAttribute="leading" secondItem="D6I-WA-2vb" secondAttribute="leading" constant="8" id="8Hf-RQ-ydf"/>
+                                                        <constraint firstItem="qE7-k6-gCt" firstAttribute="top" secondItem="akA-Vy-1Cd" secondAttribute="bottom" constant="6" id="Ea3-Fl-vkR"/>
+                                                        <constraint firstAttribute="trailing" secondItem="qfn-PJ-hxn" secondAttribute="trailing" constant="14" id="HFz-vV-lEW"/>
+                                                        <constraint firstItem="qE7-k6-gCt" firstAttribute="leading" secondItem="D6I-WA-2vb" secondAttribute="leading" constant="129" id="IqO-hZ-tuW"/>
+                                                        <constraint firstItem="Yma-Mc-oyd" firstAttribute="top" secondItem="rnk-To-VEE" secondAttribute="bottom" constant="6" id="RXr-j4-PH6"/>
+                                                        <constraint firstItem="cfF-qq-vaj" firstAttribute="leading" secondItem="D6I-WA-2vb" secondAttribute="leading" constant="8" id="TeX-I1-Wge"/>
+                                                        <constraint firstItem="cfF-qq-vaj" firstAttribute="top" secondItem="D6I-WA-2vb" secondAttribute="top" constant="8" id="hgM-9T-jpQ"/>
+                                                        <constraint firstAttribute="bottom" secondItem="qfn-PJ-hxn" secondAttribute="bottom" constant="21" id="lxA-sA-fc1"/>
+                                                        <constraint firstItem="Yma-Mc-oyd" firstAttribute="leading" secondItem="D6I-WA-2vb" secondAttribute="leading" constant="8" id="oCX-Y5-gCI"/>
+                                                        <constraint firstAttribute="trailing" secondItem="akA-Vy-1Cd" secondAttribute="trailing" constant="8" id="qKN-hu-8gy"/>
+                                                        <constraint firstItem="rnk-To-VEE" firstAttribute="top" secondItem="qE7-k6-gCt" secondAttribute="bottom" constant="14" id="s8v-1t-EMi"/>
+                                                        <constraint firstItem="akA-Vy-1Cd" firstAttribute="top" secondItem="D6I-WA-2vb" secondAttribute="top" constant="8" id="xak-bH-XRl"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <real key="value" value="5"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
+                                            </subviews>
+                                            <color key="backgroundColor" red="0.87958115179999996" green="0.87958115179999996" blue="0.87958115179999996" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstItem="D6I-WA-2vb" firstAttribute="top" secondItem="V0M-xB-mAa" secondAttribute="topMargin" id="FDj-wF-Jp8"/>
+                                                <constraint firstItem="D6I-WA-2vb" firstAttribute="leading" secondItem="V0M-xB-mAa" secondAttribute="leading" constant="8" id="IWL-Yb-bIq"/>
+                                                <constraint firstItem="D6I-WA-2vb" firstAttribute="leading" secondItem="V0M-xB-mAa" secondAttribute="leadingMargin" id="W4P-bp-oy7"/>
+                                                <constraint firstAttribute="trailing" secondItem="D6I-WA-2vb" secondAttribute="trailing" constant="8" id="kvs-WJ-gLv"/>
+                                                <constraint firstItem="D6I-WA-2vb" firstAttribute="trailing" secondItem="V0M-xB-mAa" secondAttribute="trailingMargin" id="xfZ-Sc-nSB"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.87958115179999996" green="0.87958115179999996" blue="0.87958115179999996" alpha="1" colorSpace="calibratedRGB"/>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="178" id="id4-uj-kUk">
+                                        <rect key="frame" x="0.0" y="534" width="375" height="178"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="id4-uj-kUk" id="D7x-Le-IIG">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="178"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view opaque="NO" contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="KyK-wH-IOY" userLabel="B41F4B11-AB08-46A5-9252-739DAD2760FD-5410-0001485F8FBA29F7">
+                                                    <rect key="frame" x="8" y="8" width="359" height="166"/>
+                                                    <subviews>
+                                                        <imageView opaque="NO" contentMode="scaleAspectFit" image="dp_04" translatesAutoresizingMaskIntoConstraints="NO" id="uSJ-DD-WwY" userLabel="CB1F0365-86E4-4112-A368-5BB7219DC34C-5410-0001486571626153">
+                                                            <rect key="frame" x="8" y="8" width="78" height="78"/>
+                                                            <accessibility key="accessibilityConfiguration" hint="" identifier="22E6782F-2C9A-4F71-9EC1-EDFD2E5D8DC9-asset" label=""/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="78" id="6TA-D2-Btb"/>
+                                                                <constraint firstAttribute="width" constant="78" id="gfi-hk-Hyz"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <label opaque="NO" contentMode="center" text="Gavin Padilla" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="none" translatesAutoresizingMaskIntoConstraints="NO" id="WJ8-p4-zLT" userLabel="744F8BB6-A6D1-4041-98BF-15C84539D485-5410-0001486D37D22DE7">
+                                                            <rect key="frame" x="129" y="82" width="70" height="17"/>
+                                                            <accessibility key="accessibilityConfiguration" hint="" identifier="1AE55C45-1705-4A30-B802-C9E4E608B5EB" label=""/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="17" id="E7a-KX-5Qs"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" name="OpenSans-Semibold" family="OpenSans-Semibold" pointSize="12"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </label>
+                                                        <label opaque="NO" contentMode="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="none" translatesAutoresizingMaskIntoConstraints="NO" id="W0m-eQ-0Hq" userLabel="00749465-3E2C-429A-9581-1EB5ACFC4603-5410-000148727CD2DA26">
+                                                            <rect key="frame" x="8" y="113" width="214" height="17"/>
+                                                            <accessibility key="accessibilityConfiguration" hint="" identifier="883504C5-B4B2-405C-AF30-09AC3A129852" label=""/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="17" id="vQ2-b1-INC"/>
+                                                            </constraints>
+                                                            <string key="text">Photographers		:    Ronald Parsons</string>
+                                                            <fontDescription key="fontDescription" name="OpenSans" family="OpenSans" pointSize="12"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
+                                                        </label>
+                                                        <label opaque="NO" alpha="0.34000000357627869" contentMode="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="none" translatesAutoresizingMaskIntoConstraints="NO" id="Jxf-5F-FFq" userLabel="B6E3D7E2-DBBB-4F7C-9D2C-3A61A250845F-5410-0001487DB3CCD34B">
+                                                            <rect key="frame" x="8" y="136" width="191" height="17"/>
+                                                            <accessibility key="accessibilityConfiguration" hint="" identifier="B106D3F3-8736-4FE8-8505-14962F4D5314" label=""/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="17" id="bN3-Ds-FJq"/>
+                                                            </constraints>
+                                                            <string key="text">Date				:    12/12/2016</string>
+                                                            <fontDescription key="fontDescription" name="OpenSans" family="OpenSans" pointSize="12"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
+                                                        </label>
+                                                        <imageView opaque="NO" contentMode="scaleAspectFit" image="contact1" translatesAutoresizingMaskIntoConstraints="NO" id="q8x-02-tAt" userLabel="4783ED76-E28B-4DA1-8001-A093147689F1-5410-000148874DCE36BE">
+                                                            <rect key="frame" x="315" y="115" width="30" height="30"/>
+                                                            <accessibility key="accessibilityConfiguration" hint="" identifier="EBACFCCC-A365-4B53-9257-C561AFD2579E-asset" label=""/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="30" id="3vr-hW-T5d"/>
+                                                                <constraint firstAttribute="height" constant="30" id="L2p-mR-iLR"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <label opaque="NO" contentMode="center" lineBreakMode="characterWrap" numberOfLines="4" baselineAdjustment="none" translatesAutoresizingMaskIntoConstraints="NO" id="0nW-FS-TS1" userLabel="1A6CF37C-3681-48E7-829A-B3C9F7742E45-5410-0001486827D8CF5A">
+                                                            <rect key="frame" x="129" y="8" width="222" height="68"/>
+                                                            <accessibility key="accessibilityConfiguration" hint="" identifier="41FC42C7-42A0-4054-96BE-AA2401EC23AE" label=""/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="68" id="hHw-t6-mpU"/>
+                                                            </constraints>
+                                                            <string key="text">When selecting a Flash Tutorial, look for these three criteria: examples, clarity, and usefulness.  Examples When looking for a Flash Tutoria</string>
+                                                            <fontDescription key="fontDescription" name="OpenSans" family="OpenSans" pointSize="12"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="deviceRGB"/>
+                                                    <accessibility key="accessibilityConfiguration" hint="" identifier="A52C0E44-28E2-4646-93AB-899919118137" label=""/>
+                                                    <constraints>
+                                                        <constraint firstItem="Jxf-5F-FFq" firstAttribute="leading" secondItem="KyK-wH-IOY" secondAttribute="leading" constant="8" id="K1c-9H-rxC"/>
+                                                        <constraint firstItem="0nW-FS-TS1" firstAttribute="top" secondItem="KyK-wH-IOY" secondAttribute="top" constant="8" id="NPi-o8-jBw"/>
+                                                        <constraint firstAttribute="trailing" secondItem="0nW-FS-TS1" secondAttribute="trailing" constant="8" id="OuJ-0a-8ac"/>
+                                                        <constraint firstItem="uSJ-DD-WwY" firstAttribute="leading" secondItem="KyK-wH-IOY" secondAttribute="leading" constant="8" id="TFi-Ux-NMJ"/>
+                                                        <constraint firstItem="WJ8-p4-zLT" firstAttribute="top" secondItem="0nW-FS-TS1" secondAttribute="bottom" constant="6" id="TNA-j1-cfc"/>
+                                                        <constraint firstItem="WJ8-p4-zLT" firstAttribute="leading" secondItem="KyK-wH-IOY" secondAttribute="leading" constant="129" id="UbE-xz-6G1"/>
+                                                        <constraint firstItem="W0m-eQ-0Hq" firstAttribute="top" secondItem="WJ8-p4-zLT" secondAttribute="bottom" constant="14" id="aTc-5Z-Jd1"/>
+                                                        <constraint firstItem="0nW-FS-TS1" firstAttribute="leading" secondItem="uSJ-DD-WwY" secondAttribute="trailing" constant="43" id="b12-Ws-6xW"/>
+                                                        <constraint firstAttribute="trailing" secondItem="q8x-02-tAt" secondAttribute="trailing" constant="14" id="dm6-pt-oGU"/>
+                                                        <constraint firstAttribute="height" constant="166" id="eSW-js-aQD"/>
+                                                        <constraint firstAttribute="bottom" secondItem="q8x-02-tAt" secondAttribute="bottom" constant="21" id="hx5-c0-lHM"/>
+                                                        <constraint firstItem="W0m-eQ-0Hq" firstAttribute="leading" secondItem="KyK-wH-IOY" secondAttribute="leading" constant="8" id="iNf-dr-HXS"/>
+                                                        <constraint firstItem="Jxf-5F-FFq" firstAttribute="top" secondItem="W0m-eQ-0Hq" secondAttribute="bottom" constant="6" id="meo-cx-s4D"/>
+                                                        <constraint firstItem="uSJ-DD-WwY" firstAttribute="top" secondItem="KyK-wH-IOY" secondAttribute="top" constant="8" id="qwW-7C-RJ9"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <real key="value" value="5"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
+                                            </subviews>
+                                            <color key="backgroundColor" red="0.87958115179999996" green="0.87958115179999996" blue="0.87958115179999996" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstItem="KyK-wH-IOY" firstAttribute="top" secondItem="D7x-Le-IIG" secondAttribute="topMargin" id="RMf-ja-3j5"/>
+                                                <constraint firstItem="KyK-wH-IOY" firstAttribute="leading" secondItem="D7x-Le-IIG" secondAttribute="leading" constant="8" id="WDK-Lv-slI"/>
+                                                <constraint firstItem="KyK-wH-IOY" firstAttribute="leading" secondItem="D7x-Le-IIG" secondAttribute="leadingMargin" id="m6q-Fr-YM5"/>
+                                                <constraint firstAttribute="trailing" secondItem="KyK-wH-IOY" secondAttribute="trailing" constant="8" id="oK0-rU-pLr"/>
+                                                <constraint firstItem="KyK-wH-IOY" firstAttribute="trailing" secondItem="D7x-Le-IIG" secondAttribute="trailingMargin" id="p6N-NL-cRe"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.87958115179999996" green="0.87958115179999996" blue="0.87958115179999996" alpha="1" colorSpace="calibratedRGB"/>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="b1r-i9-Njq" id="MnO-NB-j5V"/>
+                            <outlet property="delegate" destination="b1r-i9-Njq" id="PT4-U5-h3G"/>
+                        </connections>
+                    </tableView>
+                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="mm3-Ci-xGM">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </refreshControl>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Db0-JT-B7W" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1917.5999999999999" y="1317.3913043478262"/>
+        </scene>
+        <!--Testimonial View Controller-->
+        <scene sceneID="ZVz-z4-y6E">
+            <objects>
+                <viewController storyboardIdentifier="TestimonialViewController" id="NqC-Uo-WIj" customClass="TestimonialViewController" customModule="SJSegmentedScrollViewDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="uZJ-nc-AfI"/>
+                        <viewControllerLayoutGuide type="bottom" id="VdQ-1i-wd7"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="i0K-QP-IgX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SBQ-yO-nLv">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sOE-l1-M38" userLabel="ContentView">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="696"/>
+                                        <subviews>
+                                            <view opaque="NO" contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="KS4-Yc-YtX" userLabel="B41F4B11-AB08-46A5-9252-739DAD2760FD-5410-0001485F8FBA29F7">
+                                                <rect key="frame" x="8" y="182" width="359" height="166"/>
+                                                <subviews>
+                                                    <imageView opaque="NO" contentMode="scaleAspectFit" image="dp_01" translatesAutoresizingMaskIntoConstraints="NO" id="Ace-XE-6GY" userLabel="CB1F0365-86E4-4112-A368-5BB7219DC34C-5410-0001486571626153">
+                                                        <rect key="frame" x="8" y="8" width="78" height="78"/>
+                                                        <accessibility key="accessibilityConfiguration" hint="" identifier="22E6782F-2C9A-4F71-9EC1-EDFD2E5D8DC9-asset" label=""/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="78" id="C2C-hL-Hxa"/>
+                                                            <constraint firstAttribute="width" constant="78" id="xo2-Y8-pWY"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <label opaque="NO" contentMode="center" text="Mr &amp; Miss Johnny Cole" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="none" translatesAutoresizingMaskIntoConstraints="NO" id="xkp-ui-tTZ" userLabel="744F8BB6-A6D1-4041-98BF-15C84539D485-5410-0001486D37D22DE7">
+                                                        <rect key="frame" x="129" y="82" width="124.5" height="17"/>
+                                                        <accessibility key="accessibilityConfiguration" hint="" identifier="1AE55C45-1705-4A30-B802-C9E4E608B5EB" label=""/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="17" id="O8S-4U-Fp2"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="OpenSans-Semibold" family="OpenSans-Semibold" pointSize="12"/>
+                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </label>
+                                                    <label opaque="NO" contentMode="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="none" translatesAutoresizingMaskIntoConstraints="NO" id="yPU-ff-HU2" userLabel="00749465-3E2C-429A-9581-1EB5ACFC4603-5410-000148727CD2DA26">
+                                                        <rect key="frame" x="8" y="113" width="214" height="17"/>
+                                                        <accessibility key="accessibilityConfiguration" hint="" identifier="883504C5-B4B2-405C-AF30-09AC3A129852" label=""/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="17" id="kFf-69-knR"/>
+                                                        </constraints>
+                                                        <string key="text">Photographers		:    Ronald Parsons</string>
+                                                        <fontDescription key="fontDescription" name="OpenSans" family="OpenSans" pointSize="12"/>
+                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
+                                                    </label>
+                                                    <label opaque="NO" alpha="0.34000000357627869" contentMode="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="none" translatesAutoresizingMaskIntoConstraints="NO" id="cCG-2v-5r2" userLabel="B6E3D7E2-DBBB-4F7C-9D2C-3A61A250845F-5410-0001487DB3CCD34B">
+                                                        <rect key="frame" x="8" y="136" width="191" height="17"/>
+                                                        <accessibility key="accessibilityConfiguration" hint="" identifier="B106D3F3-8736-4FE8-8505-14962F4D5314" label=""/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="17" id="7CB-Qf-RlZ"/>
+                                                        </constraints>
+                                                        <string key="text">Date				:    12/12/2016</string>
+                                                        <fontDescription key="fontDescription" name="OpenSans" family="OpenSans" pointSize="12"/>
+                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
+                                                    </label>
+                                                    <imageView opaque="NO" contentMode="scaleAspectFit" image="contact1" translatesAutoresizingMaskIntoConstraints="NO" id="vua-jv-izu" userLabel="4783ED76-E28B-4DA1-8001-A093147689F1-5410-000148874DCE36BE">
+                                                        <rect key="frame" x="315" y="115" width="30" height="30"/>
+                                                        <accessibility key="accessibilityConfiguration" hint="" identifier="EBACFCCC-A365-4B53-9257-C561AFD2579E-asset" label=""/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="30" id="2EG-pl-TSb"/>
+                                                            <constraint firstAttribute="width" constant="30" id="eVc-8b-dK9"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <label opaque="NO" contentMode="center" lineBreakMode="characterWrap" numberOfLines="4" baselineAdjustment="none" translatesAutoresizingMaskIntoConstraints="NO" id="hev-ma-ZNH" userLabel="1A6CF37C-3681-48E7-829A-B3C9F7742E45-5410-0001486827D8CF5A">
+                                                        <rect key="frame" x="129" y="8" width="222" height="68"/>
+                                                        <accessibility key="accessibilityConfiguration" hint="" identifier="41FC42C7-42A0-4054-96BE-AA2401EC23AE" label=""/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="68" id="5Fc-jQ-azx"/>
+                                                        </constraints>
+                                                        <string key="text">Finding the perfect learning tool for Flash is a daunting task to any novice web developer. One can find help in a number of ways through books.</string>
+                                                        <fontDescription key="fontDescription" name="OpenSans" family="OpenSans" pointSize="12"/>
+                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="deviceRGB"/>
+                                                <accessibility key="accessibilityConfiguration" hint="" identifier="A52C0E44-28E2-4646-93AB-899919118137" label=""/>
+                                                <constraints>
+                                                    <constraint firstItem="xkp-ui-tTZ" firstAttribute="top" secondItem="hev-ma-ZNH" secondAttribute="bottom" constant="6" id="1cR-Rm-9gf"/>
+                                                    <constraint firstItem="yPU-ff-HU2" firstAttribute="top" secondItem="xkp-ui-tTZ" secondAttribute="bottom" constant="14" id="3nm-De-L5w"/>
+                                                    <constraint firstAttribute="height" constant="166" id="67x-sg-VTR"/>
+                                                    <constraint firstAttribute="bottom" secondItem="vua-jv-izu" secondAttribute="bottom" constant="21" id="6cn-4C-dyU"/>
+                                                    <constraint firstItem="hev-ma-ZNH" firstAttribute="top" secondItem="KS4-Yc-YtX" secondAttribute="top" constant="8" id="AdT-qD-EJg"/>
+                                                    <constraint firstItem="cCG-2v-5r2" firstAttribute="top" secondItem="yPU-ff-HU2" secondAttribute="bottom" constant="6" id="G0Q-fX-ndD"/>
+                                                    <constraint firstItem="Ace-XE-6GY" firstAttribute="leading" secondItem="KS4-Yc-YtX" secondAttribute="leading" constant="8" id="NJV-pw-HVk"/>
+                                                    <constraint firstAttribute="trailing" secondItem="vua-jv-izu" secondAttribute="trailing" constant="14" id="g5U-CI-dH2"/>
+                                                    <constraint firstAttribute="trailing" secondItem="hev-ma-ZNH" secondAttribute="trailing" constant="8" id="gGU-t5-B3f"/>
+                                                    <constraint firstItem="yPU-ff-HU2" firstAttribute="leading" secondItem="KS4-Yc-YtX" secondAttribute="leading" constant="8" id="j9h-8e-hXM"/>
+                                                    <constraint firstItem="xkp-ui-tTZ" firstAttribute="leading" secondItem="KS4-Yc-YtX" secondAttribute="leading" constant="129" id="l5L-bq-ZvC"/>
+                                                    <constraint firstItem="cCG-2v-5r2" firstAttribute="leading" secondItem="KS4-Yc-YtX" secondAttribute="leading" constant="8" id="m1H-q0-T8X"/>
+                                                    <constraint firstItem="hev-ma-ZNH" firstAttribute="leading" secondItem="Ace-XE-6GY" secondAttribute="trailing" constant="43" id="mdG-Hm-Q11"/>
+                                                    <constraint firstItem="Ace-XE-6GY" firstAttribute="top" secondItem="KS4-Yc-YtX" secondAttribute="top" constant="8" id="pcE-Yy-BSR"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <real key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <view opaque="NO" contentMode="center" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="C02-i1-rzF" userLabel="B41F4B11-AB08-46A5-9252-739DAD2760FD-5410-0001485F8FBA29F7">
+                                                <rect key="frame" x="8" y="530" width="359" height="166"/>
+                                                <subviews>
+                                                    <imageView opaque="NO" contentMode="scaleAspectFit" ambiguous="YES" image="dp_01" translatesAutoresizingMaskIntoConstraints="NO" id="7SS-1g-n5m" userLabel="CB1F0365-86E4-4112-A368-5BB7219DC34C-5410-0001486571626153">
+                                                        <rect key="frame" x="8" y="8" width="78" height="78"/>
+                                                        <accessibility key="accessibilityConfiguration" hint="" identifier="22E6782F-2C9A-4F71-9EC1-EDFD2E5D8DC9-asset" label=""/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="78" id="nr4-tp-Rdg"/>
+                                                            <constraint firstAttribute="height" constant="78" id="zrw-P0-lIp"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <label opaque="NO" contentMode="center" ambiguous="YES" text="Mr &amp; Miss Johnny Cole" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="none" translatesAutoresizingMaskIntoConstraints="NO" id="8Od-WK-DXI" userLabel="744F8BB6-A6D1-4041-98BF-15C84539D485-5410-0001486D37D22DE7">
+                                                        <rect key="frame" x="129" y="82" width="124.5" height="17"/>
+                                                        <accessibility key="accessibilityConfiguration" hint="" identifier="1AE55C45-1705-4A30-B802-C9E4E608B5EB" label=""/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="17" id="62n-JR-XAu"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="OpenSans-Semibold" family="OpenSans-Semibold" pointSize="12"/>
+                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </label>
+                                                    <label opaque="NO" contentMode="center" ambiguous="YES" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="none" translatesAutoresizingMaskIntoConstraints="NO" id="2Ek-3T-hgC" userLabel="00749465-3E2C-429A-9581-1EB5ACFC4603-5410-000148727CD2DA26">
+                                                        <rect key="frame" x="8" y="113" width="214" height="17"/>
+                                                        <accessibility key="accessibilityConfiguration" hint="" identifier="883504C5-B4B2-405C-AF30-09AC3A129852" label=""/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="17" id="3Tr-oS-eLa"/>
+                                                        </constraints>
+                                                        <string key="text">Photographers		:    Ronald Parsons</string>
+                                                        <fontDescription key="fontDescription" name="OpenSans" family="OpenSans" pointSize="12"/>
+                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
+                                                    </label>
+                                                    <label opaque="NO" alpha="0.34000000357627869" contentMode="center" ambiguous="YES" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="none" translatesAutoresizingMaskIntoConstraints="NO" id="4vn-KL-X2j" userLabel="B6E3D7E2-DBBB-4F7C-9D2C-3A61A250845F-5410-0001487DB3CCD34B">
+                                                        <rect key="frame" x="8" y="136" width="191" height="17"/>
+                                                        <accessibility key="accessibilityConfiguration" hint="" identifier="B106D3F3-8736-4FE8-8505-14962F4D5314" label=""/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="17" id="kBA-GN-qqG"/>
+                                                        </constraints>
+                                                        <string key="text">Date				:    12/12/2016</string>
+                                                        <fontDescription key="fontDescription" name="OpenSans" family="OpenSans" pointSize="12"/>
+                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
+                                                    </label>
+                                                    <imageView opaque="NO" contentMode="scaleAspectFit" ambiguous="YES" image="contact1" translatesAutoresizingMaskIntoConstraints="NO" id="Hp8-v0-LtK" userLabel="4783ED76-E28B-4DA1-8001-A093147689F1-5410-000148874DCE36BE">
+                                                        <rect key="frame" x="315" y="115" width="30" height="30"/>
+                                                        <accessibility key="accessibilityConfiguration" hint="" identifier="EBACFCCC-A365-4B53-9257-C561AFD2579E-asset" label=""/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="30" id="ARq-g0-Pm8"/>
+                                                            <constraint firstAttribute="width" constant="30" id="jxA-pq-BbU"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <label opaque="NO" contentMode="center" ambiguous="YES" lineBreakMode="characterWrap" numberOfLines="4" baselineAdjustment="none" translatesAutoresizingMaskIntoConstraints="NO" id="nWI-QU-5wr" userLabel="1A6CF37C-3681-48E7-829A-B3C9F7742E45-5410-0001486827D8CF5A">
+                                                        <rect key="frame" x="129" y="8" width="222" height="68"/>
+                                                        <accessibility key="accessibilityConfiguration" hint="" identifier="41FC42C7-42A0-4054-96BE-AA2401EC23AE" label=""/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="68" id="IVg-Ok-W5o"/>
+                                                        </constraints>
+                                                        <string key="text">Finding the perfect learning tool for Flash is a daunting task to any novice web developer. One can find help in a number of ways through books.</string>
+                                                        <fontDescription key="fontDescription" name="OpenSans" family="OpenSans" pointSize="12"/>
+                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="deviceRGB"/>
+                                                <accessibility key="accessibilityConfiguration" hint="" identifier="A52C0E44-28E2-4646-93AB-899919118137" label=""/>
+                                                <constraints>
+                                                    <constraint firstItem="7SS-1g-n5m" firstAttribute="top" secondItem="C02-i1-rzF" secondAttribute="top" constant="8" id="1T6-fD-4Mx"/>
+                                                    <constraint firstAttribute="trailing" secondItem="Hp8-v0-LtK" secondAttribute="trailing" constant="14" id="2Q5-VY-xYC"/>
+                                                    <constraint firstItem="nWI-QU-5wr" firstAttribute="top" secondItem="C02-i1-rzF" secondAttribute="top" constant="8" id="36n-aL-BQq"/>
+                                                    <constraint firstAttribute="height" constant="166" id="HK8-dS-1F6"/>
+                                                    <constraint firstItem="4vn-KL-X2j" firstAttribute="leading" secondItem="C02-i1-rzF" secondAttribute="leading" constant="8" id="NA3-zL-InM"/>
+                                                    <constraint firstItem="4vn-KL-X2j" firstAttribute="top" secondItem="2Ek-3T-hgC" secondAttribute="bottom" constant="6" id="RLx-Zk-UYF"/>
+                                                    <constraint firstItem="8Od-WK-DXI" firstAttribute="top" secondItem="nWI-QU-5wr" secondAttribute="bottom" constant="6" id="VwO-9y-VMj"/>
+                                                    <constraint firstItem="2Ek-3T-hgC" firstAttribute="top" secondItem="8Od-WK-DXI" secondAttribute="bottom" constant="14" id="XTQ-2h-I6u"/>
+                                                    <constraint firstAttribute="bottom" secondItem="Hp8-v0-LtK" secondAttribute="bottom" constant="21" id="d8f-qX-LPE"/>
+                                                    <constraint firstItem="2Ek-3T-hgC" firstAttribute="leading" secondItem="C02-i1-rzF" secondAttribute="leading" constant="8" id="l7e-YI-Vrk"/>
+                                                    <constraint firstItem="8Od-WK-DXI" firstAttribute="leading" secondItem="C02-i1-rzF" secondAttribute="leading" constant="129" id="lTU-9q-dhF"/>
+                                                    <constraint firstItem="7SS-1g-n5m" firstAttribute="leading" secondItem="C02-i1-rzF" secondAttribute="leading" constant="8" id="o8e-gb-boP"/>
+                                                    <constraint firstItem="nWI-QU-5wr" firstAttribute="leading" secondItem="7SS-1g-n5m" secondAttribute="trailing" constant="43" id="vNS-cS-HfC"/>
+                                                    <constraint firstAttribute="trailing" secondItem="nWI-QU-5wr" secondAttribute="trailing" constant="8" id="yY2-JT-1KM"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <real key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <view opaque="NO" contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="oMt-vo-fve" userLabel="B41F4B11-AB08-46A5-9252-739DAD2760FD-5410-0001485F8FBA29F7">
+                                                <rect key="frame" x="8" y="8" width="359" height="166"/>
+                                                <subviews>
+                                                    <imageView opaque="NO" contentMode="scaleAspectFit" image="dp_01" translatesAutoresizingMaskIntoConstraints="NO" id="UmP-Z4-cae" userLabel="CB1F0365-86E4-4112-A368-5BB7219DC34C-5410-0001486571626153">
+                                                        <rect key="frame" x="8" y="8" width="78" height="78"/>
+                                                        <accessibility key="accessibilityConfiguration" hint="" identifier="22E6782F-2C9A-4F71-9EC1-EDFD2E5D8DC9-asset" label=""/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="78" id="eN5-k3-wrm"/>
+                                                            <constraint firstAttribute="width" constant="78" id="ePh-G4-g4O"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <label opaque="NO" contentMode="center" text="Mr &amp; Miss Johnny Cole" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="none" translatesAutoresizingMaskIntoConstraints="NO" id="UxR-Ij-Vdl" userLabel="744F8BB6-A6D1-4041-98BF-15C84539D485-5410-0001486D37D22DE7">
+                                                        <rect key="frame" x="129" y="82" width="124.5" height="17"/>
+                                                        <accessibility key="accessibilityConfiguration" hint="" identifier="1AE55C45-1705-4A30-B802-C9E4E608B5EB" label=""/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="17" id="aj1-rX-RuF"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="OpenSans-Semibold" family="OpenSans-Semibold" pointSize="12"/>
+                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </label>
+                                                    <label opaque="NO" contentMode="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="none" translatesAutoresizingMaskIntoConstraints="NO" id="oCk-Qo-7cC" userLabel="00749465-3E2C-429A-9581-1EB5ACFC4603-5410-000148727CD2DA26">
+                                                        <rect key="frame" x="8" y="113" width="214" height="17"/>
+                                                        <accessibility key="accessibilityConfiguration" hint="" identifier="883504C5-B4B2-405C-AF30-09AC3A129852" label=""/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="17" id="nNA-Nv-sZE"/>
+                                                        </constraints>
+                                                        <string key="text">Photographers		:    Ronald Parsons</string>
+                                                        <fontDescription key="fontDescription" name="OpenSans" family="OpenSans" pointSize="12"/>
+                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
+                                                    </label>
+                                                    <label opaque="NO" alpha="0.34000000357627869" contentMode="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="none" translatesAutoresizingMaskIntoConstraints="NO" id="oeQ-rE-fFp" userLabel="B6E3D7E2-DBBB-4F7C-9D2C-3A61A250845F-5410-0001487DB3CCD34B">
+                                                        <rect key="frame" x="8" y="136" width="191" height="17"/>
+                                                        <accessibility key="accessibilityConfiguration" hint="" identifier="B106D3F3-8736-4FE8-8505-14962F4D5314" label=""/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="17" id="mKQ-Df-wMl"/>
+                                                        </constraints>
+                                                        <string key="text">Date				:    12/12/2016</string>
+                                                        <fontDescription key="fontDescription" name="OpenSans" family="OpenSans" pointSize="12"/>
+                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
+                                                    </label>
+                                                    <imageView opaque="NO" contentMode="scaleAspectFit" image="contact1" translatesAutoresizingMaskIntoConstraints="NO" id="5aR-Pk-bXz" userLabel="4783ED76-E28B-4DA1-8001-A093147689F1-5410-000148874DCE36BE">
+                                                        <rect key="frame" x="315" y="115" width="30" height="30"/>
+                                                        <accessibility key="accessibilityConfiguration" hint="" identifier="EBACFCCC-A365-4B53-9257-C561AFD2579E-asset" label=""/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="30" id="JZI-oF-6bY"/>
+                                                            <constraint firstAttribute="width" constant="30" id="tBm-Bw-pS1"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <label opaque="NO" contentMode="center" lineBreakMode="characterWrap" numberOfLines="4" baselineAdjustment="none" translatesAutoresizingMaskIntoConstraints="NO" id="cox-LM-AOr" userLabel="1A6CF37C-3681-48E7-829A-B3C9F7742E45-5410-0001486827D8CF5A">
+                                                        <rect key="frame" x="129" y="8" width="222" height="68"/>
+                                                        <accessibility key="accessibilityConfiguration" hint="" identifier="41FC42C7-42A0-4054-96BE-AA2401EC23AE" label=""/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="68" id="2Fq-4d-9Ie"/>
+                                                        </constraints>
+                                                        <string key="text">Finding the perfect learning tool for Flash is a daunting task to any novice web developer. One can find help in a number of ways through books.</string>
+                                                        <fontDescription key="fontDescription" name="OpenSans" family="OpenSans" pointSize="12"/>
+                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="deviceRGB"/>
+                                                <accessibility key="accessibilityConfiguration" hint="" identifier="A52C0E44-28E2-4646-93AB-899919118137" label=""/>
+                                                <constraints>
+                                                    <constraint firstItem="UxR-Ij-Vdl" firstAttribute="top" secondItem="cox-LM-AOr" secondAttribute="bottom" constant="6" id="1W7-d0-wVX"/>
+                                                    <constraint firstItem="UxR-Ij-Vdl" firstAttribute="leading" secondItem="oMt-vo-fve" secondAttribute="leading" constant="129" id="8nC-7T-iQQ"/>
+                                                    <constraint firstItem="oeQ-rE-fFp" firstAttribute="leading" secondItem="oMt-vo-fve" secondAttribute="leading" constant="8" id="Btu-jv-PDD"/>
+                                                    <constraint firstItem="oCk-Qo-7cC" firstAttribute="top" secondItem="UxR-Ij-Vdl" secondAttribute="bottom" constant="14" id="DUB-DU-hNt"/>
+                                                    <constraint firstAttribute="trailing" secondItem="5aR-Pk-bXz" secondAttribute="trailing" constant="14" id="OcM-j6-nnh"/>
+                                                    <constraint firstAttribute="bottom" secondItem="5aR-Pk-bXz" secondAttribute="bottom" constant="21" id="Oen-QK-uYI"/>
+                                                    <constraint firstItem="cox-LM-AOr" firstAttribute="top" secondItem="oMt-vo-fve" secondAttribute="top" constant="8" id="Q07-8k-t0m"/>
+                                                    <constraint firstAttribute="trailing" secondItem="cox-LM-AOr" secondAttribute="trailing" constant="8" id="Trx-IU-8G9"/>
+                                                    <constraint firstItem="oeQ-rE-fFp" firstAttribute="top" secondItem="oCk-Qo-7cC" secondAttribute="bottom" constant="6" id="VUU-hg-VSP"/>
+                                                    <constraint firstItem="UmP-Z4-cae" firstAttribute="top" secondItem="oMt-vo-fve" secondAttribute="top" constant="8" id="afT-Ie-OWh"/>
+                                                    <constraint firstItem="cox-LM-AOr" firstAttribute="leading" secondItem="UmP-Z4-cae" secondAttribute="trailing" constant="43" id="bgV-Ss-dOm"/>
+                                                    <constraint firstAttribute="height" constant="166" id="ewQ-lD-BSV"/>
+                                                    <constraint firstItem="oCk-Qo-7cC" firstAttribute="leading" secondItem="oMt-vo-fve" secondAttribute="leading" constant="8" id="rLu-HE-nA2"/>
+                                                    <constraint firstItem="UmP-Z4-cae" firstAttribute="leading" secondItem="oMt-vo-fve" secondAttribute="leading" constant="8" id="zFU-gT-JvZ"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <real key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.87958115183246077" green="0.87958115183246077" blue="0.87958115183246077" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="oMt-vo-fve" firstAttribute="top" secondItem="sOE-l1-M38" secondAttribute="top" constant="8" id="2cD-oY-8zP"/>
+                                            <constraint firstItem="C02-i1-rzF" firstAttribute="leading" secondItem="sOE-l1-M38" secondAttribute="leading" constant="8" id="4gN-af-sUX"/>
+                                            <constraint firstItem="KS4-Yc-YtX" firstAttribute="leading" secondItem="sOE-l1-M38" secondAttribute="leading" constant="8" id="95p-2v-mqE"/>
+                                            <constraint firstItem="KS4-Yc-YtX" firstAttribute="top" secondItem="oMt-vo-fve" secondAttribute="bottom" constant="8" id="KxZ-O4-Y26"/>
+                                            <constraint firstItem="oMt-vo-fve" firstAttribute="trailing" secondItem="sOE-l1-M38" secondAttribute="trailingMargin" id="P2G-V4-OB6"/>
+                                            <constraint firstAttribute="trailing" secondItem="C02-i1-rzF" secondAttribute="trailing" constant="8" id="RZr-bv-DKI"/>
+                                            <constraint firstAttribute="bottom" secondItem="C02-i1-rzF" secondAttribute="bottom" id="Uu0-Az-eEI"/>
+                                            <constraint firstAttribute="trailing" secondItem="KS4-Yc-YtX" secondAttribute="trailing" constant="8" id="ZWf-ST-kfk"/>
+                                            <constraint firstItem="oMt-vo-fve" firstAttribute="leading" secondItem="sOE-l1-M38" secondAttribute="leadingMargin" id="ck1-CP-TIZ"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="sOE-l1-M38" firstAttribute="top" secondItem="SBQ-yO-nLv" secondAttribute="top" id="Eqw-d1-YGP"/>
+                                    <constraint firstItem="sOE-l1-M38" firstAttribute="leading" secondItem="SBQ-yO-nLv" secondAttribute="leading" id="XBC-LV-5GR"/>
+                                    <constraint firstAttribute="trailing" secondItem="sOE-l1-M38" secondAttribute="trailing" id="gN6-Kc-Eo2"/>
+                                    <constraint firstAttribute="bottom" secondItem="sOE-l1-M38" secondAttribute="bottom" id="sKP-g0-vdh"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="sOE-l1-M38" firstAttribute="width" secondItem="i0K-QP-IgX" secondAttribute="width" id="Aen-lv-9LY"/>
+                            <constraint firstAttribute="trailing" secondItem="SBQ-yO-nLv" secondAttribute="trailing" id="cIE-W4-iKs"/>
+                            <constraint firstItem="VdQ-1i-wd7" firstAttribute="top" secondItem="SBQ-yO-nLv" secondAttribute="bottom" id="geQ-jW-q7S"/>
+                            <constraint firstItem="SBQ-yO-nLv" firstAttribute="leading" secondItem="i0K-QP-IgX" secondAttribute="leading" id="kEO-sw-Rsq"/>
+                            <constraint firstItem="SBQ-yO-nLv" firstAttribute="top" secondItem="uZJ-nc-AfI" secondAttribute="bottom" id="kRV-tn-sht"/>
+                        </constraints>
+                    </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Prv-gC-x6C" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2608.8000000000002" y="1330.8845577211396"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="oLE-ob-2Zc">
             <objects>
@@ -269,7 +1465,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image3.JPG" translatesAutoresizingMaskIntoConstraints="NO" id="bTz-SO-7Ul">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="banner_image" translatesAutoresizingMaskIntoConstraints="NO" id="bTz-SO-7Ul">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                         </subviews>
@@ -405,7 +1601,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image3.JPG" translatesAutoresizingMaskIntoConstraints="NO" id="JJs-yh-JWw">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="banner_image" translatesAutoresizingMaskIntoConstraints="NO" id="JJs-yh-JWw">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fng-qs-hNl">
@@ -451,8 +1647,40 @@
             </objects>
             <point key="canvasLocation" x="1393.5999999999999" y="-185.30734632683661"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="agF-dZ-02u">
+            <objects>
+                <viewController id="Wk4-cn-m0r" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="tVT-XQ-KsM"/>
+                        <viewControllerLayoutGuide type="bottom" id="F9y-C6-QcQ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="VUl-UX-Jbd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hfm-fs-WGt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
     </scenes>
     <resources>
-        <image name="image3.JPG" width="5184" height="3456"/>
+        <image name="banner_image" width="375" height="333"/>
+        <image name="contact1" width="30" height="30"/>
+        <image name="dp_01" width="78" height="78"/>
+        <image name="dp_02" width="78" height="78"/>
+        <image name="dp_03" width="78" height="78"/>
+        <image name="dp_04" width="78" height="78"/>
+        <image name="image_set_01" width="167" height="75"/>
+        <image name="profile_image-03" width="36" height="36"/>
+        <image name="profile_image-10" width="36" height="36"/>
+        <image name="profile_image_01" width="36" height="36"/>
+        <image name="profile_image_04" width="36" height="36"/>
+        <image name="profile_image_08" width="36" height="36"/>
+        <image name="profile_image_11" width="36" height="36"/>
+        <image name="profile_image_12" width="36" height="36"/>
+        <image name="profile_image_2" width="36" height="36"/>
+        <image name="stars_03" width="50" height="7"/>
     </resources>
 </document>

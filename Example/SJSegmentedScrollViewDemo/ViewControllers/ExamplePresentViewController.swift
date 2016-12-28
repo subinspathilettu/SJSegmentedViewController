@@ -18,19 +18,26 @@ class ExamplePresentViewController: UIViewController {
 			let headerViewController = storyboard
 				.instantiateViewController(withIdentifier: "PresentHeader")
 
-			let firstViewController = storyboard
-				.instantiateViewController(withIdentifier: "FirstTableViewController")
-			firstViewController.title = "First"
-
-			let secondViewController = storyboard
-				.instantiateViewController(withIdentifier: "SecondViewController")
-			secondViewController.title = "Second"
+            let firstViewController = storyboard
+                .instantiateViewController(withIdentifier: "PhotographersViewController")
+            firstViewController.title = "Photographers"
+            
+            let secondViewController = storyboard
+                .instantiateViewController(withIdentifier: "PhotosCollectionViewController")
+            secondViewController.title = "Photos"
+            let thirdViewController = storyboard.instantiateViewController(withIdentifier: "TestimonialTableViewController")
+            thirdViewController.title = "Testimonial"
 
 			let segmentController = SJSegmentedViewController()
 			segmentController.headerViewController = headerViewController
-			segmentController.segmentControllers = [firstViewController,
+			segmentController.segmentControllers = [thirdViewController,firstViewController,
 			                                        secondViewController]
 			segmentController.headerViewHeight = 200.0
+            
+            segmentController.segmentTitleColor = .darkGray
+            segmentController.selectedSegmentViewColor = .black
+            segmentController.segmentShadow = SJShadow.dark()
+
 			present(segmentController, animated: true, completion: nil)
 		}
 	}

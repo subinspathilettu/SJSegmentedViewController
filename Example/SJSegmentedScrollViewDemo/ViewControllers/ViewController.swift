@@ -20,34 +20,36 @@ class ViewController: SJSegmentedViewController {
 				.instantiateViewController(withIdentifier: "HeaderViewController1")
 
 			let firstViewController = storyboard
-				.instantiateViewController(withIdentifier: "FirstTableViewController")
-			firstViewController.title = "First"
+				.instantiateViewController(withIdentifier: "PhotographersViewController")
+			firstViewController.title = "Photographers"
 
 			let secondViewController = storyboard
-				.instantiateViewController(withIdentifier: "SecondViewController")
-			secondViewController.title = "Second"
+				.instantiateViewController(withIdentifier: "PhotosCollectionViewController")
+			secondViewController.title = "Photos"
+            let thirdViewController = storyboard.instantiateViewController(withIdentifier: "TestimonialTableViewController")
+            thirdViewController.title = "Testimonial"
 
-			let thirdViewController = storyboard
-				.instantiateViewController(withIdentifier: "ThirdViewController") as? ThirdViewController
-			thirdViewController?.title = "Third"
-			thirdViewController?.loadViewController = { (index) in
-				self.setSelectedSegmentAt(index, animated: true)
-			}
-
-			let fourthViewController = storyboard
-				.instantiateViewController(withIdentifier: "CollectionViewIdentifier")
-			fourthViewController.title = "Fourth"
+//			let thirdViewController = storyboard
+//				.instantiateViewController(withIdentifier: "ThirdViewController") as? ThirdViewController
+//			thirdViewController?.title = "Third"
+//			thirdViewController?.loadViewController = { (index) in
+//				self.setSelectedSegmentAt(index, animated: true)
+//			}
+//
+//			let fourthViewController = storyboard
+//				.instantiateViewController(withIdentifier: "TestimonialViewController")
+//			fourthViewController.title = "Fourth"
 
 			headerViewController = headerController
-			segmentControllers = [firstViewController,
-			                           secondViewController,
-			                           thirdViewController!,
-			                           fourthViewController]
+			segmentControllers = [secondViewController,firstViewController,
+			                           thirdViewController,
+			                          ]
+            segmentBounces = true
 			headerViewHeight = 200
 			selectedSegmentViewHeight = 5.0
-			segmentTitleColor = .gray
-			selectedSegmentViewColor = .red
-			segmentShadow = SJShadow.light()
+			segmentTitleColor = .lightGray
+			selectedSegmentViewColor = .black
+			segmentShadow = SJShadow.dark()
 			delegate = self
 		}
 
@@ -77,7 +79,7 @@ extension ViewController: SJSegmentedViewControllerDelegate {
 		if segments.count > 0 {
 
 			selectedSegment = segments[index]
-			selectedSegment?.titleColor(.red)
+			selectedSegment?.titleColor(.darkGray)
 		}
 	}
 }
