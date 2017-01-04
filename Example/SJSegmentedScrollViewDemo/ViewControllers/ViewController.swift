@@ -14,11 +14,10 @@ class ViewController: SJSegmentedViewController {
 	var selectedSegment: SJSegmentTab?
 
 	override func viewDidLoad() {
-        //self.navigationController?.title = "Wedding Clicks"
+      
         title = "SJSegmentVC"
         self.navigationItem.title = "WEDDING CLICKS"
-        //self.navigationController?.navigationBar.topItem?.title = "zurück"
-        
+              
 		if let storyboard = self.storyboard {
 
 			let headerController = storyboard
@@ -34,17 +33,6 @@ class ViewController: SJSegmentedViewController {
             let thirdViewController = storyboard.instantiateViewController(withIdentifier: "TestimonialTableViewController")
             thirdViewController.title = "Testimonial"
 
-//			let thirdViewController = storyboard
-//				.instantiateViewController(withIdentifier: "ThirdViewController") as? ThirdViewController
-//			thirdViewController?.title = "Third"
-//			thirdViewController?.loadViewController = { (index) in
-//				self.setSelectedSegmentAt(index, animated: true)
-//			}
-//
-//			let fourthViewController = storyboard
-//				.instantiateViewController(withIdentifier: "TestimonialViewController")
-//			fourthViewController.title = "Fourth"
-
 			headerViewController = headerController
 			segmentControllers = [secondViewController,firstViewController,
 			                           thirdViewController,
@@ -58,10 +46,8 @@ class ViewController: SJSegmentedViewController {
 			delegate = self
 		}
 
-	//	title = "Segment"
-		super.viewDidLoad()
-        //self.edgesForExtendedLayout = []
-	}
+			super.viewDidLoad()
+       	}
 
 	func getSegmentTabWithImage(_ imageName: String) -> UIView {
 
