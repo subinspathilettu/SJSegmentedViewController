@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>item0</key>
+	<array>
+		<dict>
+			<key>collagePhoto</key>
+			<string>image_set_06</string>
+			<key>ratingImage</key>
+			<string>stars_02</string>
+			<key>projectsNo</key>
+			<string>88 Projects</string>
+			<key>photographerName</key>
+			<string>Edward Lawson</string>
+		</dict>
+		<dict>
+			<key>collagePhoto</key>
+			<string>img_set_07</string>
+			<key>ratingImage</key>
+			<string>stars_02</string>
+			<key>projectsNo</key>
+			<string>130 Projects</string>
+			<key>photographerName</key>
+			<string>Martha Flowers</string>
+		</dict>
+		<dict>
+			<key>collagePhoto</key>
+			<string>image_set_01</string>
+			<key>ratingImage</key>
+			<string>stars_01</string>
+			<key>projectsNo</key>
+			<string>120 Projects</string>
+			<key>photographerName</key>
+			<string>Randall Austin</string>
+		</dict>
+		<dict>
+			<key>collagePhoto</key>
+			<string>img_set_08</string>
+			<key>ratingImage</key>
+			<string>stars_03</string>
+			<key>projectsNo</key>
+			<string>190 Projects</string>
+			<key>photographerName</key>
+			<string>Frank Ramsey</string>
+		</dict>
+		<dict>
+			<key>collagePhoto</key>
+			<string>img_set_02</string>
+			<key>ratingImage</key>
+			<string>stars_03</string>
+			<key>projectsNo</key>
+			<string>115 Projects</string>
+			<key>photographerName</key>
+			<string>Derrick Barker</string>
+		</dict>
+		<dict>
+			<key>collagePhoto</key>
+			<string>img_set_4</string>
+			<key>ratingImage</key>
+			<string>stars_01</string>
+			<key>projectsNo</key>
+			<string>100 Projects</string>
+			<key>photographerName</key>
+			<string>Dominic Walters</string>
+		</dict>
+		<dict>
+			<key>collagePhoto</key>
+			<string>img_set_05</string>
+			<key>ratingImage</key>
+			<string>stars_02</string>
+			<key>projectsNo</key>
+			<string>105 Projects</string>
+			<key>photographerName</key>
+			<string>George Quinn</string>
+		</dict>
+		<dict>
+			<key>collagePhoto</key>
+			<string>image_set_06</string>
+			<key>ratingImage</key>
+			<string>stars_01</string>
+			<key>projectsNo</key>
+			<string>90 Projects</string>
+			<key>photographerName</key>
+			<string>Adeline Marshall</string>
+		</dict>
+	</array>
+</dict>
+</plist>

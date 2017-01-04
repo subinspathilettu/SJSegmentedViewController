@@ -1,4 +1,4 @@
-//
+   //
 //  PhotosModel.swift
 //  SJSegmentedScrollViewDemo
 //
@@ -11,7 +11,7 @@ import UIKit
 class PhotosModel: NSObject {
     
     var photographerName:NSString
-    var projects_no:NSString
+    var projectsNo:NSString
     var ratingImage:UIImage
     var collagePhoto:UIImage
     
@@ -19,9 +19,27 @@ class PhotosModel: NSObject {
     init(phtgrapher:NSString, projects:NSString, rating:UIImage, collage:UIImage) {
         
         photographerName = phtgrapher
-        projects_no = projects
+        projectsNo = projects
         ratingImage = rating
         collagePhoto = collage
     }
 
+    init(dict:NSDictionary) {
+        
+        photographerName = dict.value(forKey: "photographerName") as! NSString
+         projectsNo = dict.value(forKey: "projectsNo") as! NSString
+         let ratingString = dict.value(forKey: "ratingImage") as! NSString
+         ratingImage = UIImage(named: ratingString as String)!
+        let collagePhotoString = dict.value(forKey: "collagePhoto") as! NSString
+        collagePhoto = UIImage(named: collagePhotoString as String)!
+    }
+    func modelMap( dictArray:[NSDictionary])
+    {
+        for dict in dictArray {
+            
+            photographerName = dict.value(forKey: "photographerName") as! NSString
+        }
+       
+        
+    }
 }

@@ -1,4 +1,4 @@
-  //
+    //
 //  PhotosCollectionViewController.swift
 //  SJSegmentedScrollViewDemo
 //
@@ -15,7 +15,7 @@ private let sectionInsets = UIEdgeInsets(top: 20.0, left: 10.0, bottom: 0.0, rig
 
   class PhotosCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
 
-    
+  static var resultDictionary = NSDictionary()
     var photoCell: [PhotosModel] = []
     
     override func viewDidLoad() {
@@ -25,9 +25,18 @@ private let sectionInsets = UIEdgeInsets(top: 20.0, left: 10.0, bottom: 0.0, rig
         // self.clearsSelectionOnViewWillAppear = false
 
         // Register cell classes
-        getDataObjects()
+        let sjObject =  SJReadPlist()
+        sjObject.readPlist()
+       print("\(PhotosCollectionViewController.resultDictionary.description)")
         
-
+        let dict = PhotosCollectionViewController.resultDictionary
+        let arrayDict:[NSDictionary] = dict.value(forKey: "item0") as! [NSDictionary]
+        for dictionary1 in arrayDict {
+            photoCell.append(PhotosModel(dict: dictionary1))
+        }
+        //getDataObjects()
+        
+        
      //   self.collectionView!.register(PhotosCollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
 
         // Do any additional setup after loading the view.
@@ -101,7 +110,7 @@ private let sectionInsets = UIEdgeInsets(top: 20.0, left: 10.0, bottom: 0.0, rig
    // cell.backgroundColor = UIColor.black
         let item = photoCell[indexPath.row]
         cell.photographerName.text = item.photographerName  as String
-        cell.noOfProjects.text = item.projects_no  as String
+        cell.noOfProjects.text = item.projectsNo  as String
         cell.rating.image = item.ratingImage
         cell.collage.image = item.collagePhoto
         return cell

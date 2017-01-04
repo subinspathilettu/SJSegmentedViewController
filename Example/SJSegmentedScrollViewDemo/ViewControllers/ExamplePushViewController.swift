@@ -36,6 +36,7 @@ class ExamplePushViewController: UIViewController {
             segmentController.selectedSegmentViewColor = .black
             segmentController.segmentShadow = SJShadow.dark()
 
+            //navigationController?.title = "WEDDING CLICKS"
 			navigationController?.pushViewController(segmentController, animated: true)
 		}
 	}

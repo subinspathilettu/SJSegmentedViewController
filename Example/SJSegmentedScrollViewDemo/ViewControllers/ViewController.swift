@@ -14,6 +14,11 @@ class ViewController: SJSegmentedViewController {
 	var selectedSegment: SJSegmentTab?
 
 	override func viewDidLoad() {
+        //self.navigationController?.title = "Wedding Clicks"
+        title = "SJSegmentVC"
+        self.navigationItem.title = "WEDDING CLICKS"
+        //self.navigationController?.navigationBar.topItem?.title = "zurück"
+        
 		if let storyboard = self.storyboard {
 
 			let headerController = storyboard
@@ -53,8 +58,9 @@ class ViewController: SJSegmentedViewController {
 			delegate = self
 		}
 
-		title = "Segment"
+	//	title = "Segment"
 		super.viewDidLoad()
+        //self.edgesForExtendedLayout = []
 	}
 
 	func getSegmentTabWithImage(_ imageName: String) -> UIView {

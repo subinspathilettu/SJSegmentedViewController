@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B3C65361E1B7D0B00BEDD6E /* SJReadPlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B3C65351E1B7D0B00BEDD6E /* SJReadPlist.swift */; };
+		0B3C65381E1B7FE800BEDD6E /* data.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0B3C65371E1B7FE800BEDD6E /* data.plist */; };
 		0BBA60F71E122A9D0002CBD2 /* PhotosCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BBA60F61E122A9D0002CBD2 /* PhotosCollectionViewCell.swift */; };
 		0BBA60F91E122F6D0002CBD2 /* PhotosModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BBA60F81E122F6D0002CBD2 /* PhotosModel.swift */; };
 		0BBA60FB1E1261530002CBD2 /* TestimonialTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BBA60FA1E1261530002CBD2 /* TestimonialTableViewController.swift */; };
@@ -30,6 +32,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0B3C65351E1B7D0B00BEDD6E /* SJReadPlist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SJReadPlist.swift; sourceTree = "<group>"; };
+		0B3C65371E1B7FE800BEDD6E /* data.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = data.plist; sourceTree = "<group>"; };
 		0BBA60F61E122A9D0002CBD2 /* PhotosCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewCell.swift; sourceTree = "<group>"; };
 		0BBA60F81E122F6D0002CBD2 /* PhotosModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosModel.swift; sourceTree = "<group>"; };
 		0BBA60FA1E1261530002CBD2 /* TestimonialTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestimonialTableViewController.swift; sourceTree = "<group>"; };
@@ -128,6 +132,8 @@
 				0BBA60F61E122A9D0002CBD2 /* PhotosCollectionViewCell.swift */,
 				0BBA60F81E122F6D0002CBD2 /* PhotosModel.swift */,
 				0BBA60FA1E1261530002CBD2 /* TestimonialTableViewController.swift */,
+				0B3C65351E1B7D0B00BEDD6E /* SJReadPlist.swift */,
+				0B3C65371E1B7FE800BEDD6E /* data.plist */,
 			);
 			path = SJSegmentedScrollViewDemo;
 			sourceTree = "<group>";
@@ -222,6 +228,7 @@
 				64A421691D3D4543009BFBFE /* LaunchScreen.xib in Resources */,
 				64A4216C1D3D4543009BFBFE /* Images.xcassets in Resources */,
 				65ED4A151D70043600B2EE28 /* image3.JPG in Resources */,
+				0B3C65381E1B7FE800BEDD6E /* data.plist in Resources */,
 				64A4216A1D3D4543009BFBFE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -282,6 +289,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				64A421721D3D4543009BFBFE /* ViewController.swift in Sources */,
+				0B3C65361E1B7D0B00BEDD6E /* SJReadPlist.swift in Sources */,
 				0BBA60F71E122A9D0002CBD2 /* PhotosCollectionViewCell.swift in Sources */,
 				64EE32D81DE839340003EA2A /* PresentHeaderViewController.swift in Sources */,
 				64A421701D3D4543009BFBFE /* SecondViewController.swift in Sources */,
