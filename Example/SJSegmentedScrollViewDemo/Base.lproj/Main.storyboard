@@ -134,10 +134,10 @@
             <objects>
                 <navigationController id="TMC-Kr-ANM" userLabel="Segment" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" image="new_icon" selectedImage="new_icon _active" id="5mq-J3-XMg"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="EgD-nY-UrJ">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="EgD-nY-UrJ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.94509803920000002" green="0.3803921569" blue="0.21960784310000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.93333333333333335" green="0.26666666666666666" blue="0.074509803921568626" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -212,7 +212,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N2z-27-mY0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1170" y="857"/>
+            <point key="canvasLocation" x="1169.5999999999999" y="856.37181409295363"/>
         </scene>
         <!--Photographers View Controller-->
         <scene sceneID="nO2-dn-fxd">

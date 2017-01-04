@@ -33,13 +33,4 @@ class PhotosModel: NSObject {
         let collagePhotoString = dict.value(forKey: "collagePhoto") as! NSString
         collagePhoto = UIImage(named: collagePhotoString as String)!
     }
-    func modelMap( dictArray:[NSDictionary])
-    {
-        for dict in dictArray {
-            
-            photographerName = dict.value(forKey: "photographerName") as! NSString
-        }
-       
-        
-    }
 }

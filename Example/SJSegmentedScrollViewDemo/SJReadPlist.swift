@@ -29,7 +29,7 @@ class SJReadPlist: NSObject {
             if let bundlePath = Bundle.main.path(forResource: "data", ofType: "plist") {
                 
                 let resultDictionary = NSMutableDictionary(contentsOfFile: bundlePath)
-                print("Bundle GameData.plist file is --> \(resultDictionary?.description)")
+                print("Bundle Data.plist file is --> \(resultDictionary?.description)")
                 do{
                     try fileManager.copyItem(atPath: bundlePath, toPath: path)
                 }
@@ -39,10 +39,10 @@ class SJReadPlist: NSObject {
                 }
                 print("copy")
             } else {
-                print("GameData.plist not found. Please, make sure it is part of the bundle.")
+                print("Data.plist not found. Please, make sure it is part of the bundle.")
             }
         } else {
-            print("GameData.plist already exits at path.")
+            print("data.plist already exits at path.")
             // use this to delete file from documents directory
             //fileManager.removeItemAtPath(path, error: nil)
         }
@@ -51,25 +51,11 @@ class SJReadPlist: NSObject {
         if let myDict = NSDictionary(contentsOfFile:  path)
         {
             PhotosCollectionViewController.resultDictionary = NSMutableDictionary(contentsOfFile: path)!
-            print("Loaded GameData.plist file is --> \(PhotosCollectionViewController.resultDictionary.description)")
+            print("Loaded Data.plist file is --> \(PhotosCollectionViewController.resultDictionary.description)")
             
-//            let dict = myDict
-//            //            //loading values
-//            //            bedroomFloorID = dict.objectForKey(BedroomFloorKey)!
-//            //            bedroomWallID = dict.objectForKey(BedroomWallKey)!
-//            let appCrashedLastTime = dict.object(forKey: "DidAppCrashedLastTime") as! Bool
-////            if appCrashedLastTime
-////            {
-////                stAlert.showAlertOnCrash()
-////            }
-//            let exceptionName = dict.object(forKey: "Exception")!
-//            let reason = dict.object(forKey: "Reason")
-//            print("Exception : \(exceptionName)")
-//            print("Exception Reason: \(reason)")
-//            //...
         }
         else {
-            print("WARNING: Couldn't create dictionary from GameData.plist! Default values will be used!")
+            print("WARNING: Couldn't create dictionary from Data.plist! Default values will be used!")
         }
         
     }
