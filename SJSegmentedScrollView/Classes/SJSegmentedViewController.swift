@@ -216,6 +216,19 @@ import UIKit
         }
     }
     
+    /**
+     *  Set color of SegmentedScrollView.
+     *
+     *  By default it is set to white.
+     *
+     *  segmentedScrollView.backgroundColor  = UIColor.white
+     */
+    open var segmentedScrollViewColor = UIColor.white  {
+        didSet {
+            segmentedScrollView.backgroundColor = segmentedScrollViewColor
+        }
+    }
+
     open var delegate:SJSegmentedViewControllerDelegate?
     var viewObservers = [UIView]()
     var segmentedScrollView = SJSegmentedScrollView(frame: CGRect.zero)
@@ -310,6 +323,7 @@ import UIKit
         segmentedScrollView.headerViewHeight            = headerViewHeight
         segmentedScrollView.headerViewOffsetHeight      = headerViewOffsetHeight
         segmentedScrollView.segmentViewHeight           = segmentViewHeight
+        segmentedScrollView.backgroundColor             = segmentedScrollViewColor
     }
     
     /**
