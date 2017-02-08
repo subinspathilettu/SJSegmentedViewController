@@ -7,7 +7,7 @@
 
 SJSegmentedScrollView is a light weight generic controller written in Swift. Its a simple customizable controller were you can integrate any number of ViewControllers into a segmented controller with a header view controller.
 
-![sample_gif](http://g.recordit.co/TKqjr0g6gj.gif)
+![demo](https://github.com/subinspathilettu/SJSegmentedViewController/blob/master/new_demo.gif)
 
 #### Highlights
 
