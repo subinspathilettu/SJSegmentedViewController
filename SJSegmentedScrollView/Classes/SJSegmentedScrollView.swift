@@ -294,7 +294,7 @@ class SJSegmentedScrollView: UIScrollView {
 		if scrollView == nil { return }
 		if scrollView == self { return }
 
-		let changeValues = change as! [NSKeyValueChangeKey: AnyObject]
+		let changeValues = change! as [NSKeyValueChangeKey: AnyObject]
 
 		if let new = changeValues[NSKeyValueChangeKey.newKey]?.cgPointValue,
 			let old = changeValues[NSKeyValueChangeKey.oldKey]?.cgPointValue {
