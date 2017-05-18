@@ -46,14 +46,26 @@ class SJSegmentedScrollView: UIScrollView {
     var scrollContentView: UIView!
     var contentViewHeightConstraint: NSLayoutConstraint!
     var didSelectSegmentAtIndex: DidSelectSegmentAtIndex?
+	var sjShowsVerticalScrollIndicator: Bool = false {
+		didSet {
+			showsVerticalScrollIndicator = sjShowsVerticalScrollIndicator
+			contentView?.showsVerticalScrollIndicator = sjShowsVerticalScrollIndicator
+		}
+	}
+	var sjShowsHorizontalScrollIndicator: Bool = false  {
+		didSet {
+			showsHorizontalScrollIndicator = sjShowsHorizontalScrollIndicator
+			contentView?.showsHorizontalScrollIndicator = sjShowsHorizontalScrollIndicator
+		}
+	}
 
     override init(frame: CGRect) {
         super.init(frame: frame)
         
         sizeToFit()
         translatesAutoresizingMaskIntoConstraints = false
-        showsHorizontalScrollIndicator = true
-        showsVerticalScrollIndicator = true
+        showsHorizontalScrollIndicator = sjShowsHorizontalScrollIndicator
+        showsVerticalScrollIndicator = sjShowsVerticalScrollIndicator
 		decelerationRate = UIScrollViewDecelerationRateFast
         bounces = false
         
@@ -227,6 +239,8 @@ class SJSegmentedScrollView: UIScrollView {
     func createContentView() -> SJContentView {
         
         let contentView = SJContentView(frame: CGRect.zero)
+		contentView.showsVerticalScrollIndicator = sjShowsVerticalScrollIndicator
+		contentView.showsHorizontalScrollIndicator = sjShowsHorizontalScrollIndicator
         contentView.translatesAutoresizingMaskIntoConstraints = false
         scrollContentView.addSubview(contentView)
         

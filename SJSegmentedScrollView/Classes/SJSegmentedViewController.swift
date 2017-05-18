@@ -229,6 +229,32 @@ import UIKit
         }
     }
 
+	/**
+	*  Set vertical scroll indicator.
+	*
+	*  By default true.
+	*
+	*  segmentedScrollView.showsVerticalScrollIndicator = false
+	*/
+	open var showsVerticalScrollIndicator = true {
+		didSet {
+			segmentedScrollView.sjShowsVerticalScrollIndicator = showsVerticalScrollIndicator
+		}
+	}
+
+	/**
+	*  Set horizontal scroll indicator.
+	*
+	*  By default true.
+	*
+	*  segmentedScrollView.showsHorizontalScrollIndicator = false
+	*/
+	open var showsHorizontalScrollIndicator = true {
+		didSet {
+			segmentedScrollView.sjShowsHorizontalScrollIndicator = showsHorizontalScrollIndicator
+		}
+	}
+
     open weak var delegate:SJSegmentedViewControllerDelegate?
     var viewObservers = [UIView]()
     var segmentedScrollView = SJSegmentedScrollView(frame: CGRect.zero)
@@ -297,7 +323,7 @@ import UIKit
 	* - parameter index Int Segment index
 	* - parameter animated Bool Move with an animation or not.
 	*/
-	public func setSelectedSegmentAt(_ index: Int, animated: Bool) {
+	open func setSelectedSegmentAt(_ index: Int, animated: Bool) {
 
 		if index >= 0 && index < segmentControllers.count {
 			segmentedScrollView.segmentView?.didSelectSegmentAtIndex!(segments[index],

@@ -31,14 +31,12 @@ class SJContentView: UIScrollView {
     var contentSubViewWidthConstraints = [NSLayoutConstraint]()
     let animationDuration = 0.3
     var didSelectSegmentAtIndex: DidSelectSegmentAtIndex?
-    
-    
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         
         delegate = self
 		isPagingEnabled = true
-        showsVerticalScrollIndicator = false
         
         contentView = UIView()
         contentView.translatesAutoresizingMaskIntoConstraints = false

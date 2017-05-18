@@ -24,7 +24,7 @@ import Foundation
 
 typealias DidSelectSegmentAtIndex = (_ segment: SJSegmentTab?,_ index: Int,_ animated: Bool) -> Void
 
-public class SJSegmentTab: UIView {
+open class SJSegmentTab: UIView {
 
 	let kSegmentViewTagOffset = 100
 	let button = UIButton(type: .custom)
@@ -79,12 +79,12 @@ public class SJSegmentTab: UIView {
 		fatalError("init(coder:) has not been implemented")
 	}
 
-	public func titleColor(_ color: UIColor) {
+	open func titleColor(_ color: UIColor) {
 
 		button.setTitleColor(color, for: .normal)
 	}
 
-	public func titleFont(_ font: UIFont) {
+	open func titleFont(_ font: UIFont) {
 
 		button.titleLabel?.font = font
 	}

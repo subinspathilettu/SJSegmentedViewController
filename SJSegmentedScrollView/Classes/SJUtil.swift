@@ -70,7 +70,7 @@ class SJUtil {
 
 extension String {
 	
-	func widthWithConstrainedWidth(width: CGFloat, font: UIFont) -> CGFloat {
+	func widthWithConstrainedWidth(_ width: CGFloat, font: UIFont) -> CGFloat {
 
 		let constraintRect = CGSize(width: width, height: .greatestFiniteMagnitude)
 		let boundingBox = self.boundingRect(with: constraintRect,

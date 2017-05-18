@@ -22,6 +22,7 @@
 		64EE32DC1DE840440003EA2A /* ExamplePushViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64EE32DB1DE840440003EA2A /* ExamplePushViewController.swift */; };
 		65ED4A0F1D6FF8B900B2EE28 /* SJSegmentedScrollView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65ED4A0E1D6FF8B900B2EE28 /* SJSegmentedScrollView.framework */; };
 		65ED4A151D70043600B2EE28 /* image3.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 65ED4A141D70043600B2EE28 /* image3.JPG */; };
+		F2438B1AEF5EEE18592D14BD /* Pods_SJSegmentedScrollViewDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 220B06FF892F6EAAE77A7744 /* Pods_SJSegmentedScrollViewDemo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +58,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				65ED4A0F1D6FF8B900B2EE28 /* SJSegmentedScrollView.framework in Frameworks */,
+				F2438B1AEF5EEE18592D14BD /* Pods_SJSegmentedScrollViewDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -171,13 +173,13 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0810;
+				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = CocoaPods;
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
 						DevelopmentTeam = 5DYFD9UMYF;
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 0830;
 					};
 				};
 			};
@@ -226,7 +228,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		B6C75E8006EC9F6B81B5FDB0 /* [CP] Embed Pods Frameworks */ = {

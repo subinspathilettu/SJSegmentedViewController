@@ -16,14 +16,13 @@ class FirstTableViewController: UITableViewController {
 		super.viewDidLoad()
 
 		refreshControl?.addTarget(self,
-		                          action: #selector(FirstTableViewController.handleRefresh(refreshControl:)),
+		                          action: #selector(handleRefresh(_:)),
 		                          for: UIControlEvents.valueChanged)
 	}
 
-	func handleRefresh(refreshControl: UIRefreshControl) {
+	func handleRefresh(_ refreshControl: UIRefreshControl) {
 
 		self.perform(#selector(self.endRefresh), with: nil, afterDelay: 1.0)
-
 	}
 
 	func endRefresh() {

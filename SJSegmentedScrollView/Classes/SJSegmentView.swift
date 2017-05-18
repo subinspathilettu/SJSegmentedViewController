@@ -286,7 +286,7 @@ class SJSegmentView: UIScrollView {
 				width = view.bounds.width
 			} else if let title = controller.title {
 
-				width = title.widthWithConstrainedWidth(width: .greatestFiniteMagnitude,
+				width = title.widthWithConstrainedWidth(.greatestFiniteMagnitude,
 				                                        font: font!)
 			}
 
