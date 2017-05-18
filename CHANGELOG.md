@@ -39,3 +39,6 @@ All notable changes to this project will be documented in this file.
 
 #### `1.3.5`
 * Resolved issue #29. Added supports for UIRefreshControl and custom pull to refresh libraries.
+
+#### `1.3.6`
+* Resolved issue #54. How to disable Scroll indicator.
