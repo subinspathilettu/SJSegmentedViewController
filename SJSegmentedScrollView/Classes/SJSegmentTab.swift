@@ -38,7 +38,7 @@ open class SJSegmentTab: UIView {
 
 	convenience init(title: String) {
 		self.init(frame: CGRect.zero)
-		button.setTitle(title, for: .normal)
+        setTitle(title)
 	}
 
 	convenience init(view: UIView) {
@@ -78,6 +78,11 @@ open class SJSegmentTab: UIView {
 	required public init?(coder aDecoder: NSCoder) {
 		fatalError("init(coder:) has not been implemented")
 	}
+    
+    open func setTitle(_ title: String) {
+        
+        button.setTitle(title, for: .normal)
+    }
 
 	open func titleColor(_ color: UIColor) {
 
