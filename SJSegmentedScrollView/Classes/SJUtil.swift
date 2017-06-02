@@ -42,7 +42,9 @@ class SJUtil {
 
 			if navigationController?.isNavigationBarHidden == false {
 				topSpacing = UIApplication.shared.statusBarFrame.height
-				topSpacing += (navigationController?.navigationBar.bounds.height)!
+                if !(navigationController?.navigationBar.isOpaque)! {
+                    topSpacing += (navigationController?.navigationBar.bounds.height)!
+                }
 			}
 		}
 		
@@ -59,7 +61,7 @@ class SJUtil {
         var bottomSpacing: CGFloat = 0.0
 
         if let tabBarController = viewController.tabBarController {
-            if !tabBarController.tabBar.isHidden {
+            if !tabBarController.tabBar.isHidden && !tabBarController.tabBar.isOpaque {
                 bottomSpacing += tabBarController.tabBar.bounds.size.height
             }
         }
