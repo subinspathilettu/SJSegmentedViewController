@@ -158,7 +158,7 @@ class SJSegmentedScrollView: UIScrollView {
         
         contentViews.append(contentView)
         self.contentView?.addContentView(contentView, frame: frame)
-        self.contentView!.didSelectSegmentAtIndex = {
+        self.contentView!.didSelectSegmentAtIndex = {[unowned self]
             (segment, index, animated) in
             self.didSelectSegmentAtIndex?(self.segmentView!.segments[index], index, animated)
         }
@@ -196,7 +196,7 @@ class SJSegmentedScrollView: UIScrollView {
             segmentView?.font							= segmentTitleFont!
             segmentView?.bounces						= segmentBounces
             segmentView!.translatesAutoresizingMaskIntoConstraints = false
-            segmentView!.didSelectSegmentAtIndex = {
+            segmentView!.didSelectSegmentAtIndex = {[unowned self]
                 (segment, index, animated) in
                 self.contentView?.movePageToIndex(index, animated: animated)
                 self.didSelectSegmentAtIndex?(segment, index, animated)
@@ -230,7 +230,7 @@ class SJSegmentedScrollView: UIScrollView {
                            width: bounds.size.width, height: segmentViewHeight!)
         segmentView = SJSegmentView(frame: frame)
         segmentView!.didSelectSegmentAtIndex = {
-            (segment, index, animated) in
+            [unowned self] (segment, index, animated) in
             self.contentView?.movePageToIndex(index, animated: animated)
         }
         addSubview(segmentView!)

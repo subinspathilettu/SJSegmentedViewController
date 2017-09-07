@@ -286,7 +286,7 @@ import UIKit
     
     deinit {
         for view in viewObservers {
-            view.removeObserver(self,
+            view.removeObserver(segmentedScrollView,
                                 forKeyPath: "contentOffset",
                                 context: nil)
         }
@@ -390,10 +390,10 @@ import UIKit
         segmentedScrollView.setContentView()
         
         // selected segment at index
-        segmentedScrollView.didSelectSegmentAtIndex = {(segment, index, animated) in
+        segmentedScrollView.didSelectSegmentAtIndex = {[unowned self] (segment, index, animated) in
 
-			let selectedController = self.segmentControllers[index]
-			self.delegate?.didMoveToPage?(selectedController, segment: segment!, index: index)
+            let selectedController = self.segmentControllers[index]
+            self.delegate?.didMoveToPage?(selectedController, segment: segment!, index: index)
         }
     }
     
@@ -457,7 +457,6 @@ import UIKit
         
         addHeaderViewController(headerViewController!)
         addContentControllers(segmentControllers)
-        
         
         //Delegate call for setting the first view of segments.
         var segment: SJSegmentTab?
