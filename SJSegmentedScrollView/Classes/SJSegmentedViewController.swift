@@ -301,8 +301,12 @@ import UIKit
         super.viewDidLoad()
         
         view.backgroundColor = UIColor.white
-        automaticallyAdjustsScrollViewInsets = false
         loadControllers()
+		if #available(iOS 11, *) {
+			segmentedScrollView.contentInsetAdjustmentBehavior = .never
+		} else {
+			automaticallyAdjustsScrollViewInsets = false
+		}
     }
     
     /**

@@ -45,6 +45,7 @@ class ViewController: SJSegmentedViewController {
 			                           fourthViewController]
 			headerViewHeight = 200
 			selectedSegmentViewHeight = 5.0
+			headerViewOffsetHeight = 31.0
 			segmentTitleColor = .gray
 			selectedSegmentViewColor = .red
 			segmentShadow = SJShadow.light()
