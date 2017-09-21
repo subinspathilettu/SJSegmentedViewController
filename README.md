@@ -125,7 +125,7 @@ segmentedViewController.view.frame = self.view.bounds
 segmentedViewController.didMoveToParentViewController(self)
 ```
 
-We upgraded to `Swift 4`. For those who want to use older version,
+## We upgraded to `Swift 4`. For those who want to use older version,
 
 #### For `Swift 3`
 pod ’SJSegmentedScrollView’, ‘1.3.6'
