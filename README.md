@@ -37,7 +37,7 @@ platform :ios, '9.0'
 use_frameworks!
 
 target '<Your Target Name>' do
-pod ’SJSegmentedScrollView’, ‘1.3.6'
+pod ’SJSegmentedScrollView’, ‘1.3.8'
 end
 ```
 
@@ -124,8 +124,14 @@ self.view.addSubview(segmentedViewController.view)
 segmentedViewController.view.frame = self.view.bounds
 segmentedViewController.didMoveToParentViewController(self)
 ```
+
+We upgraded to `Swift 4`. For those who want to use older version,
+
+#### For `Swift 3`
+pod ’SJSegmentedScrollView’, ‘1.3.6'
+
 #### For `Swift 2.3`
-We upgraded to `Swift 3`. For those who want to use older version, use `1.1.1` .
+use `1.1.1`
 
 ```ruby
 pod 'SJSegmentedScrollView', :git => 'https://github.com/subinspathilettu/SJSegmentedViewController.git', :tag => 'v1.1.1'
