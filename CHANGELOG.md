@@ -42,3 +42,6 @@ All notable changes to this project will be documented in this file.
 
 #### `1.3.6`
 * Resolved issue #54. How to disable Scroll indicator.
+
+#### `1.3.8`
+* Migrated to Swift 4.
