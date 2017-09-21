@@ -127,11 +127,9 @@ segmentedViewController.didMoveToParentViewController(self)
 
 ## We upgraded to `Swift 4`. For those who want to use older version,
 
-#### For `Swift 3`
-pod ’SJSegmentedScrollView’, ‘1.3.6'
+`Swift 3`: ``` pod ’SJSegmentedScrollView’, ‘1.3.6' ```
 
-#### For `Swift 2.3`
-use `1.1.1`
+`Swift 2.3`: ``` pod ’SJSegmentedScrollView’, ‘1.3.6' ``` OR
 
 ```ruby
 pod 'SJSegmentedScrollView', :git => 'https://github.com/subinspathilettu/SJSegmentedViewController.git', :tag => 'v1.1.1'
