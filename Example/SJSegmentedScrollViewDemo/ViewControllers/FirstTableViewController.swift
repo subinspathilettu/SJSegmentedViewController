@@ -20,12 +20,12 @@ class FirstTableViewController: UITableViewController {
 		                          for: UIControlEvents.valueChanged)
 	}
 
-	func handleRefresh(_ refreshControl: UIRefreshControl) {
+	@objc func handleRefresh(_ refreshControl: UIRefreshControl) {
 
 		self.perform(#selector(self.endRefresh), with: nil, afterDelay: 1.0)
 	}
 
-	func endRefresh() {
+	@objc func endRefresh() {
 
 		refreshControl?.endRefreshing()
 	}
