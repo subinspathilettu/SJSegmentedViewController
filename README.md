@@ -162,9 +162,8 @@ changes and makes the scroll effect. If you want to change the default view, imp
 `SJSegmentedViewControllerViewSource` and pass your custom view. 
 
 ```swift
-func viewForSegmentControllerToObserveContentOffsetChange(controller: UIViewController,
-    index: Int) -> UIView {
-    return view
+func viewForSegmentControllerToObserveContentOffsetChange() -> UIView {
+	return view
 }
 ```
 
