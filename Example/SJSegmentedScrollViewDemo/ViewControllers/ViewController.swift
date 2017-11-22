@@ -51,6 +51,7 @@ class ViewController: SJSegmentedViewController {
 			segmentShadow = SJShadow.light()
 			showsHorizontalScrollIndicator = false
 			showsVerticalScrollIndicator = false
+			segmentBounces = false
 			delegate = self
 		}
 

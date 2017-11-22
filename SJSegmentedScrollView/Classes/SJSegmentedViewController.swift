@@ -174,11 +174,11 @@ import UIKit
     /**
      *  Set bounce for segment.
      *
-     *  By default it is set to false.
+     *  By default it is set to true.
      *
-     *  segmentedViewController.segmentBounces = true
+     *  segmentedViewController.segmentBounces = false
      */
-    open var segmentBounces = false {
+    open var segmentBounces = true {
         didSet {
             segmentedScrollView.segmentBounces = segmentBounces
         }
