@@ -58,6 +58,8 @@ class SJSegmentedScrollView: UIScrollView {
 			contentView?.showsHorizontalScrollIndicator = sjShowsHorizontalScrollIndicator
 		}
 	}
+    
+    private var viewObservers = [UIView]()
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -84,6 +86,12 @@ class SJSegmentedScrollView: UIScrollView {
         removeObserver(self,
                             forKeyPath: "contentOffset",
                             context: nil)
+        
+        for view in viewObservers {
+            view.removeObserver(self,
+                                forKeyPath: "contentOffset",
+                                context: nil)
+        }
     }
     
     func setContentView() {
@@ -144,7 +152,7 @@ class SJSegmentedScrollView: UIScrollView {
     }
     
     func addObserverFor(_ view: UIView) {
-        
+        viewObservers.append(view)
         view.addObserver(self, forKeyPath: "contentOffset",
                          options: [NSKeyValueObservingOptions.new, NSKeyValueObservingOptions.old],
                          context: nil)
@@ -194,7 +202,7 @@ class SJSegmentedScrollView: UIScrollView {
             segmentView?.font							= segmentTitleFont!
             segmentView?.shadow							= segmentShadow
             segmentView?.font							= segmentTitleFont!
-            segmentView?.bounces						= segmentBounces
+            segmentView?.bounces						= false
             segmentView!.translatesAutoresizingMaskIntoConstraints = false
             segmentView!.didSelectSegmentAtIndex = {[unowned self]
                 (segment, index, animated) in
@@ -242,6 +250,7 @@ class SJSegmentedScrollView: UIScrollView {
 		contentView.showsVerticalScrollIndicator = sjShowsVerticalScrollIndicator
 		contentView.showsHorizontalScrollIndicator = sjShowsHorizontalScrollIndicator
         contentView.translatesAutoresizingMaskIntoConstraints = false
+		contentView.bounces = segmentBounces
         scrollContentView.addSubview(contentView)
         
         let horizontalConstraints = NSLayoutConstraint.constraints(withVisualFormat: "H:|-0-[contentView]-0-|",

@@ -31,6 +31,7 @@ class ExamplePresentViewController: UIViewController {
 			segmentController.segmentControllers = [firstViewController,
 			                                        secondViewController]
 			segmentController.headerViewHeight = 200.0
+			segmentController.headerViewOffsetHeight = 31.0
 			present(segmentController, animated: true, completion: nil)
 		}
 	}

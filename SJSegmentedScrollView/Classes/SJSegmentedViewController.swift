@@ -174,11 +174,11 @@ import UIKit
     /**
      *  Set bounce for segment.
      *
-     *  By default it is set to false.
+     *  By default it is set to true.
      *
-     *  segmentedViewController.segmentBounces = true
+     *  segmentedViewController.segmentBounces = false
      */
-    open var segmentBounces = false {
+    open var segmentBounces = true {
         didSet {
             segmentedScrollView.segmentBounces = segmentBounces
         }
@@ -256,7 +256,6 @@ import UIKit
 	}
 
     open weak var delegate:SJSegmentedViewControllerDelegate?
-    var viewObservers = [UIView]()
     var segmentedScrollView = SJSegmentedScrollView(frame: CGRect.zero)
     var segmentScrollViewTopConstraint: NSLayoutConstraint?
     
@@ -284,14 +283,6 @@ import UIKit
 		super.init(coder: aDecoder)
     }
     
-    deinit {
-        for view in viewObservers {
-            view.removeObserver(segmentedScrollView,
-                                forKeyPath: "contentOffset",
-                                context: nil)
-        }
-    }
-    
     override open func loadView() {
         super.loadView()
         addSegmentedScrollView()
@@ -301,8 +292,12 @@ import UIKit
         super.viewDidLoad()
         
         view.backgroundColor = UIColor.white
-        automaticallyAdjustsScrollViewInsets = false
         loadControllers()
+		if #available(iOS 11, *) {
+			segmentedScrollView.contentInsetAdjustmentBehavior = .never
+		} else {
+			automaticallyAdjustsScrollViewInsets = false
+		}
     }
     
     /**
@@ -415,8 +410,6 @@ import UIKit
      - parameter contentControllers: array of ViewControllers
      */
     func addContentControllers(_ contentControllers: [UIViewController]) {
-        
-        viewObservers.removeAll()
         segmentedScrollView.addSegmentView(contentControllers, frame: view.bounds)
         
         var index = 0
@@ -437,7 +430,6 @@ import UIKit
                 observeView = view
             }
 
-            viewObservers.append(observeView!)
             segmentedScrollView.addObserverFor(observeView!)
             index += 1
         }

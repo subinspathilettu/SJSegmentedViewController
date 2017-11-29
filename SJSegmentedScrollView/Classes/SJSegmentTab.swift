@@ -94,7 +94,7 @@ open class SJSegmentTab: UIView {
 		button.titleLabel?.font = font
 	}
 
-	func onSegmentButtonPress(_ sender: AnyObject) {
+	@objc func onSegmentButtonPress(_ sender: AnyObject) {
 
 		let index = tag - kSegmentViewTagOffset
 		NotificationCenter.default.post(name: Notification.Name(rawValue: "DidChangeSegmentIndex"),
