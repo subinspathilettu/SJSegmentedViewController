@@ -31,7 +31,7 @@ class SJContentView: UIScrollView {
     var contentSubViewWidthConstraints = [NSLayoutConstraint]()
     let animationDuration = 0.3
     var didSelectSegmentAtIndex: DidSelectSegmentAtIndex?
-
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -147,6 +147,6 @@ extension SJContentView: UIScrollViewDelegate {
         pageIndex = Int(contentOffset.x / bounds.size.width)
         didSelectSegmentAtIndex?(nil, pageIndex, true)
         NotificationCenter.default.post(name: Notification.Name(rawValue: "DidChangeSegmentIndex"),
-                                                                  object: pageIndex)
+                                        object: pageIndex)
     }
 }
