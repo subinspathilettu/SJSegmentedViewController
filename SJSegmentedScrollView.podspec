@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
 spec.platform               = :ios
-spec.ios.deployment_target  = '10.0'
+spec.ios.deployment_target  = '9.0'
 spec.name                   = 'SJSegmentedScrollView'
 spec.summary                = 'Custom segmented header scrollview controller.'
 spec.requires_arc           = true
