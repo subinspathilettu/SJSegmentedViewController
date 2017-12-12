@@ -367,7 +367,7 @@ import UIKit
         segmentedScrollView.headerViewOffsetHeight      = headerViewOffsetHeight
         segmentedScrollView.segmentViewHeight           = segmentViewHeight
         segmentedScrollView.backgroundColor             = segmentedScrollViewColor
-        segmentedScrollView.sjDisableScrollOnContentView = false
+        segmentedScrollView.sjDisableScrollOnContentView = disableScrollOnContentView
     }
     
     /**
