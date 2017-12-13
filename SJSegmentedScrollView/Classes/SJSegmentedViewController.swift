@@ -254,7 +254,20 @@ import UIKit
 			segmentedScrollView.sjShowsHorizontalScrollIndicator = showsHorizontalScrollIndicator
 		}
 	}
-
+    
+    /**
+     *  Disable scroll on contentView.
+     *
+     *  By default false.
+     *
+     *  segmentedScrollView.disableScrollOnContentView = true
+     */
+    open var disableScrollOnContentView: Bool = false {
+        didSet {
+            segmentedScrollView.sjDisableScrollOnContentView = disableScrollOnContentView
+        }
+    }
+    
     open weak var delegate:SJSegmentedViewControllerDelegate?
     var segmentedScrollView = SJSegmentedScrollView(frame: CGRect.zero)
     var segmentScrollViewTopConstraint: NSLayoutConstraint?
@@ -345,6 +358,7 @@ import UIKit
         segmentedScrollView.headerViewOffsetHeight      = headerViewOffsetHeight
         segmentedScrollView.segmentViewHeight           = segmentViewHeight
         segmentedScrollView.backgroundColor             = segmentedScrollViewColor
+        segmentedScrollView.sjDisableScrollOnContentView = disableScrollOnContentView
     }
     
     /**
