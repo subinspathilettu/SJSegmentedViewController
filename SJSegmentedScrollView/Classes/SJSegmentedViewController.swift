@@ -256,7 +256,6 @@ import UIKit
 	}
 
     open weak var delegate:SJSegmentedViewControllerDelegate?
-    var viewObservers = [UIView]()
     var segmentedScrollView = SJSegmentedScrollView(frame: CGRect.zero)
     var segmentScrollViewTopConstraint: NSLayoutConstraint?
     
@@ -282,14 +281,6 @@ import UIKit
     
     required public init?(coder aDecoder: NSCoder) {
 		super.init(coder: aDecoder)
-    }
-    
-    deinit {
-        for view in viewObservers {
-            view.removeObserver(segmentedScrollView,
-                                forKeyPath: "contentOffset",
-                                context: nil)
-        }
     }
     
     override open func loadView() {
@@ -419,8 +410,6 @@ import UIKit
      - parameter contentControllers: array of ViewControllers
      */
     func addContentControllers(_ contentControllers: [UIViewController]) {
-        
-        viewObservers.removeAll()
         segmentedScrollView.addSegmentView(contentControllers, frame: view.bounds)
         
         var index = 0
@@ -441,7 +430,6 @@ import UIKit
                 observeView = view
             }
 
-            viewObservers.append(observeView!)
             segmentedScrollView.addObserverFor(observeView!)
             index += 1
         }

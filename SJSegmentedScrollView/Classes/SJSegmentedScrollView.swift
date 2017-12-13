@@ -58,6 +58,8 @@ class SJSegmentedScrollView: UIScrollView {
 			contentView?.showsHorizontalScrollIndicator = sjShowsHorizontalScrollIndicator
 		}
 	}
+    
+    private var viewObservers = [UIView]()
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -84,6 +86,12 @@ class SJSegmentedScrollView: UIScrollView {
         removeObserver(self,
                             forKeyPath: "contentOffset",
                             context: nil)
+        
+        for view in viewObservers {
+            view.removeObserver(self,
+                                forKeyPath: "contentOffset",
+                                context: nil)
+        }
     }
     
     func setContentView() {
@@ -144,7 +152,7 @@ class SJSegmentedScrollView: UIScrollView {
     }
     
     func addObserverFor(_ view: UIView) {
-        
+        viewObservers.append(view)
         view.addObserver(self, forKeyPath: "contentOffset",
                          options: [NSKeyValueObservingOptions.new, NSKeyValueObservingOptions.old],
                          context: nil)
