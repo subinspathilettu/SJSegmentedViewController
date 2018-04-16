@@ -25,33 +25,88 @@ import UIKit
 class SJSegmentedScrollView: UIScrollView {
     
     var segmentView: SJSegmentView?
-    var headerViewHeight: CGFloat! = 0
-    var segmentViewHeight: CGFloat! = 0
+    
+    var headerViewHeight: CGFloat! = 0 {
+        didSet {
+            headerHeightConstraint?.constant = headerViewHeight
+        }
+    }
+    
+    var segmentViewHeight: CGFloat! = 0 {
+        didSet {
+            segmentViewHeightConstraint?.constant = segmentViewHeight
+        }
+    }
+    
     var headerViewOffsetHeight: CGFloat! = 0
-    var selectedSegmentViewColor: UIColor! = UIColor.red
+    
+    var selectedSegmentViewColor: UIColor! = UIColor.red {
+        didSet {
+            segmentView?.selectedSegmentViewColor = selectedSegmentViewColor
+        }
+    }
+    
     var selectedSegmentViewHeight: CGFloat! = 0
+    
     var segmentBounces = false
-    var segmentTitleColor: UIColor! = UIColor.red
-    var selectedSegmentTitleColor: UIColor?
-    var segmentBackgroundColor: UIColor?
-    var segmentShadow: SJShadow?
-    var segmentTitleFont: UIFont! = UIFont.systemFont(ofSize: 12)
+    
+    var segmentTitleColor: UIColor! = UIColor.red {
+        didSet {
+            segmentView?.titleColor = segmentTitleColor
+        }
+    }
+    
+    var segmentSelectedTitleColor: UIColor? {
+        didSet {
+            segmentView?.selectedTitleColor = segmentSelectedTitleColor
+        }
+    }
+    
+    var segmentBackgroundColor: UIColor? {
+        didSet {
+            segmentView?.segmentBackgroundColor = segmentBackgroundColor
+        }
+    }
+    
+    var segmentShadow: SJShadow? {
+        didSet {
+            segmentView?.shadow = segmentShadow
+        }
+    }
+    
+    var segmentTitleFont: UIFont! = UIFont.systemFont(ofSize: 12) {
+        didSet {
+            segmentView?.font = segmentTitleFont
+        }
+    }
+    
     var topSpacing: CGFloat?
+    
     var bottomSpacing: CGFloat?
+    
     var observing = true
+    
     var headerView: UIView?
+    
     var contentControllers: [UIViewController]?
+    
     var contentViews = [UIView]()
+    
     var contentView: SJContentView?
+    
     var scrollContentView: UIView!
+    
     var contentViewHeightConstraint: NSLayoutConstraint!
+    
     var didSelectSegmentAtIndex: DidSelectSegmentAtIndex?
+    
 	var sjShowsVerticalScrollIndicator: Bool = false {
 		didSet {
 			showsVerticalScrollIndicator = sjShowsVerticalScrollIndicator
 			contentView?.showsVerticalScrollIndicator = sjShowsVerticalScrollIndicator
 		}
 	}
+    
 	var sjShowsHorizontalScrollIndicator: Bool = false  {
 		didSet {
 			showsHorizontalScrollIndicator = sjShowsHorizontalScrollIndicator
@@ -131,6 +186,8 @@ class SJSegmentedScrollView: UIScrollView {
         }
     }
     
+    private var headerHeightConstraint: NSLayoutConstraint?
+    
     func addHeaderView(_ headerView: UIView?) {
         
         if headerView != nil {
@@ -150,6 +207,8 @@ class SJSegmentedScrollView: UIScrollView {
                                                                                      metrics: nil,
                                                                                      views: ["headerView": headerView!])
             scrollContentView.addConstraints(verticalConstraints)
+            
+            headerHeightConstraint = verticalConstraints[0]
         } else {
             
             headerViewHeight = headerViewOffsetHeight
@@ -194,6 +253,8 @@ class SJSegmentedScrollView: UIScrollView {
         return contentHeight
     }
     
+    private var segmentViewHeightConstraint: NSLayoutConstraint?
+    
     func addSegmentView(_ controllers: [UIViewController], frame: CGRect) {
         
         if controllers.count > 1 {
@@ -203,6 +264,7 @@ class SJSegmentedScrollView: UIScrollView {
             segmentView?.selectedSegmentViewColor		= selectedSegmentViewColor
             segmentView?.selectedSegmentViewHeight		= selectedSegmentViewHeight!
             segmentView?.titleColor						= segmentTitleColor
+            segmentView?.selectedTitleColor             = segmentSelectedTitleColor
             segmentView?.segmentBackgroundColor			= segmentBackgroundColor
             segmentView?.font							= segmentTitleFont!
             segmentView?.shadow							= segmentShadow
@@ -231,6 +293,8 @@ class SJSegmentedScrollView: UIScrollView {
                                                                                      views: ["headerView": view!,
                                                                                         "segmentView": segmentView!])
             addConstraints(verticalConstraints)
+            
+            segmentViewHeightConstraint = verticalConstraints[1]
         } else {
             
             segmentViewHeight = 0.0
