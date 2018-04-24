@@ -208,7 +208,7 @@ class SJSegmentedScrollView: UIScrollView {
                                                                                      views: ["headerView": headerView!])
             scrollContentView.addConstraints(verticalConstraints)
             
-            headerHeightConstraint = verticalConstraints[0]
+            headerHeightConstraint = verticalConstraints[1]
         } else {
             
             headerViewHeight = headerViewOffsetHeight
