@@ -135,6 +135,19 @@ import UIKit
     }
     
     /**
+     *  Set color for segment title.
+     *
+     *  By default the color is black.
+     *
+     *  segmentedViewController.segmentTitleColor = UIColor.redColor()
+     */
+    open var segmentSelectedTitleColor = UIColor.black {
+        didSet {
+            segmentedScrollView.segmentSelectedTitleColor = segmentSelectedTitleColor
+        }
+    }
+    
+    /**
      *  Set color for segment background.
      *
      *  By default the color is white.
@@ -350,6 +363,7 @@ import UIKit
         segmentedScrollView.selectedSegmentViewColor    = selectedSegmentViewColor
         segmentedScrollView.selectedSegmentViewHeight   = selectedSegmentViewHeight
         segmentedScrollView.segmentTitleColor           = segmentTitleColor
+        segmentedScrollView.segmentSelectedTitleColor   = segmentSelectedTitleColor
         segmentedScrollView.segmentBackgroundColor      = segmentBackgroundColor
         segmentedScrollView.segmentShadow               = segmentShadow
         segmentedScrollView.segmentTitleFont            = segmentTitleFont

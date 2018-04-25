@@ -88,6 +88,11 @@ open class SJSegmentTab: UIView {
 
 		button.setTitleColor(color, for: .normal)
 	}
+    
+    open func selectedTitleColor(_ color: UIColor?) {
+        
+        button.setTitleColor(color, for: .selected)
+    }
 
 	open func titleFont(_ font: UIFont) {
 
