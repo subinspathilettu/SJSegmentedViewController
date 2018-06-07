@@ -24,6 +24,8 @@ import UIKit
 
 class SJSegmentView: UIScrollView {
     
+    weak var segmentedViewController: SJSegmentedViewController?
+    
     var selectedSegmentViewColor: UIColor? {
         didSet {
             selectedSegmentView?.backgroundColor = selectedSegmentViewColor
@@ -89,24 +91,23 @@ class SJSegmentView: UIScrollView {
         }
     }
     
-    required override init(frame: CGRect) {
-        super.init(frame: frame)
-
+    convenience init(frame: CGRect, segmentedViewController: SJSegmentedViewController?) {
+        self.init(frame: frame)
+        
+        self.segmentedViewController = segmentedViewController
+        
 		showsHorizontalScrollIndicator = false
 		showsVerticalScrollIndicator = false
 		bounces = false
-
+        
+        print(segmentedViewController)
 
 		NotificationCenter.default.addObserver(self,
 		                                       selector: #selector(SJSegmentView.didChangeSegmentIndex(_:)),
 		                                       name: NSNotification.Name("DidChangeSegmentIndex"),
-		                                       object: nil)
+		                                       object: segmentedViewController)
     }
 
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
     deinit {
         contentView!.removeObserver(self,
                                     forKeyPath: "contentOffset",
@@ -114,7 +115,7 @@ class SJSegmentView: UIScrollView {
         
         NotificationCenter.default.removeObserver(self,
                                                             name:NSNotification.Name("DidChangeSegmentIndex"),
-                                                            object: nil)
+                                                            object: segmentedViewController)
     }
     
     @objc func didChangeSegmentIndex(_ notification: Notification) {
@@ -125,7 +126,7 @@ class SJSegmentView: UIScrollView {
         }
         
         // select current button
-        let index = notification.object as? Int
+        let index = notification.userInfo?["index"] as? Int
 
 		if index! < segments.count {
 			let button = segments[index!]
@@ -281,6 +282,7 @@ class SJSegmentView: UIScrollView {
 		}
 
 		segmentTab?.didSelectSegmentAtIndex = didSelectSegmentAtIndex
+        segmentTab?.segmentedViewController = segmentedViewController
 
         return segmentTab!
     }
