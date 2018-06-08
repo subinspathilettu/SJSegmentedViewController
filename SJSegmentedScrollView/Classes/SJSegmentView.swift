@@ -100,8 +100,6 @@ class SJSegmentView: UIScrollView {
 		showsVerticalScrollIndicator = false
 		bounces = false
         
-        print(segmentedViewController)
-
 		NotificationCenter.default.addObserver(self,
 		                                       selector: #selector(SJSegmentView.didChangeSegmentIndex(_:)),
 		                                       name: NSNotification.Name("DidChangeSegmentIndex"),
