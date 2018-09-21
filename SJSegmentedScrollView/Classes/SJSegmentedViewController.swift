@@ -282,6 +282,16 @@ import UIKit
     }
     
     open weak var delegate:SJSegmentedViewControllerDelegate?
+    
+    open weak var segmentedScrollViewDelegate: UIScrollViewDelegate? {
+        get {
+            return segmentedScrollView.delegate
+        }
+        set {
+            segmentedScrollView.delegate = newValue
+        }
+    }
+    
     lazy var segmentedScrollView: SJSegmentedScrollView = {
         let sv = SJSegmentedScrollView(frame: CGRect.zero)
         sv.segmentedViewController = self
@@ -432,9 +442,9 @@ import UIKit
      */
     func addHeaderViewController(_ headerViewController: UIViewController) {
         
-        addChildViewController(headerViewController)
+        addChild(headerViewController)
         segmentedScrollView.addHeaderView(headerViewController.view)
-        headerViewController.didMove(toParentViewController: self)
+        headerViewController.didMove(toParent: self)
     }
     
     /**
@@ -448,9 +458,9 @@ import UIKit
         var index = 0
         for controller in contentControllers {
             
-            addChildViewController(controller)
+            addChild(controller)
             segmentedScrollView.addContentView(controller.view, frame: view.bounds)
-            controller.didMove(toParentViewController: self)
+            controller.didMove(toParent: self)
             
             let delegate = controller as? SJSegmentedViewControllerViewSource
             var observeView = controller.view
