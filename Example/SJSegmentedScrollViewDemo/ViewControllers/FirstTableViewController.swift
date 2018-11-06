@@ -17,7 +17,7 @@ class FirstTableViewController: UITableViewController {
 
 		refreshControl?.addTarget(self,
 		                          action: #selector(handleRefresh(_:)),
-		                          for: UIControlEvents.valueChanged)
+		                          for: UIControl.Event.valueChanged)
 	}
 
 	@objc func handleRefresh(_ refreshControl: UIRefreshControl) {

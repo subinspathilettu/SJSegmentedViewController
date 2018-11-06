@@ -24,6 +24,8 @@ import UIKit
 
 class SJContentView: UIScrollView {
     
+    weak var segmentedViewController: SJSegmentedViewController?
+    
     var pageIndex = 0
     var contentViews = [UIView]()
     var contentView: UIView!
@@ -147,6 +149,7 @@ extension SJContentView: UIScrollViewDelegate {
         pageIndex = Int(contentOffset.x / bounds.size.width)
         didSelectSegmentAtIndex?(nil, pageIndex, true)
         NotificationCenter.default.post(name: Notification.Name(rawValue: "DidChangeSegmentIndex"),
-                                        object: pageIndex)
+                                        object: segmentedViewController,
+                                        userInfo: ["index": pageIndex])
     }
 }

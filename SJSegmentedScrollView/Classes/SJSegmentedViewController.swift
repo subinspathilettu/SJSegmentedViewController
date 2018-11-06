@@ -282,7 +282,22 @@ import UIKit
     }
     
     open weak var delegate:SJSegmentedViewControllerDelegate?
-    var segmentedScrollView = SJSegmentedScrollView(frame: CGRect.zero)
+    
+    open weak var segmentedScrollViewDelegate: UIScrollViewDelegate? {
+        get {
+            return segmentedScrollView.delegate
+        }
+        set {
+            segmentedScrollView.delegate = newValue
+        }
+    }
+    
+    lazy var segmentedScrollView: SJSegmentedScrollView = {
+        let sv = SJSegmentedScrollView(frame: CGRect.zero)
+        sv.segmentedViewController = self
+        return sv
+    }()
+    
     var segmentScrollViewTopConstraint: NSLayoutConstraint?
     
     
@@ -350,8 +365,8 @@ import UIKit
 			segmentedScrollView.segmentView?.didSelectSegmentAtIndex!(segments[index],
 			                                                          index,
 			                                                          animated)
-			NotificationCenter.default.post(name: Notification.Name(rawValue: "DidChangeSegmentIndex"),
-			                                object: index)
+            NotificationCenter.default.post(name: Notification.Name(rawValue: "DidChangeSegmentIndex"),
+                                            object: self, userInfo: ["index": index])
 		}
 	}
     

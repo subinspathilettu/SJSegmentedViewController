@@ -24,6 +24,8 @@ import UIKit
 
 class SJSegmentedScrollView: UIScrollView {
     
+    weak var segmentedViewController: SJSegmentedViewController?
+    
     var segmentView: SJSegmentView?
     
     var headerViewHeight: CGFloat! = 0 {
@@ -259,7 +261,7 @@ class SJSegmentedScrollView: UIScrollView {
         
         if controllers.count > 1 {
             
-            segmentView = SJSegmentView(frame: CGRect.zero)
+            segmentView = SJSegmentView(frame: CGRect.zero, segmentedViewController: segmentedViewController)
 			segmentView?.controllers					= controllers
             segmentView?.selectedSegmentViewColor		= selectedSegmentViewColor
             segmentView?.selectedSegmentViewHeight		= selectedSegmentViewHeight!
@@ -321,6 +323,7 @@ class SJSegmentedScrollView: UIScrollView {
         contentView.isScrollEnabled = !sjDisableScrollOnContentView
         contentView.translatesAutoresizingMaskIntoConstraints = false
 		contentView.bounces = segmentBounces
+        contentView.segmentedViewController = segmentedViewController
         scrollContentView.addSubview(contentView)
         
         let horizontalConstraints = NSLayoutConstraint.constraints(withVisualFormat: "H:|-0-[contentView]-0-|",

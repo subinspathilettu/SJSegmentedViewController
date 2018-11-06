@@ -28,7 +28,9 @@ open class SJSegmentTab: UIView {
 
 	let kSegmentViewTagOffset = 100
 	let button = UIButton(type: .custom)
-
+    
+    weak var segmentedViewController: SJSegmentedViewController?
+    
 	var didSelectSegmentAtIndex: DidSelectSegmentAtIndex?
 	var isSelected = false {
 		didSet {
@@ -102,8 +104,10 @@ open class SJSegmentTab: UIView {
 	@objc func onSegmentButtonPress(_ sender: AnyObject) {
 
 		let index = tag - kSegmentViewTagOffset
-		NotificationCenter.default.post(name: Notification.Name(rawValue: "DidChangeSegmentIndex"),
-		                                object: index)
+        
+        NotificationCenter.default.post(name: Notification.Name(rawValue: "DidChangeSegmentIndex"),
+                                        object: segmentedViewController,
+                                        userInfo: ["index": index])
 
 		if didSelectSegmentAtIndex != nil {
 			didSelectSegmentAtIndex!(self, index, true)
