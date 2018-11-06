@@ -38,7 +38,7 @@ class SJUtil {
 		var topSpacing: CGFloat = 0.0
 		let navigationController = viewController.navigationController
 
-		if navigationController?.childViewControllers.last == viewController {
+		if navigationController?.children.last == viewController {
 
 			if navigationController?.isNavigationBarHidden == false {
 				topSpacing = UIApplication.shared.statusBarFrame.height
@@ -77,7 +77,7 @@ extension String {
 		let constraintRect = CGSize(width: width, height: .greatestFiniteMagnitude)
 		let boundingBox = self.boundingRect(with: constraintRect,
 		                                    options: .usesLineFragmentOrigin,
-		                                    attributes: [NSAttributedStringKey.font: font], context: nil)
+		                                    attributes: [NSAttributedString.Key.font: font], context: nil)
 		return boundingBox.width
 	}
 }
