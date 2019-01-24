@@ -427,9 +427,9 @@ import UIKit
      */
     func addHeaderViewController(_ headerViewController: UIViewController) {
         
-        addChild(headerViewController)
+        addChildViewController(headerViewController)
         segmentedScrollView.addHeaderView(headerViewController.view)
-        headerViewController.didMove(toParent: self)
+        headerViewController.didMove(toParentViewController: self)
     }
     
     /**
@@ -443,9 +443,9 @@ import UIKit
         var index = 0
         for controller in contentControllers {
             
-            addChild(controller)
+            addChildViewController(controller)
             segmentedScrollView.addContentView(controller.view, frame: view.bounds)
-            controller.didMove(toParent: self)
+            controller.didMove(toParentViewController: self)
             
             let delegate = controller as? SJSegmentedViewControllerViewSource
             var observeView = controller.view

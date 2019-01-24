@@ -34,6 +34,8 @@ class ExamplePresentViewController: UIViewController {
 			segmentController.headerViewOffsetHeight = 31.0
             segmentController.segmentTitleColor = .lightGray
             segmentController.segmentSelectedTitleColor = .black
+            
+            present(segmentController, animated: true, completion: nil)
 		}
 	}
 }

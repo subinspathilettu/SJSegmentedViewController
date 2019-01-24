@@ -44,7 +44,7 @@
 		64EE32D71DE839340003EA2A /* PresentHeaderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentHeaderViewController.swift; sourceTree = "<group>"; };
 		64EE32D91DE83EB40003EA2A /* ExamplePresentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExamplePresentViewController.swift; sourceTree = "<group>"; };
 		64EE32DB1DE840440003EA2A /* ExamplePushViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExamplePushViewController.swift; sourceTree = "<group>"; };
-		65D108D5120DF23EBFD42193 /* SJSegmentedScrollView.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = SJSegmentedScrollView.podspec; path = ../SJSegmentedScrollView.podspec; sourceTree = "<group>"; };
+		65D108D5120DF23EBFD42193 /* SJSegmentedScrollView.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = SJSegmentedScrollView.podspec; path = ../SJSegmentedScrollView.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		65ED4A0E1D6FF8B900B2EE28 /* SJSegmentedScrollView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SJSegmentedScrollView.framework; path = "../../../../Library/Developer/Xcode/DerivedData/SJSegmentedScrollViewDemo-bcsxqnqsrcwiyabnptjxeyzbzldf/Build/Products/Debug-iphonesimulator/SJSegmentedScrollView/SJSegmentedScrollView.framework"; sourceTree = "<group>"; };
 		65ED4A141D70043600B2EE28 /* image3.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image3.JPG; sourceTree = "<group>"; };
 		81D33DFEACCD76037A928394 /* Pods-SJSegmentedScrollViewDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SJSegmentedScrollViewDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-SJSegmentedScrollViewDemo/Pods-SJSegmentedScrollViewDemo.release.xcconfig"; sourceTree = "<group>"; };
@@ -155,7 +155,6 @@
 				607FACCD1AFB9204008FA782 /* Frameworks */,
 				607FACCE1AFB9204008FA782 /* Resources */,
 				B6C75E8006EC9F6B81B5FDB0 /* [CP] Embed Pods Frameworks */,
-				C04D65EC4BFF9DAD2AF7D55F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -222,13 +221,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SJSegmentedScrollViewDemo-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		B6C75E8006EC9F6B81B5FDB0 /* [CP] Embed Pods Frameworks */ = {
@@ -237,28 +239,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-SJSegmentedScrollViewDemo/Pods-SJSegmentedScrollViewDemo-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SJSegmentedScrollView/SJSegmentedScrollView.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SJSegmentedScrollView.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SJSegmentedScrollViewDemo/Pods-SJSegmentedScrollViewDemo-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C04D65EC4BFF9DAD2AF7D55F /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SJSegmentedScrollViewDemo/Pods-SJSegmentedScrollViewDemo-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -409,7 +399,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 46468A5FF1343D6897EF4F74 /* Pods-SJSegmentedScrollViewDemo.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 5DYFD9UMYF;
 				INFOPLIST_FILE = SJSegmentedScrollViewDemo/Info.plist;
@@ -429,7 +419,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 81D33DFEACCD76037A928394 /* Pods-SJSegmentedScrollViewDemo.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 5DYFD9UMYF;
 				INFOPLIST_FILE = SJSegmentedScrollViewDemo/Info.plist;
