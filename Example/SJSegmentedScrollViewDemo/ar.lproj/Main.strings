@@ -1,0 +1,30 @@
+
+/* Class = "UISegmentedControl"; 9mf-u0-OpS.segmentTitles[0] = "First"; ObjectID = "9mf-u0-OpS"; */
+"9mf-u0-OpS.segmentTitles[0]" = "First";
+
+/* Class = "UISegmentedControl"; 9mf-u0-OpS.segmentTitles[1] = "Second"; ObjectID = "9mf-u0-OpS"; */
+"9mf-u0-OpS.segmentTitles[1]" = "Second";
+
+/* Class = "UILabel"; text = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."; ObjectID = "BUI-bM-XCd"; */
+"BUI-bM-XCd.text" = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.";
+
+/* Class = "UIButton"; normalTitle = "Cancel"; ObjectID = "C97-f0-B42"; */
+"C97-f0-B42.normalTitle" = "Cancel";
+
+/* Class = "UIButton"; normalTitle = "Push"; ObjectID = "CpQ-4E-sGP"; */
+"CpQ-4E-sGP.normalTitle" = "Push";
+
+/* Class = "UITabBarItem"; title = "Push"; ObjectID = "EC0-ms-bJ7"; */
+"EC0-ms-bJ7.title" = "Push";
+
+/* Class = "UIButton"; normalTitle = "Present"; ObjectID = "H55-lF-ie4"; */
+"H55-lF-ie4.normalTitle" = "Present";
+
+/* Class = "UITabBarItem"; title = "SJSegment"; ObjectID = "I96-gV-iSQ"; */
+"I96-gV-iSQ.title" = "SJSegment";
+
+/* Class = "UIButton"; normalTitle = "Load First"; ObjectID = "hDS-kp-3Ss"; */
+"hDS-kp-3Ss.normalTitle" = "Load First";
+
+/* Class = "UITabBarItem"; title = "Present"; ObjectID = "plf-fs-OkD"; */
+"plf-fs-OkD.title" = "Present";
