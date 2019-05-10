@@ -356,7 +356,13 @@ class SJSegmentView: UIScrollView {
         let value = (contentView?.contentOffset.x)! / changeOffset
         
         if !value.isNaN {
-            xPosConstraints!.constant = (selectedSegmentView?.frame.origin.x)!
+            if UIView.userInterfaceLayoutDirection(for: self.semanticContentAttribute) == .rightToLeft {
+                let newIndex = contentView?.pageIndex ?? 0
+                xPosConstraints!.constant = CGFloat(newIndex) * segmentWidth
+            } else {
+                xPosConstraints!.constant = (selectedSegmentView?.frame.origin.x)!
+            }
+            
             layoutIfNeeded()
         }
     }

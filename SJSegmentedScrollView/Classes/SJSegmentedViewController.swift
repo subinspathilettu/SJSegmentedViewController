@@ -416,7 +416,7 @@ import UIKit
         segmentedScrollView.didSelectSegmentAtIndex = {[unowned self] (segment, index, animated) in
 
             let selectedController = self.segmentControllers[index]
-//            self.delegate?.didMoveToPage?(selectedController, segment: segment!, index: index)
+            self.delegate?.didMoveToPage?(selectedController, segment: segment!, index: index)
         }
     }
     
