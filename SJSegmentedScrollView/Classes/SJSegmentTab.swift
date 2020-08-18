@@ -38,6 +38,7 @@ open class SJSegmentTab: UIView {
 
 	convenience init(title: String) {
 		self.init(frame: CGRect.zero)
+        clipsToBounds = true
         setTitle(title)
 	}
 
