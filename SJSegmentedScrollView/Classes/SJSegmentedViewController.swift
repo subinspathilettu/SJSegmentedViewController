@@ -185,6 +185,17 @@ import UIKit
     }
     
     /**
+     *  Set right offset for segment.
+     *
+     *  segmentedScrollView.segmentRightOffset = 0.0
+     */
+    open var segmentRightOffset: CGFloat = 0.0 {
+        didSet {
+            segmentedScrollView.segmentRightOffset = segmentRightOffset
+        }
+    }
+    
+    /**
      *  Set bounce for segment.
      *
      *  By default it is set to true.

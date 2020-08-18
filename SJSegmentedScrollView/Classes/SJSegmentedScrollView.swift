@@ -80,6 +80,8 @@ class SJSegmentedScrollView: UIScrollView {
         }
     }
     
+    var segmentRightOffset: CGFloat = 0.0
+    
     var topSpacing: CGFloat?
     
     var bottomSpacing: CGFloat?
@@ -240,6 +242,7 @@ class SJSegmentedScrollView: UIScrollView {
         
         contentViewHeightConstraint.constant = getContentHeight()
         contentView?.layoutIfNeeded()
+        segmentView?.didChangeParentViewFrame(CGRect(x: frame.origin.x, y: frame.origin.y, width: frame.width - segmentRightOffset, height: frame.height))
         
         segmentView?.didChangeParentViewFrame(frame)
         contentView?.updateContentControllersFrame(frame)
