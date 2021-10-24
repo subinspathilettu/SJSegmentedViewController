@@ -161,6 +161,19 @@ import UIKit
     }
     
     /**
+     *  Set color for segment background.
+     *
+     *  By default the color is white.
+     *
+     *  segmentedViewController.segmentBackgroundColor = UIColor.whiteColor()
+     */
+    open var segmentTitleBackgroundColor = UIColor.clear {
+        didSet {
+            segmentedScrollView.segmentTitleBackgroundColor = segmentTitleBackgroundColor
+        }
+    }
+    
+    /**
      *  Set shadow for segment.
      *
      *  By default the color is light gray.
@@ -253,31 +266,31 @@ import UIKit
         }
     }
 
-	/**
-	*  Set vertical scroll indicator.
-	*
-	*  By default true.
-	*
-	*  segmentedScrollView.showsVerticalScrollIndicator = false
-	*/
-	open var showsVerticalScrollIndicator = true {
-		didSet {
-			segmentedScrollView.sjShowsVerticalScrollIndicator = showsVerticalScrollIndicator
-		}
-	}
+    /**
+    *  Set vertical scroll indicator.
+    *
+    *  By default true.
+    *
+    *  segmentedScrollView.showsVerticalScrollIndicator = false
+    */
+    open var showsVerticalScrollIndicator = true {
+        didSet {
+            segmentedScrollView.sjShowsVerticalScrollIndicator = showsVerticalScrollIndicator
+        }
+    }
 
-	/**
-	*  Set horizontal scroll indicator.
-	*
-	*  By default true.
-	*
-	*  segmentedScrollView.showsHorizontalScrollIndicator = false
-	*/
-	open var showsHorizontalScrollIndicator = true {
-		didSet {
-			segmentedScrollView.sjShowsHorizontalScrollIndicator = showsHorizontalScrollIndicator
-		}
-	}
+    /**
+    *  Set horizontal scroll indicator.
+    *
+    *  By default true.
+    *
+    *  segmentedScrollView.showsHorizontalScrollIndicator = false
+    */
+    open var showsHorizontalScrollIndicator = true {
+        didSet {
+            segmentedScrollView.sjShowsHorizontalScrollIndicator = showsHorizontalScrollIndicator
+        }
+    }
     
     /**
      *  Disable scroll on contentView.
@@ -289,6 +302,12 @@ import UIKit
     open var disableScrollOnContentView: Bool = false {
         didSet {
             segmentedScrollView.sjDisableScrollOnContentView = disableScrollOnContentView
+        }
+    }
+    
+    open var fixWidth: Bool {
+        didSet {
+            segmentedScrollView.fixWidth = fixWidth
         }
     }
     
@@ -317,7 +336,7 @@ import UIKit
     }
     
     required public init?(coder aDecoder: NSCoder) {
-		super.init(coder: aDecoder)
+        super.init(coder: aDecoder)
     }
     
     override open func loadView() {
@@ -330,11 +349,11 @@ import UIKit
         
         view.backgroundColor = UIColor.white
         loadControllers()
-		if #available(iOS 11, *) {
-			segmentedScrollView.contentInsetAdjustmentBehavior = .never
-		} else {
-			automaticallyAdjustsScrollViewInsets = false
-		}
+        if #available(iOS 11, *) {
+            segmentedScrollView.contentInsetAdjustmentBehavior = .never
+        } else {
+            automaticallyAdjustsScrollViewInsets = false
+        }
     }
     
     /**
@@ -350,21 +369,21 @@ import UIKit
         segmentedScrollView.updateSubviewsFrame(view.bounds)
     }
 
-	/**
-	* To select segment programmatically
-	* - parameter index Int Segment index
-	* - parameter animated Bool Move with an animation or not.
-	*/
-	open func setSelectedSegmentAt(_ index: Int, animated: Bool) {
+    /**
+    * To select segment programmatically
+    * - parameter index Int Segment index
+    * - parameter animated Bool Move with an animation or not.
+    */
+    open func setSelectedSegmentAt(_ index: Int, animated: Bool) {
 
-		if index >= 0 && index < segmentControllers.count {
-			segmentedScrollView.segmentView?.didSelectSegmentAtIndex!(segments[index],
-			                                                          index,
-			                                                          animated)
-			NotificationCenter.default.post(name: Notification.Name(rawValue: "DidChangeSegmentIndex"),
-			                                object: index)
-		}
-	}
+        if index >= 0 && index < segmentControllers.count {
+            segmentedScrollView.segmentView?.didSelectSegmentAtIndex!(segments[index],
+                                                                      index,
+                                                                      animated)
+            NotificationCenter.default.post(name: Notification.Name(rawValue: "DidChangeSegmentIndex"),
+                                            object: index)
+        }
+    }
     
     /**
      * Set the default values for the segmented scroll view.
@@ -376,6 +395,7 @@ import UIKit
         segmentedScrollView.segmentTitleColor           = segmentTitleColor
         segmentedScrollView.segmentSelectedTitleColor   = segmentSelectedTitleColor
         segmentedScrollView.segmentBackgroundColor      = segmentBackgroundColor
+        segmentedScrollView.segmentTitleBackgroundColor = segmentTitleBackgroundColor
         segmentedScrollView.segmentShadow               = segmentShadow
         segmentedScrollView.segmentTitleFont            = segmentTitleFont
         segmentedScrollView.segmentBounces              = segmentBounces
@@ -461,9 +481,9 @@ import UIKit
             let delegate = controller as? SJSegmentedViewControllerViewSource
             var observeView = controller.view
 
-			if let collectionController = controller as? UICollectionViewController {
-				observeView = collectionController.collectionView
-			}
+            if let collectionController = controller as? UICollectionViewController {
+                observeView = collectionController.collectionView
+            }
 
             if let view = delegate?.viewForSegmentControllerToObserveContentOffsetChange?() {
                 observeView = view
@@ -483,7 +503,7 @@ import UIKit
         
         if headerViewController == nil  {
             headerViewController = UIViewController()
-			headerViewHeight = 0.0
+            headerViewHeight = 0.0
         }
         
         addHeaderViewController(headerViewController!)

@@ -54,6 +54,14 @@ class SJSegmentView: UIScrollView {
         }
     }
     
+    var segmentTitleBackgroundColor: UIColor? {
+        didSet {
+            for segment in segments {
+                segment.titleBackgroundColor = segmentTitleBackgroundColor
+            }
+        }
+    }
+    
     var shadow: SJShadow? {
         didSet {
             if let shadow = shadow {
@@ -78,7 +86,8 @@ class SJSegmentView: UIScrollView {
     var contentViewWidthConstraint: NSLayoutConstraint?
     var selectedSegmentViewWidthConstraint: NSLayoutConstraint?
     var contentSubViewWidthConstraints = [NSLayoutConstraint]()
-	var controllers: [UIViewController]?
+    var controllers: [UIViewController]?
+    var fixWidth: Bool = true
     
     var contentView: SJContentView? {
         didSet {
@@ -92,15 +101,15 @@ class SJSegmentView: UIScrollView {
     required override init(frame: CGRect) {
         super.init(frame: frame)
 
-		showsHorizontalScrollIndicator = false
-		showsVerticalScrollIndicator = false
-		bounces = false
+        showsHorizontalScrollIndicator = false
+        showsVerticalScrollIndicator = false
+        bounces = false
 
 
-		NotificationCenter.default.addObserver(self,
-		                                       selector: #selector(SJSegmentView.didChangeSegmentIndex(_:)),
-		                                       name: NSNotification.Name("DidChangeSegmentIndex"),
-		                                       object: nil)
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(SJSegmentView.didChangeSegmentIndex(_:)),
+                                               name: NSNotification.Name("DidChangeSegmentIndex"),
+                                               object: nil)
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -127,10 +136,10 @@ class SJSegmentView: UIScrollView {
         // select current button
         let index = notification.object as? Int
 
-		if index! < segments.count {
-			let button = segments[index!]
-			button.isSelected = true
-		}
+        if index! < segments.count {
+            let button = segments[index!]
+            button.isSelected = true
+        }
     }
 
     func setSegmentsView(_ frame: CGRect) {
@@ -216,7 +225,7 @@ class SJSegmentView: UIScrollView {
                                                  toItem: nil,
                                                  attribute: .notAnAttribute,
                                                  multiplier: 1.0,
-                                                 constant: width)
+                                                 constant: fixWidth ? width : segmentView.frame.size.width)
         segmentContentView!.addConstraint(widthConstraint)
         contentSubViewWidthConstraints.append(widthConstraint)
         
@@ -262,63 +271,64 @@ class SJSegmentView: UIScrollView {
     
     func getSegmentTabForController(_ controller: UIViewController) -> SJSegmentTab {
 
-		var segmentTab: SJSegmentTab?
+        var segmentTab: SJSegmentTab?
 
-		if controller.navigationItem.titleView != nil {
-			segmentTab = SJSegmentTab.init(view: controller.navigationItem.titleView!)
-		} else {
+        if controller.navigationItem.titleView != nil {
+            segmentTab = SJSegmentTab.init(view: controller.navigationItem.titleView!)
+        } else {
 
-			if let title = controller.title {
-				segmentTab = SJSegmentTab.init(title: title)
-			} else {
-				segmentTab = SJSegmentTab.init(title: "")
-			}
+            if let title = controller.title {
+                segmentTab = SJSegmentTab.init(title: title)
+            } else {
+                segmentTab = SJSegmentTab.init(title: "")
+            }
 
-			segmentTab?.backgroundColor = segmentBackgroundColor
-			segmentTab?.titleColor(titleColor!)
+            segmentTab?.backgroundColor = segmentBackgroundColor
+            segmentTab?.titleBackgroundColor = segmentTitleBackgroundColor
+            segmentTab?.titleColor(titleColor!)
             segmentTab?.selectedTitleColor(selectedTitleColor!)
-			segmentTab?.titleFont(font!)
-		}
+            segmentTab?.titleFont(font!)
+        }
 
-		segmentTab?.didSelectSegmentAtIndex = didSelectSegmentAtIndex
+        segmentTab?.didSelectSegmentAtIndex = didSelectSegmentAtIndex
 
         return segmentTab!
     }
 
-	func widthForSegment(_ frame: CGRect) -> CGFloat {
+    func widthForSegment(_ frame: CGRect) -> CGFloat {
 
-		var maxWidth: CGFloat = 0
-		for controller in controllers! {
+        var maxWidth: CGFloat = 0
+        for controller in controllers! {
 
-			var width: CGFloat = 0.0
-			if let view = controller.navigationItem.titleView {
-				width = view.bounds.width
-			} else if let title = controller.title {
+            var width: CGFloat = 0.0
+            if let view = controller.navigationItem.titleView {
+                width = view.bounds.width
+            } else if let title = controller.title {
 
-				width = title.widthWithConstrainedWidth(.greatestFiniteMagnitude,
-				                                        font: font!)
-			}
+                width = title.widthWithConstrainedWidth(.greatestFiniteMagnitude,
+                                                        font: font!)
+            }
 
-			if width > maxWidth {
-				maxWidth = width
-			}
-		}
+            if width > maxWidth {
+                maxWidth = width
+            }
+        }
 
-		let width = Int(maxWidth + segmentViewOffsetWidth)
-		let totalWidth = width * (controllers?.count)!
-		if totalWidth < Int(frame.size.width)  {
-			maxWidth = frame.size.width /  CGFloat((controllers?.count)!)
-		} else {
-			maxWidth = CGFloat(width)
-		}
+        let width = Int(maxWidth + segmentViewOffsetWidth)
+        let totalWidth = width * (controllers?.count)!
+        if totalWidth < Int(frame.size.width)  {
+            maxWidth = frame.size.width /  CGFloat((controllers?.count)!)
+        } else {
+            maxWidth = CGFloat(width)
+        }
 
-		return maxWidth
-	}
+        return maxWidth
+    }
     
-	override func observeValue(forKeyPath keyPath: String?,
-	                           of object: Any?,
-	                           change: [NSKeyValueChangeKey : Any]?,
-	                           context: UnsafeMutableRawPointer?) {
+    override func observeValue(forKeyPath keyPath: String?,
+                               of object: Any?,
+                               change: [NSKeyValueChangeKey : Any]?,
+                               context: UnsafeMutableRawPointer?) {
         
         if let change = change as [NSKeyValueChangeKey : AnyObject]? {
             if let old = change[NSKeyValueChangeKey.oldKey], let new = change[NSKeyValueChangeKey.newKey] {

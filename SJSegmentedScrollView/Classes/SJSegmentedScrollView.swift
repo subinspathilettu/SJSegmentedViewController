@@ -68,6 +68,12 @@ class SJSegmentedScrollView: UIScrollView {
         }
     }
     
+    var segmentTitleBackgroundColor: UIColor? {
+        didSet {
+            segmentView?.segmentTitleBackgroundColor = segmentTitleBackgroundColor
+        }
+    }
+    
     var segmentShadow: SJShadow? {
         didSet {
             segmentView?.shadow = segmentShadow
@@ -77,6 +83,12 @@ class SJSegmentedScrollView: UIScrollView {
     var segmentTitleFont: UIFont! = UIFont.systemFont(ofSize: 12) {
         didSet {
             segmentView?.font = segmentTitleFont
+        }
+    }
+    
+    var fixWidth: Bool {
+        didSet {
+            segmentView?.fixWidth = fixWidth
         }
     }
     
@@ -102,19 +114,19 @@ class SJSegmentedScrollView: UIScrollView {
     
     var didSelectSegmentAtIndex: DidSelectSegmentAtIndex?
     
-	var sjShowsVerticalScrollIndicator: Bool = false {
-		didSet {
-			showsVerticalScrollIndicator = sjShowsVerticalScrollIndicator
-			contentView?.showsVerticalScrollIndicator = sjShowsVerticalScrollIndicator
-		}
-	}
+    var sjShowsVerticalScrollIndicator: Bool = false {
+        didSet {
+            showsVerticalScrollIndicator = sjShowsVerticalScrollIndicator
+            contentView?.showsVerticalScrollIndicator = sjShowsVerticalScrollIndicator
+        }
+    }
     
-	var sjShowsHorizontalScrollIndicator: Bool = false  {
-		didSet {
-			showsHorizontalScrollIndicator = sjShowsHorizontalScrollIndicator
-			contentView?.showsHorizontalScrollIndicator = sjShowsHorizontalScrollIndicator
-		}
-	}
+    var sjShowsHorizontalScrollIndicator: Bool = false  {
+        didSet {
+            showsHorizontalScrollIndicator = sjShowsHorizontalScrollIndicator
+            contentView?.showsHorizontalScrollIndicator = sjShowsHorizontalScrollIndicator
+        }
+    }
     
     private var viewObservers = [UIView]()
     var sjDisableScrollOnContentView: Bool = false {
@@ -248,7 +260,7 @@ class SJSegmentedScrollView: UIScrollView {
     
     //MARK: Private Functions
     func getContentHeight() -> CGFloat {
-		
+        
         var contentHeight = (superview?.bounds.height)! + headerViewHeight!
         contentHeight -= (topSpacing! + bottomSpacing! + headerViewOffsetHeight!)
         return contentHeight
@@ -261,16 +273,17 @@ class SJSegmentedScrollView: UIScrollView {
         if controllers.count > 1 {
             
             segmentView = SJSegmentView(frame: CGRect.zero)
-			segmentView?.controllers					= controllers
-            segmentView?.selectedSegmentViewColor		= selectedSegmentViewColor
-            segmentView?.selectedSegmentViewHeight		= selectedSegmentViewHeight!
-            segmentView?.titleColor						= segmentTitleColor
+            segmentView?.controllers                    = controllers
+            segmentView?.selectedSegmentViewColor        = selectedSegmentViewColor
+            segmentView?.selectedSegmentViewHeight        = selectedSegmentViewHeight!
+            segmentView?.titleColor                        = segmentTitleColor
             segmentView?.selectedTitleColor             = segmentSelectedTitleColor
-            segmentView?.segmentBackgroundColor			= segmentBackgroundColor
-            segmentView?.font							= segmentTitleFont!
-            segmentView?.shadow							= segmentShadow
-            segmentView?.font							= segmentTitleFont!
-            segmentView?.bounces						= false
+            segmentView?.segmentBackgroundColor         = segmentBackgroundColor
+            segmentView?.segmentTitleBackgroundColor    = segmentTitleBackgroundColor
+            segmentView?.font                            = segmentTitleFont!
+            segmentView?.shadow                            = segmentShadow
+            segmentView?.font                            = segmentTitleFont!
+            segmentView?.bounces                        = false
             segmentView!.translatesAutoresizingMaskIntoConstraints = false
             segmentView!.didSelectSegmentAtIndex = {[unowned self]
                 (segment, index, animated) in
@@ -317,11 +330,11 @@ class SJSegmentedScrollView: UIScrollView {
     func createContentView() -> SJContentView {
         
         let contentView = SJContentView(frame: CGRect.zero)
-		contentView.showsVerticalScrollIndicator = sjShowsVerticalScrollIndicator
-		contentView.showsHorizontalScrollIndicator = sjShowsHorizontalScrollIndicator
+        contentView.showsVerticalScrollIndicator = sjShowsVerticalScrollIndicator
+        contentView.showsHorizontalScrollIndicator = sjShowsHorizontalScrollIndicator
         contentView.isScrollEnabled = !sjDisableScrollOnContentView
         contentView.translatesAutoresizingMaskIntoConstraints = false
-		contentView.bounces = segmentBounces
+        contentView.bounces = segmentBounces
         scrollContentView.addSubview(contentView)
         
         let horizontalConstraints = NSLayoutConstraint.constraints(withVisualFormat: "H:|-0-[contentView]-0-|",
@@ -345,18 +358,18 @@ class SJSegmentedScrollView: UIScrollView {
                         change: CGFloat,
                         oldPosition: CGPoint) {
 
-		if headerViewHeight != 0.0 && contentOffset.y != 0.0 {
-			if scrollView.contentOffset.y < 0.0 {
-				if contentOffset.y >= 0.0 {
+        if headerViewHeight != 0.0 && contentOffset.y != 0.0 {
+            if scrollView.contentOffset.y < 0.0 {
+                if contentOffset.y >= 0.0 {
 
-					var yPos = contentOffset.y - change
-					yPos = yPos < 0 ? 0 : yPos
-					let updatedPos = CGPoint(x: contentOffset.x, y: yPos)
-					setContentOffset(self, point: updatedPos)
-					setContentOffset(scrollView, point: oldPosition)
-				}
-			}
-		}
+                    var yPos = contentOffset.y - change
+                    yPos = yPos < 0 ? 0 : yPos
+                    let updatedPos = CGPoint(x: contentOffset.x, y: yPos)
+                    setContentOffset(self, point: updatedPos)
+                    setContentOffset(scrollView, point: oldPosition)
+                }
+            }
+        }
     }
 
     func handleScrollDown(_ scrollView: UIScrollView,
@@ -378,36 +391,36 @@ class SJSegmentedScrollView: UIScrollView {
         }
     }
 
-	override func observeValue(forKeyPath keyPath: String?,
-	                           of object: Any?,
-	                           change: [NSKeyValueChangeKey : Any]?,
-	                           context: UnsafeMutableRawPointer?) {
-		if !observing { return }
+    override func observeValue(forKeyPath keyPath: String?,
+                               of object: Any?,
+                               change: [NSKeyValueChangeKey : Any]?,
+                               context: UnsafeMutableRawPointer?) {
+        if !observing { return }
 
-		let scrollView = object as? UIScrollView
-		if scrollView == nil { return }
-		if scrollView == self { return }
+        let scrollView = object as? UIScrollView
+        if scrollView == nil { return }
+        if scrollView == self { return }
 
-		let changeValues = change! as [NSKeyValueChangeKey: AnyObject]
+        let changeValues = change! as [NSKeyValueChangeKey: AnyObject]
 
-		if let new = changeValues[NSKeyValueChangeKey.newKey]?.cgPointValue,
-			let old = changeValues[NSKeyValueChangeKey.oldKey]?.cgPointValue {
+        if let new = changeValues[NSKeyValueChangeKey.newKey]?.cgPointValue,
+            let old = changeValues[NSKeyValueChangeKey.oldKey]?.cgPointValue {
 
-			let diff = old.y - new.y
+            let diff = old.y - new.y
 
-			if diff > 0.0 {
+            if diff > 0.0 {
 
-				handleScrollUp(scrollView!,
-				                    change: diff,
-				                    oldPosition: old)
-			} else {
+                handleScrollUp(scrollView!,
+                                    change: diff,
+                                    oldPosition: old)
+            } else {
 
-				handleScrollDown(scrollView!,
-				                      change: diff,
-				                      oldPosition: old)
-			}
-		}
-	}
+                handleScrollDown(scrollView!,
+                                      change: diff,
+                                      oldPosition: old)
+            }
+        }
+    }
 
     func setContentOffset(_ scrollView: UIScrollView, point: CGPoint) {
         observing = false
