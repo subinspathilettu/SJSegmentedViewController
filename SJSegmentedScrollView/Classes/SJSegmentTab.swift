@@ -41,6 +41,8 @@ open class SJSegmentTab: UIView {
         didSet{
             if let titleBackgroundColor = titleBackgroundColor{
                 button.backgroundColor = titleBackgroundColor
+                layer.masksToBounds = true
+                layer.cornerRadius = 15
             }
         }
     }
