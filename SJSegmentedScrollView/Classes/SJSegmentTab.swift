@@ -33,24 +33,22 @@ open class SJSegmentTab: UIView {
     var isSelected = false {
         didSet {
             button.isSelected = isSelected
-            layer.masksToBounds = true
-            layer.cornerRadius = 15
         }
     }
     var titleBackgroundColor: UIColor?{
         didSet{
             if let titleBackgroundColor = titleBackgroundColor{
                 button.backgroundColor = titleBackgroundColor
-                layer.masksToBounds = true
-                layer.cornerRadius = 15
             }
         }
     }
 
-    convenience init(title: String) {
+    convenience init(title: String, cornerRadius: CGFloat) {
         self.init(frame: CGRect.zero)
         clipsToBounds = true
         setTitle(title)
+        layer.masksToBounds = true
+        layer.cornerRadius = cornerRadius
     }
 
     convenience init(view: UIView) {

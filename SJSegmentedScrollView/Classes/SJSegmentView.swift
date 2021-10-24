@@ -77,7 +77,7 @@ class SJSegmentView: UIScrollView {
     var font: UIFont?
     var selectedSegmentViewHeight: CGFloat?
     let kSegmentViewTagOffset = 100
-    var segmentViewOffsetWidth: CGFloat = 10.0
+    var segmentViewOffsetWidth: CGFloat = 20.0
     var segments = [SJSegmentTab]()
     var segmentContentView: UIView?
     var didSelectSegmentAtIndex: DidSelectSegmentAtIndex?
@@ -225,7 +225,7 @@ class SJSegmentView: UIScrollView {
                                                  toItem: nil,
                                                  attribute: .notAnAttribute,
                                                  multiplier: 1.0,
-                                                 constant: fixWidth ? width : segmentView.frame.size.width)
+                                                 constant: fixWidth ? width + segmentViewOffsetWidth : segmentView.frame.size.width)
         segmentContentView!.addConstraint(widthConstraint)
         contentSubViewWidthConstraints.append(widthConstraint)
         
@@ -278,9 +278,9 @@ class SJSegmentView: UIScrollView {
         } else {
 
             if let title = controller.title {
-                segmentTab = SJSegmentTab.init(title: title)
+                segmentTab = SJSegmentTab.init(title: title, cornerRadius: fixWidth ? 0 : 15)
             } else {
-                segmentTab = SJSegmentTab.init(title: "")
+                segmentTab = SJSegmentTab.init(title: "", cornerRadius: fixWidth ? 0 : 15)
             }
 
             segmentTab?.backgroundColor = segmentBackgroundColor

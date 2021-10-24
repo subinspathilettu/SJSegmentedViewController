@@ -283,6 +283,7 @@ class SJSegmentedScrollView: UIScrollView {
             segmentView?.font                            = segmentTitleFont!
             segmentView?.shadow                            = segmentShadow
             segmentView?.font                            = segmentTitleFont!
+            segmentView?.fixWidth = fixWidth
             segmentView?.bounces                        = false
             segmentView!.translatesAutoresizingMaskIntoConstraints = false
             segmentView!.didSelectSegmentAtIndex = {[unowned self]
