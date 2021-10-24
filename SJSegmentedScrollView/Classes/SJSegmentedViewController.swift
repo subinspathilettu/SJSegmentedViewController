@@ -305,7 +305,7 @@ import UIKit
         }
     }
     
-    open var fixWidth: Bool {
+    open var fixWidth: Bool = true {
         didSet {
             segmentedScrollView.fixWidth = fixWidth
         }

@@ -86,7 +86,7 @@ class SJSegmentedScrollView: UIScrollView {
         }
     }
     
-    var fixWidth: Bool {
+    var fixWidth: Bool = true {
         didSet {
             segmentView?.fixWidth = fixWidth
         }
