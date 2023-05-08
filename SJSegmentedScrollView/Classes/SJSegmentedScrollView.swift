@@ -49,6 +49,7 @@ class SJSegmentedScrollView: UIScrollView {
     var selectedSegmentViewHeight: CGFloat! = 0
     
     var segmentBounces = false
+    var hideSingleItem = true
     
     var segmentTitleColor: UIColor! = UIColor.red {
         didSet {
@@ -270,7 +271,9 @@ class SJSegmentedScrollView: UIScrollView {
     
     func addSegmentView(_ controllers: [UIViewController], frame: CGRect) {
         
-        if controllers.count > 1 {
+        if(hideSingleItem && controllers.count == 1){
+            segmentViewHeight = 0.0
+        } else {
             
             segmentView = SJSegmentView(frame: CGRect.zero)
             segmentView?.controllers                    = controllers
@@ -310,9 +313,6 @@ class SJSegmentedScrollView: UIScrollView {
             addConstraints(verticalConstraints)
             
             segmentViewHeightConstraint = verticalConstraints[1]
-        } else {
-            
-            segmentViewHeight = 0.0
         }
     }
     

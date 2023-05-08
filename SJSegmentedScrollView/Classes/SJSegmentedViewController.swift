@@ -316,6 +316,13 @@ import UIKit
     var segmentScrollViewTopConstraint: NSLayoutConstraint?
     
     
+    
+    open var hideSingleItem: Bool = true {
+        didSet {
+            segmentedScrollView.hideSingleItem = hideSingleItem
+        }
+    }
+    
     /**
      Custom initializer for SJSegmentedViewController.
      
